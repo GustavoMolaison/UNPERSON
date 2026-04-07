@@ -3,6 +3,7 @@ using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,9 +21,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public CameraData inBaseView;
+    public CameraData inBaseCamera;
     public CameraData inMonitor1;
-    public CameraData prevLoc;
+    public CameraData prevCamera;
+
+    public CameraData currentCamera;
     public List<CameraData> CDList;
 
     public static GameManager Instance;
@@ -35,58 +38,80 @@ public class GameManager : MonoBehaviour
        
         void Start()
     {
-        inBaseView = new CameraData(true, new Vector3(0, 0 ,0), 2f);
+        inBaseCamera = new CameraData(true, new Vector3(0, 0 ,0), 2f);
         inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize);
-        prevLoc = inBaseView;
-        CDList = new List<CameraData> { inBaseView, inMonitor1 };
+        prevCamera = inBaseCamera;
+        currentCamera = inBaseCamera;
+        CDList = new List<CameraData> { inBaseCamera, inMonitor1 };
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if(inBaseCamera == prevCamera)
+        {
+            Debug.Log("xd hell yeah");
+        }
+            changeCamera(prevCamera);
+        }
+
+        // Debug.Log($"inBaseCamera: {inBaseCamera.active}, inMonitor1: {inMonitor1.active}, prevCamera: {(prevCamera != null ? prevCamera.active.ToString() : "null")}, currentCamera: {(currentCamera != null ? currentCamera.active.ToString() : "null")}");
     }
 
+    
+
     void whereIsPlayer()
+{
+    // Znajdź wszystkie obecnie aktywne kamery poza tą, która była poprzednio
+    var activeCameras = CDList.Where(x => x.active && x != currentCamera).ToList();
+    
+
+    if (activeCameras.Count > 0)
     {
-        CameraData newPrevLoc = null;
-        int boolSum = CDList.Count(x => x.active);
-        if(boolSum > 1)
+        prevCamera = currentCamera; // Zaktualizuj poprzednią kamerę na aktualną przed zmianą
+        prevCamera.active = false; // Dezaktywuj poprzednią kamerę
+
+        // Nową kamerą zostaje pierwsza znaleziona, która nie jest starą kamerą
+        CameraData targetCamera = activeCameras[0];
+
+        // Wyłączamy wszystko inne
+        foreach (var cam in CDList)
         {
-            foreach (CameraData loc in CDList)
-            {
-                if (loc.active && loc == prevLoc) 
-                {
-                    loc.active = false;
-                }
-
-                if (loc.active && loc != prevLoc)
-                {
-                    newPrevLoc = loc;
-                }
-
-            }
-
-            prevLoc = newPrevLoc;
-
+            cam.active = (cam == targetCamera);
         }
-        if(boolSum == 0)
-        {
-            inBaseView.active = true;
-        }
+        
+        currentCamera = targetCamera;
+    }
+    else if (CDList.Count(x => x.active) == 0)
+    {
+        Debug.Log("passing Camera!");
+        // inBaseCamera.active = true;
+        // prevCamera = inBaseCamera; // Nie zapomnij zaktualizować prevCamera!
+        // currentCamera = inBaseCamera;
+    }
 
-        if(prevLoc == null)
-        {
-            #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-            #endif
-        }
-    }    
+    // Krytyczne sprawdzenie
+    if (prevCamera == null)
+    {
+        Debug.LogError("Brak aktywnej kamery! Zamykanie edytora.");
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
+
+    Debug.Log($"inBaseCamera: {inBaseCamera.active}, inMonitor1: {inMonitor1.active}, prevCamera: {(prevCamera != null ? prevCamera.active.ToString() : "null")}, currentCamera: {(currentCamera != null ? currentCamera.active.ToString() : "null")}");
+}
 
     public void changeCamera(CameraData camera)
     {
         camera.active = true;
         whereIsPlayer();
+        if(inBaseCamera == prevCamera)
+        {
+            Debug.Log("xd hell yeah222");
+        }
         CameraMover.Instance.mover(camera);
     }
 }

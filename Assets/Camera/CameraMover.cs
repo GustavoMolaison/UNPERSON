@@ -41,7 +41,7 @@ public class CameraMover : MonoBehaviour
     }
 
     /// <summary>
-    /// Przesuwa obiekt p³ynnie do wskazanej pozycji, wspó³rzêdna z bêdzie zawsze na sztywno równa -1.
+    /// Przesuwa obiekt pï¿½ynnie do wskazanej pozycji, wspï¿½rzï¿½dna z bï¿½dzie zawsze na sztywno rï¿½wna -1.
     /// </summary>
     
     public void moveTo(Vector3 pos, float size)
@@ -55,6 +55,7 @@ public class CameraMover : MonoBehaviour
 
     public void mover(GameManager.CameraData camera)
     { 
+      Debug.Log(camera.active);
       if(camera.active == true)
         {
             moveTo(camera.pos, camera.size);
