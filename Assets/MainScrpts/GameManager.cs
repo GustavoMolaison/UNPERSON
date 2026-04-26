@@ -7,26 +7,18 @@ using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
-    public class CameraData
-    {
-        public bool active;
-        public Vector3 pos;
-        public float size;
-
-        public CameraData(bool active, Vector3 pos, float size)
-        {
-            this.active = active;
-            this.pos = pos;
-            this.size = size;
-        }
-    }
+    
 
     public CameraData inBaseCamera;
     public CameraData inMonitor1;
+    public CameraData inMonitor2;
     public CameraData prevCamera;
-
     public CameraData currentCamera;
     public List<CameraData> CDList;
+
+
+    [Header("Camera data")]
+    [SerializeField] private Vector3 monitor2Angle;
 
     public static GameManager Instance;
 
@@ -38,11 +30,14 @@ public class GameManager : MonoBehaviour
        
         void Start()
     {
-        inBaseCamera = new CameraData(true, new Vector3(0, 0 ,0), 2f);
-        inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize);
+        inBaseCamera = new CameraData(true, new Vector3(0, 0 ,0), 2f, new Vector3(0, 0, 0), false);
+        inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
+        //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
+        
+        inMonitor2 = new CameraData(false, Screen2.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
         prevCamera = inBaseCamera;
         currentCamera = inBaseCamera;
-        CDList = new List<CameraData> { inBaseCamera, inMonitor1 };
+        CDList = new List<CameraData> { inBaseCamera, inMonitor1, inMonitor2 };
     }
 
     // Update is called once per frame
@@ -50,11 +45,48 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            if(inBaseCamera == prevCamera)
-        {
-            Debug.Log("xd hell yeah");
-        }
             changeCamera(prevCamera);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (currentCamera.isMonitor)
+            {
+                
+                changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "D"));
+            }
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (currentCamera.isMonitor)
+            {
+                changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "A"));
+               
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (currentCamera.isMonitor)
+            {
+                changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "S"));
+                
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (currentCamera.isMonitor)
+            {
+                changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "W"));
+                
+            }
+
         }
 
         // Debug.Log($"inBaseCamera: {inBaseCamera.active}, inMonitor1: {inMonitor1.active}, prevCamera: {(prevCamera != null ? prevCamera.active.ToString() : "null")}, currentCamera: {(currentCamera != null ? currentCamera.active.ToString() : "null")}");
@@ -108,10 +140,7 @@ public class GameManager : MonoBehaviour
     {
         camera.active = true;
         whereIsPlayer();
-        if(inBaseCamera == prevCamera)
-        {
-            Debug.Log("xd hell yeah222");
-        }
+        
         CameraMover.Instance.mover(camera);
     }
 }
