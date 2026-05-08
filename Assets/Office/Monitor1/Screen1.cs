@@ -64,7 +64,7 @@ public class Screen1 : MonitorBase
         extension.SetActive(!extension.activeSelf);
         if (extension.activeSelf) 
             {
-            Debug.Log("katfighr kat fight");
+           
              namText2.text = suspectData.FirstName + " " + suspectData.LastName;
              birthDateText.text = "Birth" + "\n" + suspectData.BirthDate;
              ageText.text = "Age" + "\n" + suspectData.Age.ToString(); // Int na string

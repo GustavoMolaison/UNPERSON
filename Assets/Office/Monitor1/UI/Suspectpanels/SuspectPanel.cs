@@ -48,7 +48,8 @@ public class SuspectPanel : MonoBehaviour
     private void OnMouseDown()
     {
         //Debug.Log("what");
-        Screen1.Instance.suspectPanelExtensionSwitch(suspectData);
+        //Screen1.Instance.suspectPanelExtensionSwitch(suspectData);
+        SuspectTracker.instance.changeCurrentSuspect(suspectData);
     }
 
 }
