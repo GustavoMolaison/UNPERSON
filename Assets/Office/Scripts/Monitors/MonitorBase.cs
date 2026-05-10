@@ -12,13 +12,24 @@ public class MonitorBase : MonoBehaviour
     [SerializeField]  public float cameraSize;
     
     
-    public virtual void screenChanger(Canvas screen)
+    public virtual void canvasChanger(Canvas canvas)
     {
+        Debug.Log(canvasList.Where(x => x.enabled).FirstOrDefault());
         prevCanvas = canvasList.Where(x => x.enabled).FirstOrDefault();
         prevCanvas.enabled = false;
+        //Debug.Log("wellnigga");
 
-        screen.enabled = true;
+        canvas.enabled = true;
+        //Debug.Log("wellnigga1");
     }
 
-    
+    public virtual void OnMouseDown()
+    {
+        Debug.Log("Zmiana kamery");
+        GameManager.Instance.changeCamera(GameManager.Instance.screenToCameraData[this]);
+    }
+
+
+
+
 }

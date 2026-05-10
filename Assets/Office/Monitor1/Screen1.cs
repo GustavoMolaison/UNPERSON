@@ -40,21 +40,19 @@ public class Screen1 : MonitorBase
     {
         canvasList = new List<Canvas> { mainCanvas, suspectsCanvas };
         mainCanvas.enabled = true;
+        //suspectsCanvas.enabled = false;
     }
-    private void OnMouseDown()
-    {
-        GameManager.Instance.changeCamera(GameManager.Instance.inMonitor1);      
-    }
+    
 
     public void suspectButton()
     {
-        
-        screenChanger(suspectsCanvas);
+
+        canvasChanger(suspectsCanvas);
     }
     
     public void backButton()
     {
-        screenChanger(prevCanvas);
+        canvasChanger(prevCanvas);
     }
 
     

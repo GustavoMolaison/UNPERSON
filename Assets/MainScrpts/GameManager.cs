@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public CameraData prevCamera;
     public CameraData currentCamera;
     public List<CameraData> CDList;
+    public Dictionary<MonitorBase, CameraData> screenToCameraData = new Dictionary<MonitorBase, CameraData>();
 
 
     [Header("Camera data")]
@@ -38,6 +39,9 @@ public class GameManager : MonoBehaviour
         prevCamera = inBaseCamera;
         currentCamera = inBaseCamera;
         CDList = new List<CameraData> { inBaseCamera, inMonitor1, inMonitor2 };
+
+        screenToCameraData.Add(Screen1.Instance, inMonitor1);
+        screenToCameraData.Add(Screen2.Instance, inMonitor2);
     }
 
     // Update is called once per frame

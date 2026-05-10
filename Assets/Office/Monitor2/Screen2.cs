@@ -21,15 +21,12 @@ public class Screen2 : MonitorBase
         }
     }
 
-    private void OnMouseDown()
-    {
-        GameManager.Instance.changeCamera(GameManager.Instance.inMonitor2);
-    }
+   
 
 
     public void backButton()
     {
-        screenChanger(prevCanvas);
+        canvasChanger(prevCanvas);
     }
 
     public void chatterGroupOfOn()

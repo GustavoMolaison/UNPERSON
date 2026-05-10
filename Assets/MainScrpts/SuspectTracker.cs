@@ -40,6 +40,8 @@ public class SuspectTracker : MonoBehaviour
         {
             currentSuspect = susp;
             Screen1.Instance.suspectPanelExtensionSwitch(susp);
+
+            Screen2.Instance.chatterGroupOfOn();
         }
     }
 }
