@@ -21,3 +21,4 @@ MonoBehaviour:
   face: {fileID: 0}
   chatHistory:
   - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}
+  - {fileID: 11400000, guid: e8886c599c77fab47ab5f6b4d01f0a6e, type: 2}

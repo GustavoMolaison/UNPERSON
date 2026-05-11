@@ -1,8 +1,9 @@
-using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using NUnit.Framework;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ChattersUICreator : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ChattersUICreator : MonoBehaviour
     [SerializeField] private Transform container;
     public Dictionary<Suspect, GameObject> groupToSuspect;
     public static ChattersUICreator instance;
+    private TextMeshProUGUI chatterName;
+
+
+
 
     private void Awake()
     {
@@ -38,23 +43,24 @@ public class ChattersUICreator : MonoBehaviour
 
             if (prefabRect != null && newRect != null)
             {
-
-                Debug.Log(newRect.sizeDelta);
-                Debug.Log(prefabRect.sizeDelta);
-                //newRect.anchoredPosition = Vector2.zero; // Pozycja (0,0) wzglêdem anchorów
-                //newRect.sizeDelta = prefabRect.sizeDelta; // Kopiowanie szerokoœci i wysokoœci
                 newRect.localScale = Vector3.one;
                 newRect.sizeDelta = new Vector2(30, 120);
-                // Reset skali
             }
 
+
+            mother.gameObject.SetActive(false);
 
             // 4. Pêtla tworz¹ca dzieci
             for (int i = 0; i < convs.Count; i++)
             {
                 GameObject child = Instantiate(chatterPrefab, mother.transform, false); // false mowi zeby mial wyjebane w pozycje swiatowa 
                 child.name = "Chatter_" + i;
+                Debug.Log("child" + i);
+                chatterName = child.GetComponentInChildren<TextMeshProUGUI>();
+                chatterName.text = convs[i].ParticipantName;
+
                 mother.gameObject.SetActive(false);
+
 
             }
         }

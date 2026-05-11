@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0fa0236aa42644b809c2e18bb7ab48, type: 3}
   m_Name: Conversation2
   m_EditorClassIdentifier: Assembly-CSharp::Conversation
-  participantName: 
+  participantName: Adam
   messages:
-  - senderName: "\u017Byd"
+  - senderName: Adam
     content: Bombing Iran
     timestamp: 0:01
-  - senderName: "Inny \u017Byd"
+  - senderName: Gortat
     content: Spk
     timestamp: 0:02

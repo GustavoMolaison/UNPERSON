@@ -18,7 +18,7 @@ public class Suspect : ScriptableObject
     [Header("Evidence & Logs")]
     [SerializeField] private List<Conversation> chatHistory = new List<Conversation>();
 
-    // Getters - Stop using 'nam' in your UI code after this.
+    
     public string FirstName => firstName;
     public string LastName => lastName;
     public string FullName => $"{firstName} {lastName}";
