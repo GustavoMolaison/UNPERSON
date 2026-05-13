@@ -6,11 +6,20 @@ public class Screen2 : MonitorBase
 {
     public static Screen2 Instance;
 
+    public Dictionary<Suspect, GameObject> groupToSuspect;
+    public Dictionary<GameObject, GameObject> chatterToConv;
+
     public List<string> chatersList;
+
+    private GameObject prevConvs;
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        // Dict for picking which convesration should be shown based on currently picked suspect
+        groupToSuspect = new Dictionary<Suspect, GameObject>();
+        chatterToConv = new Dictionary<GameObject, GameObject>();
     }
 
     private void Start()
@@ -28,12 +37,45 @@ public class Screen2 : MonitorBase
     {
         canvasChanger(prevCanvas);
     }
-
+    
     public void chatterGroupOfOn()
     {
-        //ChattersUICreator.instance.groupToSuspect[SuspectTracker.instance.previousSuspect].gameObject.SetActive(false);
-        ChattersUICreator.instance.groupToSuspect[SuspectTracker.instance.currentSuspect].gameObject.SetActive(true);
+           
+        var currentSuspect = SuspectTracker.instance.currentSuspect;
+
+        GameObject suspectGroup = groupToSuspect[currentSuspect].gameObject;
+
+        suspectGroup.SetActive(!suspectGroup.activeSelf);
+
+        if (SuspectTracker.instance.previousSuspect != null && SuspectTracker.instance.previousSuspect != SuspectTracker.instance.currentSuspect)
+        {
+            var prevSusp = SuspectTracker.instance.previousSuspect;
+
+            GameObject suspectGroup2 = groupToSuspect[prevSusp].gameObject;
+
+            suspectGroup2.SetActive(!suspectGroup2.activeSelf);
+        }
     }
+
+    public void convChatOfOn(GameObject chatter)
+    {
+        if(prevConvs != null)
+        {
+            prevConvs.SetActive(false);
+        }
+        
+
+        var currentSuspect = SuspectTracker.instance.currentSuspect;
+
+        GameObject conv = chatterToConv[chatter].gameObject;
+
+        conv.SetActive(!conv.activeSelf);
+
+        prevConvs = conv;
+
+        
+    }
+
 
 
 }

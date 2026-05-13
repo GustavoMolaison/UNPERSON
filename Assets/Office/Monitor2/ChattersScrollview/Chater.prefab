@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9208814423737271976}
         m_TargetAssemblyTypeName: ChaterPickerButton, Assembly-CSharp
-        m_MethodName: click
+        m_MethodName: chatterButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

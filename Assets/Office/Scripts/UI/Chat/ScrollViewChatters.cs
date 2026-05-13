@@ -8,6 +8,7 @@ public class ScrollViewChatters : MonoBehaviour
 
     // Update is called once per frame
     private ScrollRect scrollRect;
+    private GameObject convs;
 
     private void Start()
     {
@@ -18,10 +19,10 @@ public class ScrollViewChatters : MonoBehaviour
     {
         foreach (Transform child in this.transform)
         {
-            // 1. Sprawdzasz czy obiekt jest aktywny (zamiast .enabled)
+            
             if (child.gameObject.activeSelf)
             {
-                // 2. Pobierasz RectTransform z dziecka
+                
                 RectTransform childRect = child.GetComponent<RectTransform>();
 
                 if (childRect != null)
@@ -29,7 +30,13 @@ public class ScrollViewChatters : MonoBehaviour
                     scrollRect.content = childRect;
                     break;
                 }
+                
+                
             }
         }
     }
+
+    
+
+
 }

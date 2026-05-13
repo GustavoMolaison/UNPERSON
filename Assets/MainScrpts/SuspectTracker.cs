@@ -22,26 +22,34 @@ public class SuspectTracker : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if (currentSuspect != previousSuspect)
-        {
-            Screen1.Instance.suspectPanelExtensionSwitch(currentSuspect);
-        }
+    //private void Update()
+    //{
+    //    if (currentSuspect != previousSuspect)
+    //    {
+    //        Screen1.Instance.suspectPanelExtensionSwitch(currentSuspect);
+    //    }
 
 
-        previousSuspect = currentSuspect;
-    }
+    //    previousSuspect = currentSuspect;
+    //}
 
-    
+
     public void changeCurrentSuspect(Suspect susp)
     {
         if (currentSuspects.Contains(susp))
         {
+            // THIS GOES FRIST IT CHANGES THE CURRRENT SUSPECT
+            previousSuspect = currentSuspect;
             currentSuspect = susp;
-            Screen1.Instance.suspectPanelExtensionSwitch(susp);
-
+            Screen1.Instance.suspectPanelExtensionSwitch(currentSuspect);
+            ///////////////////////////////////////////////
+            
             Screen2.Instance.chatterGroupOfOn();
+
+
+
         }
+
+
     }
 }

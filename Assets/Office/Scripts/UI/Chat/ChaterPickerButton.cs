@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class ChaterPickerButton : MonoBehaviour
 {
-    public void click()
+
+    
+    public void chatterButton()
     {
-        Debug.Log("Click");
+        Screen2.Instance.convChatOfOn(this.gameObject);
     }
 }
