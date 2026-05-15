@@ -38,6 +38,7 @@ public class SuspectTracker : MonoBehaviour
     {
         if (currentSuspects.Contains(susp))
         {
+            Debug.Log("Panel click");
             // THIS GOES FRIST IT CHANGES THE CURRRENT SUSPECT
             previousSuspect = currentSuspect;
             currentSuspect = susp;

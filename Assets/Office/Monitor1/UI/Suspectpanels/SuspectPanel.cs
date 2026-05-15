@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // Potrzebne do obs³ugi Image
+using UnityEngine.UI; // Potrzebne do obsï¿½ugi Image
 using TMPro;
 using TMPro.EditorUtilities;
 
@@ -31,7 +31,7 @@ public class SuspectPanel : UIDataOrigin<Suspect>
         }
     }
 
-    // Metoda, która wype³nia UI danymi z obiektu
+    // Metoda, ktï¿½ra wypeï¿½nia UI danymi z obiektu
     override public void ApplyData(Suspect data)
     {
         namText.text = data.FirstName + " " + data.LastName;
@@ -47,6 +47,7 @@ public class SuspectPanel : UIDataOrigin<Suspect>
 
     private void OnMouseDown()
     {
+        Debug.Log("Panel click");
         //Debug.Log("what");
         //Screen1.Instance.suspectPanelExtensionSwitch(suspectData);
         SuspectTracker.instance.changeCurrentSuspect(suspectData);
