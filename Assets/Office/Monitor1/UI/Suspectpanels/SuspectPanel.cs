@@ -3,7 +3,7 @@ using UnityEngine.UI; // Potrzebne do obs³ugi Image
 using TMPro;
 using TMPro.EditorUtilities;
 
-public class SuspectPanel : MonoBehaviour
+public class SuspectPanel : UIDataOrigin<Suspect>
 {
     [Header("UI References")]
     [SerializeField] private TMP_Text namText;
@@ -27,12 +27,12 @@ public class SuspectPanel : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Brak przypisanego Assetu Suspect na obiekcie {gameObject.name}!");
+            Debug.LogError($"Brak przypisanego Assetu Suspect na obiekcie!");
         }
     }
 
     // Metoda, która wype³nia UI danymi z obiektu
-    public void ApplyData(Suspect data)
+    override public void ApplyData(Suspect data)
     {
         namText.text = data.FirstName + " " + data.LastName;
         //namText2.text = data.Nam + " " + data.Surnam;
