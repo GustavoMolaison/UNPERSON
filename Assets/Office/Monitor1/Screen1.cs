@@ -59,7 +59,11 @@ public class Screen1 : MonitorBase
 
     public void suspectPanelExtensionSwitch(Suspect suspectData)
     {
-        extension.SetActive(!extension.activeSelf);
+        if(extension.activeSelf == false)
+        {
+            extension.SetActive(true);
+        }
+        
         if (extension.activeSelf) 
             {
            

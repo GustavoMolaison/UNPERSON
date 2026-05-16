@@ -34,6 +34,7 @@ public class SuspectPanel : UIDataOrigin<Suspect>
     // Metoda, kt�ra wype�nia UI danymi z obiektu
     override public void ApplyData(Suspect data)
     {
+        suspectData = data;
         namText.text = data.FirstName + " " + data.LastName;
         //namText2.text = data.Nam + " " + data.Surnam;
         //birthDateText.text = data.BirthDate;
@@ -47,7 +48,7 @@ public class SuspectPanel : UIDataOrigin<Suspect>
 
     private void OnMouseDown()
     {
-        Debug.Log("Panel click");
+        // Debug.Log("Panel click");
         //Debug.Log("what");
         //Screen1.Instance.suspectPanelExtensionSwitch(suspectData);
         SuspectTracker.instance.changeCurrentSuspect(suspectData);
