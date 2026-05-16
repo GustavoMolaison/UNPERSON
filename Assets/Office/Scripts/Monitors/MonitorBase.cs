@@ -12,21 +12,59 @@ public class MonitorBase : MonoBehaviour
     [SerializeField]  public float cameraSize;
     
     
-    public virtual void canvasChanger(Canvas canvas)
-    {
-        Debug.Log(canvasList.Where(x => x.enabled).FirstOrDefault());
-        prevCanvas = canvasList.Where(x => x.enabled).FirstOrDefault();
-        prevCanvas.enabled = false;
-        //Debug.Log("wellnigga");
+    public virtual void canvasChanger(Canvas targetCanvas)
+{
+    // 1. Bezpiecznie szukamy obecnie aktywnego canvasu
+    Canvas currentActive = canvasList.FirstOrDefault(x => x != null && x.gameObject.activeSelf);
 
-        canvas.enabled = true;
-        //Debug.Log("wellnigga1");
+    // 2. Jeśli coś znaleźliśmy, zapisujemy do prevCanvas i DEAKTYWUJEMY CAŁY GAMEOBJECT
+    if (currentActive != null)
+    {
+        prevCanvas = currentActive;
+        prevCanvas.gameObject.SetActive(false);
     }
+    else
+    {
+        Debug.LogWarning("Brak aktywnego Canvasu na liście przed zmianą.");
+    }
+
+    // 3. Bezpiecznie włączamy nowy Canvas (cały GameObject)
+    if (targetCanvas != null)
+    {
+        targetCanvas.gameObject.SetActive(true);
+    }
+    else
+    {
+        Debug.Log("Próbowano przełączyć na nieistniejący Canvas (null)!");
+    }
+}
+
+// public virtual void canvasChanger(Canvas canvas)
+
+//     {
+
+//         Debug.Log(canvasList.Where(x => x.enabled).FirstOrDefault());
+
+//         prevCanvas = canvasList.Where(x => x.enabled).FirstOrDefault();
+
+//         prevCanvas.enabled = false;
+
+//         //Debug.Log("wellnigga");
+
+
+
+//         canvas.enabled = true;
+
+//         //Debug.Log("wellnigga1");
+
+//     }
 
     public virtual void OnMouseDown()
     {
         Debug.Log("Zmiana kamery");
         GameManager.Instance.changeCamera(GameManager.Instance.screenToCameraData[this]);
+        // Setting current coordinates in MonitorCameraTracker to the coordinates of the current monitor
+        MonitorCameraTracker.Instance.currentCords = MonitorCameraTracker.Instance.MonitorsCords[GameManager.Instance.screenToCameraData[this]];
     }
 
 

@@ -32,8 +32,8 @@ public class MonitorCameraTracker : MonoBehaviour
 
         if (MonitorsCords == null)
         {
-            Debug.LogError("S£OWNIK JEST NULL! Zapomnia³eœ go zainicjalizowaæ.");
-            return; // Przerwij, ¿eby nie wywali³o b³êdu
+            Debug.LogError("Sï¿½OWNIK JEST NULL! Zapomniaï¿½eï¿½ go zainicjalizowaï¿½.");
+            return; // Przerwij, ï¿½eby nie wywaliï¿½o bï¿½ï¿½du
         }
         else
         {

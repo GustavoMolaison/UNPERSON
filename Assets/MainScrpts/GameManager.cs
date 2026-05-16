@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public CameraData inBaseCamera;
     public CameraData inMonitor1;
     public CameraData inMonitor2;
+    public CameraData inInterrogation;
     public CameraData prevCamera;
     public CameraData currentCamera;
     public List<CameraData> CDList;
@@ -20,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Camera data")]
     [SerializeField] private Vector3 monitor2Angle;
+
+    private float lastClickTime;
+    [SerializeField] private float doubleTapDelay = 0.3f;
 
     public static GameManager Instance;
 
@@ -31,17 +35,19 @@ public class GameManager : MonoBehaviour
        
         void Start()
     {
-        inBaseCamera = new CameraData(true, new Vector3(0, 0 ,0), 2f, new Vector3(0, 0, 0), false);
+        inBaseCamera = new CameraData(true, new Vector3(0, 0 ,-1), 500f, new Vector3(0, 0, 0), false);
         inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
         //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
         
         inMonitor2 = new CameraData(false, Screen2.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
+        inInterrogation = new CameraData(false, InterrogationManager.Instance.transform.position, InterrogationManager.Instance.cameraSize, new Vector3(0, 0, 0), false);
         prevCamera = inBaseCamera;
         currentCamera = inBaseCamera;
-        CDList = new List<CameraData> { inBaseCamera, inMonitor1, inMonitor2 };
+        CDList = new List<CameraData> { inBaseCamera, inMonitor1, inMonitor2, inInterrogation };
 
         screenToCameraData.Add(Screen1.Instance, inMonitor1);
         screenToCameraData.Add(Screen2.Instance, inMonitor2);
+        // screenToCameraData.Add(InterrogationManager.Instance, inInterrogation);
     }
 
     // Update is called once per frame
@@ -49,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            changeCamera(prevCamera);
+            changeCamera(inBaseCamera);
         }
 
 
@@ -65,11 +71,29 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (currentCamera.isMonitor)
+
+            float timeSinceLastClick = Time.time - lastClickTime;
+
+            if (timeSinceLastClick <= doubleTapDelay)
             {
-                changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "A"));
-               
+                
+                changeCamera(inInterrogation);
+                
+                
+                
+                lastClickTime = 0f; 
             }
+            else
+            {
+                // To jest pierwszy klik, zapisujemy czas
+                lastClickTime = Time.time;
+                if (currentCamera.isMonitor)
+                {
+                    changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "A"));
+                }
+            }
+
+            
 
         }
 
@@ -137,14 +161,22 @@ public class GameManager : MonoBehaviour
         #endif
     }
 
-    Debug.Log($"inBaseCamera: {inBaseCamera.active}, inMonitor1: {inMonitor1.active}, prevCamera: {(prevCamera != null ? prevCamera.active.ToString() : "null")}, currentCamera: {(currentCamera != null ? currentCamera.active.ToString() : "null")}");
+    // Debug.Log($"inBaseCamera: {inBaseCamera.active}, inMonitor1: {inMonitor1.active}, prevCamera: {(prevCamera != null ? prevCamera.active.ToString() : "null")}, currentCamera: {(currentCamera != null ? currentCamera.active.ToString() : "null")}");
 }
 
     public void changeCamera(CameraData camera)
     {
-        camera.active = true;
-        whereIsPlayer();
+        if(camera != null)
+        {
+           camera.active = true;
+           whereIsPlayer();
         
-        CameraMover.Instance.mover(camera);
+           CameraMover.Instance.mover(camera);
+    
+        }
+        else
+        {
+            Debug.LogWarning("Próbowano zmienić na nieistniejącą kamerę (null)!");
+        }
     }
 }

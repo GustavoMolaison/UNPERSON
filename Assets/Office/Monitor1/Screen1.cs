@@ -52,6 +52,7 @@ public class Screen1 : MonitorBase
     
     public void backButton()
     {
+        Debug.Log("Back button clicked");
         canvasChanger(prevCanvas);
     }
 

@@ -60,7 +60,7 @@ public class CameraMover : MonoBehaviour
 
     public void mover(CameraData camera)
     { 
-      Debug.Log(camera.active);
+    //   Debug.Log(camera.active);
       if(camera.active == true)
         {
             moveTo(camera.pos, camera.size, camera.angle);

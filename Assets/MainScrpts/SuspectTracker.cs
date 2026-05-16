@@ -13,14 +13,17 @@ public class SuspectTracker : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
-    }
 
-    private void Start()
-    {
         currentSuspect = currentSuspects[0];
         previousSuspect = currentSuspects[0];
-
     }
+
+    // private void Start()
+    // {
+    //     currentSuspect = currentSuspects[0];
+    //     previousSuspect = currentSuspects[0];
+
+    // }
 
     //private void Update()
     //{
@@ -36,6 +39,7 @@ public class SuspectTracker : MonoBehaviour
 
     public void changeCurrentSuspect(Suspect susp)
     {
+        // All function that react to changing the current suspect should be here.
         if (currentSuspects.Contains(susp))
         {
             Debug.Log("Panel click");
@@ -43,14 +47,15 @@ public class SuspectTracker : MonoBehaviour
             previousSuspect = currentSuspect;
             currentSuspect = susp;
             Screen1.Instance.suspectPanelExtensionSwitch(currentSuspect);
-            ///////////////////////////////////////////////
-            
+            // InterrogationManager.Instance.changeSuspectPng();
             Screen2.Instance.chatterGroupOfOn();
 
-
+    
 
         }
 
 
     }
+
+    
 }

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c274efd7788fe9a49bea49178f3255eb, type: 3}
-  m_Name: Suspect1
+  m_Name: Suspect3
   m_EditorClassIdentifier: Assembly-CSharp::Suspect
-  firstName: "Micha\u0142"
-  lastName: Pazdan
-  birthDate: 11.03.2001
-  age: 25
-  occupation: "Pi\u0142karz"
-  gender: 0
-  face: {fileID: 7988301743759367934, guid: 57d6f3b725054144bbbe176100770087, type: 3}
+  firstName: Katarzyna
+  lastName: Przywara
+  birthDate: 1.01.1990
+  age: 37
+  occupation: Teacher
+  gender: 1
+  face: {fileID: 5390371433707949165, guid: bda22ef569b6fc143884047c60b2fc74, type: 3}
   chatHistory:
-  - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}
+  - {fileID: 11400000, guid: bcdd3858e619cb8468417a06d72449c6, type: 2}

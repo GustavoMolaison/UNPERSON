@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c274efd7788fe9a49bea49178f3255eb, type: 3}
   m_Name: Suspect2
   m_EditorClassIdentifier: Assembly-CSharp::Suspect
-  firstName: "\u017Byd"
-  lastName: "Z\u0142odziej"
-  birthDate: 03.03.2003
-  age: 20
-  occupation: "Z\u0142odziej"
+  firstName: "Kara\u015B"
+  lastName: Kawa
+  birthDate: 05.08.1999
+  age: 27
+  occupation: Ryba
   gender: 0
-  face: {fileID: 0}
+  face: {fileID: -2943860916346081441, guid: dd724a6063ad8a44f85a76e62e792426, type: 3}
   chatHistory:
   - {fileID: 11400000, guid: e8886c599c77fab47ab5f6b4d01f0a6e, type: 2}
+  - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}
