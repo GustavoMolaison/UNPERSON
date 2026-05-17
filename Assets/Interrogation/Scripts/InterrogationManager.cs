@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class InterrogationManager : MonoBehaviour
 {
     
-    public float cameraSize = 80f;
+    public float cameraSize = 140f;
     public Image SuspectPng;
     public static InterrogationManager Instance;
     void Awake()
