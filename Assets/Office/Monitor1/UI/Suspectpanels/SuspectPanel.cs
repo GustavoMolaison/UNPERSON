@@ -56,7 +56,7 @@ public class SuspectPanel : UIDataOrigin<Suspect>
 
     public void interrogationButton()
     {
-        InterrogationManager.Instance.changeSuspectPng();
+        InterrogationManager.Instance.changeInterrogationSuspect(SuspectTracker.instance.currentSuspect);
     }
 
 }

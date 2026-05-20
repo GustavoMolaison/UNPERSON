@@ -17,6 +17,7 @@ public class Suspect : ScriptableObject
 
     [Header("Evidence & Logs")]
     [SerializeField] private List<Conversation> chatHistory = new List<Conversation>();
+    [SerializeField] private List<dialogueOption> dialogueOptions = new List<dialogueOption>();
 
     
     public string FirstName => firstName;
@@ -28,4 +29,7 @@ public class Suspect : ScriptableObject
     public GenderType Gender => gender;
     public Sprite Face => face;
     public List<Conversation> ChatHistory => chatHistory;
+
+    public List<dialogueOption> DialogueOptions => dialogueOptions;
+
 }

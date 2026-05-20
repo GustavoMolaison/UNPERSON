@@ -13,7 +13,7 @@ public class ScrollRectContentGenerate : MonoBehaviour
 
     private List<ScriptableObject> iterateOver;
 
-    [SerializeField] private bool OffOnStart = false;
+    [SerializeField] private bool OffStart = false;
 
     // Code designed for suspect ScriptableObjects
     public void generateContent(DataType dataType)
@@ -43,7 +43,7 @@ public class ScrollRectContentGenerate : MonoBehaviour
             
           }       
 
-        if (OffOnStart)
+        if (OffStart)
         {
             mother.gameObject.SetActive(false);
         }

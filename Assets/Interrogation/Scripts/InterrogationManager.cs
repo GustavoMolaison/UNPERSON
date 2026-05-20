@@ -5,8 +5,10 @@ public class InterrogationManager : MonoBehaviour
 {
     
     public float cameraSize = 140f;
-    public Image SuspectPng;
+    public Image suspectPng;
+    public Suspect interrogatedSuspect;
     public static InterrogationManager Instance;
+    
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -14,8 +16,11 @@ public class InterrogationManager : MonoBehaviour
     }
     
 
-    public void changeSuspectPng()
+    public void changeInterrogationSuspect(Suspect susp)
     {
-        SuspectPng.sprite = SuspectTracker.instance.currentSuspect.Face;
+        interrogatedSuspect = susp;
+        suspectPng.sprite = susp.Face;
+
     }
+ 
 }

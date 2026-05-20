@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     private float lastClickTime;
     [SerializeField] private float doubleTapDelay = 0.3f;
+    private float lastClickTimeD;
+    [SerializeField] private float doubleTapDelayD = 0.3f;
 
     public static GameManager Instance;
 
@@ -61,11 +63,35 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (currentCamera.isMonitor)
+            float timeSinceLastClickD = Time.time - lastClickTimeD;
+            if (timeSinceLastClickD <= doubleTapDelay)
             {
+                if(inInterrogation.active)
+                {
+                    changeCamera(MonitorCameraTracker.Instance.getCurrentMonitor());
+                }
+ 
                 
-                changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "D"));
+
+
+
+                lastClickTime = 0f;
             }
+            else
+            {
+                // To jest pierwszy klik, zapisujemy czas
+                lastClickTimeD = Time.time;
+                if (currentCamera.isMonitor)
+                {
+                    changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "D"));
+                }
+            }
+
+            //if (currentCamera.isMonitor)
+            //{
+                
+            //    changeCamera(MonitorCameraTracker.Instance.monitorNavigate(currentCamera, "D"));
+            //}
             
         }
 

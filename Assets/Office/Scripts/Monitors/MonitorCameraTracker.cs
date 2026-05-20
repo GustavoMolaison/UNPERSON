@@ -74,5 +74,11 @@ public CameraData monitorNavigate(CameraData currentCamera, string input)
 
         return null;
     }
- 
+
+
+    public CameraData getCurrentMonitor()
+    {
+        return MonitorsCords.FirstOrDefault(x => x.Value == currentCords).Key;
+    
+    }
 }
