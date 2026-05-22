@@ -6,7 +6,7 @@ public class InterrogationManager : MonoBehaviour
     
     public float cameraSize = 140f;
     public Image suspectPng;
-    public Suspect interrogatedSuspect;
+    [HideInInspector] public Suspect interrogatedSuspect;
     public static InterrogationManager Instance;
     
     void Awake()
@@ -20,6 +20,7 @@ public class InterrogationManager : MonoBehaviour
     {
         interrogatedSuspect = susp;
         suspectPng.sprite = susp.Face;
+        DialougeOptionManager.Instance.dialougesChange();
 
     }
  
