@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class InterrogationManager : MonoBehaviour
 {
     
-    public float cameraSize = 140f;
+    public float cameraSize = 120f;
     public Image suspectPng;
     [HideInInspector] public Suspect interrogatedSuspect;
     public static InterrogationManager Instance;

@@ -17,15 +17,26 @@ public class DialougeOptionManager : MonoBehaviour
 
     public void dialougesChange()
     {
+
+
         
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            
+            
+                Destroy(transform.GetChild(i).gameObject);
+            
+        }
+    
+
         Suspect intSusp = InterrogationManager.Instance.interrogatedSuspect;
         for (int i = 0; i < intSusp.DialogueOptions.Count; i++)
         {
             
             GameObject window = Instantiate(dialougePickWindow, transform, false);
             DialougeOptionWindow windowScript = window.GetComponent<DialougeOptionWindow>();
-            Debug.Log(intSusp.DialogueOptions[i].dialougeTittle);
-            windowScript.changeText(intSusp.DialogueOptions[i].dialougeTittle);
+            //Debug.Log(intSusp.DialogueOptions[i].dialougeTittle);
+            windowScript.enrollDialouge(intSusp.DialogueOptions[i]);
 
         }
 

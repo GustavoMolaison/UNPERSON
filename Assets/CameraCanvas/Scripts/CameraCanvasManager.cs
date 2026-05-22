@@ -19,7 +19,7 @@ public class CameraCanvasManager : MonoBehaviour
 
     private void Start()
     {
-        talkMenu.transform.localPosition = new Vector3(20, -632, 0);
+        talkMenu.transform.localPosition = new Vector3(0, -632, 0);
     }
     public void TalkMenuButton()
     {
