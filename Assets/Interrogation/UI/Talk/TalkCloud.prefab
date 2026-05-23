@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
   m_IgnoreLayout: 0
   m_MinWidth: -1
-  m_MinHeight: -1
+  m_MinHeight: 20
   m_PreferredWidth: 80
   m_PreferredHeight: 20
   m_FlexibleWidth: -1
@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChatMesseageCloud
   layout: {fileID: 7807607231428079075}
+  Txt: {fileID: 0}
 --- !u!1 &5034429032424146953
 GameObject:
   m_ObjectHideFlags: 0

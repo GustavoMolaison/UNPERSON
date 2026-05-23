@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
   m_Name: NowyDialog 1
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
-  dialougeName: czesc czarnuch
+  DialougeName: elo
   DialougeContent:
-  - elo
+  - To ja
+  IsNewDialogueSequence: 0
+  NewDialogueSequence: []

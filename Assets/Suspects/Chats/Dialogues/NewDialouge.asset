@@ -12,6 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
   m_Name: NewDialouge
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
-  dialougeName: Czesc pani
+  DialougeName: Hej
   DialougeContent:
   - hejo
+  - cze
+  - melon z sola
+  - karate
+  - hejo
+  - late
+  - hejo
+  - mam
+  - hejo
+  - pake
+  IsNewDialogueSequence: 0
+  NewDialogueSequence: []
