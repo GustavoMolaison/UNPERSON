@@ -788,8 +788,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2917894173287171682, guid: 380b5eacf6f4a5644b26ffee9bfc2243, type: 3}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917894173287171682, guid: 380b5eacf6f4a5644b26ffee9bfc2243, type: 3}
       propertyPath: m_ChildControlHeight
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3648443518758067262, guid: 380b5eacf6f4a5644b26ffee9bfc2243, type: 3}
       propertyPath: m_SizeDelta.x
@@ -845,7 +849,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849560027897866126, guid: 380b5eacf6f4a5644b26ffee9bfc2243, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 111.09
+      value: 98.979
       objectReference: {fileID: 0}
     - target: {fileID: 5849560027897866126, guid: 380b5eacf6f4a5644b26ffee9bfc2243, type: 3}
       propertyPath: m_SizeDelta.y
@@ -881,7 +885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5849560027897866126, guid: 380b5eacf6f4a5644b26ffee9bfc2243, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.39
+      value: 8.4455
       objectReference: {fileID: 0}
     - target: {fileID: 5849560027897866126, guid: 380b5eacf6f4a5644b26ffee9bfc2243, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1507,6 +1511,7 @@ GameObject:
   - component: {fileID: 1520323397}
   - component: {fileID: 1520323399}
   - component: {fileID: 1520323400}
+  - component: {fileID: 1520323401}
   m_Layer: 5
   m_Name: TalkCanvas
   m_TagString: Untagged
@@ -1603,6 +1608,19 @@ MonoBehaviour:
   layoutPlayer: {fileID: 1900800910}
   layoutSuspect: {fileID: 1486027272}
   chatCloud: {fileID: 3165618716783559850, guid: 2ec5ac9632aca0a44b124f19291e0856, type: 3}
+  messageCooldown: 2
+--- !u!114 &1520323401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520323395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ff2e774fdacc04db34790b4f9216e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialougeManager
 --- !u!114 &1727786309 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8321017757102059182, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}

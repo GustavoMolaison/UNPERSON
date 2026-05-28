@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,15 +11,18 @@ public class UiDialougeManager : MonoBehaviour
     [SerializeField] private GameObject layoutPlayer;
     [SerializeField] private GameObject layoutSuspect;
     [SerializeField] private GameObject chatCloud;
+    [SerializeField] private float messageCooldown;
 
-    private GameObject child;
-    private TextMeshProUGUI txt;
+   
 
     Vector2 playerDimensions;
     Vector2 SuspectDimensions;
     Vector2 chatCloudDimensions;
     VerticalLayoutGroup layoutInfo;
+
+
     
+
 
     public static UiDialougeManager Instance;
     private void Awake()
@@ -27,45 +31,47 @@ public class UiDialougeManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void Start()
+    
+        private void Start()
     {
         playerDimensions = GetUiDimensions(layoutPlayer);
         SuspectDimensions = GetUiDimensions(layoutSuspect);
         chatCloudDimensions = GetUiDimensions(chatCloud);
 
         layoutInfo = layoutPlayer.GetComponent<VerticalLayoutGroup>();
-        for (int i = 0; i <= layoutPlayer.transform.childCount; i++)
-        {
+    }
+    
+    public IEnumerator ShowMessagesRoutine(List<string> messages, bool isPlayerChat)
+    {
+        // Ustalamy rodzica TYLKO RAZ przed pêtl¹ (Zasada DRY)
+        Transform targetLayout = isPlayerChat ? layoutPlayer.transform : layoutSuspect.transform;
 
-        }
+        for (int i = 0; i < messages.Count; i++)
+        {
+            // Deklarujemy zmienn¹ 'child' LOKALNIE w pêtli
+            cleanDialogueLayout(isPlayerChat);
+            GameObject child = Instantiate(chatCloud, targetLayout, false);
+
+            // Deklarujemy 'txt' LOKALNIE. Zak³adam, ¿e prefab ma tekst w dziecku.
+            TextMeshProUGUI txt = child.GetComponentInChildren<TextMeshProUGUI>();
+
+            if (txt != null)
+            {
+                txt.text = messages[i];
+            }
+            else
+            {
+                Debug.LogError("B³¹d: Prefab chatCloud nie ma komponentu TextMeshProUGUI w dzieciach!");
+            }
+
+            // Czekamy okreœlon¹ iloœæ sekund przed instancjacj¹ kolejnego dymku
+            if (i < messages.Count - 1) 
+            {
+                yield return new WaitForSeconds(messageCooldown);
+            }
 
 
     }
-    public void chatNewMess(List<string> messeages, bool isPlayerChat)
-    {
-
-        cleanDialogueLayout(isPlayerChat);
-
-        if (isPlayerChat)
-        {
-            for (int i = 0; i < messeages.Count; i++)
-            {
-                child = Instantiate(chatCloud, layoutPlayer.transform, false);
-                txt = child.GetComponentInChildren<TextMeshProUGUI>();
-                txt.text = messeages[i];
-            }
-
-        }
-        else
-        {
-            for (int i = 0; i < messeages.Count; i++)
-            {
-                child = Instantiate(chatCloud, layoutSuspect.transform, false);
-                txt = child.GetComponent<TextMeshProUGUI>();
-                txt.text = messeages[i];
-            }
-        }
-
     }
 
     public void cleanDialogueLayout(bool isPlayerChat)
@@ -112,7 +118,7 @@ public class UiDialougeManager : MonoBehaviour
     }
 
 
-    private void ManageChatOverflow(RectTransform layoutRect, Vector2 windowDimensions, Vector2 chatCloudDimensions)
+    public void ManageChatOverflow(RectTransform layoutRect, Vector2 windowDimensions, Vector2 chatCloudDimensions)
     {
         Debug.Log("Czyœcimy");
         if (layoutRect == null) return;
@@ -134,6 +140,7 @@ public class UiDialougeManager : MonoBehaviour
 
             if (child.TryGetComponent<RectTransform>(out RectTransform childRect))
             {
+                //Debug.Log("Adding height of cloud");
                 totalContentHeight += childRect.rect.height;
                 activeChildCount++;
             }
@@ -141,16 +148,17 @@ public class UiDialougeManager : MonoBehaviour
 
         if (activeChildCount > 1)
         {
+            //Debug.Log("Adding Spacing");
             totalContentHeight += layoutInfo.spacing * (activeChildCount - 1);
         }
 
         // 3. Pêtla While czyszcz¹ca czat, gdy zawartoœæ przekracza wysokoœæ okna
         float windowHeight = windowDimensions.y;
-        if (windowHeight < totalContentHeight)
+        if (windowHeight < totalContentHeight + 50)
             
         {
             Debug.Log("Przekracza");
-            while (windowHeight < totalContentHeight && layoutRect.childCount > 0)
+            while (windowHeight < totalContentHeight + 50 && layoutRect.childCount > 0)
             {
                 GameObject oldestCloud = layoutRect.GetChild(0).gameObject;
                 RectTransform cloudRect = oldestCloud.GetComponent<RectTransform>();
@@ -179,9 +187,9 @@ public class UiDialougeManager : MonoBehaviour
             }
         }
 
-        // 4. Twój dodatkowy warunek sprawdzaj¹cy sztywny rozmiar
-        int currentChildCount = layoutRect.childCount;
-        float estimatedHeight = (currentChildCount * chatCloudDimensions.y) + (layoutInfo.spacing * (currentChildCount - 1));
+        
+        //int currentChildCount = layoutRect.childCount;
+        //float estimatedHeight = (currentChildCount * chatCloudDimensions.y) + (layoutInfo.spacing * (currentChildCount - 1));
 
        
     }

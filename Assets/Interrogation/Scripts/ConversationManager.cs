@@ -18,7 +18,7 @@ public class ConversationManager : MonoBehaviour
     public void chatNewMess(List<string> messeages, bool isPlayerChat)
     {
         Debug.Log("mess:" +  messeages);
-        UiDialougeManager.Instance.chatNewMess(messeages, isPlayerChat);
+        DialougeManager.Instance.chatNewMess(messeages, isPlayerChat);
 
     }
 
