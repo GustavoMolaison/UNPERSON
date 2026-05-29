@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
   DialougeName: Hej
   DialougeContent:
-  - "M\u0142odo\u015Bci! dodaj mi skrzyd\u0142a! Niech nad martwym wzlec\u0119 \u015Bwiatem"
-  - "W rajsk\u0105 dziedzin\u0119 u\u0142udy: K\u0119dy zapa\u0142 tworzy cudy,"
-  - "Nowo\u015Bci potrz\u0105sa kwiatem I obleka w nadziei z\u0142ote malowid\u0142a!"
+  - speaker: 0
+    text: Wow
+  - speaker: 1
+    text: Nie
+  - speaker: 0
+    text: Hell
   IsNewDialogueSequence: 0
   NewDialogueSequence: []

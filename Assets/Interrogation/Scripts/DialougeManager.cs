@@ -13,13 +13,13 @@ public class DialougeManager : MonoBehaviour
     }
     private struct ChatRequest
     {
-        public List<string> Messages;
-        public bool IsPlayerChat;
+        public List<DialogueLine> Messages;
+        
 
-        public ChatRequest(List<string> messages, bool isPlayerChat)
+        public ChatRequest(List<DialogueLine> messages)
         {
             Messages = messages;
-            IsPlayerChat = isPlayerChat;
+            
         }
     }
 
@@ -31,12 +31,12 @@ public class DialougeManager : MonoBehaviour
 
     private bool isProcessingQueue = false;
 
-    public void chatNewMess(List<string> messages, bool isPlayerChat)
+    public void chatNewMess(List<DialogueLine> messages)
     {
-        // Pakujemy dane w paczkê i wrzucamy na koniec kolejki
-        chatQueue.Enqueue(new ChatRequest(messages, isPlayerChat));
+        // Pakujemy dane w paczkï¿½ i wrzucamy na koniec kolejki
+        chatQueue.Enqueue(new ChatRequest(messages));
 
-        // Jeœli system akurat œpi i nic nie robi – odpalamy maszynê przetwarzaj¹c¹ kolejkê
+        // Jeï¿½li system akurat ï¿½pi i nic nie robi ï¿½ odpalamy maszynï¿½ przetwarzajï¿½cï¿½ kolejkï¿½
         if (!isProcessingQueue)
         {
             Debug.Log("Kolejka czysta");
@@ -53,21 +53,21 @@ public class DialougeManager : MonoBehaviour
     {
         isProcessingQueue = true;
 
-        // Pêtla krêci siê tak d³ugo, jak d³ugo s¹ jakieœ paczki w kolejce
+        // Pï¿½tla krï¿½ci siï¿½ tak dï¿½ugo, jak dï¿½ugo sï¿½ jakieï¿½ paczki w kolejce
         while (chatQueue.Count > 0)
         {
-            // Pobieramy pierwsz¹ paczkê z brzegu i USUWAMY j¹ z kolejki
+            // Pobieramy pierwszï¿½ paczkï¿½ z brzegu i USUWAMY jï¿½ z kolejki
             ChatRequest currentChat = chatQueue.Dequeue();
 
-            // DOPIERO TUTAJ czyœcimy layout, dok³adnie przed pokazaniem NOWEJ SERII wiadomoœci
-            UiDialougeManager.Instance.cleanDialogueLayout(currentChat.IsPlayerChat);
+            // DOPIERO TUTAJ czyï¿½cimy layout, dokï¿½adnie przed pokazaniem NOWEJ SERII wiadomoï¿½ci
+            // UiDialougeManager.Instance.cleanDialogueLayout(currentChat.IsPlayerChat);
 
-            // S³owo kluczowe: yield return StartCoroutine.
-            // Ta korutyna ZATRZYMA SIÊ i poczeka, a¿ ShowMessagesRoutine skoñczy wyœwietlaæ ca³¹ listê!
-            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.Messages, currentChat.IsPlayerChat));
+            // Sï¿½owo kluczowe: yield return StartCoroutine.
+            // Ta korutyna ZATRZYMA SIï¿½ i poczeka, aï¿½ ShowMessagesRoutine skoï¿½czy wyï¿½wietlaï¿½ caï¿½ï¿½ listï¿½!
+            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.Messages));
         }
 
-        // Kolejka pusta? Maszyna idzie spaæ, czekaj¹c na nowe wywo³ania chatNewMess
+        // Kolejka pusta? Maszyna idzie spaï¿½, czekajï¿½c na nowe wywoï¿½ania chatNewMess
         isProcessingQueue = false;
     }
 }

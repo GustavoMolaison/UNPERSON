@@ -18,7 +18,7 @@ public class UiDialougeManager : MonoBehaviour
     Vector2 playerDimensions;
     Vector2 SuspectDimensions;
     Vector2 chatCloudDimensions;
-    VerticalLayoutGroup layoutInfo;
+    TalkWindow layoutCode;
 
 
     
@@ -38,33 +38,46 @@ public class UiDialougeManager : MonoBehaviour
         SuspectDimensions = GetUiDimensions(layoutSuspect);
         chatCloudDimensions = GetUiDimensions(chatCloud);
 
-        layoutInfo = layoutPlayer.GetComponent<VerticalLayoutGroup>();
+        layoutCode = layoutPlayer.GetComponent<TalkWindow>();
     }
     
-    public IEnumerator ShowMessagesRoutine(List<string> messages, bool isPlayerChat)
+    public IEnumerator ShowMessagesRoutine(List<DialogueLine> messages)
     {
-        // Ustalamy rodzica TYLKO RAZ przed pêtl¹ (Zasada DRY)
-        Transform targetLayout = isPlayerChat ? layoutPlayer.transform : layoutSuspect.transform;
+        // Ustalamy rodzica TYLKO RAZ przed ptl (Zasada DRY)
+        // Transform targetLayout = isPlayerChat ? layoutPlayer.transform : layoutSuspect.transform;
 
         for (int i = 0; i < messages.Count; i++)
         {
-            // Deklarujemy zmienn¹ 'child' LOKALNIE w pêtli
-            cleanDialogueLayout(isPlayerChat);
-            GameObject child = Instantiate(chatCloud, targetLayout, false);
+                // Transform targetLayout = messages[i].speaker == SpeakerType.Player ? layoutPlayer.transform : layoutSuspect.transform;
+                TalkWindow targetLayoutCode = messages[i].speaker == SpeakerType.Player ? layoutPlayer.GetComponent<TalkWindow>() : layoutSuspect.GetComponent<TalkWindow>();
+                bool isPlayer = messages[i].speaker == SpeakerType.Player ? true : false;
 
-            // Deklarujemy 'txt' LOKALNIE. Zak³adam, ¿e prefab ma tekst w dziecku.
-            TextMeshProUGUI txt = child.GetComponentInChildren<TextMeshProUGUI>();
+                cleanDialogueLayout(isPlayer);
+                targetLayoutCode.addMessage(messages[i].text);
+                
+                // cleanDialogueLayout(isPlayer);
+                // GameObject child = Instantiate(chatCloud, targetLayout, false);
+                // TextMeshProUGUI txt = child.GetComponentInChildren<TextMeshProUGUI>();
 
-            if (txt != null)
-            {
-                txt.text = messages[i];
-            }
-            else
-            {
-                Debug.LogError("B³¹d: Prefab chatCloud nie ma komponentu TextMeshProUGUI w dzieciach!");
-            }
+                
+                if (i < messages.Count - 1) 
+                {
+                yield return new WaitForSeconds(messageCooldown);
+                }
+            
 
-            // Czekamy okreœlon¹ iloœæ sekund przed instancjacj¹ kolejnego dymku
+
+            // Deklarujemy zmiennï¿½ 'child' LOKALNIE w pï¿½tli
+            // cleanDialogueLayout(isPlayerChat);
+            // GameObject child = Instantiate(chatCloud, targetLayout, false);
+
+            // Deklarujemy 'txt' LOKALNIE. Zakï¿½adam, ï¿½e prefab ma tekst w dziecku.
+            // TextMeshProUGUI txt = child.GetComponentInChildren<TextMeshProUGUI>();
+
+           
+            
+
+            // Czekamy okreï¿½lonï¿½ iloï¿½ï¿½ sekund przed instancjacjï¿½ kolejnego dymku
             if (i < messages.Count - 1) 
             {
                 yield return new WaitForSeconds(messageCooldown);
@@ -101,17 +114,17 @@ public class UiDialougeManager : MonoBehaviour
             return Vector2.zero;
         }
 
-        // 2. Bezpieczna próba wyci¹gniêcia RectTransform
+        // 2. Bezpieczna prï¿½ba wyciï¿½gniï¿½cia RectTransform
         if (go.TryGetComponent<RectTransform>(out RectTransform rectTransform))
         {
-            // Jeœli obiekt ma RectTransform, zwracamy jego wymiary
+            // Jeï¿½li obiekt ma RectTransform, zwracamy jego wymiary
             float width = rectTransform.rect.width;
             float height = rectTransform.rect.height;
             return new Vector2(width, height);
         }
         else
         {
-            // Krok krytyczny: Jeœli obiekt to np. zwyk³y Cube 3D, a nie element UI
+            // Krok krytyczny: Jeï¿½li obiekt to np. zwykï¿½y Cube 3D, a nie element UI
             Debug.LogError($"Obiekt '{go.name}' nie posiada komponentu RectTransform! Czy to na pewno element UI Canvasa?");
             return Vector2.zero;
         }
@@ -120,7 +133,7 @@ public class UiDialougeManager : MonoBehaviour
 
     public void ManageChatOverflow(RectTransform layoutRect, Vector2 windowDimensions, Vector2 chatCloudDimensions)
     {
-        Debug.Log("Czyœcimy");
+        Debug.Log("Czyï¿½cimy");
         if (layoutRect == null) return;
 
         // 1. Pobieramy komponent VerticalLayoutGroup
@@ -130,7 +143,7 @@ public class UiDialougeManager : MonoBehaviour
             return;
         }
 
-        // 2. Obliczamy aktualn¹ wysokoœæ zawartoœci czatu
+        // 2. Obliczamy aktualnï¿½ wysokoï¿½ï¿½ zawartoï¿½ci czatu
         float totalContentHeight = layoutInfo.padding.top + layoutInfo.padding.bottom;
         int activeChildCount = 0;
 
@@ -152,7 +165,7 @@ public class UiDialougeManager : MonoBehaviour
             totalContentHeight += layoutInfo.spacing * (activeChildCount - 1);
         }
 
-        // 3. Pêtla While czyszcz¹ca czat, gdy zawartoœæ przekracza wysokoœæ okna
+        // 3. Pï¿½tla While czyszczï¿½ca czat, gdy zawartoï¿½ï¿½ przekracza wysokoï¿½ï¿½ okna
         float windowHeight = windowDimensions.y;
         if (windowHeight < totalContentHeight + 50)
             
@@ -168,7 +181,7 @@ public class UiDialougeManager : MonoBehaviour
                 Debug.Log("USUNIECIE");
                 Destroy(oldestCloud);
 
-                // Wymuszamy aktualizacjê layoutu, by dane w pêtli by³y poprawne
+                // Wymuszamy aktualizacjï¿½ layoutu, by dane w pï¿½tli byï¿½y poprawne
                 LayoutRebuilder.ForceRebuildLayoutImmediate(layoutRect);
             }
 
@@ -182,7 +195,7 @@ public class UiDialougeManager : MonoBehaviour
                 oldestCloud1.transform.SetParent(null);
                 Destroy(oldestCloud1);
 
-                // Finalna aktualizacja po usuniêciu bonusowej chmurki
+                // Finalna aktualizacja po usuniï¿½ciu bonusowej chmurki
                 LayoutRebuilder.ForceRebuildLayoutImmediate(layoutRect);
             }
         }

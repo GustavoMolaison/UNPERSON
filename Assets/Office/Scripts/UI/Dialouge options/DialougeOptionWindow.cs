@@ -23,7 +23,7 @@ public class DialougeOptionWindow : MonoBehaviour
 
     public void onClick()
     {
-        ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent, true);
+        ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent);
     }
         
 }

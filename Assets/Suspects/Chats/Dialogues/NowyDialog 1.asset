@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
   DialougeName: elo
   DialougeContent:
-  - To ja
+  - speaker: 0
+    text: Dos
   IsNewDialogueSequence: 0
   NewDialogueSequence: []

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
   DialougeName: nega
   DialougeContent:
-  - Czesc
+  - speaker: 0
+    text: Uno
   IsNewDialogueSequence: 0
   NewDialogueSequence: []

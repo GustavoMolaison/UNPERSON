@@ -15,10 +15,10 @@ public class ConversationManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void chatNewMess(List<string> messeages, bool isPlayerChat)
+    public void chatNewMess(List<DialogueLine> messeages)
     {
         Debug.Log("mess:" +  messeages);
-        DialougeManager.Instance.chatNewMess(messeages, isPlayerChat);
+        DialougeManager.Instance.chatNewMess(messeages);
 
     }
 
