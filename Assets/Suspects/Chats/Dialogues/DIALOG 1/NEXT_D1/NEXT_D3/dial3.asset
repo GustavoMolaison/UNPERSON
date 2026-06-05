@@ -10,15 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
-  m_Name: NewDialouge
-  m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
-  DialougeName: Hej
-  DialougeContent:
-  - speaker: 0
-    text: Wow
-  - speaker: 1
-    text: Nie
-  - speaker: 0
-    text: Hell
+  m_Name: dial3
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  DialougeName: Bum
+  DialougeContent: []
   IsNewDialogueSequence: 0
   NewDialogueSequence: []

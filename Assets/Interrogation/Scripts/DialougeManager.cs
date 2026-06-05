@@ -2,9 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 
-public class DialougeManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
-    public static DialougeManager Instance;
+    
+    public static DialogueManager Instance;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class DialougeManager : MonoBehaviour
 
     private Queue<ChatRequest> chatQueue = new Queue<ChatRequest>();
 
-    private bool isProcessingQueue = false;
+    [HideInInspector] public bool isProcessingQueue = false;
 
     public void chatNewMess(List<DialogueLine> messages)
     {
@@ -49,6 +50,28 @@ public class DialougeManager : MonoBehaviour
         }
     }
 
+    // public void dialogueOptionClicked(DialogueOption enrolledDialouge)
+    // {
+    //     StartCoroutine(onClickWait(enrolledDialouge));
+    // }
+
+    public IEnumerator dialogueOptionClicked(DialogueOption enrolledDialouge)
+    {
+        ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent); //THIS FRIST
+        DialougeOptionManager.Instance.cleanDialogueOptions(); // THIS SECOND
+        yield return new WaitUntil(() => isProcessingQueue == false); // THIS THIRD
+
+        // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent);
+        if(enrolledDialouge.isNewDialogueSequence)
+        {
+            DialougeOptionManager.Instance.dialougesChange(true, enrolledDialouge.newdialogueSequence);
+        }
+        else
+        {
+            DialougeOptionManager.Instance.dialougesChange(false);
+        }
+    } 
+
     private IEnumerator ProcessQueueRoutine()
     {
         isProcessingQueue = true;
@@ -65,6 +88,7 @@ public class DialougeManager : MonoBehaviour
             // S�owo kluczowe: yield return StartCoroutine.
             // Ta korutyna ZATRZYMA SI� i poczeka, a� ShowMessagesRoutine sko�czy wy�wietla� ca�� list�!
             yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.Messages));
+            
         }
 
         // Kolejka pusta? Maszyna idzie spa�, czekaj�c na nowe wywo�ania chatNewMess

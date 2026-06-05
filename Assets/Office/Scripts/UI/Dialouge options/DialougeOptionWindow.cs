@@ -1,9 +1,10 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 public class DialougeOptionWindow : MonoBehaviour
 {
     TextMeshProUGUI txt;
-    private dialogueOption enrolledDialouge;
+    private DialogueOption enrolledDialouge;
 
 
     private void Awake()
@@ -11,7 +12,7 @@ public class DialougeOptionWindow : MonoBehaviour
         txt = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void enrollDialouge(dialogueOption dial)
+    public void enrollDialouge(DialogueOption dial)
     {
         enrolledDialouge = dial;
         changeText(enrolledDialouge.dialougeTittle);
@@ -23,7 +24,23 @@ public class DialougeOptionWindow : MonoBehaviour
 
     public void onClick()
     {
-        ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent);
+        DialogueManager.Instance.StartCoroutine(DialogueManager.Instance.dialogueOptionClicked(enrolledDialouge));
     }
-        
+
+    // public IEnumerator onClickWait()
+    // {
+    //     ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent); //THIS FRIST
+    //     DialougeOptionManager.Instance.cleanDialogueOptions(); // THIS SECOND
+    //     yield return new WaitUntil(() => DialogueManager.Instance.isProcessingQueue == false); // THIS THIRD
+
+    //     // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent);
+    //     if(enrolledDialouge.isNewDialogueSequence)
+    //     {
+    //         DialougeOptionManager.Instance.dialougesChange(true, enrolledDialouge.newdialogueSequence);
+    //     }
+    //     else
+    //     {
+    //         DialougeOptionManager.Instance.dialougesChange(false);
+    //     }
+    // } 
 }

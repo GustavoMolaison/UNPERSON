@@ -18,7 +18,7 @@ public class ConversationManager : MonoBehaviour
     public void chatNewMess(List<DialogueLine> messeages)
     {
         Debug.Log("mess:" +  messeages);
-        DialougeManager.Instance.chatNewMess(messeages);
+        DialogueManager.Instance.chatNewMess(messeages);
 
     }
 
