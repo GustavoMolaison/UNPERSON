@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
   m_Name: NowyDialog
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
-  DialougeName: nega
-  DialougeContent:
+  uniqueID: d8c3dbdb-c134-4037-bbf5-a68320c7e93f
+  DialogueName: da
+  DialogueContent:
   - speaker: 0
-    text: Uno
+    text: ta
+  - speaker: 1
+    text: nie
   IsNewDialogueSequence: 0
   NewDialogueSequence: []

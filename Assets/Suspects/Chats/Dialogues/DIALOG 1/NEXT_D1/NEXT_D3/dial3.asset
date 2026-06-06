@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
   m_Name: dial3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
-  DialougeName: Bum
-  DialougeContent: []
+  uniqueID: 5ba64606-d8b3-4ee0-8a9f-494d030ddff2
+  DialogueName: ba
+  DialogueContent:
+  - speaker: 0
+    text: trr
   IsNewDialogueSequence: 0
   NewDialogueSequence: []

@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
   m_Name: dial2
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
-  DialougeName: xdxd
-  DialougeContent:
+  uniqueID: 41aa8e77-e023-4885-b927-6e0fcff11d66
+  DialogueName: ga
+  DialogueContent:
   - speaker: 0
-    text: kombi
-  - speaker: 1
-    text: seat
+    text: hm
   IsNewDialogueSequence: 1
   NewDialogueSequence:
   - {fileID: 11400000, guid: f54e48ba15689f14ab968822b96b7c6d, type: 2}

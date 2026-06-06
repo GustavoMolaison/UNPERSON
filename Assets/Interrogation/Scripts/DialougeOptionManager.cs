@@ -5,10 +5,10 @@ using System.Collections.Generic;
 // This script is meant to be placed on the parent of the dialogue option windows,
 // it will be responsible for creating and deleting them when needed
 // I think so idk i write this weeks after writing it
-public class DialougeOptionManager : MonoBehaviour
+public class DialogueOptionManager : MonoBehaviour
 {
-    public static DialougeOptionManager Instance;
-    public GameObject dialougePickWindow;
+    public static DialogueOptionManager Instance;
+    public GameObject dialoguePickWindow;
     
 
     void Awake()
@@ -25,48 +25,67 @@ public class DialougeOptionManager : MonoBehaviour
             Destroy(transform.GetChild(i).gameObject);
         }
     }
-    public void dialougesChange(bool newDialougeSequence, List<DialogueOption> DialougeSequences = null)
+
+    public void hideDialogueOptions()
     {
-
-       
-        Debug.Log("change");
-        // cleanDialogueOptions();
-
-        if (!newDialougeSequence)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            Debug.Log("change new");
-           Suspect intSusp = InterrogationManager.Instance.interrogatedSuspect;
-           for (int i = 0; i < intSusp.DialogueOptions.Count; i++)
-           {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    
+    private List<string> initializedDialogues = new List<string>();
+
+    private int count = 0;
+    public void dialoguesChange(bool newDialogueSequence, List<DialogueOption> DialogueSequences = null)
+    {
+    hideDialogueOptions();
+    Debug.Log("Zmieniam dialogi");
+
+    List<DialogueOption> optionsToLoad;
+
+    // 1. DECYZJA: Wybieramy listę do załadowania tylko RAZ.
+    if (newDialogueSequence && DialogueSequences != null)
+    {
+        optionsToLoad = DialogueSequences;
+    }
+    else
+    {
+        optionsToLoad = SuspectTracker.instance.currentSuspect.DialogueOptions;
+    }
+
+     
+
+    // 2. GŁÓWNA PĘTLA: Jedna logika dla wybranej listy.
+    foreach (DialogueOption option in optionsToLoad)
+    {
+        // Jeśli nie mamy jeszcze tego dialogu
+        if (!initializedDialogues.Contains(option.ID))
+        {
+            Debug.Log("NO ID");
+            GameObject window = Instantiate(dialoguePickWindow, transform, false);
+            DialogueOptionWindow windowScript = window.GetComponent<DialogueOptionWindow>();
             
-            GameObject window = Instantiate(dialougePickWindow, transform, false);
-            DialougeOptionWindow windowScript = window.GetComponent<DialougeOptionWindow>();
-            //Debug.Log(intSusp.DialogueOptions[i].dialougeTittle);
-            windowScript.enrollDialouge(intSusp.DialogueOptions[i]);
-           } 
- 
-
-
+            windowScript.enrollDialogue(option);
+            initializedDialogues.Add(option.ID);
         }
         else
         {
-            Debug.Log("change notnew");
-            if(DialougeSequences != null)
+            // Jeśli mamy, szukamy go w dzieciach
+            Debug.Log("yes ID");
+            foreach (Transform child in transform)
             {
-                for (int i = 0; i < DialougeSequences.Count; i++)
+                // Pobieramy komponent raz na iterację
+                DialogueOptionWindow windowScript = child.GetComponent<DialogueOptionWindow>();
+                
+                if (windowScript != null && windowScript.enrolledDialogue.ID == option.ID)
                 {
-                    GameObject window = Instantiate(dialougePickWindow, transform, false);
-                    DialougeOptionWindow windowScript = window.GetComponent<DialougeOptionWindow>();
-                    //Debug.Log(DialougeSequences[i]);
-                    
-                    windowScript.enrollDialouge(DialougeSequences[i]);
+                    child.gameObject.SetActive(true);
+                    break; // Znaleźliśmy odpowiednie okno, przerywamy pętlę wewnętrzną, idziemy do kolejnej opcji!
                 }
             }
-            
         }
-
-        
     }
-
-
+}
 }

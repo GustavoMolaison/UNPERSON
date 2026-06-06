@@ -78,10 +78,10 @@ public class UiDialougeManager : MonoBehaviour
             
 
             // Czekamy okre�lon� ilo�� sekund przed instancjacj� kolejnego dymku
-            if (i < messages.Count - 1) 
-            {
-                yield return new WaitForSeconds(messageCooldown);
-            }
+            // if (i < messages.Count - 1) 
+            // {
+            //     yield return new WaitForSeconds(messageCooldown);
+            // }
 
 
     }

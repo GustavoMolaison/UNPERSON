@@ -20,7 +20,7 @@ public class InterrogationManager : MonoBehaviour
     {
         interrogatedSuspect = susp;
         suspectPng.sprite = susp.Face;
-        DialougeOptionManager.Instance.dialougesChange(false);
+        DialogueOptionManager.Instance.dialoguesChange(false);
 
     }
  

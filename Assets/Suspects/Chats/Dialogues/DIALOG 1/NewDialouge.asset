@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
   m_Name: NewDialouge
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
-  DialougeName: Hej
-  DialougeContent:
+  uniqueID: 88c3abe0-54b9-466b-81e9-8a19fba8e00a
+  DialogueName: dsa
+  DialogueContent:
   - speaker: 0
-    text: Wow
+    text: kasza
   - speaker: 1
-    text: Nie
-  - speaker: 0
-    text: Hell
+    text: masza
   IsNewDialogueSequence: 1
   NewDialogueSequence:
   - {fileID: 11400000, guid: 497f4b09a42e0db4cb17ffd554a35dbf, type: 2}

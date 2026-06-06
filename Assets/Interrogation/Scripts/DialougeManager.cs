@@ -57,18 +57,18 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator dialogueOptionClicked(DialogueOption enrolledDialouge)
     {
-        ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent); //THIS FRIST
-        DialougeOptionManager.Instance.cleanDialogueOptions(); // THIS SECOND
+        ConversationManager.Instance.chatNewMess(enrolledDialouge.dialogueContent); //THIS FRIST
+        DialogueOptionManager.Instance.hideDialogueOptions(); // THIS SECOND
         yield return new WaitUntil(() => isProcessingQueue == false); // THIS THIRD
 
-        // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent);
+        // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialogueContent);
         if(enrolledDialouge.isNewDialogueSequence)
         {
-            DialougeOptionManager.Instance.dialougesChange(true, enrolledDialouge.newdialogueSequence);
+            DialogueOptionManager.Instance.dialoguesChange(true, enrolledDialouge.newDialogueSequence);
         }
         else
         {
-            DialougeOptionManager.Instance.dialougesChange(false);
+            DialogueOptionManager.Instance.dialoguesChange(false);
         }
     } 
 

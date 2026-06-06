@@ -2391,7 +2391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418191eb160040b4991d85a53de32ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialougeOptionManager
-  dialougePickWindow: {fileID: 1527162440006646579, guid: b43b7b4758a7cf845ad106afb7df01db, type: 3}
+  dialoguePickWindow: {fileID: 1527162440006646579, guid: b43b7b4758a7cf845ad106afb7df01db, type: 3}
 --- !u!114 &1966481201
 MonoBehaviour:
   m_ObjectHideFlags: 0

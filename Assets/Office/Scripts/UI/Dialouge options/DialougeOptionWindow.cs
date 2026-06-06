@@ -1,10 +1,13 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-public class DialougeOptionWindow : MonoBehaviour
+using UnityEngine.UI;
+public class DialogueOptionWindow : MonoBehaviour
 {
     TextMeshProUGUI txt;
-    private DialogueOption enrolledDialouge;
+    public DialogueOption enrolledDialogue;
+    private bool clicked = false;
+    public bool initialized = false;
 
 
     private void Awake()
@@ -12,10 +15,12 @@ public class DialougeOptionWindow : MonoBehaviour
         txt = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void enrollDialouge(DialogueOption dial)
+    public void enrollDialogue(DialogueOption dial)
     {
-        enrolledDialouge = dial;
-        changeText(enrolledDialouge.dialougeTittle);
+        Debug.Log("Enrolling dialogue: ");
+        enrolledDialogue = dial;
+        changeText(enrolledDialogue.dialogueTitle);
+        initialized = true;
     }
     public void changeText(string newText)
     {
@@ -24,23 +29,31 @@ public class DialougeOptionWindow : MonoBehaviour
 
     public void onClick()
     {
-        DialogueManager.Instance.StartCoroutine(DialogueManager.Instance.dialogueOptionClicked(enrolledDialouge));
+        
+        DialogueManager.Instance.StartCoroutine(DialogueManager.Instance.dialogueOptionClicked(enrolledDialogue));
+
+        if (!clicked)
+        {
+            clicked = true;
+            Image img = GetComponent<Image>();
+            img.color = new Color(img.color.r, img.color.g, img.color.b, 0.5f); 
+        }
     }
 
     // public IEnumerator onClickWait()
     // {
-    //     ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent); //THIS FRIST
-    //     DialougeOptionManager.Instance.cleanDialogueOptions(); // THIS SECOND
+    //     ConversationManager.Instance.chatNewMess(enrolledDialogue.dialogueContent); //THIS FRIST
+    //     DialogueOptionManager.Instance.cleanDialogueOptions(); // THIS SECOND
     //     yield return new WaitUntil(() => DialogueManager.Instance.isProcessingQueue == false); // THIS THIRD
 
-    //     // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialougeContent);
-    //     if(enrolledDialouge.isNewDialogueSequence)
+    //     // ConversationManager.Instance.chatNewMess(enrolledDialogue.dialogueContent);
+    //     if(enrolledDialogue.isNewDialogueSequence)
     //     {
-    //         DialougeOptionManager.Instance.dialougesChange(true, enrolledDialouge.newdialogueSequence);
+    //         DialogueOptionManager.Instance.dialoguesChange(true, enrolledDialogue.newDialogueSequence);
     //     }
     //     else
     //     {
-    //         DialougeOptionManager.Instance.dialougesChange(false);
+    //         DialogueOptionManager.Instance.dialoguesChange(false);
     //     }
     // } 
 }
