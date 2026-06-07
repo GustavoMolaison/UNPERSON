@@ -37,7 +37,7 @@ public class DialogueOptionManager : MonoBehaviour
     
     private List<string> initializedDialogues = new List<string>();
 
-    private int count = 0;
+   
     public void dialoguesChange(bool newDialogueSequence, List<DialogueOption> DialogueSequences = null)
     {
     hideDialogueOptions();
