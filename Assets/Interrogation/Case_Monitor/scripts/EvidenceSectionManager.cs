@@ -4,6 +4,13 @@ using UnityEngine.UI;
 
 public class EvidenceSectionManager : MonoBehaviour
 {
+    public static EvidenceSectionManager Instance;
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     [SerializeField] public TextMeshProUGUI title;
     [SerializeField] public TextMeshProUGUI cover;
     [SerializeField] public TextMeshProUGUI details;
