@@ -87,6 +87,19 @@ public class UiDialougeManager : MonoBehaviour
     }
     }
 
+    public void forceCleanChat()
+    {
+        foreach (Transform child in layoutPlayer.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in layoutSuspect.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
     public void cleanDialogueLayout(bool isPlayerChat)
     {
         if (isPlayerChat)

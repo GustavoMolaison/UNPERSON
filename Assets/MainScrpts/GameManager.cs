@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public CameraData inBaseCamera;
     public CameraData inMonitor1;
+    public CameraData inCaseMonitor;
     public CameraData inMonitor2;
     public CameraData inInterrogation;
     public CameraData prevCamera;
@@ -39,16 +40,18 @@ public class GameManager : MonoBehaviour
     {
         inBaseCamera = new CameraData(true, new Vector3(0, 0 ,-1), 500f, new Vector3(0, 0, 0), false);
         inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
+        inCaseMonitor = new CameraData(false, Case_Monitor.Instance.transform.position, Case_Monitor.Instance.cameraSize, new Vector3(0, 0, 0), true);
         //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
         
         inMonitor2 = new CameraData(false, Screen2.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
         inInterrogation = new CameraData(false, InterrogationManager.Instance.transform.position, InterrogationManager.Instance.cameraSize, new Vector3(0, 0, 0), false);
         prevCamera = inBaseCamera;
         currentCamera = inBaseCamera;
-        CDList = new List<CameraData> { inBaseCamera, inMonitor1, inMonitor2, inInterrogation };
+        CDList = new List<CameraData> { inBaseCamera, inMonitor1, inMonitor2, inInterrogation, inCaseMonitor };
 
         screenToCameraData.Add(Screen1.Instance, inMonitor1);
         screenToCameraData.Add(Screen2.Instance, inMonitor2);
+        screenToCameraData.Add(Case_Monitor.Instance, inCaseMonitor);
         // screenToCameraData.Add(InterrogationManager.Instance, inInterrogation);
     }
 

@@ -22,6 +22,10 @@ public class InterrogationManager : MonoBehaviour
         suspectPng.sprite = susp.Face;
         DialogueOptionManager.Instance.dialoguesChange(false);
 
+        // DialogueOptionManager.Instance.cleanDialogueOptions();
+        UiDialougeManager.Instance.forceCleanChat();
+
+
     }
  
 }
