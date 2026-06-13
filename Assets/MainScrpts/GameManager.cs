@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
        
         void Start()
     {
+        // CAMERA SEGMENT START
         inBaseCamera = new CameraData(true, new Vector3(0, 0 ,-1), 500f, new Vector3(0, 0, 0), false);
         inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
         inCaseMonitor = new CameraData(false, Case_Monitor.Instance.transform.position, Case_Monitor.Instance.cameraSize, new Vector3(0, 0, 0), true);
@@ -53,6 +54,12 @@ public class GameManager : MonoBehaviour
         screenToCameraData.Add(Screen2.Instance, inMonitor2);
         screenToCameraData.Add(Case_Monitor.Instance, inCaseMonitor);
         // screenToCameraData.Add(InterrogationManager.Instance, inInterrogation);
+
+        // CAMERA SEGMENT END
+        /////////////////////////////////
+        // LEVEL CONTENT SEGMEND START
+
+
     }
 
     // Update is called once per frame

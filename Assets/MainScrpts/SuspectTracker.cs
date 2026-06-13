@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SuspectTracker : MonoBehaviour
 {
-    public List<Suspect> currentSuspects;
+    [HideInInspector] public List<Suspect> currentSuspects;
     [HideInInspector] public Suspect currentSuspect;
     [HideInInspector] public Suspect previousSuspect;
 
@@ -14,16 +14,18 @@ public class SuspectTracker : MonoBehaviour
         if (instance == null) instance = this;
         else Destroy(gameObject);
 
-        currentSuspect = currentSuspects[0];
-        previousSuspect = currentSuspects[0];
+        //currentSuspect = currentSuspects[0];
+        //previousSuspect = currentSuspects[0];
     }
 
-    // private void Start()
-    // {
-    //     currentSuspect = currentSuspects[0];
-    //     previousSuspect = currentSuspects[0];
+    private void Start()
+    {
+        currentSuspects = LevelsContentInfo.Instance.levelsList[0].SuspectsList;
+        
+        currentSuspect = currentSuspects[0];
+        previousSuspect = currentSuspects[0];
 
-    // }
+    }
 
     //private void Update()
     //{
