@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public List<CameraData> CDList;
     public Dictionary<MonitorBase, CameraData> screenToCameraData = new Dictionary<MonitorBase, CameraData>();
 
+    public Level currentLevel;
+
 
     [Header("Camera data")]
     [SerializeField] private Vector3 monitor2Angle;
@@ -34,10 +36,13 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        currentLevel = LevelsContentInfo.Instance.levelsList[0];
     }
        
         void Start()
     {
+        //currentLevel = LevelsContentInfo.Instance.levelsList[0];
         // CAMERA SEGMENT START
         inBaseCamera = new CameraData(true, new Vector3(0, 0 ,-1), 500f, new Vector3(0, 0, 0), false);
         inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);

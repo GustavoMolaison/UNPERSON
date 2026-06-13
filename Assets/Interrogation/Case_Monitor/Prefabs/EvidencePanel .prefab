@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4883479410563305094}
   - component: {fileID: 1222769693948628846}
   - component: {fileID: 1014551673260731749}
+  - component: {fileID: 2025846118390310370}
   m_Layer: 0
   m_Name: 'EvidencePanel '
   m_TagString: Untagged
@@ -120,7 +121,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1222769693948628846}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2025846118390310370}
+        m_TargetAssemblyTypeName: EvidencePanelManager, Assembly-CSharp
+        m_MethodName: Onclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2025846118390310370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966852488954164083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5f7c42989211e4d9b4ef952393cafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EvidencePanelManager
+  title: {fileID: 6277011169034977327}
 --- !u!1 &5469187313458823759
 GameObject:
   m_ObjectHideFlags: 0

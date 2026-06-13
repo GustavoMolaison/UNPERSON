@@ -467,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838b300d726cfda488c2f3518cd630f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  currentLevel: {fileID: 0}
   monitor2Angle: {x: 0, y: 30, z: 0}
   doubleTapDelay: 0.3
   doubleTapDelayD: 0.3
@@ -1508,6 +1509,8 @@ MonoBehaviour:
   prevCanvas: {fileID: 0}
   canvasList: []
   cameraSize: 66
+  viewContent: {fileID: 484777644}
+  evidencePanelPF: {fileID: 3966852488954164083, guid: a41e02342e67bbb4cbf7cc8137e71eaa, type: 3}
 --- !u!1 &1345988826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2472,14 @@ PrefabInstance:
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698421269194745958, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 6698421269194745958, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6762882900878709874, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_SizeDelta.x
