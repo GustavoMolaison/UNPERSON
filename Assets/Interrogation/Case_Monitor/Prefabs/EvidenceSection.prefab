@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3931069283554705}
   - component: {fileID: 4735071040335367276}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 2329840890814534540}
   - component: {fileID: 1665356806827369391}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Cover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 57949410756587188}
   - component: {fileID: 8807649557288187510}
   - component: {fileID: 8065593172331433542}
+  - component: {fileID: 5800201680343401787}
   m_Layer: 0
   m_Name: EvidenceSection
   m_TagString: Untagged
@@ -353,6 +354,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5800201680343401787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681001477667215317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40db4e491ae18e64ebac49dd2df6e653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceSectionManager
+  title: {fileID: 8862044092121275694}
+  cover: {fileID: 1665356806827369391}
+  details: {fileID: 4735071040335367276}
+  img: {fileID: 6126506237851839436}
 --- !u!1 &7010995760971497318
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +457,7 @@ GameObject:
   - component: {fileID: 6080149755269575351}
   - component: {fileID: 8862044092121275694}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
