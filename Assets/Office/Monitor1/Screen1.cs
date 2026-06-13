@@ -46,7 +46,7 @@ public class Screen1 : MonitorBase
 
     public void suspectButton()
     {
-
+        
         canvasChanger(suspectsCanvas);
     }
     
