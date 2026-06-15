@@ -62,9 +62,9 @@ public class MonitorBase : MonoBehaviour
     public virtual void OnMouseDown()
     {
         Debug.Log("Zmiana kamery");
-        GameManager.Instance.changeCamera(GameManager.Instance.screenToCameraData[this]);
+        MonitorCameraTracker.Instance.changeCamera("bum", MonitorCameraTracker.Instance.screenToCameraData[this]);
         // Setting current coordinates in MonitorCameraTracker to the coordinates of the current monitor
-        MonitorCameraTracker.Instance.currentCords = MonitorCameraTracker.Instance.MonitorsCords[GameManager.Instance.screenToCameraData[this]];
+        MonitorCameraTracker.Instance.currentCords = MonitorCameraTracker.Instance.MonitorsCords[MonitorCameraTracker.Instance.screenToCameraData[this]];
     }
 
 

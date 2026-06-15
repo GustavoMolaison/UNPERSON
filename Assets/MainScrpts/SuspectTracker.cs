@@ -18,13 +18,24 @@ public class SuspectTracker : MonoBehaviour
         //previousSuspect = currentSuspects[0];
     }
 
-    private void Start()
+    //private void Start()
+    //{
+    //    currentSuspects = LevelsContentInfo.Instance.levelsList[0].SuspectsList;
+        
+    //    currentSuspect = currentSuspects[0];
+    //    previousSuspect = currentSuspects[0];
+
+    //}
+
+    private bool initilized = false;
+    public void initilize()
     {
         currentSuspects = LevelsContentInfo.Instance.levelsList[0].SuspectsList;
-        
+
         currentSuspect = currentSuspects[0];
         previousSuspect = currentSuspects[0];
 
+        initilized = true;
     }
 
     //private void Update()
