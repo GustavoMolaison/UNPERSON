@@ -3,8 +3,9 @@ using UnityEngine;
 using System.Collections.Generic;
 
 // This script is meant to be placed on the parent of the dialogue option windows,
-// it will be responsible for creating and deleting them when needed
-// I think so idk i write this weeks after writing it
+// it will be responsible for creating and turning them off/on when needed
+// 
+// If 
 public class DialogueOptionManager : MonoBehaviour
 {
     public static DialogueOptionManager Instance;
@@ -45,7 +46,8 @@ public class DialogueOptionManager : MonoBehaviour
 
     List<DialogueOption> optionsToLoad;
 
-    // 1. DECYZJA: Wybieramy listę do załadowania tylko RAZ.
+    // 1. DECYZJA: Wybieramy czy ładujemy nowe drzewko dialogowe
+    //             czy wracamy do początkowych opcji.
     if (newDialogueSequence && DialogueSequences != null)
     {
         optionsToLoad = DialogueSequences;

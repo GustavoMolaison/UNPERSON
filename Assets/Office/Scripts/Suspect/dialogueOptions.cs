@@ -37,14 +37,21 @@ public class DialogueOption : ScriptableObject
 
     [Header("New Sequence")]
     [SerializeField] private bool IsNewDialogueSequence;
-    // [SerializeField] private List<string> xd = new List<string>();
-    // To chyba powinna byc lista dialougeOption nie stringow
+    
     [SerializeField] private List<DialogueOption> NewDialogueSequence = new List<DialogueOption>();
+
+    [SerializeField] private Evidence EnrolledEvidence = null;
+    private bool HasEvidence => EnrolledEvidence != null;
+
+
+
 
     public string dialogueTitle => DialogueName;
     public List<DialogueLine> dialogueContent => DialogueContent;
     public bool isNewDialogueSequence => IsNewDialogueSequence;
     public List<DialogueOption> newDialogueSequence => NewDialogueSequence;
+    public Evidence enrolledEvidence => EnrolledEvidence;
+    public bool hasEvidence => HasEvidence;
 
     // public List<string> xd1 => xd;
 }

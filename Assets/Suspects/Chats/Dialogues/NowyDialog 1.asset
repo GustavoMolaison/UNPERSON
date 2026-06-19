@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NowyDialog 1
   m_EditorClassIdentifier: Assembly-CSharp::dialogueOption
   uniqueID: 8eddfb51-8804-4054-9818-c32ae2cf7893
-  DialogueName: tda
+  DialogueName: Siema
   DialogueContent:
   - speaker: 0
     text: cyk
@@ -21,3 +21,4 @@ MonoBehaviour:
     text: pyk
   IsNewDialogueSequence: 0
   NewDialogueSequence: []
+  EnrolledEvidence: {fileID: 11400000, guid: a73990e2ddba07d479a4d068ef320cf3, type: 2}
