@@ -10,7 +10,11 @@ public class DialogueOptionManager : MonoBehaviour
 {
     public static DialogueOptionManager Instance;
     public GameObject dialoguePickWindow;
+
     
+
+    [HideInInspector] public DialogueOption dialougePicked;
+
 
     void Awake()
     {

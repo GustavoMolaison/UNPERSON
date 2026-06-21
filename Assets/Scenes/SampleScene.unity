@@ -840,8 +840,8 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.3588394, g: 0.36750874, b: 0.381132, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1504,6 +1504,8 @@ MonoBehaviour:
   cameraSize: 80
   viewContent: {fileID: 484777644}
   evidencePanelPF: {fileID: 3966852488954164083, guid: a41e02342e67bbb4cbf7cc8137e71eaa, type: 3}
+  playerIsPickingEvidence: 0
+  EvidencehightLight: {fileID: 2125895030}
 --- !u!114 &1337709098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2323,6 +2325,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3599822425266995082, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
+      propertyPath: m_Size.x
+      value: 159.15503
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599822425266995082, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
+      propertyPath: m_Size.y
+      value: 184.83119
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599822425266995082, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
+      propertyPath: m_Offset.x
+      value: 47.261566
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599822425266995082, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.9998245
+      objectReference: {fileID: 0}
     - target: {fileID: 5319028518225602680, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_SizeDelta.x
       value: -3.6115
@@ -2433,11 +2451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 253.68091
+      value: 253
       objectReference: {fileID: 0}
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 176.9922
+      value: 177
       objectReference: {fileID: 0}
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2535,6 +2553,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       insertIndex: -1
       addedObject: {fileID: 76648579}
+    - targetCorrespondingSourceObject: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2125895033}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7137873618354483932, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       insertIndex: 1
@@ -2861,6 +2882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialougeOptionManager
   dialoguePickWindow: {fileID: 1527162440006646579, guid: b43b7b4758a7cf845ad106afb7df01db, type: 3}
+  dialougePicked: {fileID: 0}
 --- !u!114 &1966481201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3012,6 +3034,95 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &2125895029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2125895033}
+  - component: {fileID: 2125895032}
+  - component: {fileID: 2125895031}
+  - component: {fileID: 2125895030}
+  m_Layer: 0
+  m_Name: Hightlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2125895030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125895029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4490c99f97c594f47a8502d142dcfaea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighlLight
+  fadeSpeed: 0.2
+--- !u!114 &2125895031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125895029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1073380948096292261, guid: 56529b7825b93304fa16a46927c65e69, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2125895032
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125895029}
+  m_CullTransparentMesh: 1
+--- !u!224 &2125895033
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125895029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 436021083}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 4.6977005, y: -0.54309845}
+  m_SizeDelta: {x: 25.837, y: 38.8438}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &554800969740610161
 PrefabInstance:
   m_ObjectHideFlags: 0

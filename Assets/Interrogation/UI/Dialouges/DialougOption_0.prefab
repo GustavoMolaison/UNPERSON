@@ -75,7 +75,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 6724413160793007890}
   - component: {fileID: 8633466454212902811}
   - component: {fileID: 4295701717688669838}
+  - component: {fileID: 516251371169781334}
   m_Layer: 0
   m_Name: DialougOption_0
   m_TagString: Untagged
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -259,8 +260,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DialougeOptionWindow, Assembly-CSharp
+      - m_Target: {fileID: 4295701717688669838}
+        m_TargetAssemblyTypeName: DialogueOptionWindow, Assembly-CSharp
         m_MethodName: onClick
         m_Mode: 1
         m_Arguments:
@@ -286,6 +287,22 @@ MonoBehaviour:
   enrolledDialogue: {fileID: 0}
   initialized: 0
   graphImage: {fileID: 6095156703614207848}
+  shaderManager: {fileID: 516251371169781334}
+--- !u!114 &516251371169781334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527162440006646579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241a360bd9187f3459b31e3172e0a615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialougeOptionShader
+  material: {fileID: 0}
+  isPlaying: 1
+  speed: {x: 0.2, y: 0}
 --- !u!1 &3289686177217590477
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 24420fad0a9059542ab2b29ce20a196a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89c50a6651f5c6546a8dc4443e1c6460, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
