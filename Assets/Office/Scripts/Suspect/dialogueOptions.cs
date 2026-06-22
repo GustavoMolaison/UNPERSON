@@ -43,6 +43,9 @@ public class DialogueOption : ScriptableObject
     [SerializeField] private Evidence EnrolledEvidence = null;
     private bool HasEvidence => EnrolledEvidence != null;
 
+    
+
+
 
 
 
@@ -52,6 +55,9 @@ public class DialogueOption : ScriptableObject
     public List<DialogueOption> newDialogueSequence => NewDialogueSequence;
     public Evidence enrolledEvidence => EnrolledEvidence;
     public bool hasEvidence => HasEvidence;
+    
+
+    
 
     // public List<string> xd1 => xd;
 }

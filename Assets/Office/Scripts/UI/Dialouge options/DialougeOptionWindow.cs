@@ -22,7 +22,25 @@ public class DialogueOptionWindow : MonoBehaviour
 
     [HideInInspector] private bool correctEvidencePicked;
 
-    
+    [SerializeField] private float maxWrongGuesses = 3;
+    public float howManyWrongGuesses { get; private set; }
+
+    public bool dialogueDisabled { get; private set; } = false;
+    public void addOneWrongGuess()
+    {
+        if (howManyWrongGuesses <= maxWrongGuesses)
+        {
+            howManyWrongGuesses = howManyWrongGuesses + 1;
+        }
+        if (howManyWrongGuesses >= maxWrongGuesses)
+        {
+            Debug.Log("ZMIENIAM NA TRUE");
+            dialogueDisabled = true;
+        }
+
+    }
+
+
 
     private void Awake()
     {
@@ -103,65 +121,56 @@ public class DialogueOptionWindow : MonoBehaviour
     public void onClick()
     {
         StartCoroutine(HandleEvidenceSequence());
-        //Debug.Log("Klikam");
-        //if(enrolledDialogue.hasEvidence)
-        //{
-        //    Debug.Log("Yellow");
-        //    animationControl(false);
-        //    DialogueOptionManager.Instance.EvidencehightLight.lightOn();
-        //    Case_Monitor.Instance.highLightEvidences();
-        //}
-        
-        //DialogueManager.Instance.StartCoroutine(DialogueManager.Instance.dialogueOptionClicked(enrolledDialogue));
-
-        //if (!clicked)
-        //{
-        //    Debug.Log("Dziala");
-        //    clicked = true;
-        //    Image img = GetComponent<Image>();
-        //    img.color = new Color(img.color.r, img.color.g, img.color.b, 0.5f); 
-        //}
     }
 
     private IEnumerator HandleEvidenceSequence()
     {
-        if (enrolledDialogue.hasEvidence)
+        Debug.Log("co :)(>:");
+        Debug.Log(dialogueDisabled);
+        if (!dialogueDisabled)
         {
-            DialogueOptionManager.Instance.dialougePicked = enrolledDialogue;
-
-            Debug.Log("Yellow");
-            Holdanimation(true);
-            Case_Monitor.Instance.EvidencehightLight.lightOn();
-            Case_Monitor.Instance.highLightEvidences(true);
-
-            // TUTAJ GRA SIÊ "ZATRZYMUJE" DLA TEGO SKRYPTU
-            // Kod nie ruszy dalej, dopóki funkcja/zmienna wewn¹trz WaitUntil nie zwróci true.
-            // Reszta gry normalnie dzia³a i siê renderuje.
-            Case_Monitor.Instance.playerIsPickingEvidence = true;
-            yield return new WaitUntil(() => didPlayerPickEvidence());
-            Case_Monitor.Instance.highLightEvidences(false);
-
-            if (!Case_Monitor.Instance.checkAnswerCorrectness())
+            Debug.Log("CZEMU :)(>:");
+            if (enrolledDialogue.hasEvidence)
             {
+                Debug.Log("CZEMU");
+                DialogueOptionManager.Instance.dialougePicked = enrolledDialogue;
+
+                Debug.Log("Yellow");
+                Holdanimation(true);
+                Case_Monitor.Instance.EvidencehightLight.lightOn();
+                Case_Monitor.Instance.highLightEvidences(true);
+
+                // TUTAJ GRA SIÊ "ZATRZYMUJE" DLA TEGO SKRYPTU
+                // Kod nie ruszy dalej, dopóki funkcja/zmienna wewn¹trz WaitUntil nie zwróci true.
+                // Reszta gry normalnie dzia³a i siê renderuje.
+                Case_Monitor.Instance.playerIsPickingEvidence = true;
+                yield return new WaitUntil(() => didPlayerPickEvidence());
+                Case_Monitor.Instance.highLightEvidences(false);
+
+                if (!Case_Monitor.Instance.checkAnswerCorrectness())
+                {
+                    addOneWrongGuess();
+                    shaderManager.wrongAnswerReact(howManyWrongGuesses / maxWrongGuesses);
+                    DialogueOptionManager.Instance.dialougePicked = null;
+                    Holdanimation(false);
+                    yield break;
+                }
+
                 DialogueOptionManager.Instance.dialougePicked = null;
                 Holdanimation(false);
-                yield break;
             }
 
-            DialogueOptionManager.Instance.dialougePicked = null;
-            Holdanimation(false);
-        }
+            // Ten kod wykona siê dopiero, gdy warunek wy¿ej puœci, 
+            // LUB natychmiastowo, jeœli if w ogóle nie by³ spe³niony (bo enrolledDialogue.hasEvidence by³o false).
+            DialogueManager.Instance.StartCoroutine(DialogueManager.Instance.dialogueOptionClicked(enrolledDialogue));
 
-        // Ten kod wykona siê dopiero, gdy warunek wy¿ej puœci, 
-        // LUB natychmiastowo, jeœli if w ogóle nie by³ spe³niony (bo enrolledDialogue.hasEvidence by³o false).
-        DialogueManager.Instance.StartCoroutine(DialogueManager.Instance.dialogueOptionClicked(enrolledDialogue));
-
-        if (!clicked)
-        {
-            Debug.Log("Dziala");
-            clicked = true;
-            Image img = GetComponent<Image>();
-            img.color = new Color(img.color.r, img.color.g, img.color.b, 0.5f);
+            if (!clicked)
+            {
+                Debug.Log("Dziala");
+                clicked = true;
+                Image img = GetComponent<Image>();
+                img.color = new Color(img.color.r, img.color.g, img.color.b, 0.5f);
+            }
         }
     }
 
