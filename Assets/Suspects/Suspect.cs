@@ -19,7 +19,9 @@ public class Suspect : ScriptableObject
     [SerializeField] private List<Conversation> chatHistory = new List<Conversation>();
     [SerializeField] private List<DialogueOption> dialogueOptions = new List<DialogueOption>();
 
-    
+
+    [Header("Who")]
+    [SerializeField] private SuspGuees role;    
     public string FirstName => firstName;
     public string LastName => lastName;
     public string FullName => $"{firstName} {lastName}";
@@ -31,5 +33,6 @@ public class Suspect : ScriptableObject
     public List<Conversation> ChatHistory => chatHistory;
 
     public List<DialogueOption> DialogueOptions => dialogueOptions;
+    public SuspGuees Role => role;
 
 }

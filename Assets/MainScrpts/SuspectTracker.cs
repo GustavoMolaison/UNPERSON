@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SuspectTracker : MonoBehaviour
 {
     [HideInInspector] public List<Suspect> currentSuspects;
+    [HideInInspector] public Dictionary<Suspect, SuspGuees> SuspectGueses = new Dictionary<Suspect, SuspGuees>();
     [HideInInspector] public Suspect currentSuspect;
     [HideInInspector] public Suspect previousSuspect;
 
@@ -34,6 +36,16 @@ public class SuspectTracker : MonoBehaviour
 
         currentSuspect = currentSuspects[0];
         previousSuspect = currentSuspects[0];
+
+        SuspectGueses.Clear();
+
+        foreach (Suspect suspect in currentSuspects)
+        {
+            if (suspect != null)
+            {
+                SuspectGueses[suspect] = default(SuspGuees);
+            }
+        }
 
         initilized = true;
     }

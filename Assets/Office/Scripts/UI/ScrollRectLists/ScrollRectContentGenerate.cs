@@ -18,7 +18,18 @@ public class ScrollRectContentGenerate : MonoBehaviour
     // Code designed for suspect ScriptableObjects
     public void generateContent(DataType dataType)
     {
-        GameObject mother = Instantiate(contentList, container.transform, false);
+        //GameObject mother = Instantiate(contentList, container.transform, false);
+        GameObject mother = contentList;
+        //RectTransform containerRect = container.GetComponent<RectTransform>();
+        //RectTransform motherRect = mother.GetComponent<RectTransform>();
+        //Vector2 targetSize = containerRect.rect.size;
+        //motherRect.anchorMin = new Vector2(0.5f, 0.5f);
+        //motherRect.anchorMax = new Vector2(0.5f, 0.5f);
+        //motherRect.pivot = new Vector2(0.5f, 0.5f);
+
+        //motherRect.sizeDelta = targetSize;
+        //motherRect.anchoredPosition = Vector2.zero;
+
         ScrollRect scrollRect = container.GetComponent<ScrollRect>();
         scrollRect.content = mother.GetComponent<RectTransform>();
 

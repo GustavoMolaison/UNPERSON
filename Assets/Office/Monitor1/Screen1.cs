@@ -13,9 +13,11 @@ public class Screen1 : MonitorBase
     private Canvas mainCanvas;
     [SerializeField]
     private Canvas suspectsCanvas;
-    
+    [SerializeField]
+    private Canvas conclusionCanvas;
 
-    
+
+
 
 
     [Header("UI References")]
@@ -26,6 +28,7 @@ public class Screen1 : MonitorBase
     [SerializeField] private TMP_Text occupationText;
     [SerializeField] private TMP_Text genderText;
     [SerializeField] private Image faceImage2;
+    [SerializeField] private DropDownStatePick SuspGueesDropDown;
 
 
 
@@ -55,6 +58,11 @@ public class Screen1 : MonitorBase
         canvasChanger(prevCanvas);
     }
 
+    public void conclusionButton()
+    {
+        canvasChanger(conclusionCanvas);
+    }
+
     
 
     public void suspectPanelExtensionSwitch(Suspect suspectData)
@@ -74,6 +82,25 @@ public class Screen1 : MonitorBase
              genderText.text = "Gender" + "\n" + suspectData.Gender.ToString(); // Enum na string
              faceImage2.sprite = suspectData.Face;
 
+            SuspGueesDropDown.pickedSuspect = suspectData;
+            //Debug.Log(SuspectTracker.instance.SuspectGueses[suspectData]);
+
              }
+    }
+
+    public void endInvestigation()
+    {
+        bool good = true;
+
+        foreach(Suspect susp in SuspectTracker.instance.currentSuspects)
+        {
+            if(susp.Role != SuspectTracker.instance.SuspectGueses[susp])
+            {
+                good = false;
+            }
+        }
+
+        print("misja wykonana" + good);
+
     }
 }
