@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 183659134}
   - component: {fileID: 183659133}
   m_Layer: 0
-  m_Name: ConclusionButton
+  m_Name: FinishButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2646,7 +2646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 765c6b5f1599ca24b8c2448f2420f821, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2887,8 +2887,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Conclusion
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2912,8 +2912,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5207,7 +5207,7 @@ GameObject:
   - component: {fileID: 2019039595}
   - component: {fileID: 2019039594}
   m_Layer: 0
-  m_Name: Button Finish
+  m_Name: ConclusionButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5606,6 +5606,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1099748102013157572, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -199.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099748102013157572, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -129
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099748102013157572, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 34.809998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099748102013157572, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.17584991
+      objectReference: {fileID: 0}
     - target: {fileID: 1213627293802728759, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5616,6 +5632,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1213627293802728759, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
       propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506126103167678460, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506126103167678460, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+    - target: {fileID: 1506126103167678460, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1506126103167678460, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+    - target: {fileID: 1506126103167678460, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1890847712674761667, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
@@ -5987,6 +6023,10 @@ PrefabInstance:
       value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7977299164651996129, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 765c6b5f1599ca24b8c2448f2420f821, type: 2}
+    - target: {fileID: 7977299164651996129, guid: 6685a08eab9f5de4e975395b578e10e0, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
@@ -6127,11 +6167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 57949410756587188, guid: 6629e15612b9f604bb9862ae447d3dd8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -87.5471
+      value: -93.893
       objectReference: {fileID: 0}
     - target: {fileID: 57949410756587188, guid: 6629e15612b9f604bb9862ae447d3dd8, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 12.8504
+      value: -0.0049438
       objectReference: {fileID: 0}
     - target: {fileID: 57949410756587188, guid: 6629e15612b9f604bb9862ae447d3dd8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6163,11 +6203,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 57949410756587188, guid: 6629e15612b9f604bb9862ae447d3dd8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50.11992
+      value: 46.947
       objectReference: {fileID: 0}
     - target: {fileID: 57949410756587188, guid: 6629e15612b9f604bb9862ae447d3dd8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.46489716
+      value: -0.0024774
       objectReference: {fileID: 0}
     - target: {fileID: 57949410756587188, guid: 6629e15612b9f604bb9862ae447d3dd8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6205,6 +6245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EvidenceSection
       objectReference: {fileID: 0}
+    - target: {fileID: 8065593172331433542, guid: 6629e15612b9f604bb9862ae447d3dd8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 765c6b5f1599ca24b8c2448f2420f821, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
