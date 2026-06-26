@@ -7,7 +7,8 @@ public class MonitorBase : MonoBehaviour
 {
     [HideInInspector] public Canvas prevCanvas;
 
-    [HideInInspector] public List<Canvas> canvasList;
+    [Header("Frist Canvas to show has to be first in this list")]
+    [SerializeField] public List<Canvas> canvasList;
 
     [SerializeField]  public float cameraSize;
     

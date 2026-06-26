@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_DialougeOptionPanel
-  m_Shader: {fileID: -6465566751694194690, guid: 08bc88f8e5c6c374994711d041f863b9, type: 3}
+  m_Name: SG_DOP_Simple
+  m_Shader: {fileID: -6465566751694194690, guid: 37b72963ac4895443a4ed26e9b393b4e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -27,10 +27,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_d07162a8807e4a29bffd809b83d0b70c_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: 24420fad0a9059542ab2b29ce20a196a, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -45,26 +41,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Animation: 1
-    - _HowManyMistakes: 0
-    - _QueueControl: -1
-    - _QueueOffset: 0
-    - _Yellow: 1
-    m_Colors:
-    - White: {r: 1, g: 1, b: 1, a: 1}
-    - _CurrentOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Blue: 0
+    - _Green: 0
+    - _Orange: 0
+    - _Red: 0
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &2968314526558315263
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
-  version: 10

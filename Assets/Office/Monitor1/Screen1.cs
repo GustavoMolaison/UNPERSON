@@ -41,7 +41,8 @@ public class Screen1 : MonitorBase
 
     void Start()
     {
-        canvasList = new List<Canvas> { mainCanvas, suspectsCanvas };
+        // Every canvas has to be enrolled here manually
+        //canvasList = new List<Canvas> { mainCanvas, suspectsCanvas, conclusionCanvas };
         mainCanvas.enabled = true;
         //suspectsCanvas.enabled = false;
     }

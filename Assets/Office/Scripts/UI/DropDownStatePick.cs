@@ -5,7 +5,7 @@ public enum SuspGuees
     Innocent,
     Culprit,
     UnPerson,
-    Undecided
+    Accomplice
 }
 public class DropDownStatePick : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class DropDownStatePick : MonoBehaviour
         }
         if( input == 3)
         {
-            SuspectTracker.instance.SuspectGueses[pickedSuspect] = SuspGuees.Undecided;
+            SuspectTracker.instance.SuspectGueses[pickedSuspect] = SuspGuees.Accomplice;
         }
         Debug.Log(SuspectTracker.instance.SuspectGueses[pickedSuspect]);
 
