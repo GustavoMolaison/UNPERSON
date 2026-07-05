@@ -18,9 +18,10 @@ MonoBehaviour:
   age: 27
   occupation: Ryba
   gender: 0
-  face: {fileID: -2943860916346081441, guid: dd724a6063ad8a44f85a76e62e792426, type: 3}
+  face: {fileID: -1701334209980089142, guid: f158318b25a8c2d41a26312aa14b50f1, type: 3}
   chatHistory:
   - {fileID: 11400000, guid: e8886c599c77fab47ab5f6b4d01f0a6e, type: 2}
   - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 9d89475192cd5a242ac05b5be2bc8d77, type: 2}
+  role: 0
