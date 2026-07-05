@@ -18,7 +18,7 @@ MonoBehaviour:
   age: 25
   occupation: "Pi\u0142karz"
   gender: 0
-  face: {fileID: 7988301743759367934, guid: 57d6f3b725054144bbbe176100770087, type: 3}
+  face: {fileID: 8894251245674261617, guid: 83f43fc9326946c4b85b44395c35198b, type: 3}
   chatHistory:
   - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}
   dialogueOptions:
