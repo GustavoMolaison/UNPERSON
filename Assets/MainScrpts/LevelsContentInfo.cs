@@ -14,6 +14,14 @@ public class LevelsContentInfo : MonoBehaviour
 
     }
 
+    public void initilize()
+    {
+        // if (Instance == null) Instance = this;
+        // else Destroy(gameObject);
+
+        GameManager.Instance.currentLevel = levelsList[0];  
+    }
+
     
 
 }

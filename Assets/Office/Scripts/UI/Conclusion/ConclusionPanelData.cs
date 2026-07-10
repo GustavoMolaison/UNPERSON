@@ -5,7 +5,7 @@ using TMPro.EditorUtilities;
 
 public class ConclusionPanelData : UIDataOrigin<Suspect>
 {
-    private Suspect suspectData;
+    public Suspect suspectData;
     [SerializeField] private TMP_Text suspName;
     [SerializeField] private Image targetImage;
 
@@ -43,8 +43,11 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
     private Material instantiatedMaterial4;
 
     [SerializeField] private Image ColorRect; 
+
+     
     private void Awake()
     {
+        SuspectTracker.instance.conclusionPanels.Add(this);
         isInnocentID = Shader.PropertyToID("_Innocent");
         isCulpritID = Shader.PropertyToID("_Victim");
         isUnPersonID = Shader.PropertyToID("_UnPerson");
@@ -76,6 +79,10 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
         myButton4.onClick.RemoveAllListeners();
         myButton4.onClick.AddListener(() => pickStatus(statusForThisButton4));
     }
+    public void OnDestroy()
+    {
+        SuspectTracker.instance.conclusionPanels.Remove(this);
+    }
     public override void ApplyData(Suspect data)
     {
         suspectData = data;
@@ -94,46 +101,12 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
 
     public void pickStatus(SuspGuees guees)
     {
-        changeGraphValues(guees);
-        SuspectTracker.instance.SuspectGueses[suspectData] = guees;
-
-        //if(isInnocent == 1)
-        //{
-        //    ColorRect.color = Color.blue;
-        //}
-        //if (isCulprit == 1)
-        //{
-        //    ColorRect.color = Color.red;
-        //}
-        //if (isUnPerson == 1)
-        //{
-        //    ColorRect.color = Color.green;
-        //}
-        //if (isAccomplice == 1)
-        //{
-        //    ColorRect.color = Color.orange;
-        //}
-        //if(guees == SuspGuees.Innocent)
-        //{
-
-        //    instantiatedMaterial1.SetFloat(isInnocentID, "_Innocent");
-        //}
-        //if(guees == SuspGuees.Culprit)
-        //{
-        //    isCulprit = 1;
-        //}
-        //if (guees == SuspGuees.UnPerson)
-        //{
-        //    isUnPerson = 1;
-        //}
-        //if (guees == SuspGuees.Accomplice)
-        //{
-        //    isAccomplice = 1;
-        //}
-
+        // changeGraphValues(guees);
+        // SuspectTracker.instance.SuspectGueses[suspectData] = guees;
+        SuspectTracker.instance.SetSuspectGuess(suspectData, guees);
     }
 
-    private void changeGraphValues(SuspGuees guees)
+    public void changeGraphValues(SuspGuees guees)
     {
         if(guees == SuspGuees.Innocent)
         {

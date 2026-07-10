@@ -5,7 +5,27 @@ using UnityEngine;
 public class SuspectTracker : MonoBehaviour
 {
     [HideInInspector] public List<Suspect> currentSuspects;
+    [HideInInspector] public List<ConclusionPanelData> conclusionPanels;
     [HideInInspector] public Dictionary<Suspect, SuspGuees> SuspectGueses = new Dictionary<Suspect, SuspGuees>();
+
+    public void SetSuspectGuess(Suspect suspect, SuspGuees newGuess)
+    {
+        // Sprawdzamy czy wartość faktycznie się zmieniła, żeby nie odpalać funkcji bez sensu
+        if (SuspectGueses.ContainsKey(suspect) && SuspectGueses[suspect] == newGuess)
+            return;
+
+        SuspectGueses[suspect] = newGuess;
+        // Funcions we wont to be called when changing dict values
+        foreach (var panel in conclusionPanels)
+        {
+            if (panel.suspectData == suspect)
+            {
+                panel.changeGraphValues(newGuess);
+            }
+        }   
+        
+    }
+    public IReadOnlyDictionary<Suspect, SuspGuees> SuspectGuesses => SuspectGueses;
     [HideInInspector] public Suspect currentSuspect;
     [HideInInspector] public Suspect previousSuspect;
 
@@ -32,6 +52,9 @@ public class SuspectTracker : MonoBehaviour
     private bool initilized = false;
     public void initilize()
     {
+        // if (instance == null) instance = this;
+        // else Destroy(gameObject);
+
         currentSuspects = LevelsContentInfo.Instance.levelsList[0].SuspectsList;
 
         currentSuspect = currentSuspects[0];

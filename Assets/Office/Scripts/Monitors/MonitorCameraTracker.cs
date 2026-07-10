@@ -47,6 +47,14 @@ public class MonitorCameraTracker : MonoBehaviour
     private bool initilized = false;
     public void initilize()
     {
+        // if (Instance == null) Instance = this;
+        // else Destroy(gameObject);
+
+        if(Screen1.Instance == null || Screen2.Instance == null || Case_Monitor.Instance == null || InterrogationManager.Instance == null)
+        {
+            Debug.LogError("Nie wszystkie instancje monitorów zostały zainicjalizowane!");
+            return;
+        }
         inBaseCamera = new CameraData(true, new Vector3(0, 0, -1), 500f, new Vector3(0, 0, 0), false);
         inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
         inCaseMonitor = new CameraData(false, Case_Monitor.Instance.transform.position, Case_Monitor.Instance.cameraSize, new Vector3(0, 0, 0), true);

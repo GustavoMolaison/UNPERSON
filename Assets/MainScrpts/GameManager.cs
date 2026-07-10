@@ -19,15 +19,19 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("GameManager Awake() called");
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
         
-        
+        // LevelsContentInfo.Instance.initilize();
+        // MonitorCameraTracker.Instance.initilize();
+        // SuspectTracker.instance.initilize();
     }
        
         void Start()
     {
-        currentLevel = LevelsContentInfo.Instance.levelsList[0];
+        Debug.Log("GameManager Start() called");
+        LevelsContentInfo.Instance.initilize();
         MonitorCameraTracker.Instance.initilize();
         SuspectTracker.instance.initilize();
 

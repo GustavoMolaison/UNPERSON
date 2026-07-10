@@ -38,7 +38,11 @@ public class ScrollRectContentGenerate : MonoBehaviour
             case DataType.Suspect:
             
                 iterateOver = SuspectTracker.instance.currentSuspects.ConvertAll(x => (ScriptableObject)x);
-                
+                if(iterateOver == null || iterateOver.Count == 0)
+                {
+                    Debug.LogError("Nie znaleziono żadnych obiektów typu Suspect do wygenerowania w ScrollRectContentGenerate.cs");
+                    return;
+                }
 
                 for (int i = 0; i < iterateOver.Count; i++)
                 {

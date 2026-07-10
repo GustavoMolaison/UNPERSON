@@ -18,8 +18,9 @@ MonoBehaviour:
   age: 37
   occupation: Teacher
   gender: 1
-  face: {fileID: 5390371433707949165, guid: bda22ef569b6fc143884047c60b2fc74, type: 3}
+  face: {fileID: -8600513156772927195, guid: d4a7cbe205a1c3946aaa6052e5b3bceb, type: 3}
   chatHistory:
   - {fileID: 11400000, guid: bcdd3858e619cb8468417a06d72449c6, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 637119cc3fd257541a942b5b97a26c5a, type: 2}
+  role: 0

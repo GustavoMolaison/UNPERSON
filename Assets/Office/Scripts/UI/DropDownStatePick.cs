@@ -16,19 +16,19 @@ public class DropDownStatePick : MonoBehaviour
     {
         if(input == 0)
         {
-            SuspectTracker.instance.SuspectGueses[pickedSuspect] = SuspGuees.Innocent;
+            SuspectTracker.instance.SetSuspectGuess(pickedSuspect, SuspGuees.Innocent);
         }
         if (input == 1)
         {
-            SuspectTracker.instance.SuspectGueses[pickedSuspect] = SuspGuees.Culprit;
+            SuspectTracker.instance.SetSuspectGuess(pickedSuspect, SuspGuees.Culprit);
         }
         if(input == 2)
         {
-            SuspectTracker.instance.SuspectGueses[pickedSuspect] = SuspGuees.UnPerson;
+            SuspectTracker.instance.SetSuspectGuess(pickedSuspect, SuspGuees.UnPerson);
         }
         if( input == 3)
         {
-            SuspectTracker.instance.SuspectGueses[pickedSuspect] = SuspGuees.Accomplice;
+            SuspectTracker.instance.SetSuspectGuess(pickedSuspect, SuspGuees.Accomplice);
         }
         Debug.Log(SuspectTracker.instance.SuspectGueses[pickedSuspect]);
 
