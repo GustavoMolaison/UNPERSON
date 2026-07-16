@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 
 public class MonitorCameraTracker : MonoBehaviour
 {
-    public CameraData inBaseCamera;
+    // public CameraData inBaseCamera;
     public CameraData inMonitor1;
     public CameraData inCaseMonitor;
     public CameraData inMonitor2;
@@ -21,7 +21,9 @@ public class MonitorCameraTracker : MonoBehaviour
 
     public Dictionary< CameraData, Vector2> MonitorsCords;
 
-    public Vector2 currentCords = new Vector2(0, 0);
+    public Vector2 currentCords = new Vector2(-1, 0);
+
+    public const int distanceFromMonitor = 50;
 
 
     public static MonitorCameraTracker Instance;
@@ -55,16 +57,28 @@ public class MonitorCameraTracker : MonoBehaviour
             Debug.LogError("Nie wszystkie instancje monitorów zostały zainicjalizowane!");
             return;
         }
-        inBaseCamera = new CameraData(true, new Vector3(0, 0, -1), 500f, new Vector3(0, 0, 0), false);
-        inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
-        inCaseMonitor = new CameraData(false, Case_Monitor.Instance.transform.position, Case_Monitor.Instance.cameraSize, new Vector3(0, 0, 0), true);
-        //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
+        // inBaseCamera = new CameraData(true, new Vector3(0, 0, -1), 500f, new Vector3(0, 0, 0), false);
 
-        inMonitor2 = new CameraData(false, Screen2.Instance.transform.position, Screen1.Instance.cameraSize, new Vector3(0, 0, 0), true);
-        inInterrogation = new CameraData(false, InterrogationManager.Instance.transform.position, InterrogationManager.Instance.cameraSize, new Vector3(0, 0, 0), false);
-        prevCamera = inBaseCamera;
-        currentCamera = inBaseCamera;
-        CDList = new List<CameraData> { inBaseCamera, inMonitor1, inMonitor2, inInterrogation, inCaseMonitor };
+        RectTransform screenRect = (RectTransform)Screen1.Instance.transform;
+        Vector2 screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
+        inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, true, screenBounds, distanceFromMonitor);
+
+        screenRect = (RectTransform)Case_Monitor.Instance.transform;
+        screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
+        inCaseMonitor = new CameraData(false, Case_Monitor.Instance.transform.position, true, screenBounds, 400);
+        //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
+        
+        screenRect = (RectTransform)Screen2.Instance.transform;
+        screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
+        inMonitor2 = new CameraData(false, Screen2.Instance.transform.position, true, screenBounds, distanceFromMonitor);
+
+        screenRect = (RectTransform)InterrogationManager.Instance.transform;
+        screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
+        inInterrogation = new CameraData(true, InterrogationManager.Instance.transform.position, true, screenBounds, distanceFromMonitor);
+        
+        prevCamera = inInterrogation;
+        currentCamera = inInterrogation;
+        CDList = new List<CameraData> { inMonitor1, inMonitor2, inInterrogation, inCaseMonitor };
 
         screenToCameraData.Add(Screen1.Instance, inMonitor1);
         screenToCameraData.Add(Screen2.Instance, inMonitor2);
@@ -74,41 +88,46 @@ public class MonitorCameraTracker : MonoBehaviour
         {
             { inMonitor1, new Vector2 (0, 0) },
             { inMonitor2, new Vector2 (1, 0) },
-            { inCaseMonitor, new Vector2 (-1, 0) },
+            { inInterrogation, new Vector2 (-1, 0) },
 
 
         };
+        
+
+        CameraMover.Instance.changeCamera("Ininterrogation", MonitorCameraTracker.Instance.inInterrogation);
 
         initilized = true;
+
+
     }
 
-    public void changeCamera(string input, CameraData cameraPicked = null)
-    {
-        CameraData camera;
-        if (cameraPicked != null)
-        {
-            camera = cameraPicked;
-        }
-        else
-        {
-            camera = monitorNavigate(input);
-        }
+    // public void changeCamera(string input, CameraData cameraPicked = null)
+    // {
+    //     CameraData camera;
+    //     if (cameraPicked != null)
+    //     {
+    //         camera = cameraPicked;
+    //     }
+    //     else
+    //     {
+    //         camera = monitorNavigate(input);
+    //     }
             
-        if (camera != null)
-        {
-            camera.active = true;
-            whereIsPlayer();
+    //     if (camera != null)
+    //     {
+    //         camera.active = true;
+    //         whereIsPlayer();
 
-            CameraMover.Instance.mover(camera);
+    //         CameraMover.Instance.mover(camera);
 
-        }
-        else
-        {
-            Debug.LogWarning("Próbowano zmienić na nieistniejącą kamerę (null)!");
-        }
-    }
+    //     }
+    //     else
+    //     {
+    //         Debug.LogWarning("Próbowano zmienić na nieistniejącą kamerę (null)!");
+    //     }
+    // }
 
-    void whereIsPlayer()
+    public void whereIsPlayer()
     {
         // Znajdź wszystkie obecnie aktywne kamery poza tą, która była poprzednio
         var activeCameras = CDList.Where(x => x.active && x != MonitorCameraTracker.Instance.currentCamera).ToList();
@@ -129,6 +148,7 @@ public class MonitorCameraTracker : MonoBehaviour
             }
 
             currentCamera = targetCamera;
+            Debug.Log($"Zmiana kamery na: {currentCamera.pos}, poprzednia kamera: {prevCamera.pos}");
         }
         else if (CDList.Count(x => x.active) == 0)
         {
@@ -169,7 +189,7 @@ public class MonitorCameraTracker : MonoBehaviour
         }
         if (input == "B")
         {
-            return inBaseCamera;
+            return inInterrogation;
         }
         if (input == "DD")
         {
@@ -177,7 +197,16 @@ public class MonitorCameraTracker : MonoBehaviour
         }
         if (input == "AA")
         {
-            return inInterrogation;
+            if(currentCords == new Vector2(-1, 0) && inInterrogation.active == true)
+            {
+                return null;
+            }
+            else
+            {
+                currentCords = new Vector2(-1, 0);
+                return inInterrogation;
+            }
+            
         }
 
         foreach (var pair in MonitorsCords)

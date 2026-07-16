@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            MonitorCameraTracker.Instance.changeCamera("B");
+            CameraMover.Instance.changeCamera("B");
         }
 
 
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             {
                 if(MonitorCameraTracker.Instance.inInterrogation.active)
                 {
-                    MonitorCameraTracker.Instance.changeCamera("DD");
+                    CameraMover.Instance.changeCamera("DD");
                 }
  
                 
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
                 lastClickTimeD = Time.time;
                 if (MonitorCameraTracker.Instance.currentCamera.isMonitor)
                 {
-                    MonitorCameraTracker.Instance.changeCamera("D");
+                    CameraMover.Instance.changeCamera("D");
                 }
             }
 
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             if (timeSinceLastClick <= doubleTapDelay)
             {
 
-                MonitorCameraTracker.Instance.changeCamera("AA");
+                CameraMover.Instance.changeCamera("AA");
                 
                 
                 
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
                 lastClickTime = Time.time;
                 if (MonitorCameraTracker.Instance.currentCamera.isMonitor)
                 {
-                    MonitorCameraTracker.Instance.changeCamera("A");
+                    CameraMover.Instance.changeCamera("A");
                 }
             }
 
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         {
             if (MonitorCameraTracker.Instance.currentCamera.isMonitor)
             {
-                MonitorCameraTracker.Instance.changeCamera("S");
+                CameraMover.Instance.changeCamera("S");
 
             }
 
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         {
             if (MonitorCameraTracker.Instance.currentCamera.isMonitor)
             {
-                MonitorCameraTracker.Instance.changeCamera("W");
+                CameraMover.Instance.changeCamera("W");
 
             }
 

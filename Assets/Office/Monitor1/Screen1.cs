@@ -72,8 +72,12 @@ public class Screen1 : MonitorBase
         // ToggleCanvasGameObject(conclusionCanvas, false);
         // Every canvas has to be enrolled here manually
         //canvasList = new List<Canvas> { mainCanvas, suspectsCanvas, conclusionCanvas };
-        mainCanvas.gameObject.SetActive(true);
+        // mainCanvas.gameObject.SetActive(true);
         //suspectsCanvas.enabled = false;
+
+        mainCanvas.enabled = true;
+        suspectsCanvas.enabled = false;
+        conclusionCanvas.enabled = false;
     }
     
 

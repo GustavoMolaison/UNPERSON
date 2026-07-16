@@ -27,12 +27,12 @@ public class CameraMover : MonoBehaviour
 
     private void Start()
     {
-        cam = GetComponent<Camera>();
+        cam = GetComponent<Camera>(); 
     }
 
     void Update()
     {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, smoothSpeed * Time.deltaTime);
         Quaternion targetRotation = Quaternion.Euler(targetAngle);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
@@ -47,23 +47,55 @@ public class CameraMover : MonoBehaviour
     /// Przesuwa obiekt p�ynnie do wskazanej pozycji, wsp�rz�dna z b�dzie zawsze na sztywno r�wna -1.
     /// </summary>
     
-    public void moveTo(Vector3 pos, float size, Vector3 angle)
-    {
-        //Debug.Log("xd");
-        pos.z = -1;
-        targetPosition = pos;
-        targetSize = size;
-        targetAngle = angle;
+   
 
-
-    }
-
-    public void mover(CameraData camera)
+    private void mover(CameraData camera)
     { 
-    //   Debug.Log(camera.active);
+    // NIE UZYWAJ TEJ FUNKCJI POZA TYM PLIKIEM
       if(camera.active == true)
         {
-            moveTo(camera.pos, camera.size, camera.angle);
+            Vector3 newPosition = new Vector3(camera.pos.x, camera.pos.y, camera.pos.z - camera.distanceFromMonitor);
+            Vector3 distanceFromCurrentViewObject = (cam.transform.position - MonitorCameraTracker.Instance.prevCamera.pos);
+            Vector3 distanceFromNewViewObject = (cam.transform.position - camera.pos);
+
+            // targetPosition = newPosition;
+
+            targetSize = ((camera.sizeOfObject[1] / 2) / distanceFromNewViewObject[2]) * 2;
+
+            float angleBetweenVectors = Vector3.SignedAngle(distanceFromCurrentViewObject, distanceFromNewViewObject, Vector3.up);
+            
+            targetAngle = targetAngle + new Vector3(0, angleBetweenVectors, 0);
+            
+
+           
+        }
+    }
+
+    public void changeCamera(string input, CameraData cameraPicked = null)
+    {
+        CameraData camera;
+        // prevCamera = currentCamera; // Zaktualizuj poprzednią kamerę na aktualną przed zmianą
+        // prevCamera.active = false;
+        if (cameraPicked != null)
+        {
+            camera = cameraPicked;
+        }
+        else
+        {
+            camera = MonitorCameraTracker.Instance.monitorNavigate(input);
+        }
+            
+        if (camera != null)
+        {
+            camera.active = true;
+            MonitorCameraTracker.Instance.whereIsPlayer();
+
+            mover(camera);
+
+        }
+        else
+        {
+            Debug.LogWarning("Próbowano zmienić na nieistniejącą kamerę (null)!");
         }
     }
 

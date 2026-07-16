@@ -16,13 +16,14 @@ public class MonitorBase : MonoBehaviour
     public virtual void canvasChanger(Canvas targetCanvas)
 {
     // 1. Bezpiecznie szukamy obecnie aktywnego canvasu
-    Canvas currentActive = canvasList.FirstOrDefault(x => x != null && x.gameObject.activeSelf);
+    Canvas currentActive = canvasList.FirstOrDefault(x => x != null && x.enabled);
 
     // 2. Jeśli coś znaleźliśmy, zapisujemy do prevCanvas i DEAKTYWUJEMY CAŁY GAMEOBJECT
     if (currentActive != null)
     {
         prevCanvas = currentActive;
-        prevCanvas.gameObject.SetActive(false);
+        // prevCanvas.gameObject.SetActive(false);
+        prevCanvas.enabled = false;
     }
     else
     {
@@ -32,7 +33,8 @@ public class MonitorBase : MonoBehaviour
     // 3. Bezpiecznie włączamy nowy Canvas (cały GameObject)
     if (targetCanvas != null)
     {
-        targetCanvas.gameObject.SetActive(true);
+        // targetCanvas.gameObject.SetActive(true);
+        targetCanvas.enabled = true;
     }
     else
     {
@@ -63,7 +65,7 @@ public class MonitorBase : MonoBehaviour
     public virtual void OnMouseDown()
     {
         Debug.Log("Zmiana kamery");
-        MonitorCameraTracker.Instance.changeCamera("bum", MonitorCameraTracker.Instance.screenToCameraData[this]);
+        CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.screenToCameraData[this]);
         // Setting current coordinates in MonitorCameraTracker to the coordinates of the current monitor
         MonitorCameraTracker.Instance.currentCords = MonitorCameraTracker.Instance.MonitorsCords[MonitorCameraTracker.Instance.screenToCameraData[this]];
     }
