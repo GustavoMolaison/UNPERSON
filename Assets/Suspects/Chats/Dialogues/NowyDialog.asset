@@ -21,3 +21,4 @@ MonoBehaviour:
     text: nie
   IsNewDialogueSequence: 0
   NewDialogueSequence: []
+  EnrolledEvidence: {fileID: 0}

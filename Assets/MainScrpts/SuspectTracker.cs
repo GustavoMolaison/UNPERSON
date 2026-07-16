@@ -10,9 +10,6 @@ public class SuspectTracker : MonoBehaviour
 
     public void SetSuspectGuess(Suspect suspect, SuspGuees newGuess)
     {
-        // Sprawdzamy czy wartość faktycznie się zmieniła, żeby nie odpalać funkcji bez sensu
-        if (SuspectGueses.ContainsKey(suspect) && SuspectGueses[suspect] == newGuess)
-            return;
 
         SuspectGueses[suspect] = newGuess;
         // Funcions we wont to be called when changing dict values

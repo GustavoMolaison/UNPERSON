@@ -1,6 +1,8 @@
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using static UnityEditor.PlayerSettings;
 
 public class CameraMover : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class CameraMover : MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, smoothSpeed * Time.deltaTime);
         Quaternion targetRotation = Quaternion.Euler(targetAngle);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
+        // Debug.Log(transform.position);
     }
 
     public void backToStandardPos()
@@ -47,23 +50,25 @@ public class CameraMover : MonoBehaviour
     /// Przesuwa obiekt p�ynnie do wskazanej pozycji, wsp�rz�dna z b�dzie zawsze na sztywno r�wna -1.
     /// </summary>
     
-    public void moveTo(Vector3 pos, float size, Vector3 angle)
+    /*public void moveTo(Vector3 pos, float size, Vector3 angle)
     {
-        //Debug.Log("xd");
-        pos.z = -1;
-        targetPosition = pos;
-        targetSize = size;
-        targetAngle = angle;
+        Debug.Log("moveTo");
+        
+        Debug.Log(size);
+        Debug.Log(pos);
+        Debug.Log(angle);
 
-
-    }
+    }*/
 
     public void mover(CameraData camera)
     { 
-    //   Debug.Log(camera.active);
+       Debug.Log(camera.active);
       if(camera.active == true)
         {
-            moveTo(camera.pos, camera.size, camera.angle);
+            camera.pos.z = -1;
+            targetPosition = camera.pos;
+            targetSize = camera.size;
+            targetAngle = camera.angle;
         }
     }
 

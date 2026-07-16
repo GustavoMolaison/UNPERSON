@@ -32,10 +32,10 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
     private int isUnPersonID;
     private int isAccompliceID;
 
-    private int isInnocent;
-    private int isCulprit;
-    private int isUnPerson;
-    private int isAccomplice;
+    private int isInnocent = 0;
+    private int isCulprit = 0;
+    private int isUnPerson = 0;
+    private int isAccomplice = 0;
 
     private Material instantiatedMaterial1;
     private Material instantiatedMaterial2;
@@ -70,14 +70,15 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
         shaderImage4.material = instantiatedMaterial4;
 
         Debug.Log("COOOOO");
+        
         myButton1.onClick.RemoveAllListeners();
-        myButton1.onClick.AddListener(() => pickStatus(statusForThisButton1));
+        myButton1.onClick.AddListener(() => pickStatusButton(statusForThisButton1));
         myButton2.onClick.RemoveAllListeners();
-        myButton2.onClick.AddListener(() => pickStatus(statusForThisButton2));
+        myButton2.onClick.AddListener(() => pickStatusButton(statusForThisButton2));
         myButton3.onClick.RemoveAllListeners();
-        myButton3.onClick.AddListener(() => pickStatus(statusForThisButton3));
+        myButton3.onClick.AddListener(() => pickStatusButton(statusForThisButton3));
         myButton4.onClick.RemoveAllListeners();
-        myButton4.onClick.AddListener(() => pickStatus(statusForThisButton4));
+        myButton4.onClick.AddListener(() => pickStatusButton(statusForThisButton4));
     }
     public void OnDestroy()
     {
@@ -99,7 +100,7 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
         //    myButton4.onClick.AddListener(() => pickStatus(statusForThisButton4));
     }
 
-    public void pickStatus(SuspGuees guees)
+    public void pickStatusButton(SuspGuees guees)
     {
         // changeGraphValues(guees);
         // SuspectTracker.instance.SuspectGueses[suspectData] = guees;
@@ -108,10 +109,12 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
 
     public void changeGraphValues(SuspGuees guees)
     {
+        Debug.Log(guees);
         if(guees == SuspGuees.Innocent)
         {
             if(isInnocent == 0)
             {
+                Debug.Log("Zmiana na inoccent");
                 isInnocent = 1;
                 isCulprit = 0;
                 isAccomplice = 0;
@@ -121,7 +124,7 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
                 isInnocent = 0;
             }
 
-                instantiatedMaterial1.SetFloat(isInnocentID, isInnocent);
+            instantiatedMaterial1.SetFloat(isInnocentID, isInnocent);
             instantiatedMaterial2.SetFloat(isCulpritID, isCulprit);
             instantiatedMaterial4.SetFloat(isAccompliceID, isAccomplice);
 
@@ -131,6 +134,7 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
         {
             if(isCulprit == 0)
             {
+                Debug.Log("Zmiana na culprit");
                 isInnocent = 0;
                 isCulprit = 1;
                 isAccomplice = 0;
@@ -148,8 +152,10 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
 
         if (guees == SuspGuees.UnPerson)
         {
-            if (isUnPerson == 0)
+            if (isUnPerson == 0){
+                Debug.Log("Zmiana na unperson");
                 isUnPerson = 1;
+            }
             else
             {
                 isUnPerson = 0;
@@ -161,6 +167,7 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
         {
             if (isAccomplice == 0)
             {
+                Debug.Log("Zmiana na accomplice");
                 isInnocent = 0;
                 isAccomplice = 1;
                 isCulprit = 0;
