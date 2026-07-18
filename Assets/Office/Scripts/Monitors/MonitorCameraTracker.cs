@@ -34,18 +34,20 @@ public class MonitorCameraTracker : MonoBehaviour
     }
     //public void Start()
     //{
-        
+
     //    MonitorsCords = new Dictionary<CameraData, Vector2> 
     //    {
     //        { GameManager.Instance.inMonitor1, new Vector2 (0, 0) },
     //        { GameManager.Instance.inMonitor2, new Vector2 (1, 0) },
     //        { GameManager.Instance.inCaseMonitor, new Vector2 (-1, 0) },
-            
+
 
     //    };
 
-        
+
     //}
+
+    
     private bool initilized = false;
     public void initilize()
     {

@@ -1,6 +1,8 @@
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using static UnityEditor.PlayerSettings;
 
 public class CameraMover : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class CameraMover : MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, smoothSpeed * Time.deltaTime);
         Quaternion targetRotation = Quaternion.Euler(targetAngle);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
+        // Debug.Log(transform.position);
     }
 
     public void backToStandardPos()

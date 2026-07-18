@@ -546,7 +546,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4525955378757667134}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -945,6 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949cc76652994f34e81553f6a15dd9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConclusionPanelData
+  suspectData: {fileID: 0}
   suspName: {fileID: 8487062300771196522}
   targetImage: {fileID: 1284689743058112794}
   myButton1: {fileID: 7253808733545185920}
