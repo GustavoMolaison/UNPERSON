@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class CameraData 
 {
-   
+    public MonoBehaviour monitorScript;
     public bool active;
-    public Vector3 pos;
+    public bool zoomed;
+    
     // public float size;
     // public Vector3 angle;
 
@@ -13,13 +14,16 @@ public class CameraData
     public float distanceFromMonitor = 50;
     public bool isMonitor;
 
+
     
 
-    public CameraData(bool active, Vector3 pos, bool isMonitor, Vector2 sizeOfObject, float distanceFromMonitor)
+    public CameraData(MonoBehaviour monitorScript, bool active, bool zoom, bool isMonitor, Vector2 sizeOfObject, float distanceFromMonitor)
     {
 
+        this.monitorScript = monitorScript;
         this.active = active;
-        this.pos = pos;
+        this.zoomed = zoom;
+        
         // this.size = size;
         // this.angle = angle;
         this.sizeOfObject = sizeOfObject;

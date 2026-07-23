@@ -62,13 +62,13 @@ public class MonitorBase : MonoBehaviour
 
 //     }
 
-    public virtual void OnMouseDown()
-    {
-        Debug.Log("Zmiana kamery");
-        CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.screenToCameraData[this]);
-        // Setting current coordinates in MonitorCameraTracker to the coordinates of the current monitor
-        MonitorCameraTracker.Instance.currentCords = MonitorCameraTracker.Instance.MonitorsCords[MonitorCameraTracker.Instance.screenToCameraData[this]];
-    }
+    // public virtual void OnMouseDown()
+    // {
+    //     Debug.Log("Zmiana kamery");
+    //     CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.screenToCameraData[this]);
+    //     // Setting current coordinates in MonitorCameraTracker to the coordinates of the current monitor
+    //     // MonitorCameraTracker.Instance.currentCords = MonitorCameraTracker.Instance.MonitorsCords[MonitorCameraTracker.Instance.screenToCameraData[this]];
+    // }
 
 
 
