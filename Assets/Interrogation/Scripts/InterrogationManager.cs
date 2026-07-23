@@ -24,7 +24,7 @@ public class InterrogationManager : MonoBehaviour
 
         // DialogueOptionManager.Instance.cleanDialogueOptions();
         UiDialougeManager.Instance.forceCleanChat();
-        MonitorCameraTracker.Instance.changeCamera("bum", MonitorCameraTracker.Instance.inInterrogation);
+        // MonitorCameraTracker.Instance.changeCamera("bum", MonitorCameraTracker.Instance.inInterrogation);
     }
  
 }
