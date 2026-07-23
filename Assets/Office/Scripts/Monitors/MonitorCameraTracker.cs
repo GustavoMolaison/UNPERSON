@@ -23,8 +23,7 @@ public class MonitorCameraTracker : MonoBehaviour
 
     public Vector2 currentCords = new Vector2(-1, 0);
 
-    // if equals to 0 it means we ignore distance we stay at basic camera position
-    public const int distanceFromMonitor = 0;
+    public const int distanceFromMonitor = 50;
 
 
     public static MonitorCameraTracker Instance;
@@ -64,20 +63,20 @@ public class MonitorCameraTracker : MonoBehaviour
 
         RectTransform screenRect = (RectTransform)Screen1.Instance.transform;
         Vector2 screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inMonitor1 = new CameraData(Screen1.Instance, true, true, true, screenBounds, 180);
+        inMonitor1 = new CameraData(false, Screen1.Instance.transform.position, true, screenBounds, distanceFromMonitor);
 
         screenRect = (RectTransform)Case_Monitor.Instance.transform;
         screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inCaseMonitor = new CameraData(Case_Monitor.Instance, false, false, true, screenBounds, 400);
+        inCaseMonitor = new CameraData(false, Case_Monitor.Instance.transform.position, true, screenBounds, 400);
         //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
         
         screenRect = (RectTransform)Screen2.Instance.transform;
         screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inMonitor2 = new CameraData(Screen2.Instance, false, false, true, screenBounds, distanceFromMonitor);
+        inMonitor2 = new CameraData(false, Screen2.Instance.transform.position, true, screenBounds, distanceFromMonitor);
 
         screenRect = (RectTransform)InterrogationManager.Instance.transform;
         screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inInterrogation = new CameraData(InterrogationManager.Instance, true, false, true, screenBounds, distanceFromMonitor);
+        inInterrogation = new CameraData(true, InterrogationManager.Instance.transform.position, true, screenBounds, distanceFromMonitor);
         
         prevCamera = inInterrogation;
         currentCamera = inInterrogation;
@@ -151,7 +150,7 @@ public class MonitorCameraTracker : MonoBehaviour
             }
 
             currentCamera = targetCamera;
-            Debug.Log($"Zmiana kamery na: {currentCamera.monitorScript.name}, poprzednia kamera: {prevCamera.monitorScript.name}");
+            Debug.Log($"Zmiana kamery na: {currentCamera.pos}, poprzednia kamera: {prevCamera.pos}");
         }
         else if (CDList.Count(x => x.active) == 0)
         {
@@ -171,26 +170,8 @@ public class MonitorCameraTracker : MonoBehaviour
         }
     }
 
-    public CameraData monitorNavigate(string input, CameraData camera = null)
+    public CameraData monitorNavigate(string input)
     {
-
-        // We pass the CameraData we only update cords
-        if(camera != null)
-        {
-            foreach (var pair in MonitorsCords)
-            {
-                if (pair.Key == camera)
-                {
-                    currentCords = pair.Value;
-                    break;
-                }
-                
-               
-            }
-            Debug.Log("currentCords updated to: " + currentCords);
-            return camera;
-        }
-        // We dont pass the CameraData we update cords and look for the camera in the dictionary
         Vector2 CordSave = currentCords;
         if(input == "D")
         {
