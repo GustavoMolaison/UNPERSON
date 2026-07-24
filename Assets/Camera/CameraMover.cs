@@ -62,6 +62,7 @@ public class CameraMover : MonoBehaviour
         float arc = Mathf.Sin(rotationProgress * Mathf.PI) * headArcAmount;
         // 1. Płynne przesunięcie z masą/bezwładnością
         float tilt = Mathf.Sin(rotationProgress * Mathf.PI) * Random.Range(0f, 4f);
+
         Quaternion targetRotation = Quaternion.Euler(targetAngle.x, targetAngle.y, targetAngle.z + tilt);
         // Quaternion targetRotation = Quaternion.Euler(targetAngle);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
@@ -106,6 +107,12 @@ public class CameraMover : MonoBehaviour
 
             // float angleBetweenVectors = Vector3.SignedAngle(distanceFromCurrentViewObject, distanceFromNewViewObject, Vector3.up);           
             // targetAngle = targetAngle + new Vector3(0, angleBetweenVectors, 0);
+            if(targetAngle != camera.monitorScript.transform.eulerAngles)
+            {
+                // Wydajemy dzwiek gdy obracamy fotel damn
+                GetComponent<RandomAudioPlayer>().PlayRandomCreak();
+            }
+
             targetAngle = camera.monitorScript.transform.eulerAngles;
 
             // targetSize = ((camera.sizeOfObject[1] / 2) / distanceFromNewViewObject[2]) * 2;
