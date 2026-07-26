@@ -11,7 +11,8 @@ public class CameraMover : MonoBehaviour
     
     Vector3 standardPosition;
     Vector3 targetPosition;
-    float targetSize = 500f;
+
+    float targetSize;
     Vector3 targetAngle;
     [SerializeField] private float smoothSpeed = 5f;
 
@@ -23,13 +24,13 @@ public class CameraMover : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        standardPosition = transform.position;
-        targetPosition = transform.position;
+
+        cam = GetComponent<Camera>();
     }
 
     private void Start()
     {
-        cam = GetComponent<Camera>(); 
+        targetSize = cam.orthographicSize;
     }
 
     void Update()
