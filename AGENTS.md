@@ -2,7 +2,7 @@
 - Project name: UNPERSON
 - Unity version: Unity 6000.3.9f1
 - Active game object:
-  - Name: InterrogationWindow
+  - Name: MainScreen 253 - 177
   - Tag: Untagged
-  - Layer: UI
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
