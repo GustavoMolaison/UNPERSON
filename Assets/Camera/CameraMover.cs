@@ -9,14 +9,8 @@ public class CameraMover : MonoBehaviour
 
     Camera cam;
     
-    
     Vector3 standardPosition;
     Vector3 targetPosition;
-    Quaternion targetRotation;
-
-    private Vector3 positionVelocity;
-    private Vector3 rotationVelocity; // do wygładzania kątów
-    public float smoothTime = 0.3f;
     float targetSize = 500f;
     Vector3 targetAngle;
     [SerializeField] private float smoothSpeed = 5f;
@@ -42,8 +36,12 @@ public class CameraMover : MonoBehaviour
         standardPosition = transform.position;
         targetPosition = transform.position;
 
-        // standardPosition = transform.position;
-        // targetPosition = transform.position;
+        cam = GetComponent<Camera>(); 
+        standardPosition = transform.position;
+        targetPosition = transform.position;
+
+        standardPosition = transform.position;
+        targetPosition = transform.position;
     }
 
     private void Start()
@@ -87,21 +85,7 @@ public class CameraMover : MonoBehaviour
         // Debug.Log("Target Rotation: " + targetRotation.eulerAngles + ", Current Rotation: " + transform.rotation.eulerAngles + ", Tilt: " + tilt);
         // Quaternion targetRotation = Quaternion.Euler(targetAngle);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
-
-        if(updateCycleCounter > rotationOverMovingHeadStart)
-        {
-            // 2. Płynna rotacja z powolnym startem i wyhamowaniem
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref positionVelocity, smoothTime);
-            transform.position -= transform.forward * arc;
-        }
-        
-         
-        // 3. Zoom
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, smoothSpeed * Time.deltaTime);
-
-
-        updateCycleCounter++;
-      
+        // Debug.Log(transform.position);
     }
 
     public void backToStandardPos()
@@ -138,19 +122,9 @@ public class CameraMover : MonoBehaviour
 
             // targetSize = ((camera.sizeOfObject[1] / 2) / distanceFromNewViewObject[2]) * 2;
 
-            if (camera.zoomed)
-            {
-                // targetPosition = distanceFromNewViewObject - (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
-                targetPosition = camera.monitorScript.transform.position - (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
-                // targetPosition = camera.monitorScript.transform.forward
-            }
-            else
-            {
-                targetPosition = standardPosition;
-            }
-
-            rotationRange = Mathf.Abs(cam.transform.rotation.eulerAngles.y - targetAngle.y);
+            float angleBetweenVectors = Vector3.SignedAngle(distanceFromCurrentViewObject, distanceFromNewViewObject, Vector3.up);
             
+            targetAngle = targetAngle + new Vector3(0, angleBetweenVectors, 0);
             
 
            
@@ -160,10 +134,17 @@ public class CameraMover : MonoBehaviour
     public void changeCamera(string input, CameraData cameraPicked = null)
     {
         CameraData camera;
-        camera = MonitorCameraTracker.Instance.monitorNavigate(input, cameraPicked);
-        updateCycleCounter = 0;
-        
-
+        // prevCamera = currentCamera; // Zaktualizuj poprzednią kamerę na aktualną przed zmianą
+        // prevCamera.active = false;
+        if (cameraPicked != null)
+        {
+            camera = cameraPicked;
+        }
+        else
+        {
+            camera = MonitorCameraTracker.Instance.monitorNavigate(input);
+        }
+            
         if (camera != null)
         {
             camera.active = true;
