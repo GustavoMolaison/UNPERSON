@@ -96,7 +96,7 @@ public class MonitorCameraTracker : MonoBehaviour
         };
         
 
-        CameraMover.Instance.changeCamera("Ininterrogation", MonitorCameraTracker.Instance.inInterrogation);
+        // CameraMover.Instance.changeCamera("Ininterrogation", MonitorCameraTracker.Instance.inMonitor1);
 
         initilized = true;
 
