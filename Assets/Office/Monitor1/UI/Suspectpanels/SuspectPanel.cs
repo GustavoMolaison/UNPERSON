@@ -14,7 +14,6 @@ public class SuspectPanel : UIDataOrigin<Suspect>
     //[SerializeField] private TMP_Text genderText;
     [SerializeField] private Image faceImage;
     //[SerializeField] private Image faceImage2;
-    [SerializeField] private AudioClip clickSound;
     
 
     [Header("Data Asset")]
@@ -47,27 +46,12 @@ public class SuspectPanel : UIDataOrigin<Suspect>
     }
 
 
-    // private void OnMouseDown()
-    // {
-    //     // Debug.Log("Panel click");
-    //     //Debug.Log("what");
-    //     //Screen1.Instance.suspectPanelExtensionSwitch(suspectData);
-    //     SuspectTracker.instance.changeCurrentSuspect(suspectData);
-
-    //     AudioSource source = GetComponent<AudioSource>();
-        
-    //     source.PlayOneShot(clickSound);
-    // }
-
-    public void onClickButton()
+    private void OnMouseDown()
     {
-
-        AudioSource source = GetComponent<AudioSource>();
-        
-        source.PlayOneShot(clickSound);
-
+        // Debug.Log("Panel click");
+        //Debug.Log("what");
+        //Screen1.Instance.suspectPanelExtensionSwitch(suspectData);
         SuspectTracker.instance.changeCurrentSuspect(suspectData);
-
     }
 
     public void interrogationButton()
