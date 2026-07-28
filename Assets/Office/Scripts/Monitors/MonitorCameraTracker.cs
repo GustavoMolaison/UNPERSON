@@ -77,7 +77,7 @@ public class MonitorCameraTracker : MonoBehaviour
 
         screenRect = (RectTransform)InterrogationManager.Instance.transform;
         screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inInterrogation = new CameraData(InterrogationManager.Instance, true, false, true, screenBounds, distanceFromMonitor);
+        inInterrogation = new CameraData(InterrogationManager.Instance, true, true, true, screenBounds, 500);
         
         prevCamera = inInterrogation;
         currentCamera = inInterrogation;

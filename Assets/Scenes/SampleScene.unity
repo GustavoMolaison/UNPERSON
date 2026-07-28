@@ -757,7 +757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 123.01}
+  m_AnchoredPosition: {x: 0, y: 123.010796}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &484777646
@@ -1803,7 +1803,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 977280796}
-  - component: {fileID: 977280795}
   m_Layer: 0
   m_Name: InterrogationSetup
   m_TagString: Untagged
@@ -1811,21 +1810,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &977280795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977280794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b13c12b0abec5604c93dd722e57cf32e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InterrogationManager
-  cameraSize: 155
-  suspectPng: {fileID: 1954983305}
-  interrogatedSuspect: {fileID: 0}
 --- !u!224 &977280796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1844,7 +1828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -377, y: 96}
+  m_AnchoredPosition: {x: -278, y: 96}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1046142296
@@ -1861,6 +1845,7 @@ GameObject:
   - component: {fileID: 1046142300}
   - component: {fileID: 1046142299}
   - component: {fileID: 1046142298}
+  - component: {fileID: 1046142304}
   m_Layer: 5
   m_Name: InterrogationWindow
   m_TagString: Untagged
@@ -1987,9 +1972,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -320, y: 23}
-  m_SizeDelta: {x: 512, y: 384}
+  m_AnchoredPosition: {x: -356, y: 37}
+  m_SizeDelta: {x: 900, y: 505}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1046142304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046142296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13c12b0abec5604c93dd722e57cf32e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InterrogationManager
+  cameraSize: 120
+  suspectPng: {fileID: 0}
+  interrogatedSuspect: {fileID: 0}
 --- !u!1 &1337709088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7137873618354483932, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
@@ -2397,8 +2397,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1713961517}
   m_HandleRect: {fileID: 0}
   m_Direction: 2
-  m_Value: -0.00000012404512
-  m_Size: 0.5899579
+  m_Value: -0.000006574391
+  m_Size: 0.589959
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2969,7 +2969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -38
+      value: -119
       objectReference: {fileID: 0}
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2989,7 +2989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 46
+      value: -972
       objectReference: {fileID: 0}
     - target: {fileID: 6437913787874497683, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
       propertyPath: m_AnchoredPosition.y
