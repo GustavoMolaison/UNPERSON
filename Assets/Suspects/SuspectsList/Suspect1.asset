@@ -22,7 +22,5 @@ MonoBehaviour:
   chatHistory:
   - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}
   dialogueOptions:
-  - {fileID: 11400000, guid: 83145c56c3e8ac145ac11fb0746c2630, type: 2}
-  - {fileID: 11400000, guid: 9d89475192cd5a242ac05b5be2bc8d77, type: 2}
-  - {fileID: 11400000, guid: 637119cc3fd257541a942b5b97a26c5a, type: 2}
+  - {fileID: 11400000, guid: 78686396b95fc5845b5c79b34fc92e6b, type: 2}
   role: 2
