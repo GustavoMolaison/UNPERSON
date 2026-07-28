@@ -757,7 +757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 123.010796}
+  m_AnchoredPosition: {x: 0, y: 123.00998}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &484777646
@@ -1007,7 +1007,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -568, y: 82.2, z: -369.8}
+  m_LocalPosition: {x: -685, y: 83, z: -397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InterrogationManager
   cameraSize: 120
-  suspectPng: {fileID: 0}
+  suspectPng: {fileID: 1954983305}
   interrogatedSuspect: {fileID: 0}
 --- !u!1 &1337709088 stripped
 GameObject:
@@ -2397,8 +2397,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1713961517}
   m_HandleRect: {fileID: 0}
   m_Direction: 2
-  m_Value: -0.000006574391
-  m_Size: 0.589959
+  m_Value: 0.00000012404512
+  m_Size: 0.5630211
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

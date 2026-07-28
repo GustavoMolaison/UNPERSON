@@ -83,6 +83,7 @@ public class Screen1 : MonitorBase
 
     public void suspectButton()
     {
+        Debug.Log("Suspect button clicked");
         canvasChanger(suspectsCanvas);
     }
     
@@ -101,7 +102,7 @@ public class Screen1 : MonitorBase
 
     public void suspectPanelExtensionSwitch(Suspect suspectData)
     {
-        if(extension.activeSelf == false)
+        if(!extension.activeSelf)
         {
             extension.SetActive(true);
         }
@@ -138,6 +139,7 @@ public class Screen1 : MonitorBase
                input = 0; // Wartość domyślna, na wypadek błędu
                break;
             }
+
             SuspGueesDropDownGO.value = input;
 
 
