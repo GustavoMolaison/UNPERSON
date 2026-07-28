@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Localization;
 
     public enum SpeakerType 
    {
@@ -9,12 +9,11 @@ using UnityEngine;
 
 
     [System.Serializable]
-    public struct DialogueLine 
-    {
+public struct DialogueLine 
+{
     public SpeakerType speaker;
     
-    [TextArea(2, 5)] 
-    public string text;
-    
-    }
+    // Zamiast 'public string text;' dajesz to:
+    public LocalizedString text;
+}
 

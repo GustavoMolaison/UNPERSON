@@ -53,7 +53,11 @@ public class UiDialougeManager : MonoBehaviour
                 bool isPlayer = messages[i].speaker == SpeakerType.Player ? true : false;
 
                 cleanDialogueLayout(isPlayer);
-                targetLayoutCode.addMessage(messages[i].text);
+                messages[i].text.GetLocalizedStringAsync().Completed += handle =>
+                {
+                  targetLayoutCode.addMessage(handle.Result);
+             };
+                // targetLayoutCode.addMessage(messages[i].text);
                 
                 // cleanDialogueLayout(isPlayer);
                 // GameObject child = Instantiate(chatCloud, targetLayout, false);
