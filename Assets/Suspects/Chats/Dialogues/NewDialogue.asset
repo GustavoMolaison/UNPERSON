@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
+  m_Name: NewDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  uniqueID: 2afdf5ea-6013-4f98-bf1d-402590186fd0
+  DialogueName: test
+  DialogueContent:
+  - speaker: 0
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:db4d327f60f6c5a4abf235f079b5052d
+      m_TableEntryReference:
+        m_KeyId: 24564981760
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - speaker: 1
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:db4d327f60f6c5a4abf235f079b5052d
+      m_TableEntryReference:
+        m_KeyId: 266878312448
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - speaker: 0
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:db4d327f60f6c5a4abf235f079b5052d
+      m_TableEntryReference:
+        m_KeyId: 301590372352
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - speaker: 1
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:db4d327f60f6c5a4abf235f079b5052d
+      m_TableEntryReference:
+        m_KeyId: 384176218112
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - speaker: 0
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:db4d327f60f6c5a4abf235f079b5052d
+      m_TableEntryReference:
+        m_KeyId: 455437443072
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - speaker: 1
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:db4d327f60f6c5a4abf235f079b5052d
+      m_TableEntryReference:
+        m_KeyId: 646190194688
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  IsNewDialogueSequence: 0
+  NewDialogueSequence: []
+  EnrolledEvidence: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

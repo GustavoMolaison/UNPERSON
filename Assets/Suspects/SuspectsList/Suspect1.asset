@@ -23,4 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}
   dialogueOptions:
   - {fileID: 11400000, guid: 78686396b95fc5845b5c79b34fc92e6b, type: 2}
+  - {fileID: 11400000, guid: 453705ca58b224e4681797d680f730c5, type: 2}
   role: 2

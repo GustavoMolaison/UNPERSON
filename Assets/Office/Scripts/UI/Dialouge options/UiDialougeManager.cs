@@ -8,9 +8,8 @@ public class UiDialougeManager : MonoBehaviour
 {
     
 
-    [SerializeField] private GameObject layoutPlayer;
-    [SerializeField] private GameObject layoutSuspect;
-    [SerializeField] private GameObject chatCloud;
+   
+    [SerializeField] private GameObject chatlayout;
     [SerializeField] private float messageCooldown;
 
    
@@ -34,36 +33,32 @@ public class UiDialougeManager : MonoBehaviour
     
         private void Start()
     {
-        playerDimensions = GetUiDimensions(layoutPlayer);
-        SuspectDimensions = GetUiDimensions(layoutSuspect);
-        chatCloudDimensions = GetUiDimensions(chatCloud);
+        playerDimensions = GetUiDimensions(chatlayout);
 
-        layoutCode = layoutPlayer.GetComponent<TalkWindow>();
+        layoutCode = chatlayout.GetComponent<TalkWindow>();
     }
     
     public IEnumerator ShowMessagesRoutine(List<DialogueLine> messages)
     {
-        // Ustalamy rodzica TYLKO RAZ przed ptl (Zasada DRY)
-        // Transform targetLayout = isPlayerChat ? layoutPlayer.transform : layoutSuspect.transform;
 
         for (int i = 0; i < messages.Count; i++)
         {
-                // Transform targetLayout = messages[i].speaker == SpeakerType.Player ? layoutPlayer.transform : layoutSuspect.transform;
-                TalkWindow targetLayoutCode = messages[i].speaker == SpeakerType.Player ? layoutPlayer.GetComponent<TalkWindow>() : layoutSuspect.GetComponent<TalkWindow>();
+               
+                
+                // Sprawdzamy czy mowi player czy suspcet huj wie czemu nie uzywamy tego wczesniej zeby usalic jaki jest talk window xd
                 bool isPlayer = messages[i].speaker == SpeakerType.Player ? true : false;
 
+                // Wbrew nazwie nie czyści to layouta poprostu przygotowuje go do wyświetlenia następnej wiadomości
+                // Ta funkcja chyba odpowiada jak to faktycznie wizualnie sie prezentuje
                 cleanDialogueLayout(isPlayer);
+                // To poprostu przekazuje stringa jakims pojebanym sposobem bo tak dziala lokalizakcja w unity idk
                 messages[i].text.GetLocalizedStringAsync().Completed += handle =>
                 {
-                  targetLayoutCode.addMessage(handle.Result);
-             };
-                // targetLayoutCode.addMessage(messages[i].text);
+                  layoutCode.addMessage(handle.Result, isPlayer);
+                };
                 
-                // cleanDialogueLayout(isPlayer);
-                // GameObject child = Instantiate(chatCloud, targetLayout, false);
-                // TextMeshProUGUI txt = child.GetComponentInChildren<TextMeshProUGUI>();
 
-                
+                // Jeśli nie jesteśmy na ostatnim elemencie czekamy chwile zanim wysiwetlimy nastepna wiadomość
                 if (i < messages.Count - 1) 
                 {
                 yield return new WaitForSeconds(messageCooldown);
@@ -71,52 +66,24 @@ public class UiDialougeManager : MonoBehaviour
             
 
 
-            // Deklarujemy zmienn� 'child' LOKALNIE w p�tli
-            // cleanDialogueLayout(isPlayerChat);
-            // GameObject child = Instantiate(chatCloud, targetLayout, false);
-
-            // Deklarujemy 'txt' LOKALNIE. Zak�adam, �e prefab ma tekst w dziecku.
-            // TextMeshProUGUI txt = child.GetComponentInChildren<TextMeshProUGUI>();
-
-           
-            
-
-            // Czekamy okre�lon� ilo�� sekund przed instancjacj� kolejnego dymku
-            // if (i < messages.Count - 1) 
-            // {
-            //     yield return new WaitForSeconds(messageCooldown);
-            // }
-
 
     }
     }
 
     public void forceCleanChat()
     {
-        foreach (Transform child in layoutPlayer.transform)
+        foreach (Transform child in layoutCode.transform)
         {
             Destroy(child.gameObject);
         }
 
-        foreach (Transform child in layoutSuspect.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        
     }
 
     public void cleanDialogueLayout(bool isPlayerChat)
     {
-        if (isPlayerChat)
-        {
-            RectTransform layoutRect = layoutPlayer.GetComponent<RectTransform>();
-            ManageChatOverflow(layoutRect, playerDimensions, chatCloudDimensions);
-        }
-        else
-        {
-            RectTransform layoutRect = layoutSuspect.GetComponent<RectTransform>();
-            ManageChatOverflow(layoutRect, SuspectDimensions, chatCloudDimensions);
-        }
-           
+        RectTransform layoutRect = layoutCode.GetComponent<RectTransform>();
+        ManageChatOverflow(layoutRect, playerDimensions);    
 
     }
 
@@ -147,10 +114,10 @@ public class UiDialougeManager : MonoBehaviour
         }
     }
 
-
-    public void ManageChatOverflow(RectTransform layoutRect, Vector2 windowDimensions, Vector2 chatCloudDimensions)
+// Ta funkcja ma zadbac by dialogi pięknie i ładnie się wyświetlały
+    public void ManageChatOverflow(RectTransform layoutRect, Vector2 windowDimensions)
     {
-        Debug.Log("Czy�cimy");
+        Debug.Log("Czyścimy");
         if (layoutRect == null) return;
 
         // 1. Pobieramy komponent VerticalLayoutGroup
@@ -160,7 +127,7 @@ public class UiDialougeManager : MonoBehaviour
             return;
         }
 
-        // 2. Obliczamy aktualn� wysoko�� zawarto�ci czatu
+        // 2. Obliczamy aktualną wysokość zawartości czatu
         float totalContentHeight = layoutInfo.padding.top + layoutInfo.padding.bottom;
         int activeChildCount = 0;
 
@@ -182,7 +149,10 @@ public class UiDialougeManager : MonoBehaviour
             totalContentHeight += layoutInfo.spacing * (activeChildCount - 1);
         }
 
-        // 3. P�tla While czyszcz�ca czat, gdy zawarto�� przekracza wysoko�� okna
+        // Okej od tego momenu mamy obliczone wszystkie wartości
+        
+
+        // 3. Pętla While czyszcząca czat, gdy zawartość przekracza wysokość okna
         float windowHeight = windowDimensions.y;
         if (windowHeight < totalContentHeight + 50)
             
@@ -218,8 +188,7 @@ public class UiDialougeManager : MonoBehaviour
         }
 
         
-        //int currentChildCount = layoutRect.childCount;
-        //float estimatedHeight = (currentChildCount * chatCloudDimensions.y) + (layoutInfo.spacing * (currentChildCount - 1));
+       
 
        
     }

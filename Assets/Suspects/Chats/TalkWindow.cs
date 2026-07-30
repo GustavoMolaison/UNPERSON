@@ -15,7 +15,7 @@ public class TalkWindow : MonoBehaviour
     private TextMeshProUGUI txt;
 
 
-    public void addMessage(string message)
+    public void addMessage(string message, bool isPlayer)
     {
         GameObject newChild = Instantiate(child, transform, false);
         newChild.transform.Rotate(new Vector3(0,1,0), rotation);
@@ -23,7 +23,15 @@ public class TalkWindow : MonoBehaviour
         txt.transform.Rotate(new Vector3(0,1,0), rotation);
         if (txt != null)
         {
-            txt.text = message;
+            if (isPlayer)
+            {
+                txt.text = "You: " + message;
+            }
+            else
+            {
+                txt.text = SuspectTracker.instance.currentSuspect.FirstName + ": " + message;
+            }
+            
         }
     }
 }
