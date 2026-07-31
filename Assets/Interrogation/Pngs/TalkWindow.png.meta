@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2ea0bb9d5733c9b4388e2e4b5434b784
+guid: cfb7653aaaf383f4a81eb6d27c493cc1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8741053522136937995
-    second: Dialouge line spacing V2 + Color_0
+      213: -3411364536857873096
+    second: TalkWindow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dialouge line spacing V2 + Color_0
+      name: TalkWindow_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 124
+        y: 33
         width: 256
-        height: 8
+        height: 165
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b0636a5cdd57e4970800000000000000
-      internalID: 8741053522136937995
+      spriteID: 835b835270668a0d0800000000000000
+      internalID: -3411364536857873096
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a04ab564398b71947be5b9de23fee65c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dialouge line spacing V2 + Color_0: 8741053522136937995
+      TalkWindow_0: -3411364536857873096
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
