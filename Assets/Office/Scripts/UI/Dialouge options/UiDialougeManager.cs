@@ -52,10 +52,14 @@ public class UiDialougeManager : MonoBehaviour
                 // Ta funkcja chyba odpowiada jak to faktycznie wizualnie sie prezentuje
                 cleanDialogueLayout(isPlayer);
                 // To poprostu przekazuje stringa jakims pojebanym sposobem bo tak dziala lokalizakcja w unity idk
-                messages[i].text.GetLocalizedStringAsync().Completed += handle =>
-                {
-                  layoutCode.addMessage(handle.Result, isPlayer);
-                };
+                var handle = messages[i].text.GetLocalizedStringAsync();
+                yield return handle;
+                yield return StartCoroutine(layoutCode.addMessage(handle.Result, isPlayer));
+                
+                // messages[i].text.GetLocalizedStringAsync().Completed += handle =>
+                // {
+                //   yield return StartCoroutine(layoutCode.addMessage(handle.Result, isPlayer));
+                // };
                 
 
                 // Jeśli nie jesteśmy na ostatnim elemencie czekamy chwile zanim wysiwetlimy nastepna wiadomość

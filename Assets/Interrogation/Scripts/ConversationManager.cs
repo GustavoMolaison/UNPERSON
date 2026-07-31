@@ -1,13 +1,14 @@
 using UnityEngine;
-using TMPro;
-using NUnit.Framework;
-using System.Collections.Generic;
 
-public class ConversationManager : MonoBehaviour
+using System.Collections.Generic;
+using UnityEngine.EventSystems;
+
+public class ConversationManager : MonoBehaviour, IPointerClickHandler
 {
     
     
     public static ConversationManager Instance;
+    [SerializeField] private Transform chatContainer;
 
     private void Awake()
     {
@@ -21,5 +22,17 @@ public class ConversationManager : MonoBehaviour
         DialogueManager.Instance.chatNewMess(messeages);
 
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // Pomija animacje pisania przy kliknięciu
+        TypewriterEffect[] typewriters = chatContainer.GetComponentsInChildren<TypewriterEffect>();
+        foreach (var tw in typewriters)
+        {
+        tw.Skip();
+        }
+    }
+
+
 
 }

@@ -8,6 +8,14 @@ public class SuspectTracker : MonoBehaviour
     [HideInInspector] public List<ConclusionPanelData> conclusionPanels;
     [HideInInspector] public Dictionary<Suspect, SuspGuees> SuspectGueses = new Dictionary<Suspect, SuspGuees>();
 
+    [HideInInspector] public Dictionary<SuspGuees, Color> guessColors = new Dictionary<SuspGuees, Color>
+    {
+        { SuspGuees.Innocent, Color.blue },
+        { SuspGuees.Culprit, Color.red },
+        { SuspGuees.UnPerson, Color.green },
+        { SuspGuees.Accomplice, Color.yellow }
+    };
+
     public void SetSuspectGuess(Suspect suspect, SuspGuees newGuess)
     {
 

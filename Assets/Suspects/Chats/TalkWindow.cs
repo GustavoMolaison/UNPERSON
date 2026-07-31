@@ -12,26 +12,25 @@ public class TalkWindow : MonoBehaviour
 
     [Header("Parameters")]
     [SerializeField] private float rotation;
-    private TextMeshProUGUI txt;
+    private TypewriterEffect typewriter;
 
 
-    public void addMessage(string message, bool isPlayer)
+    public IEnumerator addMessage(string message, bool isPlayer)
     {
         GameObject newChild = Instantiate(child, transform, false);
         newChild.transform.Rotate(new Vector3(0,1,0), rotation);
-        txt = newChild.GetComponentInChildren<TextMeshProUGUI>();
-        txt.transform.Rotate(new Vector3(0,1,0), rotation);
-        if (txt != null)
+
+        typewriter = newChild.GetComponentInChildren<TypewriterEffect>();
+
+        typewriter.transform.Rotate(new Vector3(0,1,0), rotation);
+        
+        if (typewriter != null)
         {
-            if (isPlayer)
-            {
-                txt.text = "You: " + message;
-            }
-            else
-            {
-                txt.text = SuspectTracker.instance.currentSuspect.FirstName + ": " + message;
-            }
+            string txt = isPlayer? 
+            "You: " + message : 
+            SuspectTracker.instance.currentSuspect.FirstName + ": " + message;
             
+            yield return typewriter.SetText(txt);
         }
     }
 }

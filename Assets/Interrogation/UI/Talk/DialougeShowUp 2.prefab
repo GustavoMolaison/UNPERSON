@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1.9000015, y: -2.6066}
-  m_SizeDelta: {x: 0, y: 2.6066}
+  m_AnchoredPosition: {x: -0.9500007, y: 0}
+  m_SizeDelta: {x: -1.9000015, y: 2.6066}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1569221516524641073
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3385632545872759581, guid: 57ff5da16a802874ba4d5c3e6b8b093b, type: 3}
+  m_Sprite: {fileID: 8741053522136937995, guid: a3e49e7b64bdef24683cdee6fd165aaf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -84,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5036327905052743071}
+  - component: {fileID: 8928695689238211361}
   - component: {fileID: 5901485656877969695}
   - component: {fileID: 3215220891557184002}
   - component: {fileID: 1422582423069024764}
@@ -114,6 +115,22 @@ RectTransform:
   m_AnchoredPosition: {x: 70.297, y: -42.48993}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &8928695689238211361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025530833417313584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99fecff2a3185f498df0174f2738a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TypewriterEffect
+  textComponent: {fileID: 3215220891557184002}
+  whoTextComponent: {fileID: 0}
+  timeBetweenCharacters: 0.04
+  conversationMode: 0
 --- !u!222 &5901485656877969695
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -152,7 +169,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
