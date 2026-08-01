@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 
 
-public class ChatMesseageCloud : UIDataOrigin<Suspect>
+public class PrefferedSizesPicker : UIDataOrigin<Suspect>
 
 {
 

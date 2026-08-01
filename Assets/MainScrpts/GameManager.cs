@@ -9,6 +9,8 @@ using UnityEngine.Rendering;
 public class GameManager : MonoBehaviour
 {
     [HideInInspector] public Level currentLevel;
+
+    [HideInInspector] public List<Evidence> evidenceList = new List<Evidence>();
  
     private float lastClickTime;
     [SerializeField] private float doubleTapDelay = 0.3f;
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
         LevelsContentInfo.Instance.initilize();
         MonitorCameraTracker.Instance.initilize();
         SuspectTracker.instance.initilize();
+
+        evidenceList = new List<Evidence>(currentLevel.EvidenceList);
 
     }
 

@@ -27,12 +27,20 @@ public class Case_Monitor : MonitorBase
 
     private void Start()
     {
-        foreach (Evidence e in GameManager.Instance.currentLevel.EvidenceList)
+        foreach (Evidence e in GameManager.Instance.evidenceList)
         {
             GameObject newpanel = Instantiate(evidencePanelPF, viewContent.transform, false);
             EvidencePanelManager panelManager = newpanel.GetComponent<EvidencePanelManager>();
             panelManager.enrollEvidence(e);
         }
+    }
+    public void addEvidence(Evidence e)
+    {
+        GameManager.Instance.evidenceList.Add(e);
+
+        GameObject newpanel = Instantiate(evidencePanelPF, viewContent.transform, false);
+        EvidencePanelManager panelManager = newpanel.GetComponent<EvidencePanelManager>();
+        panelManager.enrollEvidence(e);
     }
 
     public void highLightEvidences(bool light) 

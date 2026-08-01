@@ -16,11 +16,10 @@ public class ConversationManager : MonoBehaviour, IPointerClickHandler
         else Destroy(gameObject);
     }
 
-    public void chatNewMess(List<DialogueLine> messeages)
+    public void chatNewMess(DialogueOption dialOption)
     {
-        Debug.Log("mess:" +  messeages);
-        DialogueManager.Instance.chatNewMess(messeages);
-
+        // Debug.Log("mess:" +  messeages);
+        DialogueManager.Instance.chatNewMess(dialOption);
     }
 
     public void OnPointerClick(PointerEventData eventData)

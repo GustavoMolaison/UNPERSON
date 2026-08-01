@@ -25,7 +25,7 @@ public class EvidencePanelManager : MonoBehaviour, IPointerClickHandler
             if (eventData.clickCount == 2)
             {
                 Case_Monitor.Instance.playerIsPickingEvidence = false;
-                if (DialogueOptionManager.Instance.dialougePicked.enrolledEvidence == enrolledEvidence)
+                if (DialogueOptionManager.Instance.dialougePicked.evidenceCheck == enrolledEvidence)
                 {
                     Case_Monitor.Instance.changeAnswerState(true);
                     Case_Monitor.Instance.changeAnswerCorrectness(true);

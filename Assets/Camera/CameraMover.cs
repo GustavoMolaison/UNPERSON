@@ -42,32 +42,20 @@ public class CameraMover : MonoBehaviour
         standardPosition = transform.position;
         targetPosition = transform.position;
 
-        // standardPosition = transform.position;
-        // targetPosition = transform.position;
+        
     }
 
     private void Start()
     {
-        // cam = GetComponent<Camera>(); 
+        
+        // TU SIE ZMIENIA POCZATKOWA KAMERE
         changeCamera("inMonitor1", MonitorCameraTracker.Instance.inMonitor1);
 
-        // standardPosition = transform.position;
-        // targetPosition = transform.position;
-
-
-        // standardPosition = Screen1.Instance.transform.position;
-        // targetPosition = Screen1.Instance.transform.position;
-        // targetAngle = MonitorCameraTracker.Instance.inMonitor1.monitorScript.transform.eulerAngles;
-        // Debug.Log("ANGLE: " + targetAngle);
+        
     }
 
     void Update()
     {
-        // transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
-        // cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, smoothSpeed * Time.deltaTime);
-        
-        // Quaternion targetRotation = Quaternion.Euler(targetAngle);
-        // transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
 
 
         rotationProgress = Mathf.Abs(cam.transform.rotation.eulerAngles.y - targetAngle.y) / rotationRange;
@@ -78,14 +66,14 @@ public class CameraMover : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.Euler(targetAngle.x, targetAngle.y, targetAngle.z + tilt);
         Vector3 rawEuler = new Vector3(targetAngle.x, targetAngle.y, targetAngle.z + tilt);
-        if (float.IsNaN(rawEuler.x) || float.IsNaN(rawEuler.y) || float.IsNaN(rawEuler.z) ||
-        float.IsInfinity(rawEuler.x) || float.IsInfinity(rawEuler.y) || float.IsInfinity(rawEuler.z))
-       {
-          Debug.LogError($"[CameraMover] Wykryto NaN/Infinity! targetAngle: {targetAngle}, tilt: {tilt}");
-          return; // Zamiast wywalać asercję Unity, pomiń obrót w tej klatce
-    }
-        // Debug.Log("Target Rotation: " + targetRotation.eulerAngles + ", Current Rotation: " + transform.rotation.eulerAngles + ", Tilt: " + tilt);
-        // Quaternion targetRotation = Quaternion.Euler(targetAngle);
+
+        // if (float.IsNaN(rawEuler.x) || float.IsNaN(rawEuler.y) || float.IsNaN(rawEuler.z) ||
+        // float.IsInfinity(rawEuler.x) || float.IsInfinity(rawEuler.y) || float.IsInfinity(rawEuler.z))
+    //    {
+    //       Debug.LogError($"[CameraMover] Wykryto NaN/Infinity! targetAngle: {targetAngle}, tilt: {tilt}");
+    //       return; // Zamiast wywalać asercję Unity, pomiń obrót w tej klatce
+    // }
+        
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
 
         if(updateCycleCounter > rotationOverMovingHeadStart)
@@ -110,7 +98,7 @@ public class CameraMover : MonoBehaviour
     }
 
     /// <summary>
-    /// Przesuwa obiekt p�ynnie do wskazanej pozycji, wsp�rz�dna z b�dzie zawsze na sztywno r�wna -1.
+    /// Przesuwa obiekt p�ynnie do wskazanej pozycji, wsp�rz�dna z bedzie zawsze na sztywno r�wna -1.
     /// </summary>
     
    
@@ -122,12 +110,7 @@ public class CameraMover : MonoBehaviour
         {
 
             
-            // Vector3 distanceFromCurrentViewObject = (standardPosition - MonitorCameraTracker.Instance.prevCamera.pos);
-            // Vector3 distanceFromCurrentViewObject = (standardPosition - MonitorCameraTracker.Instance.prevCamera.monitorScript.transform.position);
-            // Vector3 distanceFromNewViewObject = (standardPosition - camera.monitorScript.transform.position);
-
-            // float angleBetweenVectors = Vector3.SignedAngle(distanceFromCurrentViewObject, distanceFromNewViewObject, Vector3.up);           
-            // targetAngle = targetAngle + new Vector3(0, angleBetweenVectors, 0);
+           
             if(targetAngle != camera.monitorScript.transform.eulerAngles)
             {
                 // Wydajemy dzwiek gdy obracamy fotel damn
@@ -140,9 +123,9 @@ public class CameraMover : MonoBehaviour
 
             if (camera.zoomed)
             {
-                // targetPosition = distanceFromNewViewObject - (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
+               
                 targetPosition = camera.monitorScript.transform.position - (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
-                // targetPosition = camera.monitorScript.transform.forward
+                
             }
             else
             {

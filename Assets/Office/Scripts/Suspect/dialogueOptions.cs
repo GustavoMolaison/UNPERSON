@@ -40,8 +40,11 @@ public class DialogueOption : ScriptableObject
     
     [SerializeField] private List<DialogueOption> NewDialogueSequence = new List<DialogueOption>();
 
-    [SerializeField] private Evidence EnrolledEvidence = null;
-    private bool HasEvidence => EnrolledEvidence != null;
+    [SerializeField] private Evidence EvidenceCheck = null;
+    private bool HasEvidenceCheck => EvidenceCheck != null;
+
+    [SerializeField] private Evidence EvidenceGained = null;
+    private bool HasEvidenceGained => EvidenceGained != null;
 
     
 
@@ -53,11 +56,10 @@ public class DialogueOption : ScriptableObject
     public List<DialogueLine> dialogueContent => DialogueContent;
     public bool isNewDialogueSequence => IsNewDialogueSequence;
     public List<DialogueOption> newDialogueSequence => NewDialogueSequence;
-    public Evidence enrolledEvidence => EnrolledEvidence;
-    public bool hasEvidence => HasEvidence;
-    
-
-    
+    public Evidence evidenceCheck => EvidenceCheck;
+    public bool hasEvidenceCheck => HasEvidenceCheck;
+    public Evidence evidenceGained => EvidenceGained;
+    public bool hasEvidenceGained => HasEvidenceGained;
 
     // public List<string> xd1 => xd;
 }

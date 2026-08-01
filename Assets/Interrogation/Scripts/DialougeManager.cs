@@ -14,12 +14,12 @@ public class DialogueManager : MonoBehaviour
     }
     private struct ChatRequest
     {
-        public List<DialogueLine> Messages;
+        public DialogueOption DialOption;
         
 
-        public ChatRequest(List<DialogueLine> messages)
+        public ChatRequest(DialogueOption dialOption)
         {
-            Messages = messages;
+            DialOption = dialOption;
             
         }
     }
@@ -32,10 +32,10 @@ public class DialogueManager : MonoBehaviour
 
     [HideInInspector] public bool isProcessingQueue = false;
 
-    public void chatNewMess(List<DialogueLine> messages)
+    public void chatNewMess(DialogueOption dialOption)
     {
         // Pakujemy dane w paczk� i wrzucamy na koniec kolejki
-        chatQueue.Enqueue(new ChatRequest(messages));
+        chatQueue.Enqueue(new ChatRequest(dialOption));
 
         // Je�li system akurat �pi i nic nie robi � odpalamy maszyn� przetwarzaj�c� kolejk�
         if (!isProcessingQueue)
@@ -57,7 +57,7 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator dialogueOptionClicked(DialogueOption enrolledDialouge)
     {
-        ConversationManager.Instance.chatNewMess(enrolledDialouge.dialogueContent); //THIS FRIST
+        ConversationManager.Instance.chatNewMess(enrolledDialouge); //THIS FRIST
         DialogueOptionManager.Instance.hideDialogueOptions(); // THIS SECOND
         yield return new WaitUntil(() => isProcessingQueue == false); // THIS THIRD
 
@@ -85,13 +85,20 @@ public class DialogueManager : MonoBehaviour
             // DOPIERO TUTAJ czy�cimy layout, dok�adnie przed pokazaniem NOWEJ SERII wiadomo�ci
             // UiDialougeManager.Instance.cleanDialogueLayout(currentChat.IsPlayerChat);
 
-            // S�owo kluczowe: yield return StartCoroutine.
-            // Ta korutyna ZATRZYMA SI� i poczeka, a� ShowMessagesRoutine sko�czy wy�wietla� ca�� list�!
-            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.Messages));
+            // S�owo kluczowe: yield return StartCoroutine. 
+            // Ta korutyna ZATRZYMA SIĘ i poczeka, aż ShowMessagesRoutine sko�czy wy�wietla� ca�� list�!
+            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.DialOption.dialogueContent));
+            
+            // Dodawanie dowodów po rozmowie jeżeli flaga to true
+            if (currentChat.DialOption.hasEvidenceGained)
+            {
+                Debug.Log("Dodaje dowod: " + currentChat.DialOption.evidenceGained.name);
+                Case_Monitor.Instance.addEvidence(currentChat.DialOption.evidenceGained);
+            }
             
         }
 
-        // Kolejka pusta? Maszyna idzie spa�, czekaj�c na nowe wywo�ania chatNewMess
+        // Kolejka pusta? Maszyna idzie spa, czekajc na nowe wywoania chatNewMess
         isProcessingQueue = false;
     }
 }
