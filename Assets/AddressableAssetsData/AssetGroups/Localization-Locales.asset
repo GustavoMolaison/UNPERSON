@@ -15,8 +15,8 @@ MonoBehaviour:
   m_GroupName: Localization-Locales
   m_GUID: 374014671abb5b44cb8aac6974f8a1f0
   m_SerializeEntries:
-  - m_GUID: 84010e17ea68d9d4db3e242050fe580f
-    m_Address: English (United Kingdom) (en-GB)
+  - m_GUID: 87fd238fce630814c99fa32573b948ed
+    m_Address: Polish (pl)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale

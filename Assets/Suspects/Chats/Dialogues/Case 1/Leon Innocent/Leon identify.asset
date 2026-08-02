@@ -78,6 +78,7 @@ MonoBehaviour:
   IsNewDialogueSequence: 1
   NewDialogueSequence:
   - {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}
+  - {fileID: 11400000, guid: 6d84cebc349475a46a18f2a1dc1e4873, type: 2}
   EvidenceCheck: {fileID: 0}
   EvidenceGained: {fileID: 0}
   references:

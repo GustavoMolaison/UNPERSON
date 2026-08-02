@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 2.1_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: f1531f129cbff5148a42e3af3f03f865, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 23100316966912
+    m_Localized: "You are so sure about your wife's\_guilt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23100316966913
+    m_Localized: "But the time of death is\_strangely\_close to\_the\_time when\_you\_came\_back
+      from your shift."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23100316966914
+    m_Localized: "It's\_not\_a\_coincidence indeed."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23100316966915
+    m_Localized: "Whoever\_it is\_in her body\_now.\_It\_Set me up"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23100316966916
+    m_Localized: "Strangled Sophie right before\_I\_arrived."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23100316966917
+    m_Localized: "Well\_thought\_out\_murder\_a\_little\_difficult to pull off though."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23100316966918
+    m_Localized: "You killing her is supported by evidence and witnesses.\_And\_way
+      easier\_to do in practice."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23100316966919
+    m_Localized: "From\_the\_window in our\_apartment\_you can see\_the\_bus stop
+      I use. That\_definitely\_helped\_her."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

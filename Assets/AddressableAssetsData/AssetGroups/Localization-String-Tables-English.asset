@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-English
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-String-Tables-English
+  m_GUID: 7eefe98a0211eb94da6656ff27c61c54
+  m_SerializeEntries:
+  - m_GUID: 19dc425ef4eb3d54dbef5f3a3cfe2059
+    m_Address: Case 2.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a4ce3feb9bf19246959021f48419bf7
+    m_Address: Case 1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3acd32ac477fd004f96516090bd872cf
+    m_Address: Case1 2.0_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 937f6c1f142dde348a9efb2fbdfeb0cf
+    m_Address: Case1 0.0_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98f580237f2289340a146aaf6188576e
+    m_Address: Case1 1.0_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6b46814cf55acc42a598216e0f435dc
+    m_Address: Case1 2.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: ba5f46c8b65756d46a113b85ab91283e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 069d1c68ea11ebb4b8aec7d4a3e17cc3, type: 2}
+    - {fileID: 11400000, guid: a51bf7d880d057d4f81af73f47470f34, type: 2}
