@@ -75,6 +75,9 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:1fc1a2af2807058449cd16249f9bd9b0
   IsNewDialogueSequence: 1
   NewDialogueSequence:
   - {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}

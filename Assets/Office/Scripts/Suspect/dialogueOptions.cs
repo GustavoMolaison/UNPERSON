@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Localization;
 using System;
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "DialogueOption")]
 public class DialogueOption : ScriptableObject
@@ -35,6 +36,8 @@ public class DialogueOption : ScriptableObject
     [SerializeField] private string DialogueName;
     [SerializeField] private List<DialogueLine> DialogueContent = new List<DialogueLine>();
 
+    [SerializeField] private LocalizedStringTable DialogueTable;
+
     [Header("New Sequence")]
     [SerializeField] private bool IsNewDialogueSequence;
     
@@ -54,6 +57,7 @@ public class DialogueOption : ScriptableObject
 
     public string dialogueTitle => DialogueName;
     public List<DialogueLine> dialogueContent => DialogueContent;
+    public LocalizedStringTable dialogueTable => DialogueTable;
     public bool isNewDialogueSequence => IsNewDialogueSequence;
     public List<DialogueOption> newDialogueSequence => NewDialogueSequence;
     public Evidence evidenceCheck => EvidenceCheck;

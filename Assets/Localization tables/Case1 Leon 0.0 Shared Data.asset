@@ -10,46 +10,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Case1 0.0 Shared Data
+  m_Name: Case1 Leon 0.0 Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: Case1 0.0
-  m_TableCollectionNameGuidString: 9b4b40699db38d94f8cfdb978fa5799c
+  m_TableCollectionName: Case1 Leon 0.0
+  m_TableCollectionNameGuidString: 1fc1a2af2807058449cd16249f9bd9b0
   m_Entries:
-  - m_Id: 14899748003840
+  - m_Id: 187333337088
     m_Key: 0.0.1
     m_Metadata:
       m_Items:
-      - rid: 3459676065933820280
-  - m_Id: 14899748003841
+      - rid: 3459676073562210389
+  - m_Id: 187392057344
     m_Key: 0.0.2
     m_Metadata:
       m_Items:
-      - rid: 3459676065933820281
-  - m_Id: 14899748003842
+      - rid: 3459676073562210390
+  - m_Id: 187392057345
     m_Key: 0.0.3
     m_Metadata:
       m_Items:
-      - rid: 3459676065933820282
+      - rid: 3459676073562210391
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3459676065933820169
+    rid: 3459676073562210380
   references:
     version: 2
     RefIds:
-    - rid: 3459676065933820169
+    - rid: 3459676073562210380
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1785697178872
-    - rid: 3459676065933820280
+        m_CustomEpoch: 1785702879797
+    - rid: 3459676073562210389
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: 0
-    - rid: 3459676065933820281
+    - rid: 3459676073562210390
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: 0
-    - rid: 3459676065933820282
+    - rid: 3459676073562210391
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: 0
+        m_CommentText: 1

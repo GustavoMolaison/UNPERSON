@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Metadata;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
 
 public class UiDialougeManager : MonoBehaviour
 {
@@ -38,41 +43,64 @@ public class UiDialougeManager : MonoBehaviour
         layoutCode = chatlayout.GetComponent<TalkWindow>();
     }
     
-    public IEnumerator ShowMessagesRoutine(List<DialogueLine> messages)
+public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
+{
+    // 1. Musimy najpierw asynchronicznie pobrać właściwą tabelę StringTable
+    var tableHandle = tableReference.GetTableAsync();
+    yield return tableHandle;
+
+    if (tableHandle.Status != AsyncOperationStatus.Succeeded)
     {
+        Debug.LogError("Nie udało się załadować tabeli lokalizacyjnej!");
+        yield break;
+    }
 
-        for (int i = 0; i < messages.Count; i++)
+    StringTable table = tableHandle.Result;
+
+    // 2. Pobieramy wszystkie wpisy z tabeli (są przechowywane jako KeyValuePair)
+    var entries = new List<StringTableEntry>(table.Values);
+
+    for (int i = 0; i < entries.Count; i++)
+    {
+        StringTableEntry entry = entries[i];
+         
+        bool isPlayer = false; 
+        var sharedEntry = table.SharedData.GetEntry(entry.KeyId);
+        var commentMeta = sharedEntry.Metadata.GetMetadata<Comment>();
+
+        if(commentMeta == null)
         {
-               
-                
-                // Sprawdzamy czy mowi player czy suspcet huj wie czemu nie uzywamy tego wczesniej zeby usalic jaki jest talk window xd
-                bool isPlayer = messages[i].speaker == SpeakerType.Player ? true : false;
+            Debug.LogWarning($"Brak metadanych komentarza dla klucza: {entry.Key}");
+        }
+        else
+        {
+            Debug.Log($"Komentarz dla klucza {entry.Key}: {commentMeta.CommentText}");
+        }
+        
+        if (commentMeta != null && commentMeta.CommentText.Trim() == "1")
+            {
+                 isPlayer = true;
+            }
+        
 
-                // Wbrew nazwie nie czyści to layouta poprostu przygotowuje go do wyświetlenia następnej wiadomości
-                // Ta funkcja chyba odpowiada jak to faktycznie wizualnie sie prezentuje
-                cleanDialogueLayout(isPlayer);
-                // To poprostu przekazuje stringa jakims pojebanym sposobem bo tak dziala lokalizakcja w unity idk
-                var handle = messages[i].text.GetLocalizedStringAsync();
-                yield return handle;
-                yield return StartCoroutine(layoutCode.addMessage(handle.Result, isPlayer));
-                
-                // messages[i].text.GetLocalizedStringAsync().Completed += handle =>
-                // {
-                //   yield return StartCoroutine(layoutCode.addMessage(handle.Result, isPlayer));
-                // };
-                
+        
+        
+       
 
-                // Jeśli nie jesteśmy na ostatnim elemencie czekamy chwile zanim wysiwetlimy nastepna wiadomość
-                if (i < messages.Count - 1) 
-                {
-                yield return new WaitForSeconds(messageCooldown);
-                }
-            
+        cleanDialogueLayout(isPlayer);
 
+        // Z loaded StringTable tekst mamy od razu w strefie pamięci (LocalizedValue)
+        string messageText = entry.LocalizedValue;
 
+        yield return StartCoroutine(layoutCode.addMessage(messageText, isPlayer));
 
+        if (i < entries.Count - 1)
+        {
+            yield return new WaitForSeconds(messageCooldown);
+        }
     }
-    }
+}
+    
 
     public void forceCleanChat()
     {

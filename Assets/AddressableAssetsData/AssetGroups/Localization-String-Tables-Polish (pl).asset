@@ -15,39 +15,8 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Polish (pl)
   m_GUID: 95cc05a5f9b18b540bdd09ae54b93195
   m_SerializeEntries:
-  - m_GUID: 2c5cf6d03744ea64f8b4c016d2c14af0
-    m_Address: Case 1_pl
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pl
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4c91a5c80e371dc46b58a4a6d932701f
-    m_Address: Case1 2.1_pl
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pl
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 637b196e82d47da47bf459a2191b21d7
-    m_Address: Case 2.1_pl
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pl
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8f65aa2b1039f384e8b4f91afd06860d
-    m_Address: Case1 2.0_pl
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pl
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cb8cc7007b0d7854cb7429ec2a6549b8
-    m_Address: Case1 0.0_pl
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-pl
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ded23ed1d2253034f861c107e57bddb9
-    m_Address: Case1 1.0_pl
+  - m_GUID: c15aecfbca766534bbd968ca837875f6
+    m_Address: Case1 Leon 0.0_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

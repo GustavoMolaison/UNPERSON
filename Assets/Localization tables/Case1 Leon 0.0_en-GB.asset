@@ -10,26 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Case1 0.0_en-GB
+  m_Name: Case1 Leon 0.0_en-GB
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
   m_LocaleId:
     m_Code: en-GB
-  m_SharedData: {fileID: 11400000, guid: 9b4b40699db38d94f8cfdb978fa5799c, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 1fc1a2af2807058449cd16249f9bd9b0, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 14899748003840
+  - m_Id: 187333337088
     m_Localized: "I'm\_Leon Friedrich, 34 years old, working in a LED factory.\_I've\_been
       a citizen of the Munster closed city since the beginning of the thing."
     m_Metadata:
       m_Items: []
-  - m_Id: 14899748003841
+  - m_Id: 187392057344
     m_Localized: "Life sucked all the way since then, at least now it\_can't\_get
       worse.\_It's\_a strange feeling looking at all the people who still have close
       ones\_you know.\_Just waiting for the looming tragedy.\_"
     m_Metadata:
       m_Items: []
-  - m_Id: 14899748003842
+  - m_Id: 187392057345
     m_Localized: "We all got used to it.\_\_"
     m_Metadata:
       m_Items: []

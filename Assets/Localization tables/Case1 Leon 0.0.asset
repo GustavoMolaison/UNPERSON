@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: Case1 0.0
+  m_Name: Case1 Leon 0.0
   m_EditorClassIdentifier: Unity.Localization.Editor::UnityEditor.Localization.StringTableCollection
-  m_SharedTableData: {fileID: 11400000, guid: 9b4b40699db38d94f8cfdb978fa5799c, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 1fc1a2af2807058449cd16249f9bd9b0, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 937f6c1f142dde348a9efb2fbdfeb0cf, type: 2}
-  - {fileID: 11400000, guid: cb8cc7007b0d7854cb7429ec2a6549b8, type: 2}
+  - {fileID: 11400000, guid: e7a35fa708480414598105bc4de10af0, type: 2}
+  - {fileID: 11400000, guid: c15aecfbca766534bbd968ca837875f6, type: 2}
   m_Extensions:
-  - rid: 3459676065933820256
+  - rid: 3459676073562210381
   m_Group: String Table
   references:
     version: 2
     RefIds:
-    - rid: 3459676065933820256
+    - rid: 3459676073562210381
       type: {class: CsvExtension, ns: UnityEditor.Localization.Plugins.CSV, asm: Unity.Localization.Editor}
       data:
         m_Collection: {fileID: 11400000}
         m_ColumnsList:
-        - rid: 3459676065933820265
-        - rid: 3459676065933820266
-        - rid: 3459676065933820267
+        - rid: 3459676073562210382
+        - rid: 3459676073562210383
+        - rid: 3459676073562210384
         m_ConnectedFile: 
-    - rid: 3459676065933820265
+    - rid: 3459676073562210382
       type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
       data:
         m_IncludeId: 1
@@ -39,7 +39,7 @@ MonoBehaviour:
         m_KeyFieldName: Key
         m_IdFieldName: Id
         m_CommentFieldName: Shared Comments
-    - rid: 3459676065933820266
+    - rid: 3459676073562210383
       type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
       data:
         m_LocaleIdentifier:
@@ -47,7 +47,7 @@ MonoBehaviour:
         m_FieldName: English (United Kingdom)(en-GB)
         m_CommentFieldName: English (United Kingdom)(en-GB) Comments
         m_IncludeComments: 1
-    - rid: 3459676065933820267
+    - rid: 3459676073562210384
       type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
       data:
         m_LocaleIdentifier:

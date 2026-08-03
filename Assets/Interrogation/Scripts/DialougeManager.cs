@@ -87,7 +87,7 @@ public class DialogueManager : MonoBehaviour
 
             // S�owo kluczowe: yield return StartCoroutine. 
             // Ta korutyna ZATRZYMA SIĘ i poczeka, aż ShowMessagesRoutine sko�czy wy�wietla� ca�� list�!
-            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.DialOption.dialogueContent));
+            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.DialOption.dialogueTable));
             
             // Dodawanie dowodów po rozmowie jeżeli flaga to true
             if (currentChat.DialOption.hasEvidenceGained)
