@@ -44,12 +44,12 @@ MonoBehaviour:
     - rid: 3459676073562210389
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: 0
+        m_CommentText: p0 s1 cw
     - rid: 3459676073562210390
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: 0
+        m_CommentText: p0 s0 cw
     - rid: 3459676073562210391
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: 1
+        m_CommentText: p1 s0 cw

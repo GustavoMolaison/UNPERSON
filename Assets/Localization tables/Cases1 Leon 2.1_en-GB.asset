@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Cases1 Leon 2.1_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: f822a387b99192c43aefe0127d2596b3, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22081953792
+    m_Localized: You are so sure about your wife's guilt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22140674048
+    m_Localized: But the time of death is strangely close to the time when you came
+      back from your shift.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22140674049
+    m_Localized: It's not a coincidence indeed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22140674050
+    m_Localized: Whoever it is in her body now. It set me up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22140674051
+    m_Localized: Strangled Sophie right before I arrived.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22140674052
+    m_Localized: Well-thought-out murder, a little difficult to pull off, though.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22140674053
+    m_Localized: You killing her is supported by evidence and witnesses. And way
+      easier to do in practice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22140674054
+    m_Localized: From the window in our apartment you can see the bus stop I use.
+      That definitely helped her.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

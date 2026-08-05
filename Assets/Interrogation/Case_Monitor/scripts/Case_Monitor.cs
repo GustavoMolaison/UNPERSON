@@ -24,23 +24,55 @@ public class Case_Monitor : MonitorBase
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-
+    
+    
     private void Start()
     {
         foreach (Evidence e in GameManager.Instance.evidenceList)
         {
+            e.currentEvidenceUpdateState = -1;
             GameObject newpanel = Instantiate(evidencePanelPF, viewContent.transform, false);
             EvidencePanelManager panelManager = newpanel.GetComponent<EvidencePanelManager>();
             panelManager.enrollEvidence(e);
+            
         }
     }
-    public void addEvidence(Evidence e)
+    public void addEvidence(Evidence e, int index = 0)
     {
+        if(GameManager.Instance.evidenceList.Contains(e))
+        {
+            updateEvidence(e, index);
+            return;
+        }
+
         GameManager.Instance.evidenceList.Add(e);
 
         GameObject newpanel = Instantiate(evidencePanelPF, viewContent.transform, false);
         EvidencePanelManager panelManager = newpanel.GetComponent<EvidencePanelManager>();
         panelManager.enrollEvidence(e);
+    }
+
+    public void updateEvidence(Evidence e, int index = 0)
+    {
+        if(!GameManager.Instance.evidenceList.Contains(e))
+        {
+            addEvidence(e, index);
+            return;
+        }
+
+        foreach (Transform child in viewContent.transform)
+        {
+            EvidencePanelManager evidencePanel = child.GetComponent<EvidencePanelManager>();
+            if(evidencePanel.enrolledEvidence == e)
+            {
+                if(e.currentEvidenceUpdateState > index)
+                {
+                    return;
+                }
+                evidencePanel.enrollEvidence(e.UpdatedEvidenceVersion[index]);
+                e.currentEvidenceUpdateState = index;
+            }
+        }
     }
 
     public void highLightEvidences(bool light) 

@@ -14,8 +14,10 @@ public class DialogueOptionManager : MonoBehaviour
     
 
     [HideInInspector] public DialogueOption dialougePicked;
+    [SerializeField] private DialogueOption BackOption;
 
-
+    private List<DialogueOption> prevDialOptions;
+    public List<DialogueOption> backDialOptions;
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -38,30 +40,71 @@ public class DialogueOptionManager : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
     }
+    
+    public List<DialogueOption> getCurrentDialogueOptions()
+    {
+        List<DialogueOption> currentOptions = new List<DialogueOption>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+
+           if (child.gameObject.activeSelf && child.TryGetComponent<DialogueOptionWindow>(out var window))
+              {
+               if (window.enrolledDialogue != null)
+               {
+                currentOptions.Add(window.enrolledDialogue);
+               }
+              }
+        }
+        return currentOptions;
+    }
 
     
     private List<string> initializedDialogues = new List<string>();
 
    
-    public void dialoguesChange(bool newDialogueSequence, List<DialogueOption> DialogueSequences = null)
-    {
-    hideDialogueOptions();
-    Debug.Log("Zmieniam dialogi");
+    public void dialoguesChange(bool newDialogueSequence, List<DialogueOption> DialogueSequences = null, bool back = false)
+{
+    
+    
 
-    List<DialogueOption> optionsToLoad;
+    List<DialogueOption> optionsToLoad = new List<DialogueOption>();
 
-    // 1. DECYZJA: Wybieramy czy ładujemy nowe drzewko dialogowe
-    //             czy wracamy do początkowych opcji.
-    if (newDialogueSequence && DialogueSequences != null)
+    
+    if (back)
     {
-        optionsToLoad = DialogueSequences;
+      if (backDialOptions != null)
+       {
+            optionsToLoad.AddRange(backDialOptions);
+        }
     }
     else
     {
-        optionsToLoad = SuspectTracker.instance.currentSuspect.DialogueOptions;
+        
+        if (newDialogueSequence && DialogueSequences != null)
+        {
+            optionsToLoad.AddRange(DialogueSequences);
+        }
+        else if (prevDialOptions != null)
+        {
+            optionsToLoad.AddRange(prevDialOptions);
+        }
+        else if (SuspectTracker.instance.currentSuspect != null)
+        {
+            optionsToLoad.AddRange(SuspectTracker.instance.currentSuspect.DialogueOptions);
+        }
     }
 
+    
+    if (BackOption != null)
+    {
+        optionsToLoad.Add(BackOption);
+    }
+    // backDialOptions = getCurrentDialogueOptions();
+    // hideDialogueOptions();
      
+    
+
 
     // 2. GŁÓWNA PĘTLA: Jedna logika dla wybranej listy.
     foreach (DialogueOption option in optionsToLoad)
@@ -69,7 +112,7 @@ public class DialogueOptionManager : MonoBehaviour
         // Jeśli nie mamy jeszcze tego dialogu
         if (!initializedDialogues.Contains(option.ID))
         {
-            Debug.Log("NO ID");
+            
             GameObject window = Instantiate(dialoguePickWindow, transform, false);
             DialogueOptionWindow windowScript = window.GetComponent<DialogueOptionWindow>();
             
@@ -93,5 +136,6 @@ public class DialogueOptionManager : MonoBehaviour
             }
         }
     }
+prevDialOptions = getCurrentDialogueOptions();
 }
 }

@@ -58,18 +58,21 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator dialogueOptionClicked(DialogueOption enrolledDialouge)
     {
         ConversationManager.Instance.chatNewMess(enrolledDialouge); //THIS FRIST
-        DialogueOptionManager.Instance.hideDialogueOptions(); // THIS SECOND
-        yield return new WaitUntil(() => isProcessingQueue == false); // THIS THIRD
+        // DialogueOptionManager.Instance.backDialOptions = DialogueOptionManager.Instance.getCurrentDialogueOptions();// THIS SECOND
+        DialogueOptionManager.Instance.hideDialogueOptions(); // THIS THIRD
+        yield return new WaitUntil(() => isProcessingQueue == false); // THIS FORTH
 
         // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialogueContent);
         if(enrolledDialouge.isNewDialogueSequence)
         {
-            DialogueOptionManager.Instance.dialoguesChange(true, enrolledDialouge.newDialogueSequence);
+            DialogueOptionManager.Instance.dialoguesChange(true, enrolledDialouge.newDialogueSequence, enrolledDialouge.isBackOption);
         }
         else
         {
-            DialogueOptionManager.Instance.dialoguesChange(false);
+            DialogueOptionManager.Instance.dialoguesChange(false, null, enrolledDialouge.isBackOption);
         }
+
+        // DialogueOptionManager.Instance.backDialOptions = DialogueOptionManager.Instance.getCurrentDialogueOptions();
     } 
 
     private IEnumerator ProcessQueueRoutine()
@@ -94,6 +97,11 @@ public class DialogueManager : MonoBehaviour
             {
                 Debug.Log("Dodaje dowod: " + currentChat.DialOption.evidenceGained.name);
                 Case_Monitor.Instance.addEvidence(currentChat.DialOption.evidenceGained);
+            }
+            if (currentChat.DialOption.hasEvidenceToUpdate)
+            {
+                Debug.Log("Aktualizuje dowod: " + currentChat.DialOption.evidenceToUpdate.name);
+                Case_Monitor.Instance.updateEvidence(currentChat.DialOption.evidenceToUpdate, currentChat.DialOption.evidenceUpdateIndex);
             }
             
         }

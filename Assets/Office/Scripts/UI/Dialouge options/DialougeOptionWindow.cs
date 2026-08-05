@@ -51,7 +51,7 @@ public class DialogueOptionWindow : MonoBehaviour
 
         if (graphImage != null)
         {
-            Debug.Log("HALOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+            
             // WA�NE: 'new Material(...)' tworzy unikaln� instancj� w pami�ci,
             // na podstawie materia�u, kt�ry Image ma przypisany w Inspektorze.
             instantiatedMaterial = new Material(graphImage.material);
@@ -122,22 +122,22 @@ public class DialogueOptionWindow : MonoBehaviour
 
     public void onClick()
     {
-        StartCoroutine(HandleEvidenceSequence());
+        StartCoroutine(HandleNewDialogueSequence());
     }
 
-    private IEnumerator HandleEvidenceSequence()
+    private IEnumerator HandleNewDialogueSequence()
     {
-        Debug.Log("co :)(>:");
-        Debug.Log(dialogueDisabled);
+       
+       
         if (!dialogueDisabled)
         {
-            Debug.Log("CZEMU :)(>:");
+            
             if (enrolledDialogue.hasEvidenceCheck)
             {
-                Debug.Log("CZEMU");
+               
                 DialogueOptionManager.Instance.dialougePicked = enrolledDialogue;
 
-                Debug.Log("Yellow");
+              
                 Holdanimation(true);
                 Case_Monitor.Instance.EvidencehightLight.lightOn();
                 Case_Monitor.Instance.highLightEvidences(true);

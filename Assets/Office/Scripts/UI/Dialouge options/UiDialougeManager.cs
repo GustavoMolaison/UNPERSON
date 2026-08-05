@@ -64,10 +64,23 @@ public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
     {
         StringTableEntry entry = entries[i];
          
-        bool isPlayer = false; 
+        bool isPlayer;
+        bool isSlowed;
+        Color color;
+
         var sharedEntry = table.SharedData.GetEntry(entry.KeyId);
         var commentMeta = sharedEntry.Metadata.GetMetadata<Comment>();
+        
+        (isPlayer, isSlowed, color) = metaDataParser(commentMeta.CommentText);
+        Debug.Log("isPlayer: " + isPlayer);
+        Debug.Log("isSlowed: " + isSlowed);
+        Debug.Log("color: " + color);
 
+        if(isSlowed == true)
+        {
+            Debug.Log(" jesst true sskurwysn");
+        }
+        
         if(commentMeta == null)
         {
             Debug.LogWarning($"Brak metadanych komentarza dla klucza: {entry.Key}");
@@ -223,6 +236,41 @@ public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
        
 
        
+    }
+
+    private (bool, bool, Color) metaDataParser(string data)
+    {
+        bool isPlayer = false;
+        bool isSlowed = false;
+
+        List<bool> boolList = new List<bool> { isPlayer, isSlowed };
+
+        string[] words = data.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
+
+        for(int i = 0; i < words.Length; i++)
+        {
+            if(i == 2)
+                continue;
+
+            boolList[i] = words[i][1] == '1';
+            Debug.Log("Bool " + i + ": " + boolList[i]);
+        }
+        
+
+        Color color; 
+        switch (words[2])
+        {
+            case "red":
+                color = Color.red;
+                break;
+
+            default:
+                color = Color.white;
+                break;
+            
+        }
+
+        return (boolList[0], boolList[1], color);
     }
 }
 

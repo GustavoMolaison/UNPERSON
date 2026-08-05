@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case1 Leon 2.3_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 1d08a9d557eed5940921c1eadcceb5cc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 30361509888
+    m_Localized: Has your wife ever given any signs of being an UnPerson?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870016
+    m_Localized: If her signs was making my life as miserable as possible then yes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870017
+    m_Localized: But otherwise, she was a perfect citizen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870018
+    m_Localized: She followed government instructions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870019
+    m_Localized: Reported any suspicious activities.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870020
+    m_Localized: 'Took care of public ownership. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870021
+    m_Localized: Avoided any unnecessary risk of any kind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870022
+    m_Localized: he only exceptions she would make to break those rules
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870023
+    m_Localized: Were either taking care of Sophie.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870024
+    m_Localized: Or to beat me down a litte more.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870025
+    m_Localized: Noted.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870026
+    m_Localized: Now look at her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870027
+    m_Localized: Or rather it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870028
+    m_Localized: '*sighs*'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870029
+    m_Localized: It smells of UnPerson from miles.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870030
+    m_Localized: Fack this bloody ass world.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870031
+    m_Localized: Why would anybody deserve such fate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870032
+    m_Localized: Thats why we are here. Telling the truth. Gathering information
+      that will help face the crisis.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30390870033
+    m_Localized: Hmm, yea.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

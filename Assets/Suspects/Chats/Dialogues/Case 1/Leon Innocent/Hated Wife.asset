@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
+  m_Name: Hated Wife
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  uniqueID: a28a6dc7-1799-40e9-9fc8-3be302be7993
+  DialogueName: You hated your wife?
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:6135db0ae39e6484391ebe6bee755da0
+  IsNewDialogueSequence: 0
+  NewDialogueSequence: []
+  EvidenceCheck: {fileID: 0}
+  EvidenceGained: {fileID: 11400000, guid: 89690ef3e7bcf204e905810d5c6de683, type: 2}
+  EvidenceToUpdate: {fileID: 0}
+  EvidenceUpdateIndex: 0
+  IsBackOption: 0

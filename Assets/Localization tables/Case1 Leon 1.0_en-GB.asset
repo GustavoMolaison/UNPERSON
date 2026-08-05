@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case1 Leon 1.0_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: e280720a76b856f46921abd28e618b03, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 23449296896
+    m_Localized: Tell me your story from the beginning to end
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23508017152
+    m_Localized: You want to torture me some more?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23512211456
+    m_Localized: I guess that's your job poor man.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23512211457
+    m_Localized: I still try to be short.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405760
+    m_Localized: You can imagine i dont enjoy talking about this with stranger i
+      barely see through that foggy ass window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405761
+    m_Localized: I came back from work like always. Living room all in a mess, chairs
+      lying on the ground, water everywhere.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405762
+    m_Localized: I thought something happened, so I rushed to Sophie's room.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405763
+    m_Localized: I found her on the bed with a bag on her head.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405764
+    m_Localized: When I took it off, I saw a strangled kid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405765
+    m_Localized: My kid, the only thing that made any sense for the past six years.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405766
+    m_Localized: "*Sight*\_I'm\_sorry, it must have been horrible.\_"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405767
+    m_Localized: "No shit.\_"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405768
+    m_Localized: At first, old instincts made me call for help, but when I heard
+      her coming into the apartment, I knew what happened.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405769
+    m_Localized: I just raged at everything and attacked her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405770
+    m_Localized: "The bitch was acting like she\_didn't\_know, hoping to pin it on
+      me."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405771
+    m_Localized: 'You couldn''t know it was her at the time. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405772
+    m_Localized: "Why would you attack her? The kid\_maybe still\_could be saved."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405773
+    m_Localized: "Oh,\_don't\_give me that fucking crap. She was dead. I\_didn't\_need
+      a doctor, even if any would arrive in the next hour."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23516405774
+    m_Localized: "\_It was my outrage at this whole fucking world and\_maybe at\_her."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23520600064
+    m_Localized: Lamenting all the time, caring so fucking much, like the world didn't
+      end 25 years ago.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23520600065
+    m_Localized: The last satisfaction I could get before turning into this.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

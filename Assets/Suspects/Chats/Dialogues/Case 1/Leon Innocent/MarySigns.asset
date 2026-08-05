@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
+  m_Name: MarySigns
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  uniqueID: dc2bde34-3a68-4cb4-b0ef-4b02f025bba3
+  DialogueName: Marry UnPerson signs
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:1d08a9d557eed5940921c1eadcceb5cc
+  IsNewDialogueSequence: 0
+  NewDialogueSequence: []
+  EvidenceCheck: {fileID: 0}
+  EvidenceGained: {fileID: 0}
+  EvidenceToUpdate: {fileID: 0}
+  EvidenceUpdateIndex: 0
+  IsBackOption: 0

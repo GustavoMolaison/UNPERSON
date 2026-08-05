@@ -10,25 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
-  m_Name: NewDialogue
+  m_Name: Back
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
-  uniqueID: 81725229-56e7-48e7-908d-993a2b8886cf
-  DialogueName: 
-  DialogueContent:
-  - speaker: 0
-    text:
-      m_TableReference:
-        m_TableCollectionName: 
-      m_TableEntryReference:
-        m_KeyId: 0
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
+  uniqueID: df549f83-39c4-4234-b3e6-3d35943e08a2
+  DialogueName: <--
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:b450ee0d05152f94fa7e4a8fe6ee1259
   IsNewDialogueSequence: 0
   NewDialogueSequence: []
   EvidenceCheck: {fileID: 0}
   EvidenceGained: {fileID: 0}
-  references:
-    version: 2
-    RefIds: []
+  EvidenceToUpdate: {fileID: 0}
+  EvidenceUpdateIndex: 0
+  IsBackOption: 1

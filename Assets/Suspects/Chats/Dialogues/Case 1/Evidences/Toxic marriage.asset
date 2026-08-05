@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef2e7f4ffa57884e9969bf7d3084f5d, type: 3}
-  m_Name: Evidence 1
+  m_Name: Toxic marriage
   m_EditorClassIdentifier: Assembly-CSharp::Evidence
-  title: Szczesny
-  cover: odpisz na maila
-  details: "ch\u0142op nie odpisuje na maila"
+  title: Toxic Marriage
+  cover: 
+  details: 
   sprite: {fileID: 0}
-  isVisible: 1
+  isVisible: 0
+  updatedEvidenceVersion: []
+  currentEvidenceUpdateState: -1

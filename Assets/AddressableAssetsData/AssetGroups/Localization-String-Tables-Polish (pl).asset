@@ -15,8 +15,51 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Polish (pl)
   m_GUID: 95cc05a5f9b18b540bdd09ae54b93195
   m_SerializeEntries:
+  - m_GUID: 08357027e4b178547ab16883762996ac
+    m_Address: Back_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45b08e14144c5e248913e2d100f8b66e
+    m_Address: Case1 Leon 1.0.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97af246d7aa83d54d8e1a228da8e8c22
+    m_Address: Case1 Leon 1.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac5d56e980767904297ad7f1f65ae139
+    m_Address: Cases1 Leon 2.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b98cd5e528cb307419cb3f319b886304
+    m_Address: Case1 Leon 2.2_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c15aecfbca766534bbd968ca837875f6
     m_Address: Case1 Leon 0.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3653075e866746499e0022ebcb87244
+    m_Address: Case1 Leon 2.3_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6752617dbb8ce04ea130061efd0615f
+    m_Address: Case1 Leon 2.0.0_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

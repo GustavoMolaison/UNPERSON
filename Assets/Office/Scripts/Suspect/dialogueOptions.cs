@@ -34,7 +34,7 @@ public class DialogueOption : ScriptableObject
 
     [Header("Current Sequence")]
     [SerializeField] private string DialogueName;
-    [SerializeField] private List<DialogueLine> DialogueContent = new List<DialogueLine>();
+    // [SerializeField] private List<DialogueLine> DialogueContent = new List<DialogueLine>();
 
     [SerializeField] private LocalizedStringTable DialogueTable;
 
@@ -49,6 +49,14 @@ public class DialogueOption : ScriptableObject
     [SerializeField] private Evidence EvidenceGained = null;
     private bool HasEvidenceGained => EvidenceGained != null;
 
+    [SerializeField] private Evidence EvidenceToUpdate = null;
+    private bool HasEvidenceToUpdate => EvidenceToUpdate != null;
+
+    [SerializeField] private int EvidenceUpdateIndex = 0;
+
+
+    [SerializeField] private bool IsBackOption = false;
+
     
 
 
@@ -56,7 +64,7 @@ public class DialogueOption : ScriptableObject
 
 
     public string dialogueTitle => DialogueName;
-    public List<DialogueLine> dialogueContent => DialogueContent;
+    // public List<DialogueLine> dialogueContent => DialogueContent;
     public LocalizedStringTable dialogueTable => DialogueTable;
     public bool isNewDialogueSequence => IsNewDialogueSequence;
     public List<DialogueOption> newDialogueSequence => NewDialogueSequence;
@@ -64,6 +72,9 @@ public class DialogueOption : ScriptableObject
     public bool hasEvidenceCheck => HasEvidenceCheck;
     public Evidence evidenceGained => EvidenceGained;
     public bool hasEvidenceGained => HasEvidenceGained;
-
+    public Evidence evidenceToUpdate => EvidenceToUpdate;
+    public bool hasEvidenceToUpdate => HasEvidenceToUpdate;
+    public int evidenceUpdateIndex => EvidenceUpdateIndex;
+    public bool isBackOption => IsBackOption;
     // public List<string> xd1 => xd;
 }
