@@ -63,14 +63,10 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitUntil(() => isProcessingQueue == false); // THIS FORTH
 
         // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialogueContent);
-        if(enrolledDialouge.isNewDialogueSequence)
-        {
-            DialogueOptionManager.Instance.dialoguesChange(true, enrolledDialouge.newDialogueSequence, enrolledDialouge.isBackOption);
-        }
-        else
-        {
-            DialogueOptionManager.Instance.dialoguesChange(false, null, enrolledDialouge.isBackOption);
-        }
+        
+         DialogueOptionManager.Instance.dialoguesChange(enrolledDialouge);
+        
+        
 
         // DialogueOptionManager.Instance.backDialOptions = DialogueOptionManager.Instance.getCurrentDialogueOptions();
     } 

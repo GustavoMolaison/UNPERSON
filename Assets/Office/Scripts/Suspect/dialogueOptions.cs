@@ -57,6 +57,8 @@ public class DialogueOption : ScriptableObject
 
     [SerializeField] private bool IsBackOption = false;
 
+    [HideInInspector] public DialougeTreeCreator.NodeTree nodeTree;
+
     
 
 

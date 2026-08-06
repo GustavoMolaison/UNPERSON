@@ -16,6 +16,8 @@ public class DialogueOptionManager : MonoBehaviour
     [HideInInspector] public DialogueOption dialougePicked;
     [SerializeField] private DialogueOption BackOption;
 
+    private DialogueOption currentDialogueOption;
+
     private List<DialogueOption> prevDialOptions;
     public List<DialogueOption> backDialOptions;
     void Awake()
@@ -32,12 +34,32 @@ public class DialogueOptionManager : MonoBehaviour
             Destroy(transform.GetChild(i).gameObject);
         }
     }
-
+    
+    private List<DialogueOption> disabledOptions = new List<DialogueOption>();
     public void hideDialogueOptions()
     {
+        disabledOptions.Clear();
         for (int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            GameObject child = transform.GetChild(i).gameObject;
+
+        // Sprawdzamy, czy obiekt jest aktualnie aktywny
+          if (child.activeSelf)
+          {
+            DialogueOptionWindow window = child.GetComponent<DialogueOptionWindow>();
+
+            // Zawsze sprawdzaj czy komponent istnieje, żeby nie dostać NullReferenceException
+            if (window != null && window.enrolledDialogue != null)
+                {
+                 // Sprawdzamy czy to NIE JEST opcja powrotu
+                 if (!window.enrolledDialogue.isBackOption) 
+                     {
+                        disabledOptions.Add(window.enrolledDialogue);
+                     }
+                }
+
+            child.SetActive(false); // Wyłączasz go po ogarnięciu logiki
+          }
         }
     }
     
@@ -62,21 +84,70 @@ public class DialogueOptionManager : MonoBehaviour
     
     private List<string> initializedDialogues = new List<string>();
 
-   
-    public void dialoguesChange(bool newDialogueSequence, List<DialogueOption> DialogueSequences = null, bool back = false)
+    public void initilalizeSuspectOptions()
+    {
+        hideDialogueOptions();
+        turnOnChossenDialouges(SuspectTracker.instance.currentSuspect.DialogueOptions);
+    }
+
+    public void dialoguesChange(DialogueOption enrolledDialouge)
 {
-    
-    
+    bool newDialogueSequence = enrolledDialouge.isNewDialogueSequence;
+    List<DialogueOption> DialogueSequences = enrolledDialouge.newDialogueSequence;
+    bool back = enrolledDialouge.isBackOption;
+
 
     List<DialogueOption> optionsToLoad = new List<DialogueOption>();
 
     
     if (back)
     {
-      if (backDialOptions != null)
+      if (currentDialogueOption != null)
        {
-            optionsToLoad.AddRange(backDialOptions);
-        }
+           
+            // if(prevDialOptions == null)
+            //     {
+            //         Debug.Log("skocze zaraz");
+            //     }
+            // if(prevDialOptions[0] == null)
+            //     {
+            //         Debug.Log("skocze zaraz2");
+            //     } 
+
+            // if(prevDialOptions[0].nodeTree == null)
+            //     {
+            //         Debug.Log("skocze zaraz3");
+            //     } 
+
+            // if(prevDialOptions[0].nodeTree.parents == null)
+            //     {
+            //         Debug.Log("skocze zaraz4");
+            //     } 
+            //  if(prevDialOptions[0].nodeTree.parents[0] == null)
+            //     {
+            //         Debug.Log("skocze zaraz5");
+            //     } 
+            //  if(prevDialOptions[0].nodeTree.parents[0].data == null)
+            //     {
+            //         Debug.Log("skocze zaraz6");
+            //     } 
+            if (disabledOptions[0].nodeTree.parents[0].parents.Count > 0)
+            {
+                for(int i = 0; i < disabledOptions[0].nodeTree.parents[0].parents[0].children.Count; i++)
+                {
+                  optionsToLoad.Add(disabledOptions[0].nodeTree.parents[0].parents[0].children[i].data);
+                }
+            }
+            else
+            {
+                for(int i = 0; i < DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect].Count; i++)    
+                {
+                   optionsToLoad.Add(DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect][i].data);
+                }
+            }
+            
+            
+       }
     }
     else
     {
@@ -84,6 +155,7 @@ public class DialogueOptionManager : MonoBehaviour
         if (newDialogueSequence && DialogueSequences != null)
         {
             optionsToLoad.AddRange(DialogueSequences);
+            
         }
         else if (prevDialOptions != null)
         {
@@ -100,14 +172,16 @@ public class DialogueOptionManager : MonoBehaviour
     {
         optionsToLoad.Add(BackOption);
     }
-    // backDialOptions = getCurrentDialogueOptions();
-    // hideDialogueOptions();
-     
-    
 
+    turnOnChossenDialouges(optionsToLoad);
 
-    // 2. GŁÓWNA PĘTLA: Jedna logika dla wybranej listy.
-    foreach (DialogueOption option in optionsToLoad)
+    prevDialOptions = getCurrentDialogueOptions();
+    currentDialogueOption = enrolledDialouge;
+
+}
+private void turnOnChossenDialouges(List<DialogueOption> optionsToLoad)
+    {
+        foreach (DialogueOption option in optionsToLoad)
     {
         // Jeśli nie mamy jeszcze tego dialogu
         if (!initializedDialogues.Contains(option.ID))
@@ -136,6 +210,5 @@ public class DialogueOptionManager : MonoBehaviour
             }
         }
     }
-prevDialOptions = getCurrentDialogueOptions();
-}
+    }
 }

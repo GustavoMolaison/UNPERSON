@@ -1328,6 +1328,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1720487850983244151, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
   m_PrefabInstance: {fileID: 2095491452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &698863048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698863033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66bd68a6de7e75741865e8dc7e317ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialougeTreeCreator
 --- !u!1001 &765894751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3459,6 +3471,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4754774463398229677, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
       insertIndex: 4
       addedObject: {fileID: 698863040}
+    - targetCorrespondingSourceObject: {fileID: 4754774463398229677, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 698863048}
   m_SourcePrefab: {fileID: 100100000, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
 --- !u!224 &2095491453 stripped
 RectTransform:
