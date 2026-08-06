@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class EvidencePanelManager : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] public TextMeshProUGUI title;
-    [HideInInspector] private Evidence enrolledEvidence;
+    [HideInInspector] public Evidence enrolledEvidence;
     [SerializeField] public HighLight highlight;
 
     

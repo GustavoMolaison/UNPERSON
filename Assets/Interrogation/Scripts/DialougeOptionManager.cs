@@ -14,8 +14,12 @@ public class DialogueOptionManager : MonoBehaviour
     
 
     [HideInInspector] public DialogueOption dialougePicked;
+    [SerializeField] private DialogueOption BackOption;
 
+    private DialogueOption currentDialogueOption;
 
+    private List<DialogueOption> prevDialOptions;
+    public List<DialogueOption> backDialOptions;
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -30,46 +34,159 @@ public class DialogueOptionManager : MonoBehaviour
             Destroy(transform.GetChild(i).gameObject);
         }
     }
-
+    
+    private List<DialogueOption> disabledOptions = new List<DialogueOption>();
     public void hideDialogueOptions()
     {
+        disabledOptions.Clear();
         for (int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            GameObject child = transform.GetChild(i).gameObject;
+
+        // Sprawdzamy, czy obiekt jest aktualnie aktywny
+          if (child.activeSelf)
+          {
+            DialogueOptionWindow window = child.GetComponent<DialogueOptionWindow>();
+
+            // Zawsze sprawdzaj czy komponent istnieje, żeby nie dostać NullReferenceException
+            if (window != null && window.enrolledDialogue != null)
+                {
+                 // Sprawdzamy czy to NIE JEST opcja powrotu
+                 if (!window.enrolledDialogue.isBackOption) 
+                     {
+                        disabledOptions.Add(window.enrolledDialogue);
+                     }
+                }
+
+            child.SetActive(false); // Wyłączasz go po ogarnięciu logiki
+          }
         }
+    }
+    
+    public List<DialogueOption> getCurrentDialogueOptions()
+    {
+        List<DialogueOption> currentOptions = new List<DialogueOption>();
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+
+           if (child.gameObject.activeSelf && child.TryGetComponent<DialogueOptionWindow>(out var window))
+              {
+               if (window.enrolledDialogue != null)
+               {
+                currentOptions.Add(window.enrolledDialogue);
+               }
+              }
+        }
+        return currentOptions;
     }
 
     
     private List<string> initializedDialogues = new List<string>();
 
-   
-    public void dialoguesChange(bool newDialogueSequence, List<DialogueOption> DialogueSequences = null)
+    public void initilalizeSuspectOptions()
     {
-    hideDialogueOptions();
-    Debug.Log("Zmieniam dialogi");
+        hideDialogueOptions();
+        turnOnChossenDialouges(SuspectTracker.instance.currentSuspect.DialogueOptions);
+    }
 
-    List<DialogueOption> optionsToLoad;
+    public void dialoguesChange(DialogueOption enrolledDialouge)
+{
+    bool newDialogueSequence = enrolledDialouge.isNewDialogueSequence;
+    List<DialogueOption> DialogueSequences = enrolledDialouge.newDialogueSequence;
+    bool back = enrolledDialouge.isBackOption;
 
-    // 1. DECYZJA: Wybieramy czy ładujemy nowe drzewko dialogowe
-    //             czy wracamy do początkowych opcji.
-    if (newDialogueSequence && DialogueSequences != null)
+
+    List<DialogueOption> optionsToLoad = new List<DialogueOption>();
+
+    
+    if (back)
     {
-        optionsToLoad = DialogueSequences;
+      if (currentDialogueOption != null)
+       {
+           
+            // if(prevDialOptions == null)
+            //     {
+            //         Debug.Log("skocze zaraz");
+            //     }
+            // if(prevDialOptions[0] == null)
+            //     {
+            //         Debug.Log("skocze zaraz2");
+            //     } 
+
+            // if(prevDialOptions[0].nodeTree == null)
+            //     {
+            //         Debug.Log("skocze zaraz3");
+            //     } 
+
+            // if(prevDialOptions[0].nodeTree.parents == null)
+            //     {
+            //         Debug.Log("skocze zaraz4");
+            //     } 
+            //  if(prevDialOptions[0].nodeTree.parents[0] == null)
+            //     {
+            //         Debug.Log("skocze zaraz5");
+            //     } 
+            //  if(prevDialOptions[0].nodeTree.parents[0].data == null)
+            //     {
+            //         Debug.Log("skocze zaraz6");
+            //     } 
+            if (disabledOptions[0].nodeTree.parents[0].parents.Count > 0)
+            {
+                for(int i = 0; i < disabledOptions[0].nodeTree.parents[0].parents[0].children.Count; i++)
+                {
+                  optionsToLoad.Add(disabledOptions[0].nodeTree.parents[0].parents[0].children[i].data);
+                }
+            }
+            else
+            {
+                for(int i = 0; i < DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect].Count; i++)    
+                {
+                   optionsToLoad.Add(DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect][i].data);
+                }
+            }
+            
+            
+       }
     }
     else
     {
-        optionsToLoad = SuspectTracker.instance.currentSuspect.DialogueOptions;
+        
+        if (newDialogueSequence && DialogueSequences != null)
+        {
+            optionsToLoad.AddRange(DialogueSequences);
+            
+        }
+        else if (prevDialOptions != null)
+        {
+            optionsToLoad.AddRange(prevDialOptions);
+        }
+        else if (SuspectTracker.instance.currentSuspect != null)
+        {
+            optionsToLoad.AddRange(SuspectTracker.instance.currentSuspect.DialogueOptions);
+        }
     }
 
-     
+    
+    if (BackOption != null)
+    {
+        optionsToLoad.Add(BackOption);
+    }
 
-    // 2. GŁÓWNA PĘTLA: Jedna logika dla wybranej listy.
-    foreach (DialogueOption option in optionsToLoad)
+    turnOnChossenDialouges(optionsToLoad);
+
+    prevDialOptions = getCurrentDialogueOptions();
+    currentDialogueOption = enrolledDialouge;
+
+}
+private void turnOnChossenDialouges(List<DialogueOption> optionsToLoad)
+    {
+        foreach (DialogueOption option in optionsToLoad)
     {
         // Jeśli nie mamy jeszcze tego dialogu
         if (!initializedDialogues.Contains(option.ID))
         {
-            Debug.Log("NO ID");
+            
             GameObject window = Instantiate(dialoguePickWindow, transform, false);
             DialogueOptionWindow windowScript = window.GetComponent<DialogueOptionWindow>();
             
@@ -93,5 +210,5 @@ public class DialogueOptionManager : MonoBehaviour
             }
         }
     }
-}
+    }
 }

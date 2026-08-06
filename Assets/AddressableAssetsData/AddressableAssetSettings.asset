@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 3bddddc123c9c0044b553d7b56a0b8b8
   m_currentHash:
     serializedVersion: 2
-    Hash: 2caae9806bd024460ccadc178e570ec7
+    Hash: c08cc9c584ad072329432fcc5833ebdc
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
-  m_ContentStateBuildPathProfileVariableName: 
+  m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
@@ -63,7 +63,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0d4a322c9a985a44a1535a557604e7b, type: 2}
   - {fileID: 11400000, guid: 931b249e2fdfd334e9cd71bb5bf48207, type: 2}
   - {fileID: 11400000, guid: f5aa11d68e93b964dbee2496a21a9f1a, type: 2}
+  - {fileID: 11400000, guid: 6e1810004cc3fa44e88b51d2dca68ebc, type: 2}
+  - {fileID: 11400000, guid: d51e85082801bc84f8573e0e19f02ee5, type: 2}
   - {fileID: 11400000, guid: b9642253ed8b06b4a9c14a34a308b759, type: 2}
+  - {fileID: 11400000, guid: ec8dc0357b140254394e00c19d1a1d27, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
@@ -105,6 +108,8 @@ MonoBehaviour:
     - default
     - Locale
     - Locale-en-GB
+    - Preload
+    - Locale-pl
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 0c92e9550868ca849b47a347981e980c, type: 2}

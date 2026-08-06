@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case1 Leon 2.2_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 6135db0ae39e6484391ebe6bee755da0, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2032273448960
+    m_Localized: So you hated your wife.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032311197696
+    m_Localized: Did you fight before?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032311197697
+    m_Localized: Depends on what you call a fight.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032311197698
+    m_Localized: It was always her  bragging about everything.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032319586304
+    m_Localized: Anything out of order was wrong.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780608
+    m_Localized: She could start a fight over anything she didn't find appropriate
+      or "approved".
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780609
+    m_Localized: Especially anything about having fun.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780610
+    m_Localized: She was a perfect citizen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780611
+    m_Localized: Your kind would lovvve her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780612
+    m_Localized: Intresting things you say.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780613
+    m_Localized: Would you mind giving some examples?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780614
+    m_Localized: You're that interested about my past life dramas?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780615
+    m_Localized: .   .   .
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780616
+    m_Localized: Yes, yes, you're checking me
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780617
+    m_Localized: Sadly my brain is still in his base gloomy state.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780618
+    m_Localized: She threw a glass at me once
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780619
+    m_Localized: 'It was one time she actually physically attacked me. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780620
+    m_Localized: She had a rough day probably.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780621
+    m_Localized: It was all because I didnt clean the garlic press again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780622
+    m_Localized: Not a healthy relationship indeed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2032323780623
+    m_Localized: I thought we knew that already Sherlock.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

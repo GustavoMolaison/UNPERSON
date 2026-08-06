@@ -20,7 +20,7 @@ public class InterrogationManager : MonoBehaviour
     {
         interrogatedSuspect = susp;
         suspectPng.sprite = susp.Face;
-        if (DialogueOptionManager.Instance != null) DialogueOptionManager.Instance.dialoguesChange(false);
+        if (DialogueOptionManager.Instance != null) DialogueOptionManager.Instance.initilalizeSuspectOptions();
 
         // DialogueOptionManager.Instance.cleanDialogueOptions();
         if (UiDialougeManager.Instance != null) UiDialougeManager.Instance.forceCleanChat();

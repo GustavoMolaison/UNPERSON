@@ -14,70 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
   uniqueID: 47462c0b-6ee4-46c7-a00f-4ca19db1c8f0
   DialogueName: Identify yourself
-  DialogueContent:
-  - speaker: 0
-    text:
-      m_TableReference:
-        m_TableCollectionName: GUID:1f2cc62c5158e634a91c223c7368a308
-      m_TableEntryReference:
-        m_KeyId: 15912132608
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-  - speaker: 1
-    text:
-      m_TableReference:
-        m_TableCollectionName: GUID:1f2cc62c5158e634a91c223c7368a308
-      m_TableEntryReference:
-        m_KeyId: 637923221504
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-  - speaker: 1
-    text:
-      m_TableReference:
-        m_TableCollectionName: GUID:1f2cc62c5158e634a91c223c7368a308
-      m_TableEntryReference:
-        m_KeyId: 882857992192
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-  - speaker: 1
-    text:
-      m_TableReference:
-        m_TableCollectionName: GUID:1f2cc62c5158e634a91c223c7368a308
-      m_TableEntryReference:
-        m_KeyId: 955562057728
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-  - speaker: 1
-    text:
-      m_TableReference:
-        m_TableCollectionName: GUID:1f2cc62c5158e634a91c223c7368a308
-      m_TableEntryReference:
-        m_KeyId: 1098436829184
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
-  - speaker: 0
-    text:
-      m_TableReference:
-        m_TableCollectionName: GUID:1f2cc62c5158e634a91c223c7368a308
-      m_TableEntryReference:
-        m_KeyId: 1174164987904
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
+  DialogueContent: []
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:1fc1a2af2807058449cd16249f9bd9b0
   IsNewDialogueSequence: 1
   NewDialogueSequence:
   - {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}
+  - {fileID: 11400000, guid: 6d84cebc349475a46a18f2a1dc1e4873, type: 2}
   EvidenceCheck: {fileID: 0}
   EvidenceGained: {fileID: 0}
   references:

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,10 @@ public class Evidence : ScriptableObject
 
     [Header("Type")]
     [SerializeField] private bool isVisible;
+
+    [Header("Evidence Update section")]
+    [SerializeField] private List<Evidence> updatedEvidenceVersion;
+    public int currentEvidenceUpdateState = -1;
     // type ??? visibilityCondition
 
 
@@ -21,5 +26,8 @@ public class Evidence : ScriptableObject
     public string Details => details;
     public Sprite Sprite => sprite;
     public bool IsVisible => isVisible;
+
+    
+    public List<Evidence> UpdatedEvidenceVersion => updatedEvidenceVersion;
 
 }

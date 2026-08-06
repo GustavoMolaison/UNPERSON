@@ -69,7 +69,7 @@ public class ConclusionPanelData : UIDataOrigin<Suspect>
         shaderImage3.material = instantiatedMaterial3;
         shaderImage4.material = instantiatedMaterial4;
 
-        Debug.Log("COOOOO");
+       
         
         myButton1.onClick.RemoveAllListeners();
         myButton1.onClick.AddListener(() => pickStatusButton(statusForThisButton1));

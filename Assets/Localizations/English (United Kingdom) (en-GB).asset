@@ -15,11 +15,16 @@ MonoBehaviour:
   m_Identifier:
     m_Code: en-GB
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 3459676109909000313
   m_LocaleName: English (United Kingdom) (en-GB)
   m_CustomFormatCultureCode: 
   m_UseCustomFormatter: 0
   m_SortOrder: 10000
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3459676109909000313
+      type: {class: SlowedMetaData, ns: , asm: Assembly-CSharp}
+      data:
+        Context: 

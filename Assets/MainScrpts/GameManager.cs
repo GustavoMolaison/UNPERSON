@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
         MonitorCameraTracker.Instance.initilize();
         SuspectTracker.instance.initilize();
 
+
+        Debug.Log(SuspectTracker.instance.currentSuspects.Count);
+        DialougeTreeCreator.Instance.bulidTree(SuspectTracker.instance.currentSuspects);
+        
+        DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspects[1]][0].displayTree();
+
         evidenceList = new List<Evidence>(currentLevel.EvidenceList);
 
     }

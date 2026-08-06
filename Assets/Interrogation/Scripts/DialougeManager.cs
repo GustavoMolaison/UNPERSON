@@ -58,18 +58,17 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator dialogueOptionClicked(DialogueOption enrolledDialouge)
     {
         ConversationManager.Instance.chatNewMess(enrolledDialouge); //THIS FRIST
-        DialogueOptionManager.Instance.hideDialogueOptions(); // THIS SECOND
-        yield return new WaitUntil(() => isProcessingQueue == false); // THIS THIRD
+        // DialogueOptionManager.Instance.backDialOptions = DialogueOptionManager.Instance.getCurrentDialogueOptions();// THIS SECOND
+        DialogueOptionManager.Instance.hideDialogueOptions(); // THIS THIRD
+        yield return new WaitUntil(() => isProcessingQueue == false); // THIS FORTH
 
         // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialogueContent);
-        if(enrolledDialouge.isNewDialogueSequence)
-        {
-            DialogueOptionManager.Instance.dialoguesChange(true, enrolledDialouge.newDialogueSequence);
-        }
-        else
-        {
-            DialogueOptionManager.Instance.dialoguesChange(false);
-        }
+        
+         DialogueOptionManager.Instance.dialoguesChange(enrolledDialouge);
+        
+        
+
+        // DialogueOptionManager.Instance.backDialOptions = DialogueOptionManager.Instance.getCurrentDialogueOptions();
     } 
 
     private IEnumerator ProcessQueueRoutine()
@@ -87,13 +86,18 @@ public class DialogueManager : MonoBehaviour
 
             // S�owo kluczowe: yield return StartCoroutine. 
             // Ta korutyna ZATRZYMA SIĘ i poczeka, aż ShowMessagesRoutine sko�czy wy�wietla� ca�� list�!
-            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.DialOption.dialogueContent));
+            yield return StartCoroutine(UiDialougeManager.Instance.ShowMessagesRoutine(currentChat.DialOption.dialogueTable));
             
             // Dodawanie dowodów po rozmowie jeżeli flaga to true
             if (currentChat.DialOption.hasEvidenceGained)
             {
                 Debug.Log("Dodaje dowod: " + currentChat.DialOption.evidenceGained.name);
                 Case_Monitor.Instance.addEvidence(currentChat.DialOption.evidenceGained);
+            }
+            if (currentChat.DialOption.hasEvidenceToUpdate)
+            {
+                Debug.Log("Aktualizuje dowod: " + currentChat.DialOption.evidenceToUpdate.name);
+                Case_Monitor.Instance.updateEvidence(currentChat.DialOption.evidenceToUpdate, currentChat.DialOption.evidenceUpdateIndex);
             }
             
         }
