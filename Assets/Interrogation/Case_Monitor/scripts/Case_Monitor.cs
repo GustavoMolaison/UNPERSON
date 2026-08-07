@@ -37,7 +37,7 @@ public class Case_Monitor : MonitorBase
             
         }
     }
-    public void addEvidence(Evidence e, int index = 0)
+    public void addEvidence(Evidence e, int index = -1)
     {
         if(GameManager.Instance.evidenceList.Contains(e))
         {
@@ -52,8 +52,14 @@ public class Case_Monitor : MonitorBase
         panelManager.enrollEvidence(e);
     }
 
-    public void updateEvidence(Evidence e, int index = 0)
+    public void updateEvidence(Evidence e, int index = -1)
     {
+        // zabezpieczenie gdy evidencen jest w podstawowej wersji
+        if(index == -1)
+        {
+            return;
+        }
+
         if(!GameManager.Instance.evidenceList.Contains(e))
         {
             addEvidence(e, index);
@@ -70,7 +76,7 @@ public class Case_Monitor : MonitorBase
                     return;
                 }
                 evidencePanel.enrollEvidence(e.UpdatedEvidenceVersion[index]);
-                e.currentEvidenceUpdateState = index;
+                // e.currentEvidenceUpdateState = index;
             }
         }
     }

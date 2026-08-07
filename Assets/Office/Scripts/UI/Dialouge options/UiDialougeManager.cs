@@ -15,7 +15,10 @@ public class UiDialougeManager : MonoBehaviour
 
    
     [SerializeField] private GameObject chatlayout;
-    [SerializeField] private float messageCooldown;
+    [SerializeField] public float messageCooldown;
+    [HideInInspector] public float originalmessageCooldown;
+    
+    
 
    
 
@@ -38,6 +41,7 @@ public class UiDialougeManager : MonoBehaviour
     
         private void Start()
     {
+        originalmessageCooldown = messageCooldown;
         playerDimensions = GetUiDimensions(chatlayout);
 
         layoutCode = chatlayout.GetComponent<TalkWindow>();

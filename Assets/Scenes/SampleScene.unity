@@ -1323,6 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UiDialougeManager
   chatlayout: {fileID: 428735359}
   messageCooldown: 0.5
+  originalmessageCooldown: 0
 --- !u!224 &698863041 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1720487850983244151, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}

@@ -19,4 +19,4 @@ MonoBehaviour:
   isVisible: 1
   updatedEvidenceVersion:
   - {fileID: 11400000, guid: b6c88aad77452744a9b8019ef0501ef4, type: 2}
-  currentEvidenceUpdateState: 0
+  currentEvidenceUpdateState: -1

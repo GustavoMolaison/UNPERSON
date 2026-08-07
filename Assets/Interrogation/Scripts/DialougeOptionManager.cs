@@ -105,39 +105,26 @@ public class DialogueOptionManager : MonoBehaviour
       if (currentDialogueOption != null)
        {
            
-            // if(prevDialOptions == null)
-            //     {
-            //         Debug.Log("skocze zaraz");
-            //     }
-            // if(prevDialOptions[0] == null)
-            //     {
-            //         Debug.Log("skocze zaraz2");
-            //     } 
-
-            // if(prevDialOptions[0].nodeTree == null)
-            //     {
-            //         Debug.Log("skocze zaraz3");
-            //     } 
-
-            // if(prevDialOptions[0].nodeTree.parents == null)
-            //     {
-            //         Debug.Log("skocze zaraz4");
-            //     } 
-            //  if(prevDialOptions[0].nodeTree.parents[0] == null)
-            //     {
-            //         Debug.Log("skocze zaraz5");
-            //     } 
-            //  if(prevDialOptions[0].nodeTree.parents[0].data == null)
-            //     {
-            //         Debug.Log("skocze zaraz6");
-            //     } 
-            if (disabledOptions[0].nodeTree.parents[0].parents.Count > 0)
+            
+            // 1  okej więc bierzemy obecne opcje dialogowe
+            // 2 Jeżeli rodzic ich rodzica czyli dziadek
+            // jeśli istnieje to bierzemy jego dzieci i dostaniemy wsszystkie dialogi które powinny być przed aktualnymi tak
+            // 3 DisabledOptions to poprostu opcje dialogowe ktore teraz przy zmianie wylaczone czyli 
+            // aktualne opcje dialogowe przed zmiana maja one tych samych starych wszystkie wiec poprostu
+            // to hardcoduje i huj
+            if (disabledOptions[0].nodeTree.parents[0].parents.Count > 0) // okej więc bierzemy obecne opcje dialogowe
             {
+                //sprawdzamy ile dzieci ma dziadek czyli ile pocji dialogowych powinno być przed aktualnymi i je dodajemy do listy
                 for(int i = 0; i < disabledOptions[0].nodeTree.parents[0].parents[0].children.Count; i++)
                 {
                   optionsToLoad.Add(disabledOptions[0].nodeTree.parents[0].parents[0].children[i].data);
                 }
+                if (BackOption != null)
+                {
+                optionsToLoad.Add(BackOption);
+                }
             }
+            // jeżeli rodzic nie ma rodzica to znaczt jest sigma i jest dialogiem rozpoczynajacym wiec na ostro wlaczamy poczatkowe dialogi przypisane do suspecta
             else
             {
                 for(int i = 0; i < DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect].Count; i++)    
@@ -165,13 +152,15 @@ public class DialogueOptionManager : MonoBehaviour
         {
             optionsToLoad.AddRange(SuspectTracker.instance.currentSuspect.DialogueOptions);
         }
+
+         if (BackOption != null)
+        {
+        optionsToLoad.Add(BackOption);
+        }
     }
 
     
-    if (BackOption != null)
-    {
-        optionsToLoad.Add(BackOption);
-    }
+    
 
     turnOnChossenDialouges(optionsToLoad);
 
@@ -181,8 +170,20 @@ public class DialogueOptionManager : MonoBehaviour
 }
 private void turnOnChossenDialouges(List<DialogueOption> optionsToLoad)
     {
-        foreach (DialogueOption option in optionsToLoad)
+    foreach (DialogueOption option in optionsToLoad)
     {
+        
+        if(option.ishidden)
+            {
+                foreach (Evidence evid in option.evidencesTillHidden)
+                {
+                    if (!GameManager.Instance.evidenceList.Contains(evid))
+                    {
+                        continue;
+                    }
+                }
+            }
+            
         // Jeśli nie mamy jeszcze tego dialogu
         if (!initializedDialogues.Contains(option.ID))
         {

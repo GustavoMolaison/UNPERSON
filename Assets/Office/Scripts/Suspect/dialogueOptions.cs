@@ -52,6 +52,9 @@ public class DialogueOption : ScriptableObject
     [SerializeField] private Evidence EvidenceToUpdate = null;
     private bool HasEvidenceToUpdate => EvidenceToUpdate != null;
 
+    [SerializeField] private List<Evidence> EvidencesTillHidden = null;
+    private bool Ishidden => EvidencesTillHidden.Count > 0;
+
     [SerializeField] private int EvidenceUpdateIndex = 0;
 
 
@@ -77,6 +80,10 @@ public class DialogueOption : ScriptableObject
     public Evidence evidenceToUpdate => EvidenceToUpdate;
     public bool hasEvidenceToUpdate => HasEvidenceToUpdate;
     public int evidenceUpdateIndex => EvidenceUpdateIndex;
+
+    public List<Evidence> evidencesTillHidden => EvidencesTillHidden;
+    public bool ishidden => Ishidden;
+
     public bool isBackOption => IsBackOption;
     // public List<string> xd1 => xd;
 }

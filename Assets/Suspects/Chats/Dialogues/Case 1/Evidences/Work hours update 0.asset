@@ -18,4 +18,4 @@ MonoBehaviour:
   sprite: {fileID: 0}
   isVisible: 0
   updatedEvidenceVersion: []
-  currentEvidenceUpdateState: -1
+  currentEvidenceUpdateState: 0
