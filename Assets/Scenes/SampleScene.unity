@@ -1591,9 +1591,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 784109403875910093, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 784109403875910093, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 784109403875910093, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 61
+      objectReference: {fileID: 0}
     - target: {fileID: 837345246625429283, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1133595464179275783, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 52.5
       objectReference: {fileID: 0}
     - target: {fileID: 2482896278004002737, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1670,6 +1686,14 @@ PrefabInstance:
     - target: {fileID: 3889760250191470265, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168924593751430487, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168924593751430487, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 73.5
       objectReference: {fileID: 0}
     - target: {fileID: 4435710484088817489, guid: 6550b7abaec53114ab1d01569846e0dc, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
