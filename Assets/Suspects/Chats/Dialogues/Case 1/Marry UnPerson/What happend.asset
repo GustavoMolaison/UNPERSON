@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
+  m_Name: What happend
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  uniqueID: e6442d3a-2ea8-4286-903e-fd626a97609c
+  DialogueName: Tell me what happend
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:910dfa9073621f74596f146ba4beff29
+  IsNewDialogueSequence: 1
+  NewDialogueSequence:
+  - {fileID: 11400000, guid: a1d67d464c74f9044b33547d8d93ec38, type: 2}
+  EvidenceCheck: {fileID: 0}
+  EvidenceGained: {fileID: 11400000, guid: 2aafc74048ec2404db81167cb548f82e, type: 2}
+  EvidenceToUpdate: {fileID: 0}
+  EvidencesTillHidden: []
+  EvidenceUpdateIndex: 0
+  IsBackOption: 0

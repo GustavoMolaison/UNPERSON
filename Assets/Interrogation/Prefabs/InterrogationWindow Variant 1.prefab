@@ -201,6 +201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialougeOptionManager
   dialoguePickWindow: {fileID: 1527162440006646579, guid: b43b7b4758a7cf845ad106afb7df01db, type: 3}
   dialougePicked: {fileID: 0}
+  BackOption: {fileID: 0}
+  backDialOptions: []
 --- !u!114 &157670345984174724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConversationManager
   chatContainer: {fileID: 0}
+  holdThreshold: 0.3
 --- !u!114 &2573485209027440442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3244633477737349715, guid: 3491cf5efb709c84fa3885bb5519c5db, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7384912429893603369, guid: 3491cf5efb709c84fa3885bb5519c5db, type: 3}
       propertyPath: suspectPng

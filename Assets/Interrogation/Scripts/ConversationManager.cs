@@ -22,7 +22,11 @@ public class ConversationManager : MonoBehaviour, IPointerClickHandler, IPointer
 
     private void Update()
     {
-        if (!pointerDown) return;
+        if (!pointerDown)
+        {
+            UiDialougeManager.Instance.messageCooldown = UiDialougeManager.Instance.originalmessageCooldown;
+            return;
+        }  
 
         holdTimer += Time.deltaTime;
         if (holdTimer >= holdThreshold)
@@ -38,10 +42,7 @@ public class ConversationManager : MonoBehaviour, IPointerClickHandler, IPointer
         }
 
         
-        else
-        {
-            UiDialougeManager.Instance.messageCooldown = UiDialougeManager.Instance.originalmessageCooldown;
-        }
+        
     }
 
     public void chatNewMess(DialogueOption dialOption)

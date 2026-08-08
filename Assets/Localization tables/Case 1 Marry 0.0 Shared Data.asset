@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Case 1 Marry 0.0 Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Case 1 Marry 0.0
+  m_TableCollectionNameGuidString: 6c584fef4d7cfb842aaf143cda313256
+  m_Entries:
+  - m_Id: 2770710028288
+    m_Key: 0.0.1
+    m_Metadata:
+      m_Items:
+      - rid: 3459676208802824268
+  - m_Id: 2770777137152
+    m_Key: 0.0.2
+    m_Metadata:
+      m_Items:
+      - rid: 3459676208802824269
+  - m_Id: 2770789720064
+    m_Key: 0.0.3
+    m_Metadata:
+      m_Items:
+      - rid: 3459676208802824270
+  - m_Id: 2770793914368
+    m_Key: 0.0.4
+    m_Metadata:
+      m_Items:
+      - rid: 3459676208802824271
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3459676208802824267
+  references:
+    version: 2
+    RefIds:
+    - rid: 3459676208802824267
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1786221556135
+    - rid: 3459676208802824268
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 cw
+    - rid: 3459676208802824269
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 cw
+    - rid: 3459676208802824270
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 cw
+    - rid: 3459676208802824271
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 cw

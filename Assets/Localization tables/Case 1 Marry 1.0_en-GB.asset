@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Marry 1.0_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 910dfa9073621f74596f146ba4beff29, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18185445376
+    m_Localized: Describe what happened one hour prior to the body discovery.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18218999808
+    m_Localized: I will have to ask you for details.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194112
+    m_Localized: I would prefer not to, but I'll comply. If this will give me justice
+      for Sophie.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194113
+    m_Localized: I was doing usual errands. Cleaning. Cooking.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194114
+    m_Localized: Sophie was happy that day. "He" told her he would play with her
+      after work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194115
+    m_Localized: This cunt, I mean I know it's not really him, but I can't refer
+      to him otherwise, it's just...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194116
+    m_Localized: I understand you are emotional, but we will talk about your speculations
+      later.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194117
+    m_Localized: Now let's focus on what actually happened.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194118
+    m_Localized: Okay, sorry. I will focus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194119
+    m_Localized: Sophie asked me if she could go to her room, prepare her toys.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194120
+    m_Localized: I allowed her. I used the moment when she was busy to borrow a pot
+      from my neighbor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194121
+    m_Localized: I locked the doors and went to the neighbor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194122
+    m_Localized: Was the neighbor Cassidy?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194123
+    m_Localized: Yes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194124
+    m_Localized: How long did you two talk?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194125
+    m_Localized: For around ten minutes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194126
+    m_Localized: That's pretty long. You know the regulations.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194127
+    m_Localized: Children without a reason shouldn't be left alone for more than
+      five minutes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194128
+    m_Localized: I know, I know. You think I don't regret this? It's just Cassidy
+      is my friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194129
+    m_Localized: We don't get many occasions to enjoy ourselves. Even in talk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194130
+    m_Localized: I regret it. But how could I know?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194131
+    m_Localized: I came back and saw the mess. I thought it was him making a mess
+      again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194132
+    m_Localized: Like always, making everything harder to bear.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194133
+    m_Localized: Then he came looking at me like a madman.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194134
+    m_Localized: Talking like a madman.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194135
+    m_Localized: I thought his miserable ass got high again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194136
+    m_Localized: But I saw what he did to her. To Sophie. My brain froze.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194137
+    m_Localized: I spoke to him, but he just attacked me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18223194138
+    m_Localized: Then Cassidy arrived and called the authorities. I was in disbelief.
+      With Sophie gone...
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

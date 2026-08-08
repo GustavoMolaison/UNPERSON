@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Marry 0.0_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 6c584fef4d7cfb842aaf143cda313256, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2770710028288
+    m_Localized: Please identify yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2770777137152
+    m_Localized: Im Marry Glasgow. 32 years old. Employed in community housing service.
+      Im citizen of the Munster closed city for my entire life since the begging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2770789720064
+    m_Localized: Please be quick. I dont want to relive this again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2770793914368
+    m_Localized: I do my best ma'am.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -45,6 +45,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90eae91b23cffcf4c80c3edf49f1f8c6
+    m_Address: Case 1 Marry 1.0.2_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0522ed20372e6545982361b77ae74a2
+    m_Address: Case 1 Marry 1.0_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: da3e5478b54898d4892f4a0185e18aa9
     m_Address: Case1 Leon 1.0.1_en-GB
     m_ReadOnly: 1
@@ -63,6 +75,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb3bbafd7052fa74bb5eebe364c7c1ab
+    m_Address: Case 1 Marry 0.0_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ba5f46c8b65756d46a113b85ab91283e, type: 2}

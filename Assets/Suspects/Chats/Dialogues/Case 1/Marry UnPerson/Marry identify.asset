@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
+  m_Name: Marry identify
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  uniqueID: 08128b3a-7b69-41ac-a1da-e2648aae9089
+  DialogueName: Identify yoursef
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:6c584fef4d7cfb842aaf143cda313256
+  IsNewDialogueSequence: 1
+  NewDialogueSequence:
+  - {fileID: 11400000, guid: a22126d802b658847b72c463066d8e37, type: 2}
+  EvidenceCheck: {fileID: 0}
+  EvidenceGained: {fileID: 0}
+  EvidenceToUpdate: {fileID: 0}
+  EvidencesTillHidden: []
+  EvidenceUpdateIndex: 0
+  IsBackOption: 0

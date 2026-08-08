@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 9
+  m_fontSizeBase: 9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -288,6 +288,7 @@ MonoBehaviour:
   initialized: 0
   graphImage: {fileID: 6095156703614207848}
   shaderManager: {fileID: 516251371169781334}
+  maxWrongGuesses: 3
 --- !u!114 &516251371169781334
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,5 +21,6 @@ MonoBehaviour:
   face: {fileID: -8600513156772927195, guid: d4a7cbe205a1c3946aaa6052e5b3bceb, type: 3}
   chatHistory:
   - {fileID: 11400000, guid: bcdd3858e619cb8468417a06d72449c6, type: 2}
-  dialogueOptions: []
+  dialogueOptions:
+  - {fileID: 11400000, guid: 17d058b9161df64419f2fc15ce95ad66, type: 2}
   role: 0

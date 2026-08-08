@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 76872e3a41049e845a5dadbb2e0b9d1b
   m_SerializeEntries:
+  - m_GUID: 147f977d2434e3e47b5bd4624d284ef9
+    m_Address: Assets/Localization tables/Case 1 Marry 1.0.2 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1d08a9d557eed5940921c1eadcceb5cc
     m_Address: Assets/Localization tables/Case1 Leon 2.3 Shared Data.asset
     m_ReadOnly: 1
@@ -37,6 +42,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68b81b0023ddeff43b68f86c27153d5e
     m_Address: Assets/Localization tables/Case1 Leon 1.0.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c584fef4d7cfb842aaf143cda313256
+    m_Address: Assets/Localization tables/Case 1 Marry 0.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 910dfa9073621f74596f146ba4beff29
+    m_Address: Assets/Localization tables/Case 1 Marry 1.0 Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
