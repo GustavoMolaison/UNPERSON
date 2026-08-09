@@ -12,11 +12,11 @@ public class DialogueOptionWindow : MonoBehaviour
     [HideInInspector] public bool initialized = false;
 
 
-    [SerializeField] private Image graphImage;
-    private int yellowPropertyID;
-    private int animationSwitchID;
-    private Material instantiatedMaterial;
-    [SerializeField] private DialougeOptionShader shaderManager;
+    //[SerializeField] private Image graphImage;
+    //private int yellowPropertyID;
+    //private int animationSwitchID;
+    //private Material instantiatedMaterial;
+    //[SerializeField] private DialougeOptionShader shaderManager;
     //private DialougeOptionShader
     //private DialougeOptionShader
 
@@ -46,10 +46,10 @@ public class DialogueOptionWindow : MonoBehaviour
     {
         txt = GetComponentInChildren<TextMeshProUGUI>();
 
-        yellowPropertyID = Shader.PropertyToID("_Yellow");
-        animationSwitchID = Shader.PropertyToID("_Animation");
+        //yellowPropertyID = Shader.PropertyToID("_Yellow");
+        //animationSwitchID = Shader.PropertyToID("_Animation");
 
-        if (graphImage != null)
+        /*if (graphImage != null)
         {
             
             // WA�NE: 'new Material(...)' tworzy unikaln� instancj� w pami�ci,
@@ -60,16 +60,16 @@ public class DialogueOptionWindow : MonoBehaviour
             // 3. Przypisujemy t� unikaln� kopi� Z POWROTEM do Image.
             // Od teraz ten Image korzysta ze swojej prywatnej wersji materia�u.
             graphImage.material = instantiatedMaterial;
-        }
+        }*/
     }
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         if (instantiatedMaterial != null)
         {
             Destroy(instantiatedMaterial);
         }
-    }
+    }*/
 
 
     public void enrollDialogue(DialogueOption dial)
@@ -88,21 +88,21 @@ public class DialogueOptionWindow : MonoBehaviour
         {
             txt.color = new Color(1f, 1f, 0.9f);
             // To powinno byc w dialouge option Shader ale mi sie kurwa nie chce tego zmieniac
-            instantiatedMaterial.SetFloat(yellowPropertyID, 1);
+            //instantiatedMaterial.SetFloat(yellowPropertyID, 1);
         }
         else
         {
             txt.color = Color.cyan;
-            if(instantiatedMaterial == null)
+            /*if(instantiatedMaterial == null)
             {
                 Debug.Log("xdd");
-            }
+            }*/
             // To powinno byc w dialouge option Shader ale mi sie kurwa nie chce tego zmieniac
-            instantiatedMaterial.SetFloat(yellowPropertyID, 0);
+            //instantiatedMaterial.SetFloat(yellowPropertyID, 0);
         }
     }
 
-    private void Holdanimation(bool hold)
+    /*private void Holdanimation(bool hold)
     {
         Debug.Log("ANIMACJA");
         if (hold)
@@ -118,7 +118,7 @@ public class DialogueOptionWindow : MonoBehaviour
         }
 
             
-    }
+    }*/
 
     public void onClick()
     {
@@ -138,7 +138,7 @@ public class DialogueOptionWindow : MonoBehaviour
                 DialogueOptionManager.Instance.dialougePicked = enrolledDialogue;
 
               
-                Holdanimation(true);
+                //Holdanimation(true);
                 Case_Monitor.Instance.EvidencehightLight.lightOn();
                 Case_Monitor.Instance.highLightEvidences(true);
 
@@ -152,14 +152,14 @@ public class DialogueOptionWindow : MonoBehaviour
                 if (!Case_Monitor.Instance.checkAnswerCorrectness())
                 {
                     addOneWrongGuess();
-                    shaderManager.wrongAnswerReact(howManyWrongGuesses / maxWrongGuesses);
+                    //shaderManager.wrongAnswerReact(howManyWrongGuesses / maxWrongGuesses);
                     DialogueOptionManager.Instance.dialougePicked = null;
-                    Holdanimation(false);
+                    //Holdanimation(false);
                     yield break;
                 }
 
                 DialogueOptionManager.Instance.dialougePicked = null;
-                Holdanimation(false);
+                //Holdanimation(false);
             }
 
             // Ten kod wykona si� dopiero, gdy warunek wy�ej pu�ci, 
