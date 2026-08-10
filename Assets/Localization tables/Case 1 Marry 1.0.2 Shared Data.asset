@@ -59,24 +59,24 @@ MonoBehaviour:
     - rid: 3459676208802824308
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p1 s0 cw
+        m_CommentText: p1 s0 e0 cw
     - rid: 3459676208802824309
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p0 s0 cw
+        m_CommentText: p0 s0 e1 cw
     - rid: 3459676208802824310
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p0 s0 cw
+        m_CommentText: p0 s0 e0 cw
     - rid: 3459676208802824311
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p0 s0 cw
+        m_CommentText: p0 s0 e0 cw
     - rid: 3459676208802824312
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p0 s0 cw
+        m_CommentText: p0 s0 e0 cw
     - rid: 3459676208802824313
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p1 s0 cw
+        m_CommentText: p1 s0 e0 cw

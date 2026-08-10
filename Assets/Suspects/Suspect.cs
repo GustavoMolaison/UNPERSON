@@ -35,4 +35,5 @@ public class Suspect : ScriptableObject
     public List<DialogueOption> DialogueOptions => dialogueOptions;
     public SuspGuees Role => role;
 
+
 }

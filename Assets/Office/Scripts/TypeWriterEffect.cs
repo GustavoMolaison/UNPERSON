@@ -56,6 +56,8 @@ public class TypewriterEffect : MonoBehaviour
 
     public void Skip()
     {
+        
+        
         if (!IsTyping) return;
 
         // Ustawiamy flagę na true – korutyna TypeText sama łagodnie zakończy pracę w następnym kroku

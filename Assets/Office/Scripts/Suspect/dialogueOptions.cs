@@ -46,6 +46,11 @@ public class DialogueOption : ScriptableObject
     [SerializeField] private Evidence EvidenceCheck = null;
     private bool HasEvidenceCheck => EvidenceCheck != null;
 
+    [SerializeField] private Evidence EvidenceCheckDialougeLine = null;
+    private bool HasEvidenceCheckDialougeLine => EvidenceCheck != null;
+
+    [SerializeField] private DialogueOption UnlockedDialouge = null;
+
     [SerializeField] private Evidence EvidenceGained = null;
     private bool HasEvidenceGained => EvidenceGained != null;
 
@@ -60,11 +65,10 @@ public class DialogueOption : ScriptableObject
 
     [SerializeField] private bool IsBackOption = false;
 
-    [HideInInspector] public DialougeTreeCreator.NodeTree nodeTree;
+    [HideInInspector] public DialogueTreeCreator.NodeTree nodeTree;
+
 
     
-
-
 
 
 
@@ -75,6 +79,11 @@ public class DialogueOption : ScriptableObject
     public List<DialogueOption> newDialogueSequence => NewDialogueSequence;
     public Evidence evidenceCheck => EvidenceCheck;
     public bool hasEvidenceCheck => HasEvidenceCheck;
+
+    public Evidence evidenceCheckDialougeLine => EvidenceCheckDialougeLine;
+    public bool hasEvidenceCheckDialougeLine => HasEvidenceCheckDialougeLine;
+
+    public DialogueOption unlockedDialouge => UnlockedDialouge;
     public Evidence evidenceGained => EvidenceGained;
     public bool hasEvidenceGained => HasEvidenceGained;
     public Evidence evidenceToUpdate => EvidenceToUpdate;

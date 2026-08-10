@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialougeTreeCreator : MonoBehaviour
+public class DialogueTreeCreator : MonoBehaviour
 {
-    public static DialougeTreeCreator Instance;
+    public static DialogueTreeCreator Instance;
     void Awake()
     {
         
@@ -64,6 +64,10 @@ public class DialougeTreeCreator : MonoBehaviour
         public void AddChild(NodeTree child)
         {
             children.Add(child);
+            if (!this.data.newDialogueSequence.Contains(child.data))
+            {
+                this.data.newDialogueSequence.Add(child.data);
+            }
             child.parents.Add(this);
         }
 
@@ -85,15 +89,20 @@ public class DialougeTreeCreator : MonoBehaviour
             parent.children.Remove(this);
         }
 
+        public void AddChildrenToParents( NodeTree child)
+        {
+            foreach(NodeTree parent in this.parents)
+            {
+                Debug.Log("ojcom robie dzieci");
+                parent.AddChild(child);
+            }
+        }
+
        
     }
     
     public Dictionary<Suspect, List<NodeTree>> startingNodes = new Dictionary<Suspect, List<NodeTree>>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    
 
     public void bulidTree(List<Suspect> suspects)
     {
@@ -117,9 +126,19 @@ public class DialougeTreeCreator : MonoBehaviour
                 }
                 startingNodes[suspect].Add(node);
                 Debug.Log("4");
+
+                if(option.unlockedDialouge != null)
+                {
+                    NodeTree hiddenNode = new NodeTree(option.unlockedDialouge);
+                    
+                }
             }
+
+            
         }
     }
+
+    
     
         
     

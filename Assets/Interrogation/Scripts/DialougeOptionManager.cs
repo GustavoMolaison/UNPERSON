@@ -109,7 +109,7 @@ public class DialogueOptionManager : MonoBehaviour
             // 1  okej więc bierzemy obecne opcje dialogowe
             // 2 Jeżeli rodzic ich rodzica czyli dziadek
             // jeśli istnieje to bierzemy jego dzieci i dostaniemy wsszystkie dialogi które powinny być przed aktualnymi tak
-            // 3 DisabledOptions to poprostu opcje dialogowe ktore teraz przy zmianie wylaczone czyli 
+            // 3 DisabledOptions to poprostu opcje dialogowe ktore teraz przy zmianie wylaczoamy czyli 
             // aktualne opcje dialogowe przed zmiana maja one tych samych starych wszystkie wiec poprostu
             // to hardcoduje i huj
             if (disabledOptions[0].nodeTree.parents[0].parents.Count > 0) // okej więc bierzemy obecne opcje dialogowe
@@ -127,9 +127,9 @@ public class DialogueOptionManager : MonoBehaviour
             // jeżeli rodzic nie ma rodzica to znaczt jest sigma i jest dialogiem rozpoczynajacym wiec na ostro wlaczamy poczatkowe dialogi przypisane do suspecta
             else
             {
-                for(int i = 0; i < DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect].Count; i++)    
+                for(int i = 0; i < DialogueTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect].Count; i++)    
                 {
-                   optionsToLoad.Add(DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect][i].data);
+                   optionsToLoad.Add(DialogueTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect][i].data);
                 }
             }
             
@@ -168,7 +168,7 @@ public class DialogueOptionManager : MonoBehaviour
     currentDialogueOption = enrolledDialouge;
 
 }
-private void turnOnChossenDialouges(List<DialogueOption> optionsToLoad)
+public void turnOnChossenDialouges(List<DialogueOption> optionsToLoad)
     {
     foreach (DialogueOption option in optionsToLoad)
     {

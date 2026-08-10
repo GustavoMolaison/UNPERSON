@@ -86,7 +86,7 @@ public class DialogueOptionWindow : MonoBehaviour
 
         if (evidenceConnected)
         {
-            txt.color = new Color(1f, 1f, 0.9f);
+            txt.color = new Color(1f, 1f, 0.8f);
             // To powinno byc w dialouge option Shader ale mi sie kurwa nie chce tego zmieniac
             instantiatedMaterial.SetFloat(yellowPropertyID, 1);
         }

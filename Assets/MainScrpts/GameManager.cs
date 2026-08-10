@@ -39,9 +39,9 @@ public class GameManager : MonoBehaviour
 
 
         Debug.Log(SuspectTracker.instance.currentSuspects.Count);
-        DialougeTreeCreator.Instance.bulidTree(SuspectTracker.instance.currentSuspects);
+        DialogueTreeCreator.Instance.bulidTree(SuspectTracker.instance.currentSuspects);
         
-        DialougeTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspects[1]][0].displayTree();
+        // DialogueTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspects[1]][0].displayTree();
 
         evidenceList = new List<Evidence>(currentLevel.EvidenceList);
 

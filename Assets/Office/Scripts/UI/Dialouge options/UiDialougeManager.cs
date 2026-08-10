@@ -47,8 +47,9 @@ public class UiDialougeManager : MonoBehaviour
         layoutCode = chatlayout.GetComponent<TalkWindow>();
     }
     
-public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
+public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
 {
+    LocalizedStringTable tableReference = dialoption.dialogueTable;
     // 1. Musimy najpierw asynchronicznie pobrać właściwą tabelę StringTable
     var tableHandle = tableReference.GetTableAsync();
     yield return tableHandle;
@@ -70,29 +71,21 @@ public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
          
         bool isPlayer;
         bool isSlowed;
+        bool isEvidenceConntected;
         Color color;
 
         var sharedEntry = table.SharedData.GetEntry(entry.KeyId);
         var commentMeta = sharedEntry.Metadata.GetMetadata<Comment>();
         
-        (isPlayer, isSlowed, color) = metaDataParser(commentMeta.CommentText);
+        (isPlayer, isSlowed, isEvidenceConntected, color) = metaDataParser(commentMeta.CommentText);
         Debug.Log("isPlayer: " + isPlayer);
         Debug.Log("isSlowed: " + isSlowed);
+        Debug.Log("isEvidenceConntected: " + isEvidenceConntected);
         Debug.Log("color: " + color);
 
-        if(isSlowed == true)
-        {
-            Debug.Log(" jesst true sskurwysn");
-        }
         
-        if(commentMeta == null)
-        {
-            Debug.LogWarning($"Brak metadanych komentarza dla klucza: {entry.Key}");
-        }
-        else
-        {
-            Debug.Log($"Komentarz dla klucza {entry.Key}: {commentMeta.CommentText}");
-        }
+        
+       
         
         if (commentMeta != null && commentMeta.CommentText.Trim() == "1")
             {
@@ -109,7 +102,7 @@ public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
         // Z loaded StringTable tekst mamy od razu w strefie pamięci (LocalizedValue)
         string messageText = entry.LocalizedValue;
 
-        yield return StartCoroutine(layoutCode.addMessage(messageText, isPlayer));
+        yield return StartCoroutine(layoutCode.addMessage(messageText, isPlayer, isEvidenceConntected, dialoption));
 
         if (i < entries.Count - 1)
         {
@@ -242,18 +235,20 @@ public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
        
     }
 
-    private (bool, bool, Color) metaDataParser(string data)
+    private (bool, bool, bool, Color) metaDataParser(string data)
     {
         bool isPlayer = false;
         bool isSlowed = false;
+        bool isEvidenceConnected = false;
 
-        List<bool> boolList = new List<bool> { isPlayer, isSlowed };
+        List<bool> boolList = new List<bool> { isPlayer, isSlowed, isEvidenceConnected };
 
         string[] words = data.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
 
         for(int i = 0; i < words.Length; i++)
         {
-            if(i == 2)
+            // kolor nie jest oparty na boolu wiec go skipujemy
+            if(i == 3)
                 continue;
 
             boolList[i] = words[i][1] == '1';
@@ -262,8 +257,14 @@ public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
         
 
         Color color; 
-        switch (words[2])
+        if(words[2].Length < 2)
         {
+            color = Color.white;
+        }
+        else
+        {
+            switch (words[2])
+           {
             case "red":
                 color = Color.red;
                 break;
@@ -272,9 +273,11 @@ public IEnumerator ShowMessagesRoutine(LocalizedStringTable tableReference)
                 color = Color.white;
                 break;
             
+           }
         }
+        
 
-        return (boolList[0], boolList[1], color);
+        return (boolList[0], boolList[1], boolList[2], color);
     }
 }
 
