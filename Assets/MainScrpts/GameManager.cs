@@ -34,12 +34,16 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager Start() called");
         LevelsContentInfo.Instance.initilize();
+        Debug.Log("LevelsContentInfo called");
         MonitorCameraTracker.Instance.initilize();
+        Debug.Log("MonitorCameraTracker called");
         SuspectTracker.instance.initilize();
+        Debug.Log("SuspectTracker called");
 
 
-        Debug.Log(SuspectTracker.instance.currentSuspects.Count);
+        // Debug.Log(SuspectTracker.instance.currentSuspects.Count);
         DialogueTreeCreator.Instance.bulidTree(SuspectTracker.instance.currentSuspects);
+        OptionTreeManager.Instance.initialize();
         
         // DialogueTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspects[1]][0].displayTree();
 

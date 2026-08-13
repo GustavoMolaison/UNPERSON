@@ -47,7 +47,7 @@ public class DialogueOption : ScriptableObject
     private bool HasEvidenceCheck => EvidenceCheck != null;
 
     [SerializeField] private Evidence EvidenceCheckDialougeLine = null;
-    private bool HasEvidenceCheckDialougeLine => EvidenceCheck != null;
+    private bool HasEvidenceCheckDialougeLine => EvidenceCheckDialougeLine != null;
 
     [SerializeField] private DialogueOption UnlockedDialouge = null;
 
@@ -94,5 +94,33 @@ public class DialogueOption : ScriptableObject
     public bool ishidden => Ishidden;
 
     public bool isBackOption => IsBackOption;
-    // public List<string> xd1 => xd;
+    
+    public DialogueOption dialogueOptionRunTimeInstace()
+    {
+        // Debug.Log("petla");
+        DialogueOption dialOptionCopy = Instantiate(this);
+        dialOptionCopy.NewDialogueSequence = new List<DialogueOption>();
+        foreach(DialogueOption originalDialOption in this.NewDialogueSequence)
+        {
+            if(originalDialOption != null)
+            {
+                dialOptionCopy.NewDialogueSequence.Add(originalDialOption.dialogueOptionRunTimeInstace());
+            }
+            
+        }
+
+        if(this.UnlockedDialouge != null)
+        {
+            Debug.Log("KTORY TO JUZ DEBUG KURWA");
+            dialOptionCopy.UnlockedDialouge = this.UnlockedDialouge.dialogueOptionRunTimeInstace();
+        }
+        
+
+        return dialOptionCopy;
+
+
+
+
+        
+    }
 }

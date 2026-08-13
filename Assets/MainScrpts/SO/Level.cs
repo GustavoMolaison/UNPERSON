@@ -13,4 +13,15 @@ public class Level : ScriptableObject
 
     public List<Suspect> SuspectsList => suspectsList;
     public List<Evidence> EvidenceList => evidenceList;
+
+    public Level runTimeLevel()
+    {
+        Level levelInstance = Instantiate(this);
+        levelInstance.suspectsList = new List<Suspect>();
+        foreach(Suspect susp in this.suspectsList)
+        {
+            levelInstance.suspectsList.Add(susp.CreateRuntimeInstance());
+        }
+        return levelInstance;
+    }
 }
