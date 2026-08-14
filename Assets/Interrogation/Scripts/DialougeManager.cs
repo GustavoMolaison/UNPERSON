@@ -64,7 +64,7 @@ public class DialogueManager : MonoBehaviour
 
         // ConversationManager.Instance.chatNewMess(enrolledDialouge.dialogueContent);
         
-         DialogueOptionManager.Instance.dialoguesChange(enrolledDialouge);
+         DialogueOptionManager.Instance.dialoguesChange2(enrolledDialouge);
         
         
 

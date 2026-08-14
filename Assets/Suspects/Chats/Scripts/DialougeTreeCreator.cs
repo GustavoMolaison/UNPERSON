@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class DialogueTreeCreator : MonoBehaviour
 {
+    [SerializeField] public DialogueOption backPreFabb;
     public static DialogueTreeCreator Instance;
     void Awake()
     {
@@ -14,13 +16,16 @@ public class DialogueTreeCreator : MonoBehaviour
         // MonitorCameraTracker.Instance.initilize();
         // SuspectTracker.instance.initilize();
     }
+
+    
     public class NodeTree
     {
         // By adding starting dialouge option we create whole tree structture of nodes
         public DialogueOption data;
         public List<NodeTree> children;
         public List<NodeTree> parents;
-
+         
+        public bool back;
         public NodeTree(DialogueOption data)
         {
             if (data == null)
@@ -31,6 +36,7 @@ public class DialogueTreeCreator : MonoBehaviour
             this.data = data;
             this.children = new List<NodeTree>();
             this.parents = new List<NodeTree>();
+            this.back = data.isBackOption;
             if (data == null)
             {
                 Debug.LogError("DialogueOption data is null. Cannot create NodeTree.2222");
@@ -38,6 +44,10 @@ public class DialogueTreeCreator : MonoBehaviour
             }
             
             data.nodeTree = this;
+            if(data.unlockedDialouge != null)
+            {
+                NodeTree hiddenNode = new NodeTree(data.unlockedDialouge);
+            }
 
             foreach (DialogueOption child in data.newDialogueSequence)
             {
@@ -63,11 +73,22 @@ public class DialogueTreeCreator : MonoBehaviour
 
         public void AddChild(NodeTree child)
         {
+            if(child == null)
+            {
+                Debug.LogError("DZIECKO NIE ISTNIEJE");
+            }
             children.Add(child);
+           
+            if(this.data.newDialogueSequence == null)
+            {
+               
+            }
             if (!this.data.newDialogueSequence.Contains(child.data))
             {
+                
                 this.data.newDialogueSequence.Add(child.data);
             }
+            
             child.parents.Add(this);
         }
 
@@ -94,23 +115,26 @@ public class DialogueTreeCreator : MonoBehaviour
             foreach(NodeTree parent in this.parents)
             {
                 Debug.Log("ojcom robie dzieci");
+                // TU KOD SIE ZATRZYMUJE JA
                 parent.AddChild(child);
+                Debug.Log("ojcom robie dzieci222222222");
             }
         }
 
        
     }
     
-    public Dictionary<Suspect, List<NodeTree>> startingNodes = new Dictionary<Suspect, List<NodeTree>>();
+    public Dictionary<Suspect, Branch> startingNodes = new Dictionary<Suspect, Branch>();
     
 
     public void bulidTree(List<Suspect> suspects)
     {
-        Debug.Log(suspects.Count + " suspects found. Building dialogue trees...");
+        NodeTree nodee = new NodeTree(backPreFabb);
+        // Debug.Log(suspects.Count + " suspects found. Building dialogue trees...");
         
         foreach (Suspect suspect in suspects)
         {
-            Debug.Log(suspect.DialogueOptions.Count + " dialogue options found for suspect: " + suspect.name);
+            // Debug.Log(suspect.DialogueOptions.Count + " dialogue options found for suspect: " + suspect.name);
             
             foreach (DialogueOption option in suspect.DialogueOptions)
             {
@@ -120,20 +144,107 @@ public class DialogueTreeCreator : MonoBehaviour
                 Debug.Log(option);
                 if (!startingNodes.ContainsKey(suspect))
                 {
+                    
+                    startingNodes[suspect] = new Branch(null, backPreFabb);
                     Debug.Log("2");
-                    startingNodes[suspect] = new List<NodeTree>();
-                    Debug.Log("3");
                 }
-                startingNodes[suspect].Add(node);
+                startingNodes[suspect].AddToBranch(node);
                 Debug.Log("4");
 
-                if(option.unlockedDialouge != null)
-                {
-                    NodeTree hiddenNode = new NodeTree(option.unlockedDialouge);
-                    
-                }
             }
 
+            
+        }
+//         var climbers = startingNodes;
+
+// if (climbers == null || climbers.Count == 0)
+// {
+//     Debug.Log("Słownik treeClimbers jest pusty!");
+// }
+// else
+// {
+//     foreach (var pair in climbers)
+//     {
+//         Debug.Log($"Podejrzany: {pair.Key} | Climber: {pair.Value}");
+//     }
+// }
+    }
+
+    public class Branch
+    {
+        public readonly List<NodeTree> content = new List<NodeTree>();
+        public readonly List<Branch> childBranches = new List<Branch>();
+        public readonly List<Branch> parentBranches = new List<Branch>();
+
+        [SerializeField] private DialogueOption backPreFab;
+
+        public Branch(List<NodeTree> cont = null, DialogueOption backPreFab = null)
+        {
+            content = cont ?? new List<NodeTree>();
+            if(backPreFab.nodeTree == null){
+              Debug.LogError("NULLL");  
+            }
+            if (backPreFab != null && backPreFab.nodeTree != null)
+            {
+                Debug.Log("dodjae BAck");
+                content.Add(backPreFab.nodeTree);
+            }
+
+            foreach(NodeTree node in content)
+            {
+                if(node.children.Count > 0)
+                {
+                    Branch newBranch = new Branch(node.children, backPreFab);
+                    this.AddChildrenToBranch(newBranch);
+
+                }
+            }
+        }
+
+        public void BuildTree(DialogueOption backPreFab)
+        {
+        foreach (NodeTree node in content)
+        {
+            if (node != null && node.children != null && node.children.Count > 0)
+            {
+                
+                Branch childBranch = new Branch(node.children, backPreFab);
+                
+                
+                this.AddChildrenToBranch(childBranch);
+
+                
+                childBranch.BuildTree(backPreFab);
+            }
+        }
+        }
+        public void AddToBranch(NodeTree cont)
+        {
+            content.Add(cont);
+        }
+
+        public void AddChildrenToBranch(Branch child)
+        {
+            if (!childBranches.Contains(child))
+            {
+                childBranches.Add(child); 
+            }
+            if (!child.parentBranches.Contains(this))
+            {
+               child.AddParentToBranch(this);
+            }
+        }
+
+        public void AddParentToBranch(Branch parent)
+        {
+            if (!parentBranches.Contains(parent))
+            {
+                parentBranches.Add(parent);
+            }
+            if (!parent.childBranches.Contains(this))
+            {
+                parent.AddChildrenToBranch(this);
+            }
             
         }
     }

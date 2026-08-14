@@ -60,7 +60,7 @@ public class SuspectTracker : MonoBehaviour
         // if (instance == null) instance = this;
         // else Destroy(gameObject);
 
-        currentSuspects = LevelsContentInfo.Instance.levelsList[0].SuspectsList;
+        currentSuspects = GameManager.Instance.currentLevel.SuspectsList;
 
         currentSuspect = currentSuspects[0];
         previousSuspect = currentSuspects[0];
@@ -73,6 +73,7 @@ public class SuspectTracker : MonoBehaviour
             {
                 SuspectGueses[suspect] = default(SuspGuees);
             }
+            
         }
 
         initilized = true;

@@ -18,7 +18,7 @@ public class EvidencePanelManager : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("whatPanelEVidence");
+        Case_Monitor.Instance.currentlyPickedEvidence = enrolledEvidence;
         EvidenceSectionManager.Instance.changeAllContent(enrolledEvidence.Title, enrolledEvidence.Cover, enrolledEvidence.Details, enrolledEvidence.Sprite);
         if (Case_Monitor.Instance.playerIsPickingEvidence)
         {

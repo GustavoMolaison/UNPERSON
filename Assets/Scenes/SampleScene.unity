@@ -2639,7 +2639,7 @@ Transform:
   m_GameObject: {fileID: 1956733854}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1769, y: 83, z: -586}
+  m_LocalPosition: {x: 1771, y: 83, z: -586}
   m_LocalScale: {x: 2500, y: 1000, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2757,6 +2757,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1422186587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1983002420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2492959907189334704, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+  m_PrefabInstance: {fileID: 2095491452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1983002426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983002420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069f77ca94c6fb24aa79e168e4399131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OptionTreeManager
 --- !u!1 &1995436117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,6 +2998,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5574502533221804018, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      propertyPath: backPreFabb
+      value: 
+      objectReference: {fileID: 11400000, guid: c9c494351e6f7a04b96661b09c52548b, type: 2}
     - target: {fileID: 5786476964520640544, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2996,7 +3017,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2492959907189334704, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1983002426}
   m_SourcePrefab: {fileID: 100100000, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
 --- !u!224 &2095491453 stripped
 RectTransform:

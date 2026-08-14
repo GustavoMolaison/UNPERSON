@@ -18,6 +18,8 @@ public class Case_Monitor : MonitorBase
     [HideInInspector] private bool evidenceIsDecided = false;
     [HideInInspector] private bool correctAnswer = false;
 
+    [HideInInspector] public Evidence currentlyPickedEvidence = null;
+
     [SerializeField] public HighLight EvidencehightLight;
     void Awake()
     {

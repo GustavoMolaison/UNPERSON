@@ -35,5 +35,24 @@ public class Suspect : ScriptableObject
     public List<DialogueOption> DialogueOptions => dialogueOptions;
     public SuspGuees Role => role;
 
+    public Suspect CreateRuntimeInstance()
+    {
+        // 1. Klonujemy samego Suspecta
+        Suspect suspectInstance = Instantiate(this);
 
+        // 2. Tworzymy nową listę na sklonowane SO
+        suspectInstance.dialogueOptions = new List<DialogueOption>();
+
+        // 3. Klonujemy każdy zagnieżdżony DialogueOption osobno
+        foreach (var originalOption in this.dialogueOptions)
+        {
+            if (originalOption != null)
+            {
+                DialogueOption optionInstance = originalOption.dialogueOptionRunTimeInstace();
+                suspectInstance.dialogueOptions.Add(optionInstance);
+            }
+        }
+
+        return suspectInstance;
+    }
 }

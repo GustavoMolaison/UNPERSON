@@ -21,6 +21,8 @@ MonoBehaviour:
   NewDialogueSequence:
   - {fileID: 11400000, guid: a1d67d464c74f9044b33547d8d93ec38, type: 2}
   EvidenceCheck: {fileID: 0}
+  EvidenceCheckDialougeLine: {fileID: 0}
+  UnlockedDialouge: {fileID: 0}
   EvidenceGained: {fileID: 11400000, guid: 2aafc74048ec2404db81167cb548f82e, type: 2}
   EvidenceToUpdate: {fileID: 0}
   EvidencesTillHidden: []
