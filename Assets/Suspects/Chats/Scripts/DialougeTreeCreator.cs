@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using System.Linq;
 
 public class DialogueTreeCreator : MonoBehaviour
 {
@@ -246,6 +246,11 @@ public class DialogueTreeCreator : MonoBehaviour
                 parent.AddChildrenToBranch(this);
             }
             
+        }
+
+        public List<DialogueOption> branchToOptions()
+        {
+             return content.Select(node => node.data).ToList();
         }
     }
 

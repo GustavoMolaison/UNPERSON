@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 38729146368
-    m_Localized: 'You have wife, she''s also being interrogated. '
+    m_Localized: 'You have a wife, she''s also being interrogated. '
     m_Metadata:
       m_Items: []
   - m_Id: 38825615360
@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 38825615382
-    m_Localized: "When Sophie is gone and\_Marry."
+    m_Localized: "Now that Sophie is gone and\_Marry too."
     m_Metadata:
       m_Items: []
   - m_Id: 38825615383

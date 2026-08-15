@@ -67,7 +67,7 @@ public class DialogueOptionManager : MonoBehaviour
         }
     }
     
-    public List<DialogueOption> getCurrentDialogueOptions()
+    private List<DialogueOption> getCurrentDialogueOptions()
     {
         List<DialogueOption> currentOptions = new List<DialogueOption>();
         for (int i = 0; i < transform.childCount; i++)
@@ -99,7 +99,7 @@ public class DialogueOptionManager : MonoBehaviour
     public void initilalizeSuspectOptions()
     {
         hideDialogueOptions();
-        turnOnChossenDialogues(SuspectTracker.instance.currentSuspect.DialogueOptions);
+        turnOnChossenDialogues(OptionTreeManager.Instance.treeClimbers[SuspectTracker.instance.currentSuspect].startingBranch.branchToOptions());
     }
 
 

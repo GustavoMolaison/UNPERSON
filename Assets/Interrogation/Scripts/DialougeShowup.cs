@@ -1,13 +1,26 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using System.Collections.Generic;
 public class DialougeShowup : MonoBehaviour, IPointerClickHandler
 {
-    [HideInInspector] DialogueOption enrolledDialOption;
+    [HideInInspector] private DialogueOption enrolledDialOption;
     [HideInInspector] bool hasEnrolledDialOption;
 
     List<DialogueOption> optionList = new List<DialogueOption>();
 
+    Image img;
+    private bool evidenceConnected = false;
+    public bool clicked = false;
+
+    private void Start()
+    {
+        img = GetComponent<Image>();
+        
+    }
+    
+
+    
     public void enroll(DialogueOption dialoption)
     {
         
@@ -21,39 +34,33 @@ public class DialougeShowup : MonoBehaviour, IPointerClickHandler
             hasEnrolledDialOption = false;
         }
     }
-
+    
+    public void onClick(bool on)
+    {
+        if (on)
+        {
+            clicked = true;
+            img.color = Color.white;
+        }
+        else
+        {
+            clicked = false;
+            img.color = new Color32(171, 171, 171, 255);
+        }
+        
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
-       
-        if (hasEnrolledDialOption)
+        TalkWindow.Instance.manageShowUps(this);
+    }
+    public void entryEvidenceConnect()
+    {
+        if(enrolledDialOption!= null && enrolledDialOption.hasEvidenceCheckDialougeLine && enrolledDialOption.evidenceCheckDialougeLine == Case_Monitor.Instance.currentlyPickedEvidence && evidenceConnected == false)
         {
-            Debug.Log("dialog ma dowod i go klikam");
-            optionList.Clear();
-            
-
-            if(enrolledDialOption.evidenceCheckDialougeLine == Case_Monitor.Instance.currentlyPickedEvidence)
-            {
-                optionList.Add(enrolledDialOption.unlockedDialouge);
-                // if(enrolledDialOption.unlockedDialouge != null)
-                // {
-                //     Debug.Log(optionList.Count);
-                // }
-
-                DialogueOptionManager.Instance.turnOnChossenDialogues(optionList);
-                DialogueOptionManager.Instance.optionsToLoad.AddRange(optionList);
-                DialogueOptionManager.Instance.optionAddedOutsideTheLoop = true;
-                // if(enrolledDialOption.unlockedDialouge == null)
-                // {
-                //   Debug.LogError("unlockedDialouge NIE ISTNIEJE");  
-                // }
-                // if(enrolledDialOption.unlockedDialouge.nodeTree == null)
-                // {
-                //   Debug.LogError("nodeTree NIE ISTNIEJE");  
-                // }
-                enrolledDialOption.nodeTree.AddChildrenToParents(enrolledDialOption.unlockedDialouge.nodeTree);
-                
-            }
-            
+            evidenceConnected = true;
+            optionList.Add(enrolledDialOption.unlockedDialouge);
+            DialogueOptionManager.Instance.turnOnChossenDialogues(optionList);
+            enrolledDialOption.nodeTree.AddChildrenToParents(enrolledDialOption.unlockedDialouge.nodeTree);
         }
     }
 }

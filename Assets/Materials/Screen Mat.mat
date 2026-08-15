@@ -42,11 +42,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorMask: 15
+    - _NoiseRatio: 0.5
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
+    - _StepValue: 0.25
     - _UIMaskSoftnessX: 1
     - _UIMaskSoftnessY: 1
     m_Colors:

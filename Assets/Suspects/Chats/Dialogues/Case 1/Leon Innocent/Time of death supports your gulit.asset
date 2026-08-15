@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Time of death supports your gulit
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
   uniqueID: 81725229-56e7-48e7-908d-993a2b8886cf
-  DialogueName: Time of death supports your gulit
+  DialogueName: Time of death supports your guilt
   DialogueTable:
     m_TableReference:
       m_TableCollectionName: GUID:f822a387b99192c43aefe0127d2596b3
@@ -21,7 +21,10 @@ MonoBehaviour:
   NewDialogueSequence:
   - {fileID: 0}
   EvidenceCheck: {fileID: 11400000, guid: f0c892f0f7477064b9dfa2c2f6acde65, type: 2}
+  EvidenceCheckDialougeLine: {fileID: 0}
+  UnlockedDialouge: {fileID: 0}
   EvidenceGained: {fileID: 0}
   EvidenceToUpdate: {fileID: 11400000, guid: a73990e2ddba07d479a4d068ef320cf3, type: 2}
+  EvidencesTillHidden: []
   EvidenceUpdateIndex: 0
   IsBackOption: 0

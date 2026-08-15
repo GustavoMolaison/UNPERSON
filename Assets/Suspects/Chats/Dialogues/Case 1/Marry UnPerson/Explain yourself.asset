@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
-  m_Name: Marry identify
+  m_Name: Explain yourself
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
-  uniqueID: 08128b3a-7b69-41ac-a1da-e2648aae9089
-  DialogueName: Identify yoursef
+  uniqueID: ec6a988c-8abe-4192-b1bd-db3a547245ce
+  DialogueName: How did you knew about strangling?
   DialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:6c584fef4d7cfb842aaf143cda313256
-  IsNewDialogueSequence: 1
-  NewDialogueSequence:
-  - {fileID: 11400000, guid: a22126d802b658847b72c463066d8e37, type: 2}
-  - {fileID: 11400000, guid: 097873c4665239940b1257b35245a796, type: 2}
+      m_TableCollectionName: GUID:dccd8ee46a9486e4197e8df35f5cc471
+  IsNewDialogueSequence: 0
+  NewDialogueSequence: []
   EvidenceCheck: {fileID: 0}
   EvidenceCheckDialougeLine: {fileID: 0}
   UnlockedDialouge: {fileID: 0}

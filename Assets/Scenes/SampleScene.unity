@@ -2918,6 +2918,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: InterrogationWindow Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2466863238829862452, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1397604683423338067, guid: 4bdddee07f1eddd43998f92e94d0a7d1, type: 3}
+    - target: {fileID: 2516387486707683455, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516387486707683455, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403444323996129053, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 2788199366229683168, guid: 15c4b84e59c7b3844974a85746ef859c, type: 3}
     - target: {fileID: 5413335208964286324, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3015,7 +3031,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6820248884365593284, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2492959907189334704, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}

@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Marry 1.0.2.1_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: dccd8ee46a9486e4197e8df35f5cc471, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 15262015488
+    m_Localized: How did you know he strangled her?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15366873088
+    m_Localized: What do you mean? I saw her, with bruises on her neck. Purple skin...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15371067392
+    m_Localized: She must have been so scared, betrayed... *Cough*
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15371067393
+    m_Localized: Being strangled by her own parent. HOW CAN ANYONE STRANGLE THEIR
+      OWN CHILD! I cant imagine it when i try i just lost my mind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261696
+    m_Localized: Easy, easy! You are being interrogated remeber no screaming, no
+      sudden movements.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261697
+    m_Localized: And I have a very serious question for you. So you'd better focus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261698
+    m_Localized: How did you see your child lying in her room from the lobby? Hm?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261699
+    m_Localized: Are you lying to me, citizen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261700
+    m_Localized: Well...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261701
+    m_Localized: I...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261702
+    m_Localized: I didn't actually see her. I'm just so distraught. I wasn't thinking
+      about what I was saying.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261703
+    m_Localized: Forgive me, I should be more precise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261704
+    m_Localized: I said, "WHAT DID YOU DO TO HER, YOU FUCKING PSYCHO?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261705
+    m_Localized: My head hurts so much, too. I'm very sorry, officer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261706
+    m_Localized: That's quite a serious change in testimony.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261707
+    m_Localized: You sure there are no memory problems?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261708
+    m_Localized: No! No, sir. I'm perfectly fine in that regard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15375261709
+    m_Localized: I'm not... you know what.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

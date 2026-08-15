@@ -60,8 +60,18 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dccd8ee46a9486e4197e8df35f5cc471
+    m_Address: Assets/Localization tables/Case 1 Marry 1.0.2.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e280720a76b856f46921abd28e618b03
     m_Address: Assets/Localization tables/Case1 Leon 1.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e37e0157e230e194eb2c6163f7ca0774
+    m_Address: Assets/Localization tables/Case 1 Marry 1.1 Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

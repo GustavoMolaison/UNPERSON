@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Marry 1.1_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: e37e0157e230e194eb2c6163f7ca0774, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 41677742080
+    m_Localized: How did the mess in the kitchen happen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41740656640
+    m_Localized: Water spilled, knives and forks on the floor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41744850944
+    m_Localized: I can't really explain it with the evidence I have.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41744850945
+    m_Localized: I assume it must have been my fight with "him".
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41753239552
+    m_Localized: It was pretty chaotic. Can't really tell what happened there exactly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41753239553
+    m_Localized: It was satisfying, though. Amidst all the terror of what happened.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41753239554
+    m_Localized: Being able to beat that bloody cunt. He had it coming even before.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41753239555
+    m_Localized: Now I only want him dead and never to see him again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41753239556
+    m_Localized: Not even the death of a daughter can fix a bitter marriage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41753239557
+    m_Localized: Excuse me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41753239558
+    m_Localized: Is there a problem? You weren't asked, citizen.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
