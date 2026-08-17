@@ -10,73 +10,64 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Case 1 Marry 1.0.2 Shared Data
+  m_Name: Case 1 Mary 1.1.1.2 Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: Case 1 Marry 1.0.2
-  m_TableCollectionNameGuidString: 147f977d2434e3e47b5bd4624d284ef9
+  m_TableCollectionName: Case 1 Mary 1.1.1.2
+  m_TableCollectionNameGuidString: 9c99575bb92c84c459897838a077afc9
   m_Entries:
-  - m_Id: 31116484608
-    m_Key: 1.0.1
+  - m_Id: 14687395840
+    m_Key: 1.1.2.1
     m_Metadata:
       m_Items:
-      - rid: 3459676208802824308
-  - m_Id: 31124873216
-    m_Key: 1.0.2
+      - rid: 3459676404332888069
+  - m_Id: 14720950272
+    m_Key: 1.1.2.2
     m_Metadata:
       m_Items:
-      - rid: 3459676208802824309
-  - m_Id: 31124873217
-    m_Key: 1.0.3
+      - rid: 3459676404332888070
+  - m_Id: 14725144576
+    m_Key: 1.1.2.3
     m_Metadata:
       m_Items:
-      - rid: 3459676208802824310
-  - m_Id: 31124873218
-    m_Key: 1.0.4
+      - rid: 3459676404332888071
+  - m_Id: 14725144577
+    m_Key: 1.1.2.4
     m_Metadata:
       m_Items:
-      - rid: 3459676208802824311
-  - m_Id: 31124873219
-    m_Key: 1.0.5
+      - rid: 3459676404332888072
+  - m_Id: 14729338880
+    m_Key: 1.1.2.5
     m_Metadata:
       m_Items:
-      - rid: 3459676208802824312
-  - m_Id: 31124873220
-    m_Key: 1.0.6
-    m_Metadata:
-      m_Items:
-      - rid: 3459676208802824313
+      - rid: 3459676404332888073
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3459676208802824307
+    rid: 3459676404332888068
   references:
     version: 2
     RefIds:
-    - rid: 3459676208802824307
+    - rid: 3459676404332888068
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1786227452939
-    - rid: 3459676208802824308
+        m_CustomEpoch: 1786964242114
+    - rid: 3459676404332888069
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676208802824309
+    - rid: 3459676404332888070
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p0 s0 e1ApartmentLayout cw
-    - rid: 3459676208802824310
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676208802824311
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888071
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p0 s0 e0 cw
-    - rid: 3459676208802824312
+    - rid: 3459676404332888072
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676208802824313
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888073
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw

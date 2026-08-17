@@ -45,6 +45,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a9667605d66bdf49af7ea239b2b578c
+    m_Address: Case 1 Mary 1.1.1.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 614cc2c2b1f3bbd448e23919d74e50fa
+    m_Address: Case 1 Mary 1.1.1.2_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6a8c4696c9c716f4ea453dc89d4b9acf
     m_Address: Back_en-GB
     m_ReadOnly: 1
@@ -59,6 +71,18 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a36d4071a8befe344a8336bdc6af256e
     m_Address: Case 1 Marry 1.0.2.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7f91b75197867342a19704bfcb1aa80
+    m_Address: Case 1 Mary 1.1.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb28fc1cc541bda4c943535c3c3d21e5
+    m_Address: Case 1 Mary 2.0_en-GB
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB

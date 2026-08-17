@@ -44,9 +44,13 @@ public class DialogueTreeCreator : MonoBehaviour
             }
             
             data.nodeTree = this;
-            if(data.unlockedDialouge != null)
+            if(data.unlockedDialouge.Count > 0)
             {
-                NodeTree hiddenNode = new NodeTree(data.unlockedDialouge);
+                foreach(DialogueOption option in data.unlockedDialouge)
+                {
+                    NodeTree hiddenNode = new NodeTree(option);
+                }
+              
             }
 
             foreach (DialogueOption child in data.newDialogueSequence)

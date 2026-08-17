@@ -15,61 +15,61 @@ MonoBehaviour:
   m_TableCollectionName: Case 1 Marry 1.1
   m_TableCollectionNameGuidString: e37e0157e230e194eb2c6163f7ca0774
   m_Entries:
-  - m_Id: 41677742080
-    m_Key: 1.1.1
+  - m_Id: 211001516482560
+    m_Key: 01.01.2001
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444644
-  - m_Id: 41740656640
-    m_Key: 1.1.2
+      - rid: 3459676382766039040
+  - m_Id: 211001575202816
+    m_Key: 01.01.2002
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444645
-  - m_Id: 41744850944
-    m_Key: 1.1.3
+      - rid: 3459676382766039041
+  - m_Id: 211001575202817
+    m_Key: 01.01.2003
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444646
-  - m_Id: 41744850945
-    m_Key: 1.1.4
+      - rid: 3459676382766039042
+  - m_Id: 211001575202818
+    m_Key: 01.01.2004
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444647
-  - m_Id: 41753239552
-    m_Key: 1.1.5
+      - rid: 3459676382766039043
+  - m_Id: 211001575202819
+    m_Key: 01.01.2005
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444648
-  - m_Id: 41753239553
-    m_Key: 1.1.6
+      - rid: 3459676382766039044
+  - m_Id: 211001575202820
+    m_Key: 01.01.2006
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444649
-  - m_Id: 41753239554
-    m_Key: 1.1.7
+      - rid: 3459676382766039045
+  - m_Id: 211001575202821
+    m_Key: 01.01.2007
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444650
-  - m_Id: 41753239555
-    m_Key: 1.1.8
+      - rid: 3459676382766039046
+  - m_Id: 211001575202822
+    m_Key: 01.01.2008
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444651
-  - m_Id: 41753239556
-    m_Key: 1.1.9
+      - rid: 3459676382766039047
+  - m_Id: 211001575202823
+    m_Key: 01.01.2009
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444652
-  - m_Id: 41753239557
-    m_Key: 1.1.10
+      - rid: 3459676382766039048
+  - m_Id: 211001575202824
+    m_Key: 01.01.2010
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444653
-  - m_Id: 41753239558
-    m_Key: 1.1.11
+      - rid: 3459676382766039049
+  - m_Id: 211001575202825
+    m_Key: 01.01.2011
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444654
+      - rid: 3459676382766039050
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -81,47 +81,47 @@ MonoBehaviour:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1786831650423
-    - rid: 3459676365678444644
+    - rid: 3459676382766039040
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444645
+    - rid: 3459676382766039041
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444646
+    - rid: 3459676382766039042
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444647
+    - rid: 3459676382766039043
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444648
+    - rid: 3459676382766039044
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444649
+    - rid: 3459676382766039045
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444650
+    - rid: 3459676382766039046
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444651
+    - rid: 3459676382766039047
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444652
+    - rid: 3459676382766039048
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444653
+    - rid: 3459676382766039049
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444654
+    - rid: 3459676382766039050
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw

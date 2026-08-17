@@ -40,6 +40,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63320ee028dc86147bc8a4a53809652a
+    m_Address: Assets/Localization tables/Case 1 Mary 1.2 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68b81b0023ddeff43b68f86c27153d5e
     m_Address: Assets/Localization tables/Case1 Leon 1.0.1 Shared Data.asset
     m_ReadOnly: 1
@@ -50,8 +55,23 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75dfe886a521ebe4ba124ec328fcef77
+    m_Address: Assets/Localization tables/Case 1 Mary 1.1.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 910dfa9073621f74596f146ba4beff29
     m_Address: Assets/Localization tables/Case 1 Marry 1.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c99575bb92c84c459897838a077afc9
+    m_Address: Assets/Case 1 Mary 1.1.1.2 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aca25b8674c5bee4abdc0c734f4add28
+    m_Address: Assets/Localization tables/Case 1 Mary 1.1.1.1 Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

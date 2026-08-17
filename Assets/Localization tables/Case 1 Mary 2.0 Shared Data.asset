@@ -1,0 +1,289 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Case 1 Mary 2.0 Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Case 1 Mary 2.0
+  m_TableCollectionNameGuidString: 63320ee028dc86147bc8a4a53809652a
+  m_Entries:
+  - m_Id: 214931857408
+    m_Key: 2.0.1
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888162
+  - m_Id: 214973800448
+    m_Key: 2.0.2
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888163
+  - m_Id: 214973800449
+    m_Key: 2.0.3
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888164
+  - m_Id: 214973800450
+    m_Key: 2.0.4
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888165
+  - m_Id: 214973800451
+    m_Key: 2.0.5
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888166
+  - m_Id: 214973800452
+    m_Key: 2.0.6
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888167
+  - m_Id: 214973800453
+    m_Key: 2.0.7
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888168
+  - m_Id: 214973800454
+    m_Key: 2.0.8
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888169
+  - m_Id: 214973800455
+    m_Key: 2.0.9
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888170
+  - m_Id: 214973800456
+    m_Key: 2.0.10
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888171
+  - m_Id: 214973800457
+    m_Key: 2.0.11
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888172
+  - m_Id: 214973800458
+    m_Key: 2.0.12
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888173
+  - m_Id: 214973800459
+    m_Key: 2.0.13
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888174
+  - m_Id: 214973800460
+    m_Key: 2.0.14
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888175
+  - m_Id: 214973800461
+    m_Key: 2.0.15
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888176
+  - m_Id: 214973800462
+    m_Key: 2.0.16
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888177
+  - m_Id: 214973800463
+    m_Key: 2.0.17
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888178
+  - m_Id: 214973800464
+    m_Key: 2.0.18
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888179
+  - m_Id: 214973800465
+    m_Key: 2.0.19
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888180
+  - m_Id: 214973800466
+    m_Key: 2.0.20
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888181
+  - m_Id: 214973800467
+    m_Key: 2.0.21
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888182
+  - m_Id: 214973800468
+    m_Key: 2.0.22
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888183
+  - m_Id: 214973800469
+    m_Key: 2.0.23
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888184
+  - m_Id: 214973800470
+    m_Key: 2.0.24
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888185
+  - m_Id: 214973800471
+    m_Key: 2.0.25
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888186
+  - m_Id: 214973800472
+    m_Key: 2.0.26
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888187
+  - m_Id: 214973800473
+    m_Key: 2.0.27
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888188
+  - m_Id: 214973800474
+    m_Key: 2.0.28
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888189
+  - m_Id: 214973800475
+    m_Key: 2.0.29
+    m_Metadata:
+      m_Items:
+      - rid: 3459676404332888190
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3459676404332888154
+  references:
+    version: 2
+    RefIds:
+    - rid: 3459676404332888154
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1786967651736
+    - rid: 3459676404332888162
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888163
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888164
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888165
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888166
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888167
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888168
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888169
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888170
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888171
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888172
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888173
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888174
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888175
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888176
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888177
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888178
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888179
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888180
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888181
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888182
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888183
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888184
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888185
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888186
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888187
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676404332888188
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888189
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676404332888190
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw

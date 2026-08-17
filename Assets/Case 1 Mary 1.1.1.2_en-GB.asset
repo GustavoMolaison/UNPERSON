@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Mary 1.1.1.2_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 9c99575bb92c84c459897838a077afc9, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 14687395840
+    m_Localized: Your husband came back from work by bus.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14720950272
+    m_Localized: You could see the bus stop he used from your apartment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14725144576
+    m_Localized: 'Yea, that''s true officer. I didn''t thought its important though. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14725144577
+    m_Localized: You were wrong then.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14729338880
+    m_Localized: With such convenience, timing isn't that much of a problem anymore,
+      is it?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

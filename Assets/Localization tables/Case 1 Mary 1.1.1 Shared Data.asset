@@ -10,208 +10,253 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Case 1 Marry 1.0.2.1 Shared Data
+  m_Name: Case 1 Mary 1.1.1 Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: Case 1 Marry 1.0.2.1
-  m_TableCollectionNameGuidString: dccd8ee46a9486e4197e8df35f5cc471
+  m_TableCollectionName: Case 1 Mary 1.1.1
+  m_TableCollectionNameGuidString: 75dfe886a521ebe4ba124ec328fcef77
   m_Entries:
-  - m_Id: 15262015488
+  - m_Id: 17027817472
     m_Key: 1.2.1
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444621
-  - m_Id: 15366873088
+      - rid: 3459676382766039052
+  - m_Id: 17065566208
     m_Key: 1.2.2
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444622
-  - m_Id: 15371067392
+      - rid: 3459676382766039053
+  - m_Id: 17065566209
     m_Key: 1.2.3
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444623
-  - m_Id: 15371067393
+      - rid: 3459676382766039054
+  - m_Id: 17065566210
     m_Key: 1.2.4
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444624
-  - m_Id: 15375261696
+      - rid: 3459676382766039055
+  - m_Id: 17065566211
     m_Key: 1.2.5
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444625
-  - m_Id: 15375261697
+      - rid: 3459676382766039056
+  - m_Id: 17065566212
     m_Key: 1.2.6
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444626
-  - m_Id: 15375261698
+      - rid: 3459676382766039057
+  - m_Id: 17065566213
     m_Key: 1.2.7
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444627
-  - m_Id: 15375261699
+      - rid: 3459676382766039058
+  - m_Id: 17065566214
     m_Key: 1.2.8
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444628
-  - m_Id: 15375261700
+      - rid: 3459676382766039059
+  - m_Id: 17065566215
     m_Key: 1.2.9
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444629
-  - m_Id: 15375261701
+      - rid: 3459676382766039060
+  - m_Id: 17065566216
     m_Key: 1.2.10
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444630
-  - m_Id: 15375261702
+      - rid: 3459676382766039061
+  - m_Id: 17065566217
     m_Key: 1.2.11
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444631
-  - m_Id: 15375261703
+      - rid: 3459676382766039062
+  - m_Id: 17065566218
     m_Key: 1.2.12
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444632
-  - m_Id: 15375261704
+      - rid: 3459676382766039063
+  - m_Id: 17065566219
     m_Key: 1.2.13
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444633
-  - m_Id: 15375261705
+      - rid: 3459676382766039064
+  - m_Id: 17065566220
     m_Key: 1.2.14
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444634
-  - m_Id: 15375261706
+      - rid: 3459676382766039065
+  - m_Id: 17065566221
     m_Key: 1.2.15
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444635
-  - m_Id: 15375261707
+      - rid: 3459676382766039066
+  - m_Id: 17065566222
     m_Key: 1.2.16
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444636
-  - m_Id: 15375261708
+      - rid: 3459676382766039067
+  - m_Id: 17065566223
     m_Key: 1.2.17
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444637
-  - m_Id: 15375261709
+      - rid: 3459676382766039068
+  - m_Id: 17065566224
     m_Key: 1.2.18
     m_Metadata:
       m_Items:
-      - rid: 3459676365678444638
-  - m_Id: 583927038205952
+      - rid: 3459676382766039069
+  - m_Id: 17065566225
     m_Key: 1.2.19
     m_Metadata:
       m_Items:
-      - rid: 3459676404332888195
-  - m_Id: 583927092731904
+      - rid: 3459676382766039070
+  - m_Id: 17065566226
     m_Key: 1.2.20
     m_Metadata:
       m_Items:
-      - rid: 3459676404332888196
-  - m_Id: 583927092731905
+      - rid: 3459676382766039071
+  - m_Id: 17065566227
     m_Key: 1.2.21
     m_Metadata:
       m_Items:
-      - rid: 3459676404332888197
+      - rid: 3459676382766039072
+  - m_Id: 17065566228
+    m_Key: 1.2.22
+    m_Metadata:
+      m_Items:
+      - rid: 3459676382766039073
+  - m_Id: 17065566229
+    m_Key: 1.2.23
+    m_Metadata:
+      m_Items:
+      - rid: 3459676382766039074
+  - m_Id: 17065566230
+    m_Key: 1.2.24
+    m_Metadata:
+      m_Items:
+      - rid: 3459676382766039075
+  - m_Id: 17065566231
+    m_Key: 1.2.25
+    m_Metadata:
+      m_Items:
+      - rid: 3459676382766039076
+  - m_Id: 17065566232
+    m_Key: 1.2.26
+    m_Metadata:
+      m_Items:
+      - rid: 3459676382766039077
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3459676365678444620
+    rid: 3459676382766039051
   references:
     version: 2
     RefIds:
-    - rid: 3459676365678444620
+    - rid: 3459676382766039051
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1786829404298
-    - rid: 3459676365678444621
+        m_CustomEpoch: 1786885305206
+    - rid: 3459676382766039052
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444622
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444623
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444624
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444625
+    - rid: 3459676382766039053
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444626
+    - rid: 3459676382766039054
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444627
+    - rid: 3459676382766039055
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039056
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039057
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039058
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444628
+    - rid: 3459676382766039059
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444629
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444630
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444631
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444632
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444633
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444634
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444635
+    - rid: 3459676382766039060
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444636
+    - rid: 3459676382766039061
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676365678444637
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676365678444638
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676404332888195
-      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
-      data:
-        m_CommentText: p0 s0 e0 cw
-    - rid: 3459676404332888196
+    - rid: 3459676382766039062
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
-    - rid: 3459676404332888197
+    - rid: 3459676382766039063
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039064
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 e0 cw
+    - rid: 3459676382766039065
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676382766039066
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676382766039067
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676382766039068
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039069
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039070
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676382766039071
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p1 s0 e0 cw
+    - rid: 3459676382766039072
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039073
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e1ConstructionWorks cw
+    - rid: 3459676382766039074
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039075
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw
+    - rid: 3459676382766039076
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e1LeonTestimony cw
+    - rid: 3459676382766039077
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 e0 cw

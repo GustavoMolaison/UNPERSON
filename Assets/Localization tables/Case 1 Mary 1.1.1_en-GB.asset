@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Mary 1.1.1_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 75dfe886a521ebe4ba124ec328fcef77, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 17027817472
+    m_Localized: 'Few bruises. Nothing more. For two people who weren''t exactly
+      lovebirds that fight was pretty calm. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566208
+    m_Localized: The kitchen looks like someone threw a body around.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566209
+    m_Localized: There would be at least cuts. Not to mention broken bones or twisted
+      ankles. Or are you two some superhumans with iron skin?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566210
+    m_Localized: I assumed he had to do it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566211
+    m_Localized: He went crazy after all.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566212
+    m_Localized: Sophie could also be trying to grab someone's attention when this
+      monster attacked her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566213
+    m_Localized: Ten minutes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566214
+    m_Localized: Assuming you are not lying and you perfectly dodged each other.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566215
+    m_Localized: Ten minutes. That's how much time your husband would have to commit
+      the crime.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566216
+    m_Localized: He couldn't know when you'd come back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566217
+    m_Localized: Why would he waste time destroying the kitchen?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566218
+    m_Localized: Since when do we expect rationality from UnPersons?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566219
+    m_Localized: I'll tell you what I think.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566220
+    m_Localized: Someone destroyed the kitchen before youleft to the neighbor's.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566221
+    m_Localized: Someone lost control, went mad.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566222
+    m_Localized: Fell into uncontrolled rage. A common sight among newborn UnPersons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566223
+    m_Localized: It wasn't me, officer! I swear! Don't let him deceive you. He planned
+      it to pin it on me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566224
+    m_Localized: He always did it, putting his faults on me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566225
+    m_Localized: Screaming won't help you, suspect. I suggest giving me some alibi
+      or proof.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566226
+    m_Localized: Otherwise...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566227
+    m_Localized: Just let's think, how could I make such a mess and kil... did this
+      crime?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566228
+    m_Localized: Every neighbor would hear it and call the services.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566229
+    m_Localized: Besides, if I did it and specially left the apartment to pin it
+      on him...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566230
+    m_Localized: Even though it was the other way around.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566231
+    m_Localized: I wouldn't be able to time it so perfectly to dodge each other.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17065566232
+    m_Localized: I couldn't do it! I wouldn't NO MATTER WHAT KILL SOPHIE!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

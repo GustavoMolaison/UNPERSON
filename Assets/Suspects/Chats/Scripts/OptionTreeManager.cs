@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Linq;
 using NUnit.Framework.Constraints;
+using UnityEditor;
 
 public class OptionTreeManager : MonoBehaviour
 {
@@ -66,9 +67,14 @@ public class OptionTreeManager : MonoBehaviour
             }
             else
             {
-                if (node.data.hasEvidenceCheckDialougeLine)
+                // 
+                if (node.data.hasEvidenceCheckDialogueLine)
                 {
-                    currentBranch.AddToBranch(node.data.unlockedDialouge.nodeTree);
+                    foreach(DialogueOption dialopt in node.data.unlockedDialouge)
+                    {
+                        currentBranch.AddToBranch(dialopt.nodeTree);
+                    }
+                    // currentBranch.AddToBranch(node.data.unlockedDialouge.nodeTree);
                     return currentBranch.content.Select(child => child.data).ToList();
                 }
                 else

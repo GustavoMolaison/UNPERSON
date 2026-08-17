@@ -27,8 +27,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3eb4af68e1e83e24ca8a61f6bf038d16
+    m_Address: Case 1 Mary 1.1.1.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 45b08e14144c5e248913e2d100f8b66e
     m_Address: Case1 Leon 1.0.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 538d13bab59963e49a4d05a3048ab0b0
+    m_Address: Case 1 Mary 1.1.1_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
@@ -70,8 +82,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8529fcd2ea8d454db3c84414d841661
+    m_Address: Case 1 Mary 2.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf9c3c146af0c1c409e63fad6784bcd6
     m_Address: Case 1 Marry 1.0.2.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d58888cc2d2e177458f6037ef2973b49
+    m_Address: Case 1 Mary 1.1.1.2_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

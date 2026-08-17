@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Localization;
 using System;
+using System.Linq;
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "DialogueOption")]
 public class DialogueOption : ScriptableObject
 {
@@ -46,10 +47,10 @@ public class DialogueOption : ScriptableObject
     [SerializeField] private Evidence EvidenceCheck = null;
     private bool HasEvidenceCheck => EvidenceCheck != null;
 
-    [SerializeField] private Evidence EvidenceCheckDialougeLine = null;
-    private bool HasEvidenceCheckDialougeLine => EvidenceCheckDialougeLine != null;
+    [SerializeField] private List<Evidence> EvidenceCheckDialogueLine = new List<Evidence>();
+    private bool HasEvidenceCheckDialogueLine => EvidenceCheckDialogueLine.Count != 0;
 
-    [SerializeField] private DialogueOption UnlockedDialouge = null;
+    [SerializeField] private List<DialogueOption> UnlockedDialouge = new List<DialogueOption>();
 
     [SerializeField] private Evidence EvidenceGained = null;
     private bool HasEvidenceGained => EvidenceGained != null;
@@ -80,10 +81,10 @@ public class DialogueOption : ScriptableObject
     public Evidence evidenceCheck => EvidenceCheck;
     public bool hasEvidenceCheck => HasEvidenceCheck;
 
-    public Evidence evidenceCheckDialougeLine => EvidenceCheckDialougeLine;
-    public bool hasEvidenceCheckDialougeLine => HasEvidenceCheckDialougeLine;
+    public List<Evidence> evidenceCheckDialogueLine => EvidenceCheckDialogueLine;
+    public bool hasEvidenceCheckDialogueLine => HasEvidenceCheckDialogueLine;
 
-    public DialogueOption unlockedDialouge => UnlockedDialouge;
+    public List<DialogueOption> unlockedDialouge => UnlockedDialouge;
     public Evidence evidenceGained => EvidenceGained;
     public bool hasEvidenceGained => HasEvidenceGained;
     public Evidence evidenceToUpdate => EvidenceToUpdate;
@@ -112,7 +113,10 @@ public class DialogueOption : ScriptableObject
         if(this.UnlockedDialouge != null)
         {
             Debug.Log("KTORY TO JUZ DEBUG KURWA");
-            dialOptionCopy.UnlockedDialouge = this.UnlockedDialouge.dialogueOptionRunTimeInstace();
+            dialOptionCopy.UnlockedDialouge = this.UnlockedDialouge
+    ?.Where(dialogue => dialogue != null)
+    .Select(dialogue => dialogue.dialogueOptionRunTimeInstace())
+    .ToList() ?? new List<DialogueOption>();
         }
         
 

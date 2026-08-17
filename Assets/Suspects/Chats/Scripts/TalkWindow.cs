@@ -30,14 +30,14 @@ public class TalkWindow : MonoBehaviour
             prevShowUp.entryEvidenceConnect();  
         }
     }
-    public IEnumerator addMessage(string message, bool isPlayer, bool isEvidenceConnected, DialogueOption dialoption)
+    public IEnumerator addMessage(string message, bool isPlayer, bool isEvidenceConnected, string connectedEvidence, DialogueOption dialoption)
     {
 
         GameObject newChild = Instantiate(child, transform, false);
         if (isEvidenceConnected)
         {
             DialougeShowup dialShowUp = newChild.GetComponent<DialougeShowup>();
-            dialShowUp.enroll(dialoption);
+            dialShowUp.enroll(dialoption, connectedEvidence);
         }
         
 

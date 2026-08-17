@@ -1,7 +1,6 @@
-using TMPro;
+
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 
 // This script is meant to be placed on the parent of the dialogue option windows,
 // it will be responsible for creating and turning them off/on when needed
@@ -99,7 +98,7 @@ public class DialogueOptionManager : MonoBehaviour
     public void initilalizeSuspectOptions()
     {
         hideDialogueOptions();
-        turnOnChossenDialogues(OptionTreeManager.Instance.treeClimbers[SuspectTracker.instance.currentSuspect].startingBranch.branchToOptions());
+        turnOnChossenDialogues(OptionTreeManager.Instance.treeClimbers[SuspectTracker.instance.currentSuspect].currentBranch.branchToOptions());
     }
 
 
@@ -257,12 +256,18 @@ public void turnOnChossenDialogues(List<DialogueOption> optionsToLoad)
         
         if(option.ishidden)
             {
+                bool stillhidden = false;
                 foreach (Evidence evid in option.evidencesTillHidden)
                 {
                     if (!GameManager.Instance.evidenceList.Contains(evid))
                     {
+                        stillhidden = true;
                         break;
                     }
+                }
+                if (stillhidden)
+                {
+                    continue;
                 }
             }
             

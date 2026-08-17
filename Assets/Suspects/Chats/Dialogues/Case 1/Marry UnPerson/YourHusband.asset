@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
-  m_Name: Why the mess in the lobby
+  m_Name: YourHusband
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
-  uniqueID: b187d0f6-ffb6-46a2-8c36-c84871d770ee
-  DialogueName: Why the mess in the lobby?
+  uniqueID: 07b4eb72-3a60-4961-adf3-4ef6c1262c01
+  DialogueName: Tell me about your husband
   DialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:e37e0157e230e194eb2c6163f7ca0774
+      m_TableCollectionName: GUID:63320ee028dc86147bc8a4a53809652a
   IsNewDialogueSequence: 0
-  NewDialogueSequence:
-  - {fileID: 11400000, guid: 89f5b9af9f4971f458bb1790c0a287ea, type: 2}
+  NewDialogueSequence: []
   EvidenceCheck: {fileID: 0}
   EvidenceCheckDialogueLine: []
-  UnlockedDialouge: {fileID: 0}
+  UnlockedDialouge: []
   EvidenceGained: {fileID: 0}
   EvidenceToUpdate: {fileID: 0}
   EvidencesTillHidden: []

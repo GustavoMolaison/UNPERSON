@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class DialougeShowup : MonoBehaviour, IPointerClickHandler
 {
     [HideInInspector] private DialogueOption enrolledDialOption;
+    [HideInInspector] private string enrolledEvidenceName;
+    [HideInInspector] private Evidence enrolledEvidence;
     [HideInInspector] bool hasEnrolledDialOption;
 
     List<DialogueOption> optionList = new List<DialogueOption>();
@@ -21,10 +23,11 @@ public class DialougeShowup : MonoBehaviour, IPointerClickHandler
     
 
     
-    public void enroll(DialogueOption dialoption)
+    public void enroll(DialogueOption dialoption, string enrolledEvidName)
     {
         
         enrolledDialOption = dialoption;
+        enrolledEvidenceName = enrolledEvidName;
         if(enrolledDialOption != null) 
         {
             hasEnrolledDialOption = true;
@@ -55,12 +58,33 @@ public class DialougeShowup : MonoBehaviour, IPointerClickHandler
     }
     public void entryEvidenceConnect()
     {
-        if(enrolledDialOption!= null && enrolledDialOption.hasEvidenceCheckDialougeLine && enrolledDialOption.evidenceCheckDialougeLine == Case_Monitor.Instance.currentlyPickedEvidence && evidenceConnected == false)
+        Debug.Log("Sprawdzam");
+        if(enrolledDialOption != null)
         {
+            
+        
+        int evidenceIndex = -1;
+
+        for (int i = 0; i < enrolledDialOption.evidenceCheckDialogueLine.Count; i++) 
+        {
+           Evidence evid = enrolledDialOption.evidenceCheckDialogueLine[i];
+
+           if (evid.name == enrolledEvidenceName)
+              {
+                 enrolledEvidence = evid;
+                 evidenceIndex = i;
+                 break;
+              }
+        }
+        if(enrolledDialOption!= null && enrolledDialOption.hasEvidenceCheckDialogueLine && enrolledEvidence == Case_Monitor.Instance.currentlyPickedEvidence && evidenceConnected == false)
+        {
+            Debug.Log("sigma");
             evidenceConnected = true;
-            optionList.Add(enrolledDialOption.unlockedDialouge);
+            optionList.Add(enrolledDialOption.unlockedDialouge[evidenceIndex]);
             DialogueOptionManager.Instance.turnOnChossenDialogues(optionList);
-            enrolledDialOption.nodeTree.AddChildrenToParents(enrolledDialOption.unlockedDialouge.nodeTree);
+            enrolledDialOption.nodeTree.AddChildrenToParents(enrolledDialOption.unlockedDialouge[evidenceIndex].nodeTree);
+        }
+
         }
     }
 }

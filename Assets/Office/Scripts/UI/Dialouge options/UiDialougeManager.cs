@@ -7,6 +7,7 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
 using UnityEngine.Localization.Metadata;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Linq;
 
 
 public class UiDialougeManager : MonoBehaviour
@@ -72,16 +73,17 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
         bool isPlayer;
         bool isSlowed;
         bool isEvidenceConntected;
+        string connectedEvidence;
         Color color;
 
         var sharedEntry = table.SharedData.GetEntry(entry.KeyId);
         var commentMeta = sharedEntry.Metadata.GetMetadata<Comment>();
         
-        (isPlayer, isSlowed, isEvidenceConntected, color) = metaDataParser(commentMeta.CommentText);
+        (isPlayer, isSlowed, isEvidenceConntected, connectedEvidence,  color) = metaDataParser(commentMeta.CommentText);
         Debug.Log("isPlayer: " + isPlayer);
         Debug.Log("isSlowed: " + isSlowed);
         Debug.Log("isEvidenceConntected: " + isEvidenceConntected);
-        Debug.Log("color: " + color);
+        // Debug.Log("color: " + color);
 
         
         
@@ -102,7 +104,7 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
         // Z loaded StringTable tekst mamy od razu w strefie pamięci (LocalizedValue)
         string messageText = entry.LocalizedValue;
 
-        yield return StartCoroutine(layoutCode.addMessage(messageText, isPlayer, isEvidenceConntected, dialoption));
+        yield return StartCoroutine(layoutCode.addMessage(messageText, isPlayer, isEvidenceConntected, connectedEvidence, dialoption));
 
         if (i < entries.Count - 1)
         {
@@ -159,7 +161,7 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
 // Ta funkcja ma zadbac by dialogi pięknie i ładnie się wyświetlały
     public void ManageChatOverflow(RectTransform layoutRect, Vector2 windowDimensions)
     {
-        Debug.Log("Czyścimy");
+        // Debug.Log("Czyścimy");
         if (layoutRect == null) return;
 
         // 1. Pobieramy komponent VerticalLayoutGroup
@@ -199,7 +201,7 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
         if (windowHeight < totalContentHeight + 50)
             
         {
-            Debug.Log("Przekracza");
+            // Debug.Log("Przekracza");
             while (windowHeight < totalContentHeight + 50 && layoutRect.childCount > 0)
             {
                 GameObject oldestCloud = layoutRect.GetChild(0).gameObject;
@@ -207,7 +209,7 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
 
                 totalContentHeight -= (cloudRect.rect.height + layoutInfo.spacing);
                 oldestCloud.transform.SetParent(null);
-                Debug.Log("USUNIECIE");
+                // Debug.Log("USUNIECIE");
                 Destroy(oldestCloud);
 
                 // Wymuszamy aktualizacj� layoutu, by dane w p�tli by�y poprawne
@@ -235,13 +237,14 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
        
     }
 
-    private (bool, bool, bool, Color) metaDataParser(string data)
+    private (bool, bool, bool, string, Color) metaDataParser(string data)
     {
         bool isPlayer = false;
         bool isSlowed = false;
         bool isEvidenceConnected = false;
+        string ConnectedEvidence = null;
 
-        List<bool> boolList = new List<bool> { isPlayer, isSlowed, isEvidenceConnected };
+        List<bool> boolList = new List<bool> { isPlayer, isSlowed, isEvidenceConnected};
 
         string[] words = data.Split(' ', System.StringSplitOptions.RemoveEmptyEntries);
 
@@ -252,18 +255,27 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
                 continue;
 
             boolList[i] = words[i][1] == '1';
-            Debug.Log("Bool " + i + ": " + boolList[i]);
+            
         }
         
+        if(boolList[2])
+        {
+            Debug.Log("Evidence znaleziony");
+            ConnectedEvidence = words[2].Substring(2);
+            Debug.Log(ConnectedEvidence);
+        }
+
 
         Color color; 
-        if(words[2].Length < 2)
+        if(words.Length > 3)
         {
+            if(words[3].Length < 2)
+          {
             color = Color.white;
-        }
-        else
-        {
-            switch (words[2])
+          }
+            else
+          {
+            switch (words[3])
            {
             case "red":
                 color = Color.red;
@@ -274,10 +286,16 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
                 break;
             
            }
+           }
+        }
+        else
+        {
+            color = Color.white;
         }
         
+        
 
-        return (boolList[0], boolList[1], boolList[2], color);
+        return (boolList[0], boolList[1], boolList[2], ConnectedEvidence, color);
     }
 }
 

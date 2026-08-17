@@ -10,20 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
-  m_Name: What did you say
+  m_Name: SomethingWrongWithFightScene
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
-  uniqueID: a6231f3f-d234-4f59-9284-45cc0f3965b1
-  DialogueName: What excactly you have said to Leon?
+  uniqueID: 18b6928b-65a9-4c49-b824-d75c70bacbb2
+  DialogueName: It doesnt make sense
   DialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:147f977d2434e3e47b5bd4624d284ef9
+      m_TableCollectionName: GUID:75dfe886a521ebe4ba124ec328fcef77
   IsNewDialogueSequence: 0
   NewDialogueSequence: []
-  EvidenceCheck: {fileID: 0}
+  EvidenceCheck: {fileID: 11400000, guid: 087711a3aaf5014498dd65ba504aeb08, type: 2}
   EvidenceCheckDialogueLine:
-  - {fileID: 11400000, guid: 16650d77bb1f18f4da2ac4b2dcdff93a, type: 2}
+  - {fileID: 11400000, guid: c926bb3ad4466ba4aa6aa6c1fecefdb1, type: 2}
+  - {fileID: 11400000, guid: 1fae59a665c18f5419a215b45c6ad3b2, type: 2}
   UnlockedDialouge:
-  - {fileID: 11400000, guid: d2f4ce3dfaad1184f9b84be740e9d118, type: 2}
+  - {fileID: 11400000, guid: c6c35909fbdba7045bb9058ffa263fc5, type: 2}
+  - {fileID: 11400000, guid: 48a6c4fd546f2164aaae7a830bea21fd, type: 2}
   EvidenceGained: {fileID: 0}
   EvidenceToUpdate: {fileID: 0}
   EvidencesTillHidden: []
