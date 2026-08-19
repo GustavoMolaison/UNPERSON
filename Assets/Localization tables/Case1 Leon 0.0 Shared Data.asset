@@ -30,6 +30,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 3459676073562210391
+  - m_Id: 6050944394452992
+    m_Key: 0.0.4
+    m_Metadata:
+      m_Items:
+      - rid: 3459676451359424587
+  - m_Id: 6050944444784640
+    m_Key: 0.0.5
+    m_Metadata:
+      m_Items:
+      - rid: 3459676451359424588
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -50,6 +60,14 @@ MonoBehaviour:
       data:
         m_CommentText: p0 s0 cw
     - rid: 3459676073562210391
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 cw
+    - rid: 3459676451359424587
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: p0 s0 cw
+    - rid: 3459676451359424588
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: p1 s0 cw

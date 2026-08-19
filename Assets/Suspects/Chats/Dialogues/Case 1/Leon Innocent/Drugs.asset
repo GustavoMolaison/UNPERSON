@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf707f0d683e3b4f8f59a6e3ae6a00c, type: 3}
+  m_Name: Drugs
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueOption
+  uniqueID: a3002aa3-90f8-4ed2-a888-4e5cb7133e35
+  DialogueName: Drugs Usage
+  DialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:35465ffd41720c0448c1c6f7ad565f11
+  IsNewDialogueSequence: 0
+  NewDialogueSequence: []
+  EvidenceCheck: {fileID: 11400000, guid: c77a74a049d4b1e498a627670b139800, type: 2}
+  EvidenceCheckDialogueLine: []
+  UnlockedDialouge: []
+  EvidenceGained: {fileID: 0}
+  EvidenceToUpdate: {fileID: 0}
+  EvidencesTillHidden:
+  - {fileID: 11400000, guid: c77a74a049d4b1e498a627670b139800, type: 2}
+  EvidenceUpdateIndex: 0
+  IsBackOption: 0

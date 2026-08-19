@@ -63,6 +63,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d637ea1ef3d9254fa234223d580e63a
+    m_Address: Case 1 Leon 0.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 90eae91b23cffcf4c80c3edf49f1f8c6
     m_Address: Case 1 Marry 1.0.2_en-GB
     m_ReadOnly: 1

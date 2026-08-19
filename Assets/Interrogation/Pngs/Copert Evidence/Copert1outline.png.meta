@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 52d70b4cb7922124e8d2bb91cee6ab97
+guid: a24b4921d4ee2c044abbb2a700aa3b90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4162445006892173512
-    second: Suspect_0
+      213: -3110312029703371194
+    second: Copert1outline_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Suspect_0
+      name: Copert1outline_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 68
-        width: 63
-        height: 84
+        x: 0
+        y: 0
+        width: 64
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 837f71fd1560c36c0800000000000000
-      internalID: -4162445006892173512
+      spriteID: 64608e820b3f5d4d0800000000000000
+      internalID: -3110312029703371194
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Suspect_0: -4162445006892173512
+      Copert1outline_0: -3110312029703371194
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
