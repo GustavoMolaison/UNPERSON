@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4181505144023529456, guid: 318b58cd09fb3424a8f4bdbfb56dbad8, type: 3}
+  m_Sprite: {fileID: -502251006566509656, guid: 7376876067669444091720b1397c2d00, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -107,10 +107,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -6791910354076640760, guid: 318b58cd09fb3424a8f4bdbfb56dbad8, type: 3}
-    m_PressedSprite: {fileID: 6414241233706062674, guid: 318b58cd09fb3424a8f4bdbfb56dbad8, type: 3}
-    m_SelectedSprite: {fileID: 6414241233706062674, guid: 318b58cd09fb3424a8f4bdbfb56dbad8, type: 3}
-    m_DisabledSprite: {fileID: 4181505144023529456, guid: 318b58cd09fb3424a8f4bdbfb56dbad8, type: 3}
+    m_HighlightedSprite: {fileID: -7910667973076567708, guid: 7376876067669444091720b1397c2d00, type: 3}
+    m_PressedSprite: {fileID: -1824277389131821403, guid: 7376876067669444091720b1397c2d00, type: 3}
+    m_SelectedSprite: {fileID: -1824277389131821403, guid: 7376876067669444091720b1397c2d00, type: 3}
+    m_DisabledSprite: {fileID: -502251006566509656, guid: 7376876067669444091720b1397c2d00, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -148,8 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueOptionWindow
   enrolledDialogue: {fileID: 0}
   initialized: 0
-  graphImage: {fileID: 0}
-  shaderManager: {fileID: 0}
   maxWrongGuesses: 3
 --- !u!1 &6845619217061659936
 GameObject:

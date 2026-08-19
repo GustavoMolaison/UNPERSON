@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: d4a7cbe205a1c3946aaa6052e5b3bceb
+guid: 7376876067669444091720b1397c2d00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8600513156772927195
-    second: work - 8 B&W + Color_0
+      213: -502251006566509656
+    second: dialogue_button_v2_0
+  - first:
+      213: -7910667973076567708
+    second: dialogue_button_v2_1
+  - first:
+      213: -1824277389131821403
+    second: dialogue_button_v2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: work - 8 B&W + Color_0
+      name: dialogue_button_v2_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 37
-        width: 98
-        height: 110
+        x: 14
+        y: 74
+        width: 232
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 529e974f9d6d4a880800000000000000
-      internalID: -8600513156772927195
+      spriteID: 8a3558dde55a709f0800000000000000
+      internalID: -502251006566509656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialogue_button_v2_1
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 74
+        width: 232
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46936b81469a73290800000000000000
+      internalID: -7910667973076567708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialogue_button_v2_2
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 74
+        width: 232
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae4509416ddea6e0800000000000000
+      internalID: -1824277389131821403
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      work - 8 B&W + Color_0: -8600513156772927195
+      dialogue_button_v2_0: -502251006566509656
+      dialogue_button_v2_1: -7910667973076567708
+      dialogue_button_v2_2: -1824277389131821403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

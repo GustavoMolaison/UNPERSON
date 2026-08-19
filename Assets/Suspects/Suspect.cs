@@ -14,6 +14,7 @@ public class Suspect : ScriptableObject
     public enum GenderType { Male, Female, Other }
     [SerializeField] private GenderType gender;
     [SerializeField] private Sprite face;
+    [SerializeField] private Sprite face_interrogation;
 
     [Header("Evidence & Logs")]
     [SerializeField] private List<Conversation> chatHistory = new List<Conversation>();
@@ -30,6 +31,7 @@ public class Suspect : ScriptableObject
     public string Occupation => occupation;
     public GenderType Gender => gender;
     public Sprite Face => face;
+    public Sprite Face_interrogation => face_interrogation;
     public List<Conversation> ChatHistory => chatHistory;
 
     public List<DialogueOption> DialogueOptions => dialogueOptions;

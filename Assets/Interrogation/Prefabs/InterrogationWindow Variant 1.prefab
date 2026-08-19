@@ -110,7 +110,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 21.2705, y: -26.5868}
-  m_SizeDelta: {x: 167.7149, y: 212.0131}
+  m_SizeDelta: {x: 200, y: 225}
   m_Pivot: {x: 0.4999998, y: 0.5}
 --- !u!222 &7977037359009601721
 CanvasRenderer:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1701334209980089142, guid: f158318b25a8c2d41a26312aa14b50f1, type: 3}
+  m_Sprite: {fileID: 2433157168141348243, guid: a2e20dfacb254dc4abd116262af4190a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -281,6 +281,8 @@ MonoBehaviour:
   dialougePicked: {fileID: 0}
   BackOption: {fileID: 11400000, guid: c9c494351e6f7a04b96661b09c52548b, type: 2}
   backDialOptions: []
+  optionsToLoad: []
+  optionAddedOutsideTheLoop: 0
 --- !u!114 &157670345984174724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,6 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bd68a6de7e75741865e8dc7e317ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialougeTreeCreator
+  backPreFabb: {fileID: 0}
 --- !u!222 &8525361465638744218
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1969,6 +1972,7 @@ MonoBehaviour:
   viewContent: {fileID: 6195531949909273771}
   evidencePanelPF: {fileID: 3966852488954164083, guid: a41e02342e67bbb4cbf7cc8137e71eaa, type: 3}
   playerIsPickingEvidence: 0
+  currentlyPickedEvidence: {fileID: 0}
   EvidencehightLight: {fileID: 4190993346336043700}
 --- !u!114 &2596830715896853696
 MonoBehaviour:

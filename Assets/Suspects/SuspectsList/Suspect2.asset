@@ -19,6 +19,7 @@ MonoBehaviour:
   occupation: Ryba
   gender: 0
   face: {fileID: -1701334209980089142, guid: f158318b25a8c2d41a26312aa14b50f1, type: 3}
+  face_interrogation: {fileID: 2433157168141348243, guid: a2e20dfacb254dc4abd116262af4190a, type: 3}
   chatHistory:
   - {fileID: 11400000, guid: e8886c599c77fab47ab5f6b4d01f0a6e, type: 2}
   - {fileID: 11400000, guid: 384e170e81356d34e99418e40d1a7627, type: 2}

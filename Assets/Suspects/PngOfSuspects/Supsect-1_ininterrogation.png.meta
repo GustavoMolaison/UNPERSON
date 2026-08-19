@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d4a7cbe205a1c3946aaa6052e5b3bceb
+guid: f97e7a5fe5a0ced408c202c00aaf484a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8600513156772927195
-    second: work - 8 B&W + Color_0
+      213: -4469123392704760578
+    second: Supsect-1_ininterrogation_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: work - 8 B&W + Color_0
+      name: Supsect-1_ininterrogation_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 37
-        width: 98
-        height: 110
+        x: 84
+        y: 84
+        width: 88
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 529e974f9d6d4a880800000000000000
-      internalID: -8600513156772927195
+      spriteID: ef4b178e3fb7af1c0800000000000000
+      internalID: -4469123392704760578
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      work - 8 B&W + Color_0: -8600513156772927195
+      Supsect-1_ininterrogation_0: -4469123392704760578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

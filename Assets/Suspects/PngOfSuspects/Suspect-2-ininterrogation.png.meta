@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d4a7cbe205a1c3946aaa6052e5b3bceb
+guid: a2e20dfacb254dc4abd116262af4190a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8600513156772927195
-    second: work - 8 B&W + Color_0
+      213: 2433157168141348243
+    second: Suspect-2-ininterrogation_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: work - 8 B&W + Color_0
+      name: Suspect-2-ininterrogation_0
       rect:
         serializedVersion: 2
-        x: 83
-        y: 37
-        width: 98
-        height: 110
+        x: 71
+        y: 54
+        width: 123
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 529e974f9d6d4a880800000000000000
-      internalID: -8600513156772927195
+      spriteID: 39da2c19d8f44c120800000000000000
+      internalID: 2433157168141348243
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      work - 8 B&W + Color_0: -8600513156772927195
+      Suspect-2-ininterrogation_0: 2433157168141348243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
