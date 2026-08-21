@@ -1,7 +1,8 @@
 using System;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -38,6 +39,8 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private Vector2 startDragPosition;
     private Animator animator;
     
+    [Header("Children")]
+    [SerializeField] private VerticalLayoutGroup  markslayout;
     
     private void Awake()
     {
@@ -45,19 +48,22 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         parentRectTransform = transform.parent as RectTransform;
         parentCanvas = GetComponentInParent<Canvas>();
         animator = GetComponent<Animator>();
+
+        markslayout = GetComponentInChildren<VerticalLayoutGroup>();
+        markslayout.gameObject.SetActive(false);
     }
 
-    public void onClick()
-    {
+    // public void onClick()
+    // {
         
-        if (!isPointerDown && open == false)
-        {
-           open = true;
-           targetPosition = baseTargetPosition; 
-           targetLocalSize = baseTargetLocalSize * Vector3.one;
-        }
+    //     if (!isPointerDown && open == false)
+    //     {
+    //        open = true;
+    //        targetPosition = baseTargetPosition; 
+    //        targetLocalSize = baseTargetLocalSize * Vector3.one;
+    //     }
         
-    } 
+    // } 
     
     public void Start()
     {
@@ -218,6 +224,8 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         animator.SetBool("Open", false);
         open = false;
         targetLocalSize =  Vector3.one;
+        EvidenceSectionManager.Instance.showContent(false);
+        
     }
 
     private void denyClosing()
@@ -232,5 +240,23 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
        animator.SetBool("Open", true);
        open = true;
        targetLocalSize = baseTargetLocalSize * Vector3.one;
+       
+    }
+    
+    // ta funkcja jest włączana w animation clip na ostatniej klatce
+    private void lastFrameAction()
+    {
+        if (open)
+        {
+            markslayout.gameObject.SetActive(true);
+        }  
+        if (!open)
+        {
+            markslayout.gameObject.SetActive(false);
+        }  
+    }
+    private void firstFrameAction()
+    {
+        
     }
 }

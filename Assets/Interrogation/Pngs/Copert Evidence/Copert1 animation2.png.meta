@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: d052c00e3b67665449c76d23794bd504
+guid: dcac6064c8b0710439de4a1b85c09ff3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4322367834269271606
-    second: Copert1 animation_0
+      213: 9220670027588241402
+    second: Copert1 animation2_0
   - first:
-      213: -1310880619778589971
-    second: Copert1 animation_1
+      213: 3537607460008577765
+    second: Copert1 animation2_1
   - first:
-      213: 7987799409407410699
-    second: Copert1 animation_2
+      213: 689003690918673617
+    second: Copert1 animation2_2
   - first:
-      213: -5766749702477990009
-    second: Copert1 animation_3
+      213: 5045350529041879873
+    second: Copert1 animation2_3
   - first:
-      213: -7720531140647679505
-    second: Copert1 animation_4
+      213: 1941411314032511
+    second: Copert1 animation2_4
   - first:
-      213: 5408409422313895200
-    second: Copert1 animation_5
+      213: -6163279853493747450
+    second: Copert1 animation2_5
   - first:
-      213: 6075094908793328453
-    second: Copert1 animation_6
+      213: -8352943109321123718
+    second: Copert1 animation2_6
   - first:
-      213: 9173852617411835591
-    second: Copert1 animation_7
+      213: 1712654180154352109
+    second: Copert1 animation2_7
   - first:
-      213: -2285035679643615015
-    second: Copert1 animation_8
+      213: 6456283450480447525
+    second: Copert1 animation2_8
   - first:
-      213: 7166586663012858565
-    second: Copert1 animation_9
+      213: 1922599048204598600
+    second: Copert1 animation2_9
   - first:
-      213: -8350849199039120145
-    second: Copert1 animation_10
+      213: -3010430063839153122
+    second: Copert1 animation2_10
   - first:
-      213: 4163471728636797668
-    second: Copert1 animation_11
+      213: 8347904124574174935
+    second: Copert1 animation2_11
   - first:
-      213: -4315262136042588739
-    second: Copert1 animation_12
+      213: -6879447755267510534
+    second: Copert1 animation2_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Copert1 animation_0
+      name: Copert1 animation2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -151,19 +151,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 636c136f4a22cfb30800000000000000
-      internalID: 4322367834269271606
+      spriteID: af70d71798666ff70800000000000000
+      internalID: 9220670027588241402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Copert1 animation_1
+      name: Copert1 animation2_1
       rect:
         serializedVersion: 2
-        x: 179
+        x: 188
         y: 0
-        width: 128
+        width: 119
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -173,193 +173,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dea372b8501decde0800000000000000
-      internalID: -1310880619778589971
+      spriteID: 5ea4598ed3b181130800000000000000
+      internalID: 3537607460008577765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Copert1 animation_2
+      name: Copert1 animation2_2
       rect:
         serializedVersion: 2
-        x: 368
-        y: 0
-        width: 117
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b02cdcedd3d5ade60800000000000000
-      internalID: 7987799409407410699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_3
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 0
-        width: 124
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 787b53bf2b368ffa0800000000000000
-      internalID: -5766749702477990009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_4
-      rect:
-        serializedVersion: 2
-        x: 716
-        y: 0
-        width: 125
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe98a5c25d92bd490800000000000000
-      internalID: -7720531140647679505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_5
-      rect:
-        serializedVersion: 2
-        x: 894
-        y: 0
-        width: 125
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02535e0f6b78e0b40800000000000000
-      internalID: 5408409422313895200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_6
-      rect:
-        serializedVersion: 2
-        x: 1072
-        y: 0
-        width: 125
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 543196fd1a21f4450800000000000000
-      internalID: 6075094908793328453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_7
-      rect:
-        serializedVersion: 2
-        x: 1245
-        y: 0
-        width: 130
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c6be92b952105f70800000000000000
-      internalID: 9173852617411835591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_8
-      rect:
-        serializedVersion: 2
-        x: 1427
-        y: 0
-        width: 126
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d0cfbfe72ce940e0800000000000000
-      internalID: -2285035679643615015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_9
-      rect:
-        serializedVersion: 2
-        x: 1606
-        y: 0
-        width: 125
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5cafeec8994d47360800000000000000
-      internalID: 7166586663012858565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Copert1 animation_10
-      rect:
-        serializedVersion: 2
-        x: 1786
+        x: 362
         y: 0
         width: 123
         height: 128
@@ -371,17 +195,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fecfa6ee5e2db1c80800000000000000
-      internalID: -8350849199039120145
+      spriteID: 1dcf326d435df8900800000000000000
+      internalID: 689003690918673617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Copert1 animation_11
+      name: Copert1 animation2_3
       rect:
         serializedVersion: 2
-        x: 1965
+        x: 543
+        y: 0
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143ded2239fa40640800000000000000
+      internalID: 5045350529041879873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_4
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 0
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f5cbb04b5e60000800000000000000
+      internalID: 1941411314032511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_5
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 0
+        width: 120
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6010f21b0a1a77aa0800000000000000
+      internalID: -6163279853493747450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_6
+      rect:
+        serializedVersion: 2
+        x: 1075
         y: 0
         width: 122
         height: 128
@@ -393,14 +283,124 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e227c96a7f97c930800000000000000
-      internalID: 4163471728636797668
+      spriteID: a781ed37f72641c80800000000000000
+      internalID: -8352943109321123718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Copert1 animation_12
+      name: Copert1 animation2_7
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 0
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1203f17e194c710800000000000000
+      internalID: 1712654180154352109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_8
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 0
+        width: 124
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520de136793599950800000000000000
+      internalID: 6456283450480447525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_9
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d3db1e5a17eaa10800000000000000
+      internalID: 1922599048204598600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_10
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 0
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e14f5bf8ecdc836d0800000000000000
+      internalID: -3010430063839153122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_11
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de034c7296b9d370800000000000000
+      internalID: 8347904124574174935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copert1 animation2_12
       rect:
         serializedVersion: 2
         x: 2135
@@ -415,8 +415,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db5fc7453fb1d14c0800000000000000
-      internalID: -4315262136042588739
+      spriteID: afeeb6827ba4780a0800000000000000
+      internalID: -6879447755267510534
       vertices: []
       indices: 
       edges: []
@@ -425,7 +425,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 32675dc6dcd3f8849b000833fca17558
+    spriteID: 5968faaf7f1a49a4f8ed684541448c5c
     internalID: 0
     vertices: []
     indices: 
@@ -435,19 +435,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Copert1 animation_0: 4322367834269271606
-      Copert1 animation_1: -1310880619778589971
-      Copert1 animation_10: -8350849199039120145
-      Copert1 animation_11: 4163471728636797668
-      Copert1 animation_12: -4315262136042588739
-      Copert1 animation_2: 7987799409407410699
-      Copert1 animation_3: -5766749702477990009
-      Copert1 animation_4: -7720531140647679505
-      Copert1 animation_5: 5408409422313895200
-      Copert1 animation_6: 6075094908793328453
-      Copert1 animation_7: 9173852617411835591
-      Copert1 animation_8: -2285035679643615015
-      Copert1 animation_9: 7166586663012858565
+      Copert1 animation2_0: 9220670027588241402
+      Copert1 animation2_1: 3537607460008577765
+      Copert1 animation2_10: -3010430063839153122
+      Copert1 animation2_11: 8347904124574174935
+      Copert1 animation2_12: -6879447755267510534
+      Copert1 animation2_2: 689003690918673617
+      Copert1 animation2_3: 5045350529041879873
+      Copert1 animation2_4: 1941411314032511
+      Copert1 animation2_5: -6163279853493747450
+      Copert1 animation2_6: -8352943109321123718
+      Copert1 animation2_7: 1712654180154352109
+      Copert1 animation2_8: 6456283450480447525
+      Copert1 animation2_9: 1922599048204598600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

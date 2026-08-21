@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 public class EvidencePanelManager : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] public TextMeshProUGUI title;
@@ -18,22 +19,23 @@ public class EvidencePanelManager : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Case_Monitor.Instance.currentlyPickedEvidence = enrolledEvidence;
+        
+        EvidenceManager.Instance.currentlyPickedEvidence = enrolledEvidence;
         EvidenceSectionManager.Instance.changeAllContent(enrolledEvidence.Title, enrolledEvidence.Cover, enrolledEvidence.Details, enrolledEvidence.Sprite);
-        if (Case_Monitor.Instance.playerIsPickingEvidence)
+        if (EvidenceManager.Instance.playerIsPickingEvidence)
         {
             if (eventData.clickCount == 2)
             {
-                Case_Monitor.Instance.playerIsPickingEvidence = false;
+                EvidenceManager.Instance.playerIsPickingEvidence = false;
                 if (DialogueOptionManager.Instance.dialougePicked.evidenceCheck == enrolledEvidence)
                 {
-                    Case_Monitor.Instance.changeAnswerState(true);
-                    Case_Monitor.Instance.changeAnswerCorrectness(true);
+                    EvidenceManager.Instance.changeAnswerState(true);
+                    EvidenceManager.Instance.changeAnswerCorrectness(true);
                 }
                 else
                 {
-                    Case_Monitor.Instance.changeAnswerState(true);
-                    Case_Monitor.Instance.changeAnswerCorrectness(false);
+                    EvidenceManager.Instance.changeAnswerState(true);
+                    EvidenceManager.Instance.changeAnswerCorrectness(false);
                 }
             }
         }

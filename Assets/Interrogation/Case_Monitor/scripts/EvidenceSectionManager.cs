@@ -9,10 +9,14 @@ public class EvidenceSectionManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        details.gameObject.SetActive(false);
+        img.gameObject.SetActive(false);
     }
 
-    [SerializeField] public TextMeshProUGUI title;
-    [SerializeField] public TextMeshProUGUI cover;
+    
+
+    
+    
     [SerializeField] public TextMeshProUGUI details;
     [SerializeField] public Image img;
 
@@ -26,17 +30,20 @@ public class EvidenceSectionManager : MonoBehaviour
 
     public void changeContentSep(EvidenceElementType part, string txt = null, Sprite imgg = null)
     {
+        if (!details.gameObject.activeSelf)
+        {
+            details.gameObject.SetActive(true);
+        }
+        if (!img.gameObject.activeSelf)
+        {
+            img.gameObject.SetActive(true);
+        }
+       
         if (txt != null)
         {
 
-            if (part == EvidenceElementType.Title)
-            {
-                title.text = txt;
-            }
-            if (part == EvidenceElementType.Cover)
-            {
-                cover.text = txt;
-            }
+           
+            
             if (part == EvidenceElementType.Details)
             {
                 details.text = txt;
@@ -54,10 +61,27 @@ public class EvidenceSectionManager : MonoBehaviour
 
     public void changeAllContent(string title_txt, string cover_txt, string details_txt, Sprite sprite)
     {
-        title.text = title_txt;
-        cover.text = cover_txt;
+        if (!details.gameObject.activeSelf)
+        {
+            details.gameObject.SetActive(true);
+        }
+        if (!img.gameObject.activeSelf)
+        {
+            img.gameObject.SetActive(true);
+        }
+
         details.text = details_txt;
         img.sprite = sprite;
 
+    }
+
+    public void showContent(bool hide)
+    {
+       
+            details.gameObject.SetActive(hide);
+        
+        
+            img.gameObject.SetActive(hide);
+        
     }
 }
