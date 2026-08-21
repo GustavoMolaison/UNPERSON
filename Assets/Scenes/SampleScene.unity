@@ -1428,6 +1428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 812643033}
   - component: {fileID: 812643035}
+  - component: {fileID: 812643038}
   - component: {fileID: 812643034}
   - component: {fileID: 812643036}
   m_Layer: 5
@@ -1476,7 +1477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4315262136042588739, guid: d052c00e3b67665449c76d23794bd504, type: 3}
+  m_Sprite: {fileID: 4322367834269271606, guid: d052c00e3b67665449c76d23794bd504, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1516,6 +1517,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &812643038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812643032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451984d7e9a0a67458450b7541866b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EvidenceCopert
+  baseTargetPosition: {x: 100, y: 150, z: -310}
+  baseTargetLocalSize: 3
+  smoothTime: 0.2
+  holdDuration: 0.5
+  holdTreshTime: 0.2
+  leftZoneThreshold: 0.2
+  minDragDistance: 200
 --- !u!224 &902652164 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8030846623482443151, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}
