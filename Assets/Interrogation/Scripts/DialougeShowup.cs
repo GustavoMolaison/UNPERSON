@@ -76,7 +76,7 @@ public class DialougeShowup : MonoBehaviour, IPointerClickHandler
                  break;
               }
         }
-        if(enrolledDialOption!= null && enrolledDialOption.hasEvidenceCheckDialogueLine && enrolledEvidence == Case_Monitor.Instance.currentlyPickedEvidence && evidenceConnected == false)
+        if(enrolledDialOption!= null && enrolledDialOption.hasEvidenceCheckDialogueLine && enrolledEvidence == EvidenceManager.Instance.currentlyPickedEvidence && evidenceConnected == false)
         {
             Debug.Log("sigma");
             evidenceConnected = true;

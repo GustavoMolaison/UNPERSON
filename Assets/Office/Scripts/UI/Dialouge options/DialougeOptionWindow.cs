@@ -25,7 +25,7 @@ public class DialogueOptionWindow : MonoBehaviour
         }
         if (howManyWrongGuesses >= maxWrongGuesses)
         {
-            Debug.Log("ZMIENIAM NA TRUE");
+           
             dialogueDisabled = true;
         }
 
@@ -60,7 +60,7 @@ public class DialogueOptionWindow : MonoBehaviour
         }
         else
         {
-            txt.color = Color.cyan;
+            txt.color = Color.white;
           
         }
     }
@@ -86,17 +86,17 @@ public class DialogueOptionWindow : MonoBehaviour
 
               
                 //Holdanimation(true);
-                Case_Monitor.Instance.EvidencehightLight.lightOn();
-                Case_Monitor.Instance.highLightEvidences(true);
+                EvidenceManager.Instance.EvidencehightLight.lightOn();
+                EvidenceManager.Instance.highLightEvidences(true);
 
                 // TUTAJ GRA SI� "ZATRZYMUJE" DLA TEGO SKRYPTU
                 // Kod nie ruszy dalej, dop�ki funkcja/zmienna wewn�trz WaitUntil nie zwr�ci true.
                 // Reszta gry normalnie dzia�a i si� renderuje.
-                Case_Monitor.Instance.playerIsPickingEvidence = true;
+                EvidenceManager.Instance.playerIsPickingEvidence = true;
                 yield return new WaitUntil(() => didPlayerPickEvidence());
-                Case_Monitor.Instance.highLightEvidences(false);
+                EvidenceManager.Instance.highLightEvidences(false);
 
-                if (!Case_Monitor.Instance.checkAnswerCorrectness())
+                if (!EvidenceManager.Instance.checkAnswerCorrectness())
                 {
                     addOneWrongGuess();
                     //shaderManager.wrongAnswerReact(howManyWrongGuesses / maxWrongGuesses);
@@ -131,7 +131,7 @@ public class DialogueOptionWindow : MonoBehaviour
         //}
         
         
-        return (Case_Monitor.Instance.checkAnswerState());
+        return (EvidenceManager.Instance.checkAnswerState());
         
 
     }

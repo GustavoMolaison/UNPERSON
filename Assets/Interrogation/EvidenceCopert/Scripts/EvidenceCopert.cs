@@ -40,7 +40,8 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private Animator animator;
     
     [Header("Children")]
-    [SerializeField] private VerticalLayoutGroup  markslayout;
+    VerticalLayoutGroup markslayout;
+    
     
     private void Awake()
     {
@@ -134,7 +135,7 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             if (normalizedX <= leftZoneThreshold)
             {
                 isDragValid = true;
-                startDragPosition = eventData.position;
+                // startDragPosition = eventData.position;
             }
             else
             {

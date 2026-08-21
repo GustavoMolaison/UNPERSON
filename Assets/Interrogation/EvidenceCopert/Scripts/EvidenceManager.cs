@@ -11,6 +11,8 @@ public class EvidenceManager : MonoBehaviour
 
     [HideInInspector] public Evidence currentlyPickedEvidence = null;
 
+    [SerializeField] public HighLight EvidencehightLight;
+
     public static EvidenceManager Instance;
     private void Awake()
     {
@@ -93,5 +95,24 @@ public class EvidenceManager : MonoBehaviour
         bool returnValue = evidenceIsDecided;
         evidenceIsDecided = false;
         return returnValue;
+    }
+
+    public void highLightEvidences(bool light) 
+    {
+        foreach (Transform child in viewContent.transform)
+        {
+            EvidencePanelManager evid = child.GetComponent<EvidencePanelManager>();
+            if(evid != null)
+            {
+                if (light == true)
+                {
+                    evid.highlight.permaLight();
+                }
+                else
+                {
+                    evid.highlight.disableLight();
+                }
+            }
+        }
     }
 }

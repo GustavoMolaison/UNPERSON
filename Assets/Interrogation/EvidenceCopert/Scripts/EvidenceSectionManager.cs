@@ -77,11 +77,7 @@ public class EvidenceSectionManager : MonoBehaviour
 
     public void showContent(bool hide)
     {
-       
-            details.gameObject.SetActive(hide);
-        
-        
-            img.gameObject.SetActive(hide);
-        
+     details.gameObject.SetActive(hide);
+     img.gameObject.SetActive(hide);
     }
 }

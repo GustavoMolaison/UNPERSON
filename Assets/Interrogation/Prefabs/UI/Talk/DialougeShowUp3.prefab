@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 939a9ad6a3796884fb5ab27f842d1753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialougeShowup
+  clicked: 0
 --- !u!1 &3833323056171521320
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TypewriterEffect
   textComponent: {fileID: 2873219298855046159}
   whoTextComponent: {fileID: 0}
-  timeBetweenCharacters: 0.04
+  timeBetweenCharacters: 0.035
   conversationMode: 0
 --- !u!222 &6269948026688314131
 CanvasRenderer:
@@ -214,16 +215,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: sdasdasdasdasdasdasdasdasd
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9467a3d712a830446aeab65de9871abe, type: 2}
-  m_sharedMaterial: {fileID: 6782814187432009750, guid: 9467a3d712a830446aeab65de9871abe, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 77dbc243f8dd63041b735d09a0c80318, type: 2}
+  m_sharedMaterial: {fileID: -6970691816945567560, guid: 77dbc243f8dd63041b735d09a0c80318, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -241,8 +242,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

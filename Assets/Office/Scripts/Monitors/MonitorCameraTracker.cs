@@ -33,29 +33,15 @@ public class MonitorCameraTracker : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-    //public void Start()
-    //{
-
-    //    MonitorsCords = new Dictionary<CameraData, Vector2> 
-    //    {
-    //        { GameManager.Instance.inMonitor1, new Vector2 (0, 0) },
-    //        { GameManager.Instance.inMonitor2, new Vector2 (1, 0) },
-    //        { GameManager.Instance.inCaseMonitor, new Vector2 (-1, 0) },
-
-
-    //    };
-
-
-    //}
+   
 
     
     private bool initilized = false;
     public void initilize()
     {
-        // if (Instance == null) Instance = this;
-        // else Destroy(gameObject);
 
-        if(Screen1.Instance == null || Screen2.Instance == null || Case_Monitor.Instance == null || InterrogationManager.Instance == null)
+
+        if(Screen1.Instance == null || Screen2.Instance == null || EvidenceManager.Instance == null || InterrogationManager.Instance == null)
         {
             Debug.LogError("Nie wszystkie instancje monitorów zostały zainicjalizowane!");
             return;
@@ -66,9 +52,9 @@ public class MonitorCameraTracker : MonoBehaviour
         Vector2 screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
         inMonitor1 = new CameraData(Screen1.Instance, true, true, true, screenBounds, 180);
 
-        screenRect = (RectTransform)Case_Monitor.Instance.transform;
-        screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inCaseMonitor = new CameraData(Case_Monitor.Instance, false, false, true, screenBounds, 400);
+        // screenRect = (RectTransform)Case_Monitor.Instance.transform;
+        // screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
+        // inCaseMonitor = new CameraData(Case_Monitor.Instance, false, false, true, screenBounds, 400);
         //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
         
         screenRect = (RectTransform)Screen2.Instance.transform;
@@ -81,11 +67,11 @@ public class MonitorCameraTracker : MonoBehaviour
         
         prevCamera = inInterrogation;
         currentCamera = inInterrogation;
-        CDList = new List<CameraData> { inMonitor1, inMonitor2, inInterrogation, inCaseMonitor };
+        CDList = new List<CameraData> { inMonitor1, inMonitor2, inInterrogation};
 
         screenToCameraData.Add(Screen1.Instance, inMonitor1);
         screenToCameraData.Add(Screen2.Instance, inMonitor2);
-        screenToCameraData.Add(Case_Monitor.Instance, inCaseMonitor);
+        // screenToCameraData.Add(Case_Monitor.Instance, inCaseMonitor);
 
         MonitorsCords = new Dictionary<CameraData, Vector2>
         {

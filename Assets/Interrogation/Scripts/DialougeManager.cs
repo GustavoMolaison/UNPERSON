@@ -92,12 +92,12 @@ public class DialogueManager : MonoBehaviour
             if (currentChat.DialOption.hasEvidenceGained)
             {
                 Debug.Log("Dodaje dowod: " + currentChat.DialOption.evidenceGained.name);
-                Case_Monitor.Instance.addEvidence(currentChat.DialOption.evidenceGained);
+                EvidenceManager.Instance.addEvidence(currentChat.DialOption.evidenceGained);
             }
             if (currentChat.DialOption.hasEvidenceToUpdate)
             {
                 Debug.Log("Aktualizuje dowod: " + currentChat.DialOption.evidenceToUpdate.name);
-                Case_Monitor.Instance.updateEvidence(currentChat.DialOption.evidenceToUpdate, currentChat.DialOption.evidenceUpdateIndex);
+                EvidenceManager.Instance.updateEvidence(currentChat.DialOption.evidenceToUpdate, currentChat.DialOption.evidenceUpdateIndex);
             }
             
         }
