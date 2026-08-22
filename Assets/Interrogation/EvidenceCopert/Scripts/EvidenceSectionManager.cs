@@ -59,7 +59,7 @@ public class EvidenceSectionManager : MonoBehaviour
         }
     }
 
-    public void changeAllContent(string title_txt, string cover_txt, string details_txt, Sprite sprite)
+    public void changeAllContent(string title_txt, string details_txt, Sprite sprite)
     {
         if (!details.gameObject.activeSelf)
         {

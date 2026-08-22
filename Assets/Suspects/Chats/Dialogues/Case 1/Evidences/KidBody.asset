@@ -12,10 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef2e7f4ffa57884e9969bf7d3084f5d, type: 3}
   m_Name: KidBody
   m_EditorClassIdentifier: Assembly-CSharp::Evidence
-  title: child's body analysis
-  cover: 
-  details: 
+  table:
+    m_TableReference:
+      m_TableCollectionName: GUID:f5b06ac3a37557944af9838f33d94de0
+  title:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  details:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   sprite: {fileID: 0}
   isVisible: 0
   updatedEvidenceVersion: []
   currentEvidenceUpdateState: -1
+  references:
+    version: 2
+    RefIds: []

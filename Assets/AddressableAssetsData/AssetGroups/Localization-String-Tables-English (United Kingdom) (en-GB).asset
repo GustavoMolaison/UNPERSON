@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 257f5fe3e8d9f4f4dae8499e3fbc8678
+    m_Address: Case1 Evidence ApartmentLayout_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 29958827508e6ab47a94e1e660b47b76
     m_Address: Case1 Leon 2.0.0_en-GB
     m_ReadOnly: 1
@@ -63,8 +69,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d595391460495640b3736e6443f9f0c
+    m_Address: Case1 Evidence KidBody_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d637ea1ef3d9254fa234223d580e63a
     m_Address: Case 1 Leon 0.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83b09a88aa7ae8149a6d6f41b2d508da
+    m_Address: Case1 Evidence FightScene_en-GB
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB
@@ -83,6 +101,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7f91b75197867342a19704bfcb1aa80
     m_Address: Case 1 Mary 1.1.1_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1e70d78ad2ab084fab4f859fd9005a8
+    m_Address: Case1 Evidence ConstructionWork_en-GB
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB
@@ -117,6 +141,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebd5847af063e484a9e99366176c554e
+    m_Address: Case1 Evidence DrugUse_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb3bbafd7052fa74bb5eebe364c7c1ab
     m_Address: Case 1 Marry 0.0_en-GB

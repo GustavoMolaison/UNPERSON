@@ -12,10 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef2e7f4ffa57884e9969bf7d3084f5d, type: 3}
   m_Name: Toxicmarriage
   m_EditorClassIdentifier: Assembly-CSharp::Evidence
-  title: Toxic Marriage
-  cover: 
-  details: 
+  table:
+    m_TableReference:
+      m_TableCollectionName: GUID:6b04ad09fc700f14ca75e6d65da102f4
+  title:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  details:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   sprite: {fileID: 0}
   isVisible: 0
   updatedEvidenceVersion: []
   currentEvidenceUpdateState: -1
+  references:
+    version: 2
+    RefIds: []

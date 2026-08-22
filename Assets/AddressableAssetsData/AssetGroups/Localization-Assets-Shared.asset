@@ -35,8 +35,20 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39db41de102dbdf44945767e542456e8
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence FightScene
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4e35420d76dc76749ae17443d412c45b
     m_Address: Assets/Localization tables/Case1 Leon 2.0.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e712275acc9ff5468b0156fb6adf4d3
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence ConstructionWork
+      Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -52,6 +64,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68b81b0023ddeff43b68f86c27153d5e
     m_Address: Assets/Localization tables/Case1 Leon 1.0.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b04ad09fc700f14ca75e6d65da102f4
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence ApartmentLayout
+      Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -97,6 +115,17 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e37e0157e230e194eb2c6163f7ca0774
     m_Address: Assets/Localization tables/Case 1 Marry 1.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5b06ac3a37557944af9838f33d94de0
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence KidBody
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f75bfc32736b09e46ac1c42885d3f1c9
+    m_Address: Assets/Case1 Evidence DrugUse Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

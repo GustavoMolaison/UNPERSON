@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f0334fa81d53be4ca088b7cde6e894e
+    m_Address: Case1 Evidence ApartmentLayout_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2c6817db76e229e44ace709ec7041da3
     m_Address: Case 1 Marry 0.0_pl
     m_ReadOnly: 1
@@ -51,8 +57,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68748fdf682078f488c1db7ca616e371
+    m_Address: Case1 Evidence ConstructionWork_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69bbbe5a2f1cef94ab89c581a974c598
+    m_Address: Case1 Evidence DrugUse_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97af246d7aa83d54d8e1a228da8e8c22
     m_Address: Case1 Leon 1.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa05065a84e62f140a8b862c0384e37c
+    m_Address: Case1 Evidence KidBody_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
@@ -120,6 +144,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dff2e2e93bc9ecd439ee34394bab9f7f
     m_Address: Case 1 Marry 1.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: edb903be7883c7646a33c5555f10397b
+    m_Address: Case1 Evidence FightScene_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
