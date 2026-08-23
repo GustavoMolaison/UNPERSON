@@ -22,7 +22,7 @@ MonoBehaviour:
   EvidenceCheck: {fileID: 0}
   EvidenceCheckDialogueLine: []
   UnlockedDialouge: []
-  EvidenceGained: {fileID: 0}
+  EvidenceGained: {fileID: 11400000, guid: 89690ef3e7bcf204e905810d5c6de683, type: 2}
   EvidenceToUpdate: {fileID: 0}
   EvidencesTillHidden: []
   EvidenceUpdateIndex: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Evidence
   table:
     m_TableReference:
-      m_TableCollectionName: GUID:6b04ad09fc700f14ca75e6d65da102f4
+      m_TableCollectionName: GUID:80b0a0fc2a0dfe54e98c52f3932d1f2a
   title:
     m_TableReference:
       m_TableCollectionName: 

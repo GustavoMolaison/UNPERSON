@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -37,18 +38,23 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public float minDragDistance = 500f;
     private bool isDragValid = false;
     private Vector2 startDragPosition;
-    private Animator animator;
+    [SerializeField] private Animator mainAnimator;
+    [SerializeField] private Animator newEvidenceAnimator;
     
     [Header("Children")]
     VerticalLayoutGroup markslayout;
     
-    
+    public static EvidenceCopert Instance;
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+
+
         rectTransform = GetComponent<RectTransform>();
         parentRectTransform = transform.parent as RectTransform;
         parentCanvas = GetComponentInParent<Canvas>();
-        animator = GetComponent<Animator>();
+        
 
         markslayout = GetComponentInChildren<VerticalLayoutGroup>();
         markslayout.gameObject.SetActive(false);
@@ -222,7 +228,7 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private void closeCopert()
     {
         // Odpalenie stanu zamknięcia w Animatorze
-        animator.SetBool("Open", false);
+        mainAnimator.SetBool("Open", false);
         open = false;
         targetLocalSize =  Vector3.one;
         EvidenceSectionManager.Instance.showContent(false);
@@ -238,7 +244,7 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     private void openCopert()
     {
-       animator.SetBool("Open", true);
+       mainAnimator.SetBool("Open", true);
        open = true;
        targetLocalSize = baseTargetLocalSize * Vector3.one;
        
@@ -260,4 +266,29 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         
     }
+
+    public void newEvidAnimation()
+    { 
+        newEvidenceAnimator.gameObject.SetActive(true);
+        newEvidenceAnimator.SetTrigger("Added");
+        // PlayAndDisableRoutine();
+    }
+
+    private IEnumerator PlayAndDisableRoutine()
+  {
+    
+    // 1. Czeka sekundę po aktywacji/przed animacją Run
+    yield return new WaitForSeconds(20.0f);
+
+    // 2. Odpala animację
+    newEvidenceAnimator.SetTrigger("Added");
+
+    // // 3. Czeka na przejście i czas trwania klipu (pobiera aktualny czas klipu lub wpisujesz czas na sztywno)
+    // yield return null; // Jedna klatka na przejście ze stanu Idle do Run
+    // var stateInfo = newEvidenceAnimator.GetCurrentAnimatorStateInfo(0);
+    // yield return new WaitForSeconds(stateInfo.length);
+
+    // 4. Wyłącza obiekt
+    
+  }
 }

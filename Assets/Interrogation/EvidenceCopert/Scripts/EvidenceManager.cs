@@ -43,6 +43,7 @@ public class EvidenceManager : MonoBehaviour
         GameObject newpanel = Instantiate(evidencePanelPF, viewContent.transform, false);
         EvidencePanelManager panelManager = newpanel.GetComponent<EvidencePanelManager>();
         panelManager.enrollEvidence(e);
+        EvidenceCopert.Instance.newEvidAnimation(); 
     }
 
     public void updateEvidence(Evidence e, int index = -1)
