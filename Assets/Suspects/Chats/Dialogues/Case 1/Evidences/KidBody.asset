@@ -33,7 +33,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  sprite: {fileID: 0}
+  sprite: {fileID: 3068751877766084144, guid: f5f6220ae632ebd4383feebae4705d19, type: 3}
   isVisible: 0
   updatedEvidenceVersion: []
   currentEvidenceUpdateState: -1
