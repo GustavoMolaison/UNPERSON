@@ -14,10 +14,11 @@ public class TalkWindow : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private float rotation;
     private TypewriterEffect typewriter;
-
+    [SerializeField] private AudioSource typingAudioSource;
     private int clickedCount = 0;
 
     public static TalkWindow Instance;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -53,8 +54,19 @@ public class TalkWindow : MonoBehaviour
             string txt = isPlayer? 
             "You: " + message : 
             SuspectTracker.instance.currentSuspect.FirstName + ": " + message;
+
+            // if (typingAudioSource != null)
+            // {
+            //       typingAudioSource.loop = true;
+            //       typingAudioSource.Play();
+            // }
             
-            yield return typewriter.SetText(txt);
+            yield return typewriter.SetText(txt, typingAudioSource: typingAudioSource);
+
+            // if (typingAudioSource != null)
+            // {
+            //       typingAudioSource.Stop();
+            // }
         }
     }
 

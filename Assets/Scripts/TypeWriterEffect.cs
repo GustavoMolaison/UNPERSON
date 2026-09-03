@@ -16,14 +16,14 @@ public class TypewriterEffect : MonoBehaviour
     // Opcjonalna flaga, aby kontrolować, czy chcemy wyświetlać "whoText" w trybie konwersacji
     [SerializeField] private bool conversationMode = true;
 
-    public Coroutine SetText(string newText, string whoText = null)
+    public Coroutine SetText(string newText, string whoText = null, AudioSource typingAudioSource = null)
     {
         targetText = newText;
         isSkipped = false; // Resetujemy flagę przed nowym tekstem
-        return StartCoroutine(TypeText(newText, whoText));
+        return StartCoroutine(TypeText(newText, whoText, typingAudioSource));
     }
 
-    private IEnumerator TypeText(string textToType, string whoText = null)
+    private IEnumerator TypeText(string textToType, string whoText = null, AudioSource typingAudioSource = null)
     {
         if (conversationMode)
         {
@@ -46,6 +46,11 @@ public class TypewriterEffect : MonoBehaviour
                 break;
 
             textComponent.text += letter;
+            if(typingAudioSource != null)
+            {
+                typingAudioSource.pitch = Random.Range(0.89f, 0.91f);
+                typingAudioSource.Play();
+            }
             yield return new WaitForSeconds(timeBetweenCharacters);
         }
 
