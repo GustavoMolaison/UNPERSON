@@ -35,6 +35,7 @@ public class EvidenceManager : MonoBehaviour
         if(GameManager.Instance.evidenceList.Contains(e))
         {
             updateEvidence(e, index);
+            EvidenceCopert.Instance.newEvidAnimation();
             return;
         }
 

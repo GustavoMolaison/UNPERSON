@@ -40,6 +40,14 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private Vector2 startDragPosition;
     [SerializeField] private Animator mainAnimator;
     [SerializeField] private Animator newEvidenceAnimator;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
+    [SerializeField] private AudioClip PeakSound;
+    [SerializeField] private AudioClip newEvidenceSound;
+    [SerializeField] private AudioClip EvidenceChangedSound;
+    
     
     [Header("Children")]
     VerticalLayoutGroup markslayout;
@@ -228,6 +236,7 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private void closeCopert()
     {
         // Odpalenie stanu zamknięcia w Animatorze
+        audioSource.PlayOneShot(closeSound);
         mainAnimator.SetBool("Open", false);
         open = false;
         targetLocalSize =  Vector3.one;
@@ -239,15 +248,26 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         Debug.Log("kiedys to sie zrobi");
         // Przywrócenie stanu otwartego, jeśli gracz puścił za wcześnie
+        // ni chuja tego nie robie 
         // animator.SetTrigger("CancelClose");
     }
 
     private void openCopert()
     {
-       mainAnimator.SetBool("Open", true);
-       open = true;
-       targetLocalSize = baseTargetLocalSize * Vector3.one;
+        audioSource.PlayOneShot(openSound);
+        mainAnimator.SetBool("Open", true);
+        open = true;
+        targetLocalSize = baseTargetLocalSize * Vector3.one;
        
+    }
+
+    public void SuggestOpening()
+    {
+        if (!open)
+        {
+            audioSource.PlayOneShot(PeakSound);
+            mainAnimator.SetTrigger("Peak");
+        }
     }
     
     // ta funkcja jest włączana w animation clip na ostatniej klatce
@@ -269,10 +289,18 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void newEvidAnimation()
     { 
+        audioSource.PlayOneShot(newEvidenceSound);
         newEvidenceAnimator.gameObject.SetActive(true);
         newEvidenceAnimator.SetTrigger("Added");
         // PlayAndDisableRoutine();
     }
+
+    public void changingEvidence()
+    {
+        audioSource.PlayOneShot(EvidenceChangedSound);
+    }
+
+    
 
     private IEnumerator PlayAndDisableRoutine()
   {

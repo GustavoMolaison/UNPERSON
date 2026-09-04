@@ -70,6 +70,7 @@ public class DialogueOptionWindow : MonoBehaviour
     public void onClick()
     {
         StartCoroutine(HandleNewDialogueSequence());
+        DialougeOptionSoundAnimation.instance.optionClicked();
     }
 
     private IEnumerator HandleNewDialogueSequence()
@@ -86,8 +87,11 @@ public class DialogueOptionWindow : MonoBehaviour
 
               
                 //Holdanimation(true);
-                EvidenceManager.Instance.EvidencehightLight.lightOn();
-                EvidenceManager.Instance.highLightEvidences(true);
+                // Podświetlanie dowodów narazie wyłączone pewnie na zawsze
+                // EvidenceManager.Instance.EvidencehightLight.lightOn();
+                // EvidenceManager.Instance.highLightEvidences(true);
+
+                EvidenceCopert.Instance.SuggestOpening();
 
                 // TUTAJ GRA SI� "ZATRZYMUJE" DLA TEGO SKRYPTU
                 // Kod nie ruszy dalej, dop�ki funkcja/zmienna wewn�trz WaitUntil nie zwr�ci true.

@@ -39,6 +39,8 @@ public class EvidencePanelManager : MonoBehaviour, IPointerClickHandler
                 }
             }
         }
+
+        EvidenceCopert.Instance.changingEvidence();
         
 
             

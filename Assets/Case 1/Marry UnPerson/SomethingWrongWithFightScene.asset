@@ -22,7 +22,7 @@ MonoBehaviour:
   EvidenceCheck: {fileID: 11400000, guid: 087711a3aaf5014498dd65ba504aeb08, type: 2}
   EvidenceCheckDialogueLine:
   - {fileID: 11400000, guid: c926bb3ad4466ba4aa6aa6c1fecefdb1, type: 2}
-  - {fileID: 11400000, guid: 1fae59a665c18f5419a215b45c6ad3b2, type: 2}
+  - {fileID: 11400000, guid: b6c88aad77452744a9b8019ef0501ef4, type: 2}
   UnlockedDialouge:
   - {fileID: 11400000, guid: c6c35909fbdba7045bb9058ffa263fc5, type: 2}
   - {fileID: 11400000, guid: 48a6c4fd546f2164aaae7a830bea21fd, type: 2}
