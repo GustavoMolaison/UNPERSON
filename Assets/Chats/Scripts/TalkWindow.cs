@@ -10,6 +10,7 @@ using UnityEngine.UI;
 public class TalkWindow : MonoBehaviour
 {
     [SerializeField] private GameObject child; 
+    [SerializeField] public GameObject content;
 
     [Header("Parameters")]
     [SerializeField] private float rotation;
@@ -34,7 +35,7 @@ public class TalkWindow : MonoBehaviour
     public IEnumerator addMessage(string message, bool isPlayer, bool isEvidenceConnected, string connectedEvidence, DialogueOption dialoption)
     {
 
-        GameObject newChild = Instantiate(child, transform, false);
+        GameObject newChild = Instantiate(child, content.transform, false);
         if (isEvidenceConnected)
         {
             DialougeShowup dialShowUp = newChild.GetComponent<DialougeShowup>();
@@ -90,5 +91,16 @@ public class TalkWindow : MonoBehaviour
         Debug.Log("Biały");
         showup.onClick(true);
         prevShowUp = showup;
+    }
+
+
+    public void forceCleanChat()
+    {
+        foreach (Transform child in content.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        
     }
 }

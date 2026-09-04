@@ -23,7 +23,7 @@ public class InterrogationManager : MonoBehaviour
         if (DialogueOptionManager.Instance != null) DialogueOptionManager.Instance.initilalizeSuspectOptions();
 
         // DialogueOptionManager.Instance.cleanDialogueOptions();
-        if (UiDialougeManager.Instance != null) UiDialougeManager.Instance.forceCleanChat();
+        if (UiDialougeManager.Instance != null) UiDialougeManager.Instance.forceClean();
         if (CameraMover.Instance != null && MonitorCameraTracker.Instance != null) CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.inInterrogation);
     }
  

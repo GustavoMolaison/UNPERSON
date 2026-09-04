@@ -23,10 +23,12 @@ public class UiDialougeManager : MonoBehaviour
 
    
 
-    Vector2 playerDimensions;
+    Vector2 Dimensions;
     Vector2 SuspectDimensions;
     Vector2 chatCloudDimensions;
     TalkWindow layoutCode;
+
+    
 
 
     
@@ -43,9 +45,10 @@ public class UiDialougeManager : MonoBehaviour
         private void Start()
     {
         originalmessageCooldown = messageCooldown;
-        playerDimensions = GetUiDimensions(chatlayout);
-
         layoutCode = chatlayout.GetComponent<TalkWindow>();
+        Dimensions = GetUiDimensions(layoutCode.content);
+
+        
     }
     
 public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
@@ -113,21 +116,17 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
     }
 }
     
-
-    public void forceCleanChat()
+    
+    public void forceClean()
     {
-        foreach (Transform child in layoutCode.transform)
-        {
-            Destroy(child.gameObject);
-        }
-
-        
+        layoutCode.forceCleanChat();
     }
 
     public void cleanDialogueLayout(bool isPlayerChat)
     {
-        RectTransform layoutRect = layoutCode.GetComponent<RectTransform>();
-        ManageChatOverflow(layoutRect, playerDimensions);    
+        RectTransform layoutRect = layoutCode.content.GetComponent<RectTransform>();
+        Dimensions = GetUiDimensions(layoutCode.content);
+        ManageChatOverflow(layoutRect, Dimensions);    
 
     }
 
@@ -198,7 +197,7 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
 
         // 3. Pętla While czyszcząca czat, gdy zawartość przekracza wysokość okna
         float windowHeight = windowDimensions.y;
-        if (windowHeight < totalContentHeight + 50)
+        if (windowHeight + 350 < totalContentHeight + 50)
             
         {
             // Debug.Log("Przekracza");
