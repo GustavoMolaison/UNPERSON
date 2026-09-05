@@ -9,10 +9,12 @@ public class Level : ScriptableObject
     [Header("Evidence")]
     [SerializeField] private List<Evidence> evidenceList = new List<Evidence>();
 
-
+    [Header("Game Events")]
+    [SerializeField] private List<GameEvent> gameEventsList = new List<GameEvent>();
 
     public List<Suspect> SuspectsList => suspectsList;
     public List<Evidence> EvidenceList => evidenceList;
+    public List<GameEvent> GameEventsList => gameEventsList;
 
     public Level runTimeLevel()
     {

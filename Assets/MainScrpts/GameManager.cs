@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour
  
     void Update()
     {
+        foreach(GameEvent gameEvent in currentLevel.GameEventsList)
+        {
+            EventManager.Instance.EnqueueEvent(gameEvent);
+        }
         if (Input.GetKeyDown(KeyCode.B))
         {
             CameraMover.Instance.changeCamera("B");
