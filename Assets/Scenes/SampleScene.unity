@@ -2201,6 +2201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SvDialougeManager
   dialougePanelGO: {fileID: 838305095}
+  dialougeText: {fileID: 0}
+  hideDelay: 2
+  delayBetweenLines: 1.5
 --- !u!114 &1080432656
 MonoBehaviour:
   m_ObjectHideFlags: 0

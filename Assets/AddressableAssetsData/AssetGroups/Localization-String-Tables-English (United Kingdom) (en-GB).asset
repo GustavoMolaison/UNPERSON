@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c260e0f450c0814496aa26183f347d8
+    m_Address: Supervisor Case1 test_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1b1eed1335a893a4885a3a28239c69e4
     m_Address: Case1 Evidence MarryTestimony_en-GB
     m_ReadOnly: 1

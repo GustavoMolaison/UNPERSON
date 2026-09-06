@@ -28,12 +28,11 @@ public class EventManager : MonoBehaviour
 
     public void EnqueueEvent(GameEvent gameEvent)
     {
-        if(gameEvent.Start)
-        {
+        
            
            eventQueue.Enqueue(gameEvent);
            StartQueue(); 
-        }
+        
         
     }
     public void StartQueue()

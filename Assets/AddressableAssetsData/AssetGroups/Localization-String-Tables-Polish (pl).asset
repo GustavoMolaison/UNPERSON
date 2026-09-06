@@ -184,6 +184,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1ff6a9e316a8ad4f8cd755236e2938d
+    m_Address: Supervisor Case1 test_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ba5f46c8b65756d46a113b85ab91283e, type: 2}
   m_SchemaSet:

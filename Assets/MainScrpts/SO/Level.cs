@@ -24,6 +24,15 @@ public class Level : ScriptableObject
         {
             levelInstance.suspectsList.Add(susp.CreateRuntimeInstance());
         }
+        // foreach(Evidence evid in this.evidenceList)
+        // {
+        //     levelInstance.evidenceList.Add(evid.CreateRuntimeInstance());
+        // }
+        foreach(GameEvent gameEvent in this.gameEventsList)
+        {
+            levelInstance.gameEventsList = new List<GameEvent>();
+            levelInstance.gameEventsList.Add(gameEvent.GameEventRuntime());
+        }
         return levelInstance;
     }
 }

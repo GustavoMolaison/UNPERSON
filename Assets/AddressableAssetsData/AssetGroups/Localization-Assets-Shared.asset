@@ -164,6 +164,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa7c9c2a6dbc6d446a0a6d8a1b42ea25
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 test
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: ba5f46c8b65756d46a113b85ab91283e, type: 2}
   m_SchemaSet:

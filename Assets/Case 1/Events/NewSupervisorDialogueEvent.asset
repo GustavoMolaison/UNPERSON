@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
   eventName: test
   eventType: 0
-  start: 1
-  isCompleted: 1
-  message: 1 2 3 test
+  timer: 1
+  timeToStart: 3
+  dialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:fa7c9c2a6dbc6d446a0a6d8a1b42ea25

@@ -11,7 +11,7 @@ public class TypewriterEffect : MonoBehaviour
     private string targetText;
     private bool isSkipped; // Flaga przerwania
 
-    public bool IsTyping { get; private set; }
+    public bool IsTyping { get;  set; }
 
     // Opcjonalna flaga, aby kontrolować, czy chcemy wyświetlać "whoText" w trybie konwersacji
     [SerializeField] private bool conversationMode = true;
@@ -67,5 +67,10 @@ public class TypewriterEffect : MonoBehaviour
 
         // Ustawiamy flagę na true – korutyna TypeText sama łagodnie zakończy pracę w następnym kroku
         isSkipped = true;
+    }
+
+    public void Clean()
+    {
+        textComponent.text = "";
     }
 }

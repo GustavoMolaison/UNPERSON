@@ -56,8 +56,17 @@ public class GameManager : MonoBehaviour
     {
         foreach(GameEvent gameEvent in currentLevel.GameEventsList)
         {
-            EventManager.Instance.EnqueueEvent(gameEvent);
+            
+
+            if(gameEvent.areConditionsMet() && !gameEvent.IsCompleted)
+            {
+                Debug.Log("Conditions met for event: " + gameEvent.EventName);
+                EventManager.Instance.EnqueueEvent(gameEvent);
+            }
+            
         }
+
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             CameraMover.Instance.changeCamera("B");
