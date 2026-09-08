@@ -7,8 +7,11 @@ public class GameEventSupervisorDialouge : GameEvent
     [SerializeField] private LocalizedStringTable dialogueTable;
     override public void actionToDo()
     {
-        SvDialougeManager.Instance.newDialouge(dialogueTable);
+     SvDialougeManager.Instance.StartDialogue(dialogueTable, () => 
+    {
         IsCompleted = true;
+    });
+        
     }
     
 }

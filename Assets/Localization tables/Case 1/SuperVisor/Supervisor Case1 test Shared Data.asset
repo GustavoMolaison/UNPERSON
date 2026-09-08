@@ -16,11 +16,27 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: fa7c9c2a6dbc6d446a0a6d8a1b42ea25
   m_Entries:
   - m_Id: 85051039744
-    m_Key: Test 123
+    m_Key: Hello? Are speakers working?
     m_Metadata:
       m_Items: []
   - m_Id: 87492124672
-    m_Key: "\u0141adnie pachniesz i huj"
+    m_Key: Some nod or something
+    m_Metadata:
+      m_Items: []
+  - m_Id: 736287421095936
+    m_Key: Oh they are. Great to see you all my new investigators.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 736760307900416
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737518629675008
+    m_Key: New Entry 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737722019864576
+    m_Key: New Entry 2
     m_Metadata:
       m_Items: []
   m_Metadata:

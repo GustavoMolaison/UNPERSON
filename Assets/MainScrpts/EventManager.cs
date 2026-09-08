@@ -22,39 +22,58 @@ public class EventManager : MonoBehaviour
     private Queue<GameEvent> eventQueue = new Queue<GameEvent>();
     GameEvent currentEvent;
     private Coroutine queueCoroutine;
-    
+private bool isProcessing = false;
 
-    
+public void EnqueueEvent(GameEvent gameEvent)
+{
+    if (gameEvent == null) return;
 
-    public void EnqueueEvent(GameEvent gameEvent)
+    eventQueue.Enqueue(gameEvent);
+    StartQueue();
+}
+
+public void StartQueue()
+{
+    if (isProcessing) return;
+
+    queueCoroutine = StartCoroutine(ProcessQueueRoutine());
+}
+
+private IEnumerator ProcessQueueRoutine()
+{
+    isProcessing = true;
+
+    while (eventQueue.Count > 0)
     {
-        
-           
-           eventQueue.Enqueue(gameEvent);
-           StartQueue(); 
-        
-        
-    }
-    public void StartQueue()
-    {
-        // jak chodzi to nie włączamy kolejnej
-        if (queueCoroutine == null)
+        GameEvent currentEvent = eventQueue.Dequeue();
+
+        if (currentEvent == null || currentEvent.IsCompleted)
+            continue;
+
+        // Bezpieczne wywołanie - błąd w evencie nie może zablokować całej kolejki
+        try
         {
-            queueCoroutine = StartCoroutine(ProcessQueueRoutine());
-        }
-    }
-
-    private IEnumerator ProcessQueueRoutine()
-    {
-        while (eventQueue.Count > 0)
-        {
-            GameEvent currentEvent = eventQueue.Dequeue();
             currentEvent.actionToDo();
-
-            // Czeka klatka po klatce aż isCompleted zmieni się na true
-            yield return new WaitUntil(() => currentEvent.IsCompleted);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Błąd podczas wykonywania eventu: {e.Message}\n{e.StackTrace}");
+            continue; 
         }
 
-        queueCoroutine = null; 
+        // Czekaj na zakończenie
+        yield return new WaitUntil(() => currentEvent.IsCompleted);
     }
+
+    // Sprzątanie po zakończeniu pętli
+    isProcessing = false;
+    queueCoroutine = null;
+}
+
+private void OnDisable()
+{
+    // Reset stanu, jeśli obiekt z jakiegoś powodu zostanie wyłączony w trakcie
+    isProcessing = false;
+    queueCoroutine = null;
+}
 }

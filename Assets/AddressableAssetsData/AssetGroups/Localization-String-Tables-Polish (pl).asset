@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 143d4d2791cf19d43a9b95a0494ef9df
+    m_Address: Supervisor Case1 SomeExplanation_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e553632b081e7c4f9eee05f42d6f617
     m_Address: Case 1 Leon 0.1_pl
     m_ReadOnly: 1

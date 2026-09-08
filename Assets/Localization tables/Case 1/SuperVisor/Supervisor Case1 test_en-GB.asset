@@ -19,11 +19,27 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 87492124672
-    m_Localized: "\u0141adnie pachniesz i huj"
+    m_Localized: Hello? Are speakers working?
     m_Metadata:
       m_Items: []
   - m_Id: 85051039744
-    m_Localized: Test 123
+    m_Localized: Give me some nods if they are.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 736287421095936
+    m_Localized: Oh they are. Great to see you my new investigators.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 736760307900416
+    m_Localized: You ended up here for a lot reasons. Some not by their choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737518629675008
+    m_Localized: But fear not beacause under my managment, no talent go to waste.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 737722019864576
+    m_Localized: Togheter we will help our city survive. Be proud!
     m_Metadata:
       m_Items: []
   references:

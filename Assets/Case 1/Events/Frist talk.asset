@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
-  m_Name: NewSupervisorDialogueEvent
+  m_Name: Frist talk
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
-  eventName: test
+  eventName: Welcome invesstigators
   eventType: 0
   timer: 1
-  timeToStart: 3
+  timeToStart: 2
   dialogueTable:
     m_TableReference:
       m_TableCollectionName: GUID:fa7c9c2a6dbc6d446a0a6d8a1b42ea25

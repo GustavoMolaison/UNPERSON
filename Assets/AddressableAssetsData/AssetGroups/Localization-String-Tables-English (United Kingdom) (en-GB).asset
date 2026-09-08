@@ -184,6 +184,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc331373d3bf4434f801eeae5fc294aa
+    m_Address: Supervisor Case1 SomeExplanation_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ff4624b5665e05f45a697c8dc0521b7c
     m_Address: Case1 Evidence WorkHours Updated_en-GB
     m_ReadOnly: 1

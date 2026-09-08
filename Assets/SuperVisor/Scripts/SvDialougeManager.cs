@@ -49,16 +49,23 @@ public class SvDialougeManager : MonoBehaviour
      isPanelVisible = false; // pamiętaj zaktualizować stan widoczności!
      hideCoroutine = null;   // reset referencji, żeby timer mógł odpalić ponownie
     }
-    public void newDialouge(LocalizedStringTable tableReference)
-    {
-        // Jeśli leci już jakiś dialog, przerywamy go
-        if (dialogueSequenceCoroutine != null)
-        {
-            StopCoroutine(dialogueSequenceCoroutine);
-        }
 
-        dialogueSequenceCoroutine = StartCoroutine(PlayDialogueSequence(tableReference));
-        
+
+    public void StartDialogue(LocalizedStringTable tableReference, System.Action onComplete)
+    {
+        StartCoroutine(newDialougeRoutine(tableReference, onComplete));
+    }
+    public IEnumerator newDialougeRoutine(LocalizedStringTable tableReference, System.Action onComplete)
+    {
+        // // Jeśli leci już jakiś dialog, przerywamy go
+        // if (dialogueSequenceCoroutine != null)
+        // {
+        //     StopCoroutine(dialogueSequenceCoroutine);
+        // }
+
+        yield return StartCoroutine(PlayDialogueSequence(tableReference));
+        onComplete?.Invoke();
+        // yield return dialogueSequenceCoroutine;
     }
 
    
@@ -77,7 +84,7 @@ public class SvDialougeManager : MonoBehaviour
         isPanelVisible = true;
 
         // 2. Iterujemy po wszystkich wpisach (Entry) w tabeli
-        foreach (StringTableEntry entry in table.Values.Reverse())
+        foreach (StringTableEntry entry in table.Values)
         {
             Debug.Log("1");
             typewriterEffect.Clean(); // Czyścimy poprzedni tekst przed rozpoczęciem nowego
@@ -96,6 +103,7 @@ public class SvDialougeManager : MonoBehaviour
         dialougePanelGO.SetActive(false);
         isPanelVisible = false;
         dialogueSequenceCoroutine = null;
+        
 
 
     }

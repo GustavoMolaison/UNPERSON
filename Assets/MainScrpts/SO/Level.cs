@@ -28,9 +28,10 @@ public class Level : ScriptableObject
         // {
         //     levelInstance.evidenceList.Add(evid.CreateRuntimeInstance());
         // }
+        levelInstance.gameEventsList = new List<GameEvent>();
         foreach(GameEvent gameEvent in this.gameEventsList)
         {
-            levelInstance.gameEventsList = new List<GameEvent>();
+            
             levelInstance.gameEventsList.Add(gameEvent.GameEventRuntime());
         }
         return levelInstance;

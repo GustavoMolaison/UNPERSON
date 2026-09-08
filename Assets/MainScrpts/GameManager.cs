@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         foreach(GameEvent gameEvent in currentLevel.GameEventsList)
         {
-            
+            Debug.Log("Checking conditions for event: " + gameEvent.EventName);
 
             if(gameEvent.areConditionsMet() && !gameEvent.IsCompleted)
             {
