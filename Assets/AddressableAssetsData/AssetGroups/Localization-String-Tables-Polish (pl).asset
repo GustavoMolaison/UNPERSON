@@ -184,6 +184,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea3688dbf5a2273418af5e79c984c0d3
+    m_Address: Supervisor Case1 InterrogateNow_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edb903be7883c7646a33c5555f10397b
     m_Address: Case1 Evidence FightScene_pl
     m_ReadOnly: 1

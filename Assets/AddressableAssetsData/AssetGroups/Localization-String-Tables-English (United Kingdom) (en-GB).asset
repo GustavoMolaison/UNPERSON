@@ -57,6 +57,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d2c071ebcb5bf843bbd0ee5a6f7d4a6
+    m_Address: Supervisor Case1 InterrogateNow_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 308cc5d289a150c4684e13f16780fb8b
     m_Address: Case1 Leon 2.3_en-GB
     m_ReadOnly: 1

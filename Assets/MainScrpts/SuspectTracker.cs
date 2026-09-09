@@ -62,8 +62,8 @@ public class SuspectTracker : MonoBehaviour
 
         currentSuspects = GameManager.Instance.currentLevel.SuspectsList;
 
-        currentSuspect = currentSuspects[0];
-        previousSuspect = currentSuspects[0];
+        // currentSuspect = currentSuspects[0];
+        // previousSuspect = currentSuspects[0];
 
         SuspectGueses.Clear();
 

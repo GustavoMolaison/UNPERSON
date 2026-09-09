@@ -19,8 +19,24 @@ abstract public class GameEvent : ScriptableObject
     [SerializeField]
     private float timeToStart = 5f;
 
-
+    [Header("Suspect is interrogated conditions")]
+    [Tooltip("If true, the event will start when the chosen suspect is interrogated")]
+    [SerializeField]
+    private bool suspectInterrogated = false;
+    [SerializeField]
+    private string suspectInterrogatedName;
     
+    [Header("Dialouge Option picked conditions")]
+    [Tooltip("If true, the event will start when the chosen Dialouge Option is picked and finished playing")]
+
+    [SerializeField]
+    private bool dialougeOptionPicked = false;
+    [SerializeField]
+    private DialogueOption dialougeOptionPickedTarget;
+
+
+
+
     private bool isCompleted = false;
 
 
@@ -34,8 +50,9 @@ abstract public class GameEvent : ScriptableObject
         get => isCompleted;
         set => isCompleted = value;
     }
-    public bool Timer => timer;
-    
+    // public bool Timer => timer;
+
+
     // Pointers  END////////////////////// 
 
     abstract public void actionToDo();
@@ -59,6 +76,18 @@ abstract public class GameEvent : ScriptableObject
             }
             
     
+        }
+        if (suspectInterrogated)
+        {
+            if (SuspectTracker.instance.currentSuspect != null && InterrogationManager.Instance.interrogatedSuspect.FirstName == suspectInterrogatedName)
+            {
+                suspectInterrogated = false;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {

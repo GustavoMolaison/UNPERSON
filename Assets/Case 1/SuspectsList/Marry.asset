@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c274efd7788fe9a49bea49178f3255eb, type: 3}
-  m_Name: Suspect3
+  m_Name: Marry
   m_EditorClassIdentifier: Assembly-CSharp::Suspect
-  firstName: Katarzyna
-  lastName: Przywara
+  firstName: Marry
+  lastName: Friedrich
   birthDate: 1.01.1990
   age: 37
   occupation: Teacher

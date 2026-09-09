@@ -23,3 +23,4 @@ MonoBehaviour:
   gameEventsList:
   - {fileID: 11400000, guid: 64e28a65b029f8d4695e0c89ea660e2e, type: 2}
   - {fileID: 11400000, guid: 5c9d2071bf4c6f848883308df27735d1, type: 2}
+  - {fileID: 11400000, guid: 31a3b126986c3ae4face093bc690cf79, type: 2}

@@ -10,75 +10,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Supervisor Case1 SomeExplanation Shared Data
+  m_Name: Supervisor Case1 InterrogateNow Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: Supervisor Case1 SomeExplanation
-  m_TableCollectionNameGuidString: c9b06d29efd07c9469bcacd8f107775c
+  m_TableCollectionName: Supervisor Case1 InterrogateNow
+  m_TableCollectionNameGuidString: 559a0ae3448ec4f46a7fc45d64fe0b92
   m_Entries:
-  - m_Id: 5988409344
+  - m_Id: 5468315648
     m_Key: New Entry
     m_Metadata:
       m_Items: []
-  - m_Id: 235358117888
+  - m_Id: 1778669051904
     m_Key: New Entry 1
     m_Metadata:
       m_Items: []
-  - m_Id: 331115352023040
-    m_Key: New Entry 10
-    m_Metadata:
-      m_Items: []
-  - m_Id: 332684487286784
-    m_Key: New Entry 11
-    m_Metadata:
-      m_Items: []
-  - m_Id: 333058568871936
-    m_Key: New Entry 12
-    m_Metadata:
-      m_Items: []
-  - m_Id: 333479307894784
-    m_Key: New Entry 13
-    m_Metadata:
-      m_Items: []
-  - m_Id: 237304274944
+  - m_Id: 2514601631744
     m_Key: New Entry 2
     m_Metadata:
       m_Items: []
-  - m_Id: 238977802240
+  - m_Id: 2578707374080
     m_Key: New Entry 3
     m_Metadata:
       m_Items: []
-  - m_Id: 1137376747520
+  - m_Id: 2622583988224
     m_Key: New Entry 4
     m_Metadata:
       m_Items: []
-  - m_Id: 1296152125440
+  - m_Id: 3533016391680
     m_Key: New Entry 5
     m_Metadata:
       m_Items: []
-  - m_Id: 1507255640064
+  - m_Id: 3955336667136
     m_Key: New Entry 6
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1760914563072
-    m_Key: New Entry 7
-    m_Metadata:
-      m_Items: []
-  - m_Id: 1919350202368
-    m_Key: New Entry 8
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2174959476736
-    m_Key: New Entry 9
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3864004016345710668
+    rid: 3864004037362057297
   references:
     version: 2
     RefIds:
-    - rid: 3864004016345710668
+    - rid: 3864004037362057297
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1788892936855
+        m_CustomEpoch: 1788975120157

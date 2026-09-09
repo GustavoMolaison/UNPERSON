@@ -28,7 +28,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 237304274944
-    m_Localized: And burbs or yawns will be seen as a negative behaviour.
+    m_Localized: Negative behaviour will give you negative points in my personal
+      ranking.
     m_Metadata:
       m_Items: []
   - m_Id: 238977802240
@@ -37,11 +38,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1137376747520
-    m_Localized: You all will solve your first case today. I hope you are excited!
+    m_Localized: All of you will solve your first case today. I hope you are excited!
     m_Metadata:
       m_Items: []
   - m_Id: 1296152125440
-    m_Localized: 'One at a time i help you so dont worry. But only this once. '
+    m_Localized: 'One newbie at a time i  will help you so dont worry. Only this
+      once. '
     m_Metadata:
       m_Items: []
   - m_Id: 1507255640064
@@ -60,7 +62,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2174959476736
-    m_Localized: 'Nobody cares focus up! '
+    m_Localized: 'Nobody cares, focus up! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331115352023040
+    m_Localized: I picked a case for you already. Should be an easy case! First of
+      many!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 332684487286784
+    m_Localized: You see that computer? From what i know about you. You are familiar
+      with them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 333058568871936
+    m_Localized: 'Waste of working motherboards if you ask me. But they did give
+      you those. So use them gently. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 333479307894784
+    m_Localized: 'Go into suspect section pick the sad man in glasses. And click
+      "Interrogate". Basic computer usage.  '
     m_Metadata:
       m_Items: []
   references:
