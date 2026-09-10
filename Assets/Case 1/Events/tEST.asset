@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
+  m_Name: tEST
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
+  eventName: sdssd
+  eventType: 0
+  timer: 0
+  timeToStart: 5
+  suspectInterrogated: 0
+  suspectInterrogatedName: 
+  dialougeOptionPicked: 1
+  dialougeOptionPickedTarget: {fileID: 11400000, guid: 78686396b95fc5845b5c79b34fc92e6b, type: 2}
+  typeWriterEffect: {fileID: 0}
+  dialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:fa7c9c2a6dbc6d446a0a6d8a1b42ea25

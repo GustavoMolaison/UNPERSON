@@ -16,7 +16,7 @@ public class DialogueOptionManager : MonoBehaviour
     [HideInInspector] public DialogueOption dialougePicked;
     [SerializeField] private DialogueOption BackOption;
 
-    private DialogueOption currentDialogueOption;
+    public DialogueOption currentDialogueOption { get; private set; }
 
     private List<DialogueOption> prevDialOptions;
     public List<DialogueOption> backDialOptions;

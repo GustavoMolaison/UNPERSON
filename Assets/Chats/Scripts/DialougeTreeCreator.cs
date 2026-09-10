@@ -143,17 +143,15 @@ public class DialogueTreeCreator : MonoBehaviour
             foreach (DialogueOption option in suspect.DialogueOptions)
             {
                 Debug.Log("Creating node tree for suspect: " + suspect.name + " with starting dialogue option: " + option.name);
-                Debug.Log(option);
+               
                 NodeTree node = new NodeTree(option);
-                Debug.Log(option);
+                
                 if (!startingNodes.ContainsKey(suspect))
                 {
-                    
-                    startingNodes[suspect] = new Branch(null, backPreFabb);
-                    Debug.Log("2");
+                    startingNodes[suspect] = new Branch(null, backPreFabb); 
                 }
                 startingNodes[suspect].AddToBranch(node);
-                Debug.Log("4");
+               
 
             }
 

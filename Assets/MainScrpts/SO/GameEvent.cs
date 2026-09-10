@@ -35,7 +35,11 @@ abstract public class GameEvent : ScriptableObject
     private DialogueOption dialougeOptionPickedTarget;
 
 
-
+    [Header("Observed Components")]
+    [Tooltip("Components what will be observed and used for conditions")]
+    
+    [SerializeField]
+    private TypewriterEffect typeWriterEffect;
 
     private bool isCompleted = false;
 
@@ -89,10 +93,47 @@ abstract public class GameEvent : ScriptableObject
                 return false;
             }
         }
-        else
+        if(dialougeOptionPicked && typeWriterEffect!= null)
         {
-            return false;
+            
+            
+                if(typeWriterEffect.IsTyping == false)
+                {
+                    if (DialogueOptionManager.Instance.currentDialogueOption == dialougeOptionPickedTarget)
+                    {
+                       dialougeOptionPicked = false;
+                        return true;
+                    }
+                    else
+                    {       
+                        return false;
+                    }
+                }
+            
+            
+            
         }
+        
+        if(dialougeOptionPicked && !DialogueManager.Instance.isProcessingQueue && typeWriterEffect == null)
+        {
+             
+             if (DialogueOptionManager.Instance.currentDialogueOption != null && DialogueOptionManager.Instance.currentDialogueOption.dialogueTitle == dialougeOptionPickedTarget.dialogueTitle)
+                    {
+                       dialougeOptionPicked = false;
+                        return true;
+                    }
+                    else
+                    {       
+                        return false;
+                    }
+        }
+        
+           
+        
+        
+        
+        return false;
+        
     }
 
 
