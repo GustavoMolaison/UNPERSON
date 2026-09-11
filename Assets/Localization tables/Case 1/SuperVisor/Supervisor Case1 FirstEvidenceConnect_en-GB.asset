@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Supervisor Case1 FirstEvidenceConnect_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: f924487708eb906469b03791724ea406, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5766111232
+    m_Localized: I see you are well aware of hierarchy here. In that regard we are
+      similiar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 127107325952
+    m_Localized: We are the law, we protect them. If not we our world would be long
+      go.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 231595827200
+    m_Localized: But not every suspect undestand that. Unpersons wont care about
+      it either.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 379403100160
+    m_Localized: We have to use evidence to corner them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 708253310976
+    m_Localized: You may find your files helpfull in that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 946418475008
+    m_Localized: Connect right evidence with right questions and investigation will
+      go twice as fast.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

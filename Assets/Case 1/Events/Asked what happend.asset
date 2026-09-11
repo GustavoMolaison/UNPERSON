@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
-  m_Name: tEST
+  m_Name: Asked what happend
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
-  eventName: sdssd
+  eventName: Asked WhatHappend
   eventType: 0
   timer: 0
   timeToStart: 5
   suspectInterrogated: 0
   suspectInterrogatedName: 
   dialougeOptionPicked: 1
-  dialougeOptionPickedTarget: {fileID: 11400000, guid: 78686396b95fc5845b5c79b34fc92e6b, type: 2}
+  dialougeOptionPickedTarget: {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}
   typeWriterEffect: {fileID: 0}
   dialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:fa7c9c2a6dbc6d446a0a6d8a1b42ea25
+      m_TableCollectionName: GUID:8fcb0e438aa817b479ee3c521bca25fd

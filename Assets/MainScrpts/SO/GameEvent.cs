@@ -33,6 +33,16 @@ abstract public class GameEvent : ScriptableObject
     private bool dialougeOptionPicked = false;
     [SerializeField]
     private DialogueOption dialougeOptionPickedTarget;
+    [Space(15)]
+    [SerializeField]
+    [Tooltip("If true, the event will start when the chosen Dialouge Option is clicked and its dialouge wont play instantly")]
+    private bool dialougeOptionClicked = false;
+
+    [SerializeField]
+    private  DialogueOption dialougeOptionClickedTarget;
+
+    
+
 
 
     [Header("Observed Components")]
@@ -126,6 +136,21 @@ abstract public class GameEvent : ScriptableObject
                     {       
                         return false;
                     }
+        }
+        if(dialougeOptionClicked && !DialogueManager.Instance.isProcessingQueue && typeWriterEffect == null)
+        {
+           
+            if (DialogueOptionManager.Instance.dialougePicked != null && DialogueOptionManager.Instance.dialougePicked.dialogueTitle == dialougeOptionClickedTarget.dialogueTitle)
+            {
+               
+                
+                dialougeOptionClicked = false;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         
            

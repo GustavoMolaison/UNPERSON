@@ -45,6 +45,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21f228ad304285544900929a20fd1546
+    m_Address: Supervisor Case1 AboutYourWife_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2c6817db76e229e44ace709ec7041da3
     m_Address: Case 1 Marry 0.0_pl
     m_ReadOnly: 1
@@ -71,6 +77,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 538d13bab59963e49a4d05a3048ab0b0
     m_Address: Case 1 Mary 1.1.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 643185675cb23ec44a95c88f8442bff4
+    m_Address: Supervisor Case1 FirstEvidenceConnect_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
@@ -180,6 +192,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dff2e2e93bc9ecd439ee34394bab9f7f
     m_Address: Case 1 Marry 1.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1a0c088b3d72194cb8afa16930b0b79
+    m_Address: Supervisor Case1 YouAskedWhathappend_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

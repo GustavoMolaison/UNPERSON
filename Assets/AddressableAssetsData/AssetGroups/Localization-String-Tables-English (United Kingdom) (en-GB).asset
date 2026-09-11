@@ -99,8 +99,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ad0851d11806934f9261f75ead869df
+    m_Address: Supervisor Case1 FirstEvidenceConnect_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d595391460495640b3736e6443f9f0c
     m_Address: Case1 Evidence KidBody_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 778bc500f722187409762fb1beedeaa6
+    m_Address: Supervisor Case1 AboutYourWife_en-GB
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB
@@ -198,6 +210,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ff4624b5665e05f45a697c8dc0521b7c
     m_Address: Case1 Evidence WorkHours Updated_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffed1a9ce645a5f4d92f1f99042259b3
+    m_Address: Supervisor Case1 YouAskedWhathappend_en-GB
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB

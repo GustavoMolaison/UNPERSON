@@ -21,4 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 087711a3aaf5014498dd65ba504aeb08, type: 2}
   - {fileID: 11400000, guid: c926bb3ad4466ba4aa6aa6c1fecefdb1, type: 2}
   gameEventsList:
+  - {fileID: 11400000, guid: 31a3b126986c3ae4face093bc690cf79, type: 2}
   - {fileID: 11400000, guid: c5bde7bf316d8de4fbf35cb3fa434cfe, type: 2}
+  - {fileID: 11400000, guid: 0c872fb728955914cad03f006c93712f, type: 2}
+  - {fileID: 11400000, guid: 44b8fa9d2d5e66a40a51a421b6c21eb7, type: 2}

@@ -119,6 +119,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8fcb0e438aa817b479ee3c521bca25fd
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 YouAskedWhathappend
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 910dfa9073621f74596f146ba4beff29
     m_Address: Assets/Localization tables/Case 1 Marry 1.0 Shared Data.asset
     m_ReadOnly: 1
@@ -136,6 +142,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b450ee0d05152f94fa7e4a8fe6ee1259
     m_Address: Assets/Localization tables/Back Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c80415ba3b7bef94191e3a44dd28bc8e
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 AboutYourWife
+      Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -173,6 +185,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f822a387b99192c43aefe0127d2596b3
     m_Address: Assets/Localization tables/Cases1 Leon 2.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f924487708eb906469b03791724ea406
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 FirstEvidenceConnect
+      Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

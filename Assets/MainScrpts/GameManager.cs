@@ -56,11 +56,11 @@ public class GameManager : MonoBehaviour
     {
         foreach(GameEvent gameEvent in currentLevel.GameEventsList)
         {
-            Debug.Log("Checking conditions for event: " + gameEvent.EventName);
+            // Debug.Log("Checking conditions for event: " + gameEvent.EventName);
 
             if(gameEvent.areConditionsMet() && !gameEvent.IsCompleted)
             {
-                Debug.Log("Conditions met for event: " + gameEvent.EventName);
+                // Debug.Log("Conditions met for event: " + gameEvent.EventName);
                 EventManager.Instance.EnqueueEvent(gameEvent);
             }
             

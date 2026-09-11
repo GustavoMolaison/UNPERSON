@@ -43,7 +43,7 @@ public class DialogueOptionWindow : MonoBehaviour
 
     public void enrollDialogue(DialogueOption dial)
     {
-        Debug.Log("Enrolling dialogue: ");
+       
         enrolledDialogue = dial;
         changeText(enrolledDialogue.dialogueTitle, enrolledDialogue.hasEvidenceCheck);
         initialized = true;
@@ -79,9 +79,11 @@ public class DialogueOptionWindow : MonoBehaviour
        
         if (!dialogueDisabled)
         {
+            Debug.Log("Dialogue Option Clicked: " + enrolledDialogue.dialogueTitle);
             
             if (enrolledDialogue.hasEvidenceCheck)
             {
+                Debug.Log("Has evidenceCheck: " + enrolledDialogue.hasEvidenceCheck);
                
                 DialogueOptionManager.Instance.dialougePicked = enrolledDialogue;
 
