@@ -86,6 +86,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68748fdf682078f488c1db7ca616e371
     m_Address: Case1 Evidence ConstructionWork_pl
@@ -215,7 +216,7 @@ MonoBehaviour:
     - Locale-pl
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f1ff6a9e316a8ad4f8cd755236e2938d
-    m_Address: Supervisor Case1 test_pl
+    m_Address: Supervisor Case1 Introduction_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

@@ -22,7 +22,7 @@ MonoBehaviour:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0c260e0f450c0814496aa26183f347d8
-    m_Address: Supervisor Case1 test_en-GB
+    m_Address: Supervisor Case1 Introduction_en-GB
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB
@@ -104,6 +104,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-GB
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d595391460495640b3736e6443f9f0c
     m_Address: Case1 Evidence KidBody_en-GB

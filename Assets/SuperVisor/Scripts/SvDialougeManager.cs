@@ -13,6 +13,8 @@ public class SvDialougeManager : MonoBehaviour
     public static SvDialougeManager Instance { get; private set; }
     private TypewriterEffect typewriterEffect;
 
+    [SerializeField] private AudioSource typingAudioSource;
+    
   
     [SerializeField] private float hideDelay = 2f; 
     [SerializeField] private float delayBetweenLines = 1.5f; 
@@ -92,7 +94,7 @@ public class SvDialougeManager : MonoBehaviour
             string lineText = entry.LocalizedValue;
 
             // Odpalamy maszynę do pisania i CZEKAMY, aż skończy pisać tę linijkę
-            yield return typewriterEffect.SetText(lineText);
+            yield return typewriterEffect.SetText(lineText, typingAudioSource: typingAudioSource);
 
             // Pauza na przeczytanie tekstu zanim wjedzie następny wpis
             yield return new WaitForSeconds(delayBetweenLines);
