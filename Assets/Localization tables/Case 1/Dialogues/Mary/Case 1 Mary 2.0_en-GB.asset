@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Mary 2.0_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 63320ee028dc86147bc8a4a53809652a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 214931857408
+    m_Localized: Your husband, what is he like?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800448
+    m_Localized: It's not him anymore. It's it. It's an UnPerson.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800449
+    m_Localized: It's not  confirmed yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800450
+    m_Localized: Just describe your relationship before the accident.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800451
+    m_Localized: It would be more of a complaint than a description.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800452
+    m_Localized: Doesn't matter I wonna hear it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800453
+    m_Localized: '*sigh* If I have to.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800454
+    m_Localized: 'He was a lazy ungrateful fuck in short. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800455
+    m_Localized: Only thing he could barely take care of was his job.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800456
+    m_Localized: Anything else was a "drag".
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800457
+    m_Localized: Our relationship.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800458
+    m_Localized: Apartment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800459
+    m_Localized: Civilian responsibilities.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800460
+    m_Localized: He would get drunk every opportunity he got.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800461
+    m_Localized: He didn't care about the child either?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800462
+    m_Localized: No. He did, in his own stupid, crazy way. He would take her to new
+      places, show her ways to beat boredom. Tell her new jokes so she could make
+      her friends laugh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800463
+    m_Localized: He took her to dangerous places. Told her things that are dangerous
+      in these times.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800464
+    m_Localized: I was against it. But sometimes, if he wasn't drunk, I allowed it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800465
+    m_Localized: Because Sophie was happy then. She needed a father after all.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800466
+    m_Localized: Even if that father was who he was.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800467
+    m_Localized: Why would you let him act like this? You should have convinced him
+      to change. Or contacted us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800468
+    m_Localized: I tried to talk to him. So he could repent. Fix his behavior.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800469
+    m_Localized: He was too weak. Couldn't face this new world. So he fell into drugs.
+      Nihilism. He wouldn't even sleep with me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800470
+    m_Localized: I couldn't be like him. It was me who was working, cleaning the
+      house, cooking dinners, taking Sophie to school. Making sure our family acts
+      as the officials want.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800471
+    m_Localized: He didn't even thank me for that. Just talked about how stupid and
+      naive I am for trying so much.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800472
+    m_Localized: You should have reported him then. That's your responsibility.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800473
+    m_Localized: I couldn't. Because of Sophie. She couldn't lose her father
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800474
+    m_Localized: I was worried that one day he might go crazy. That's what they say.
+      Rebellious people are more likely to become UnPersons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214973800475
+    m_Localized: But I fooled myself like every other stupid bitch.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

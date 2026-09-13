@@ -15,8 +15,207 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Polish (pl)
   m_GUID: 95cc05a5f9b18b540bdd09ae54b93195
   m_SerializeEntries:
+  - m_GUID: 08357027e4b178547ab16883762996ac
+    m_Address: Back_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b34d680c914b4040ac92b81131521ba
+    m_Address: Case1 Evidence ToxicMarriage_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 143d4d2791cf19d43a9b95a0494ef9df
+    m_Address: Supervisor Case1 SomeExplanation_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e553632b081e7c4f9eee05f42d6f617
+    m_Address: Case 1 Leon 0.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f0334fa81d53be4ca088b7cde6e894e
+    m_Address: Case1 Evidence ApartmentLayout_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21f228ad304285544900929a20fd1546
+    m_Address: Supervisor Case1 AboutYourWife_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c6817db76e229e44ace709ec7041da3
+    m_Address: Case 1 Marry 0.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3eb4af68e1e83e24ca8a61f6bf038d16
+    m_Address: Case 1 Mary 1.1.1.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45b08e14144c5e248913e2d100f8b66e
+    m_Address: Case1 Leon 1.0.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4bee8e46c89d9814182f890807df7edc
+    m_Address: Case1 Evidence WorkHours_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 538d13bab59963e49a4d05a3048ab0b0
+    m_Address: Case 1 Mary 1.1.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 643185675cb23ec44a95c88f8442bff4
+    m_Address: Supervisor Case1 FirstEvidenceConnect_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68748fdf682078f488c1db7ca616e371
+    m_Address: Case1 Evidence ConstructionWork_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69bbbe5a2f1cef94ab89c581a974c598
+    m_Address: Case1 Evidence DrugUse_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bea819e49c77334994d83d620026b91
+    m_Address: Case1 Evidence KarasTestimony_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e40aa5bd7dec5444a6a5b8b27f6ab0e
+    m_Address: Case1 Evidence WorkHours Updated_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8158ac4e4f325bc4888bd5a918d07137
+    m_Address: Case1 Evidence MarryTestimony_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97af246d7aa83d54d8e1a228da8e8c22
+    m_Address: Case1 Leon 1.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa05065a84e62f140a8b862c0384e37c
+    m_Address: Case1 Evidence KidBody_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac5d56e980767904297ad7f1f65ae139
+    m_Address: Cases1 Leon 2.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afda948e7117cb14e9f886a2a94fdfd6
+    m_Address: Case 1 Marry 1.0.2_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b98cd5e528cb307419cb3f319b886304
+    m_Address: Case1 Leon 2.2_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c15aecfbca766534bbd968ca837875f6
     m_Address: Case1 Leon 0.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3653075e866746499e0022ebcb87244
+    m_Address: Case1 Leon 2.3_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8529fcd2ea8d454db3c84414d841661
+    m_Address: Case 1 Mary 2.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf9c3c146af0c1c409e63fad6784bcd6
+    m_Address: Case 1 Marry 1.0.2.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d58888cc2d2e177458f6037ef2973b49
+    m_Address: Case 1 Mary 1.1.1.2_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6752617dbb8ce04ea130061efd0615f
+    m_Address: Case1 Leon 2.0.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd0b411522a0f304f86a0138b55287d7
+    m_Address: Case 1 Marry 1.0_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dff2e2e93bc9ecd439ee34394bab9f7f
+    m_Address: Case 1 Marry 1.1_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1a0c088b3d72194cb8afa16930b0b79
+    m_Address: Supervisor Case1 YouAskedWhathappend_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea3688dbf5a2273418af5e79c984c0d3
+    m_Address: Supervisor Case1 InterrogateNow_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: edb903be7883c7646a33c5555f10397b
+    m_Address: Case1 Evidence FightScene_pl
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pl
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1ff6a9e316a8ad4f8cd755236e2938d
+    m_Address: Supervisor Case1 test_pl
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pl

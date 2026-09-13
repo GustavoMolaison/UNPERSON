@@ -15,8 +15,188 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 76872e3a41049e845a5dadbb2e0b9d1b
   m_SerializeEntries:
+  - m_GUID: 147f977d2434e3e47b5bd4624d284ef9
+    m_Address: Assets/Localization tables/Case 1 Marry 1.0.2 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d08a9d557eed5940921c1eadcceb5cc
+    m_Address: Assets/Localization tables/Case1 Leon 2.3 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1fc1a2af2807058449cd16249f9bd9b0
     m_Address: Assets/Localization tables/Case1 Leon 0.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35465ffd41720c0448c1c6f7ad565f11
+    m_Address: Assets/Localization tables/Case 1 Leon 0.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39db41de102dbdf44945767e542456e8
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence FightScene
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e35420d76dc76749ae17443d412c45b
+    m_Address: Assets/Localization tables/Case1 Leon 2.0.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e712275acc9ff5468b0156fb6adf4d3
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence ConstructionWork
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 559a0ae3448ec4f46a7fc45d64fe0b92
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 InterrogateNow
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6135db0ae39e6484391ebe6bee755da0
+    m_Address: Assets/Localization tables/Case1 Leon 2.2 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63320ee028dc86147bc8a4a53809652a
+    m_Address: Assets/Localization tables/Case 1 Mary 1.2 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68b81b0023ddeff43b68f86c27153d5e
+    m_Address: Assets/Localization tables/Case1 Leon 1.0.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b04ad09fc700f14ca75e6d65da102f4
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence ApartmentLayout
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c584fef4d7cfb842aaf143cda313256
+    m_Address: Assets/Localization tables/Case 1 Marry 0.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70a5fff55f130d046b788725aab04142
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence ToxicMarriage
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75dfe886a521ebe4ba124ec328fcef77
+    m_Address: Assets/Localization tables/Case 1 Mary 1.1.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80b0a0fc2a0dfe54e98c52f3932d1f2a
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence WorkHours
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8203c46499805e0449174d32aab99c0c
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence WorkHours
+      Updated Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b507cd2761ff0f47846178956a5fa1d
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence KarasTestimony
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b5386abf82ff3c46867185baf36bb3c
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence MarryTestimony
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8fcb0e438aa817b479ee3c521bca25fd
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 YouAskedWhathappend
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 910dfa9073621f74596f146ba4beff29
+    m_Address: Assets/Localization tables/Case 1 Marry 1.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c99575bb92c84c459897838a077afc9
+    m_Address: Assets/Case 1 Mary 1.1.1.2 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aca25b8674c5bee4abdc0c734f4add28
+    m_Address: Assets/Localization tables/Case 1 Mary 1.1.1.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b450ee0d05152f94fa7e4a8fe6ee1259
+    m_Address: Assets/Localization tables/Back Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c80415ba3b7bef94191e3a44dd28bc8e
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 AboutYourWife
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9b06d29efd07c9469bcacd8f107775c
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 SomeExplanation
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dccd8ee46a9486e4197e8df35f5cc471
+    m_Address: Assets/Localization tables/Case 1 Marry 1.0.2.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e280720a76b856f46921abd28e618b03
+    m_Address: Assets/Localization tables/Case1 Leon 1.0 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e37e0157e230e194eb2c6163f7ca0774
+    m_Address: Assets/Localization tables/Case 1 Marry 1.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5b06ac3a37557944af9838f33d94de0
+    m_Address: Assets/Localization tables/Case 1/Evidence/Case1 Evidence KidBody
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f75bfc32736b09e46ac1c42885d3f1c9
+    m_Address: Assets/Case1 Evidence DrugUse Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f822a387b99192c43aefe0127d2596b3
+    m_Address: Assets/Localization tables/Cases1 Leon 2.1 Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f924487708eb906469b03791724ea406
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 FirstEvidenceConnect
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa7c9c2a6dbc6d446a0a6d8a1b42ea25
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supervisor Case1 test
+      Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

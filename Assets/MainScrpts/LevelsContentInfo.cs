@@ -19,7 +19,7 @@ public class LevelsContentInfo : MonoBehaviour
         // if (Instance == null) Instance = this;
         // else Destroy(gameObject);
 
-        GameManager.Instance.currentLevel = levelsList[0];  
+        GameManager.Instance.currentLevel = levelsList[0].runTimeLevel();  
     }
 
     

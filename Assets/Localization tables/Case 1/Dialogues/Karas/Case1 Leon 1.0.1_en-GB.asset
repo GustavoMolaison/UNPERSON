@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case1 Leon 1.0.1_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 68b81b0023ddeff43b68f86c27153d5e, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 22706905088
+    m_Localized: ' I assume you come back from work at similar time everyday.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625344
+    m_Localized: 'You are right to assume that. If there were no jam because of some
+      other fucked up terrorism attack by this mind twisted fucks. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625345
+    m_Localized: That's why im standing with my point.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625346
+    m_Localized: 'Poing being who killed? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625347
+    m_Localized: Point being she got mind twisted and set me up. Left the apartment
+      right at the time i would arrive.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625348
+    m_Localized: It would be stupid of her to murder her own child right in the apartment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625349
+    m_Localized: "It would be stupid to except normal thinking from\_UnPerson."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625350
+    m_Localized: Me killing my own child right after arriving would be even stupider.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625351
+    m_Localized: You are so sure she is UnPerson?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22765625352
+    m_Localized: "Marry was a bitch. But she\_wouldn't\_kill Sophie. No matter how
+      world or\_I\_would terrorize her."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

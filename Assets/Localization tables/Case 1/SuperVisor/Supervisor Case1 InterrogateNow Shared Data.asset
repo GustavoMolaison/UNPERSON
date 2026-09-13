@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Supervisor Case1 InterrogateNow Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Supervisor Case1 InterrogateNow
+  m_TableCollectionNameGuidString: 559a0ae3448ec4f46a7fc45d64fe0b92
+  m_Entries:
+  - m_Id: 5468315648
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1778669051904
+    m_Key: New Entry 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2514601631744
+    m_Key: New Entry 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2578707374080
+    m_Key: New Entry 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2622583988224
+    m_Key: New Entry 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3533016391680
+    m_Key: New Entry 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3955336667136
+    m_Key: New Entry 6
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3864004037362057297
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004037362057297
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1788975120157

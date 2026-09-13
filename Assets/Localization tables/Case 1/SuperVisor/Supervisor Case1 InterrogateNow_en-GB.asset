@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Supervisor Case1 InterrogateNow_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 559a0ae3448ec4f46a7fc45d64fe0b92, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5468315648
+    m_Localized: You may have noticed by now but we have prepared evidence file for
+      you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1778669051904
+    m_Localized: Pretty important stuff are there.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2514601631744
+    m_Localized: Like what even are you trying to solve.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2578707374080
+    m_Localized: Get used to it. You will need it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2622583988224
+    m_Localized: 'Now ask him some question. its two-way mirror. So he doesn''t see
+      you. But you do. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3533016391680
+    m_Localized: 'Their faces are very important, but for now ask him who he is and
+      what happend. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3955336667136
+    m_Localized: You'l manage that. I belive you. Everyone belives in you.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

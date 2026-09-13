@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case1 Evidence MarryTestimony_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 8b5386abf82ff3c46867185baf36bb3c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 6256844800
+    m_Localized: Marry Testimony
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7800348672
+    m_Localized: 'Mary states that she was running her usual errands.
+
+      While
+      Sophie was busy playing with her toys in the bedroom, Mary took the opportunity
+      to borrow a pot from her neighbor.
+
+      Mary states that she talked with
+      her neighbor, Cassidy, for 10 minutes, which Cassidy herself confirms.
+
+      When
+      she came back, she witnessed a completely destroyed kitchen and her husband,
+      who seemed as he had lost his mind.
+
+      He attacked her, and then Cassidy
+      came to her aid.'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

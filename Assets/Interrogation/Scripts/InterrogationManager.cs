@@ -19,11 +19,11 @@ public class InterrogationManager : MonoBehaviour
     public void changeInterrogationSuspect(Suspect susp)
     {
         interrogatedSuspect = susp;
-        suspectPng.sprite = susp.Face;
-        if (DialogueOptionManager.Instance != null) DialogueOptionManager.Instance.dialoguesChange(false);
+        suspectPng.sprite = susp.Face_interrogation;
+        if (DialogueOptionManager.Instance != null) DialogueOptionManager.Instance.initilalizeSuspectOptions();
 
         // DialogueOptionManager.Instance.cleanDialogueOptions();
-        if (UiDialougeManager.Instance != null) UiDialougeManager.Instance.forceCleanChat();
+        if (UiDialougeManager.Instance != null) UiDialougeManager.Instance.forceClean();
         if (CameraMover.Instance != null && MonitorCameraTracker.Instance != null) CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.inInterrogation);
     }
  

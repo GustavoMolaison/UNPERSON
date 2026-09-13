@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c274efd7788fe9a49bea49178f3255eb, type: 3}
+  m_Name: Marry
+  m_EditorClassIdentifier: Assembly-CSharp::Suspect
+  firstName: Marry
+  lastName: Friedrich
+  birthDate: 1.01.1990
+  age: 37
+  occupation: Teacher
+  gender: 1
+  face: {fileID: -8600513156772927195, guid: d4a7cbe205a1c3946aaa6052e5b3bceb, type: 3}
+  face_interrogation: {fileID: -8600513156772927195, guid: d4a7cbe205a1c3946aaa6052e5b3bceb, type: 3}
+  chatHistory:
+  - {fileID: 11400000, guid: bcdd3858e619cb8468417a06d72449c6, type: 2}
+  dialogueOptions:
+  - {fileID: 11400000, guid: 17d058b9161df64419f2fc15ce95ad66, type: 2}
+  role: 0

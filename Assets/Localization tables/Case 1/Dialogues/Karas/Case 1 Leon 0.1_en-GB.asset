@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Case 1 Leon 0.1_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 35465ffd41720c0448c1c6f7ad565f11, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 51853123584
+    m_Localized: I've heard things about your life, you know?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678016
+    m_Localized: What are you plotting, "Officer"?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678017
+    m_Localized: Our lives are harsh. We tend to go easy on ourselves sometimes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678018
+    m_Localized: Everyone has their own methods. But some are too dangerous for society.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678019
+    m_Localized: That's why they are illegal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678020
+    m_Localized: Do you know anything about these illegal methods?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678021
+    m_Localized: I don't know what you mean. And how is that relevant to the death
+      of my child?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678022
+    m_Localized: I have information that you've been in close contact with those
+      "methods", or rather, substances.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678023
+    m_Localized: No matter how the case ends, I have to file a report regarding suspected
+      drug use.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678024
+    m_Localized: If you are innocent, you have nothing to worry about.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678025
+    m_Localized: Are you trying to intimidate me? Frame me as a murderous drug addict?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678026
+    m_Localized: I'm not gonna fold. I won't admit to false accusations.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678027
+    m_Localized: Okay, citizen, I appreciate your honesty. Let me file the report,
+      then.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678028
+    m_Localized: Tell what you want. Marry is way more coparative citizen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678029
+    m_Localized: Mary told you? I mean... it told you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678030
+    m_Localized: A very fucking desperate move.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678031
+    m_Localized: You're not gonna screw me over something like this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678032
+    m_Localized: If you made it say this things, you know already its her don't you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678033
+    m_Localized: What do you want from me? Money? I can give you dealers' contacts
+      if you want.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678034
+    m_Localized: Just leave me alone. Let me die in peace.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51886678035
+    m_Localized: That's a splendid gift, citizen. Your appreciation of our work is
+      beautiful.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
