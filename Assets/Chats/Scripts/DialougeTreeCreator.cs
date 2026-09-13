@@ -30,7 +30,7 @@ public class DialogueTreeCreator : MonoBehaviour
         {
             if (data == null)
             {
-                Debug.LogError("DialogueOption data is null. Cannot create NodeTree.11111");
+                Debug.LogError("DialogueOption data is null. Cannot create NodeTree");
                 return;
             }
             this.data = data;
@@ -39,7 +39,7 @@ public class DialogueTreeCreator : MonoBehaviour
             this.back = data.isBackOption;
             if (data == null)
             {
-                Debug.LogError("DialogueOption data is null. Cannot create NodeTree.2222");
+                Debug.LogError("DialogueOption data is null. Cannot create NodeTree");
                 return;
             }
             
@@ -118,10 +118,10 @@ public class DialogueTreeCreator : MonoBehaviour
         {
             foreach(NodeTree parent in this.parents)
             {
-                Debug.Log("ojcom robie dzieci");
-                // TU KOD SIE ZATRZYMUJE JA
+                
+                
                 parent.AddChild(child);
-                Debug.Log("ojcom robie dzieci222222222");
+                
             }
         }
 
@@ -148,7 +148,7 @@ public class DialogueTreeCreator : MonoBehaviour
                 
                 if (!startingNodes.ContainsKey(suspect))
                 {
-                    startingNodes[suspect] = new Branch(null, backPreFabb); 
+                    startingNodes[suspect] = new Branch(null, backPreFabb, startingbranch: true); 
                 }
                 startingNodes[suspect].AddToBranch(node);
                
@@ -180,23 +180,24 @@ public class DialogueTreeCreator : MonoBehaviour
 
         [SerializeField] private DialogueOption backPreFab;
 
-        public Branch(List<NodeTree> cont = null, DialogueOption backPreFab = null)
+        public Branch(List<NodeTree> cont = null, DialogueOption backPreFab = null, bool startingbranch = false)
         {
             content = cont ?? new List<NodeTree>();
             if(backPreFab.nodeTree == null){
               Debug.LogError("NULLL");  
             }
-            if (backPreFab != null && backPreFab.nodeTree != null)
+            if (backPreFab != null && backPreFab.nodeTree != null && !startingbranch)
             {
-                Debug.Log("dodjae BAck");
+                Debug.Log("dodaje back");
                 content.Add(backPreFab.nodeTree);
             }
+            
 
             foreach(NodeTree node in content)
             {
                 if(node.children.Count > 0)
                 {
-                    Branch newBranch = new Branch(node.children, backPreFab);
+                    Branch newBranch = new Branch(node.children, backPreFab, startingbranch: false);
                     this.AddChildrenToBranch(newBranch);
 
                 }
@@ -210,7 +211,7 @@ public class DialogueTreeCreator : MonoBehaviour
             if (node != null && node.children != null && node.children.Count > 0)
             {
                 
-                Branch childBranch = new Branch(node.children, backPreFab);
+                Branch childBranch = new Branch(node.children, backPreFab, startingbranch: false);
                 
                 
                 this.AddChildrenToBranch(childBranch);

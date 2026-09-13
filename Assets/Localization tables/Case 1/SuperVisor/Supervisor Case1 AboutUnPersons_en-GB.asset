@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Supervisor Case1 AboutUnPersons_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 8b533d96286d9444ab807a09718efa17, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5749334016
+    m_Localized: Most of you are probably well aware of how we treat unpersons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 145302216704
+    m_Localized: 'But you should have instruction on desks how to deal with them. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 272301547520
+    m_Localized: I see that to some they didn't arrive. We will fix that tommorow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496835223552
+    m_Localized: But you my pupil seem to know great deal of things about them. I
+      trust you manage till then.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659859431424
+    m_Localized: 'I will give additional points for that hardship. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 777933283328
+    m_Localized: I bet you have never been happier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 819784048640
+    m_Localized: Few more points away from hanging!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

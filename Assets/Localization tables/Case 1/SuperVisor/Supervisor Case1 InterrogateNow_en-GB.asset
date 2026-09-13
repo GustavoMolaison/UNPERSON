@@ -36,8 +36,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2622583988224
-    m_Localized: 'Now ask him some question. its two-way mirror. So he doesn''t see
-      you. But you do. '
+    m_Localized: 'Now ask him some questions. its two-way mirror by the way. So he
+      doesn''t see you. But you do. '
     m_Metadata:
       m_Items: []
   - m_Id: 3533016391680
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3955336667136
-    m_Localized: You'l manage that. I belive you. Everyone belives in you.
+    m_Localized: You'l manage that. I belive in you. Everyone belives in you.
     m_Metadata:
       m_Items: []
   references:
