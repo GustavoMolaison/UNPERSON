@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 // This script is meant to be placed on the parent of the dialogue option windows,
 // it will be responsible for creating and turning them off/on when needed
@@ -13,10 +14,15 @@ public class DialogueOptionManager : MonoBehaviour
 
     
 
-    [HideInInspector] public DialogueOption dialougePicked;
+    [HideInInspector] public DialogueOption dialougueClicked{ get; private set; }
+    public event Action<DialogueOption> OnCurrentDialogueClickedChangedInputDialogueOption;
+    public event Action OnCurrentDialogueClickedChanged;
     [SerializeField] private DialogueOption BackOption;
 
     public DialogueOption currentDialogueOption { get; private set; }
+    public event Action<DialogueOption> OnCurrentDialogueOptionChangedInputDialogueOption;
+    public event Action OnCurrentDialogueOptionChanged;
+
 
     private List<DialogueOption> prevDialOptions;
     public List<DialogueOption> backDialOptions;
@@ -27,6 +33,15 @@ public class DialogueOptionManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        OnCurrentDialogueOptionChangedInputDialogueOption += (option) => option.pickedAtLeastOnce = true;
+    }
+
+    public void changeDialoguePicked(DialogueOption enrolledDialouge)
+    {
+        dialougueClicked = enrolledDialouge;
+        OnCurrentDialogueClickedChangedInputDialogueOption?.Invoke(enrolledDialouge);
+        OnCurrentDialogueClickedChanged?.Invoke();
     }
 
    
@@ -73,18 +88,18 @@ public class DialogueOptionManager : MonoBehaviour
         {
             Transform child = transform.GetChild(i);
 
-           Debug.Log("dodam tych skurwysynow");
+           
             if (child.gameObject.activeSelf)
             {
-                Debug.Log("hm,mm");
+                
             }
             
            if (child.gameObject.activeSelf && child.TryGetComponent<DialogueOptionWindow>(out var window))
               {
-                Debug.Log("zaraz dodaje skurwysynow");
+              
                if (window.enrolledDialogue != null)
                {
-                Debug.Log("dodaje skurwysynow");
+                
                 currentOptions.Add(window.enrolledDialogue);
                }
               }
@@ -104,9 +119,12 @@ public class DialogueOptionManager : MonoBehaviour
 
     public void dialoguesChange2(DialogueOption enrolledDialouge)
     {
+        Debug.Log("o huj chodzi");
         optionsToLoad = OptionTreeManager.Instance.treeClimbers[SuspectTracker.instance.currentSuspect].DecideDirection(enrolledDialouge.nodeTree);
         turnOnChossenDialogues(optionsToLoad);
         currentDialogueOption = enrolledDialouge;
+        OnCurrentDialogueOptionChangedInputDialogueOption?.Invoke(enrolledDialouge);
+        OnCurrentDialogueOptionChanged?.Invoke();
     }
 
 

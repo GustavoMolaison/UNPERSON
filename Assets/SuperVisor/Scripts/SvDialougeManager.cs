@@ -88,7 +88,7 @@ public class SvDialougeManager : MonoBehaviour
         // 2. Iterujemy po wszystkich wpisach (Entry) w tabeli
         foreach (StringTableEntry entry in table.Values)
         {
-            Debug.Log("1");
+            
             typewriterEffect.Clean(); // Czyścimy poprzedni tekst przed rozpoczęciem nowego
 
             string lineText = entry.LocalizedValue;

@@ -1,9 +1,6 @@
 using System.Collections.Generic;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
-using System.Linq;
-using UnityEngine.Rendering;
+using System;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
@@ -16,7 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float doubleTapDelay = 0.3f;
     private float lastClickTimeD;
     [SerializeField] private float doubleTapDelayD = 0.3f;
-
+    
+    public event Action actionPerFrame;
     public static GameManager Instance;
 
     void Awake()
@@ -44,6 +42,11 @@ public class GameManager : MonoBehaviour
         // Debug.Log(SuspectTracker.instance.currentSuspects.Count);
         DialogueTreeCreator.Instance.bulidTree(SuspectTracker.instance.currentSuspects);
         OptionTreeManager.Instance.initialize();
+
+        foreach(GameEvent gameEvent in currentLevel.GameEventsList)
+        {
+            gameEvent.enrollConditions();
+        }
         
         // DialogueTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspects[1]][0].displayTree();
 
@@ -54,18 +57,8 @@ public class GameManager : MonoBehaviour
  
     void Update()
     {
-        foreach(GameEvent gameEvent in currentLevel.GameEventsList)
-        {
-            // Debug.Log("Checking conditions for event: " + gameEvent.EventName);
-
-            if(gameEvent.areConditionsMet() && !gameEvent.IsCompleted)
-            {
-                // Debug.Log("Conditions met for event: " + gameEvent.EventName);
-                EventManager.Instance.EnqueueEvent(gameEvent);
-            }
-            
-        }
-
+        actionPerFrame?.Invoke();
+     
 
         if (Input.GetKeyDown(KeyCode.B))
         {

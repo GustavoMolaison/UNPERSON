@@ -163,6 +163,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d87f684934f201a4192d8d3e53de151c
+    m_Address: Assets/Localization tables/Case 1/SuperVisor/Supercisor Case1 KarasAllDone
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dccd8ee46a9486e4197e8df35f5cc471
     m_Address: Assets/Localization tables/Case 1 Marry 1.0.2.1 Shared Data.asset
     m_ReadOnly: 1

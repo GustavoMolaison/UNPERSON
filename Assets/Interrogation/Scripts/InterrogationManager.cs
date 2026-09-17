@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class InterrogationManager : MonoBehaviour
 {
@@ -7,12 +8,18 @@ public class InterrogationManager : MonoBehaviour
     public float cameraSize = 120f;
     public Image suspectPng;
     [HideInInspector] public Suspect interrogatedSuspect;
+
+    public event Action<Suspect> OnInterrogatedSuspectChangedInputSuspect;
+
+    public event Action OnInterrogatedSuspectChanged;
     public static InterrogationManager Instance;
     
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        OnInterrogatedSuspectChanged += DialogueOptionManager.Instance.initilalizeSuspectOptions;
+        OnInterrogatedSuspectChanged += UiDialougeManager.Instance.forceClean;
     }
     
 
@@ -20,11 +27,9 @@ public class InterrogationManager : MonoBehaviour
     {
         interrogatedSuspect = susp;
         suspectPng.sprite = susp.Face_interrogation;
-        if (DialogueOptionManager.Instance != null) DialogueOptionManager.Instance.initilalizeSuspectOptions();
-
-        // DialogueOptionManager.Instance.cleanDialogueOptions();
-        if (UiDialougeManager.Instance != null) UiDialougeManager.Instance.forceClean();
-        if (CameraMover.Instance != null && MonitorCameraTracker.Instance != null) CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.inInterrogation);
+        OnInterrogatedSuspectChanged?.Invoke();
+        OnInterrogatedSuspectChangedInputSuspect?.Invoke(susp);
+         CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.inInterrogation);
     }
  
 }

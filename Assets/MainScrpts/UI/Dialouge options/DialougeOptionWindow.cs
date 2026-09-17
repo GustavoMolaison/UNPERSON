@@ -85,8 +85,8 @@ public class DialogueOptionWindow : MonoBehaviour
             {
                 Debug.Log("Has evidenceCheck: " + enrolledDialogue.hasEvidenceCheck);
                
-                DialogueOptionManager.Instance.dialougePicked = enrolledDialogue;
-
+                
+                DialogueOptionManager.Instance.changeDialoguePicked(enrolledDialogue);
               
                 //Holdanimation(true);
                 // Podświetlanie dowodów narazie wyłączone pewnie na zawsze
@@ -106,12 +106,12 @@ public class DialogueOptionWindow : MonoBehaviour
                 {
                     addOneWrongGuess();
                     //shaderManager.wrongAnswerReact(howManyWrongGuesses / maxWrongGuesses);
-                    DialogueOptionManager.Instance.dialougePicked = null;
+                    DialogueOptionManager.Instance.changeDialoguePicked(null);
                     //Holdanimation(false);
                     yield break;
                 }
 
-                DialogueOptionManager.Instance.dialougePicked = null;
+                DialogueOptionManager.Instance.changeDialoguePicked(null);
                 //Holdanimation(false);
             }
 
@@ -137,7 +137,7 @@ public class DialogueOptionWindow : MonoBehaviour
         //}
         
         
-        return (EvidenceManager.Instance.checkAnswerState());
+        return EvidenceManager.Instance.checkAnswerState();
         
 
     }

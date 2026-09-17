@@ -124,6 +124,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-GB
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83022cde216d3884caa7adfae92c9ed7
+    m_Address: Supercisor Case1 KarasAllDone_en-GB
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-GB
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 83b09a88aa7ae8149a6d6f41b2d508da
     m_Address: Case1 Evidence FightScene_en-GB
     m_ReadOnly: 1

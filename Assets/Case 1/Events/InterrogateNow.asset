@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
   eventName: InterrogateNow
   eventType: 0
-  timer: 0
-  timeToStart: 5
-  suspectInterrogated: 1
-  suspectInterrogatedName: Karas
-  dialougeOptionPicked: 0
-  dialougeOptionPickedTarget: {fileID: 0}
+  eventConditionsList:
+  - rid: 3864004171118936335
+  isCompleted: 0
   dialogueTable:
     m_TableReference:
       m_TableCollectionName: GUID:559a0ae3448ec4f46a7fc45d64fe0b92
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004171118936335
+      type: {class: EventConditionSuspectInterrogated, ns: , asm: Assembly-CSharp}
+      data:
+        suspectInterrogatedName: Karas

@@ -47,7 +47,7 @@ private IEnumerator ProcessQueueRoutine()
     {
         GameEvent currentEvent = eventQueue.Dequeue();
 
-        if (currentEvent == null || currentEvent.IsCompleted)
+        if (currentEvent == null || currentEvent.isCompleted)
             continue;
 
         // Bezpieczne wywołanie - błąd w evencie nie może zablokować całej kolejki
@@ -62,7 +62,7 @@ private IEnumerator ProcessQueueRoutine()
         }
 
         // Czekaj na zakończenie
-        yield return new WaitUntil(() => currentEvent.IsCompleted);
+        yield return new WaitUntil(() => currentEvent.isCompleted);
     }
 
     // Sprzątanie po zakończeniu pętli

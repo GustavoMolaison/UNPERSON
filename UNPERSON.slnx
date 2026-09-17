@@ -8,4 +8,5 @@
   <Project Path="Unity.Localization.DocCodeSamples.csproj" />
   <Project Path="Unity.InternalAPIEditorBridge.013.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

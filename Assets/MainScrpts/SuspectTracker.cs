@@ -31,8 +31,12 @@ public class SuspectTracker : MonoBehaviour
         
     }
     public IReadOnlyDictionary<Suspect, SuspGuees> SuspectGuesses => SuspectGueses;
-    [HideInInspector] public Suspect currentSuspect;
-    [HideInInspector] public Suspect previousSuspect;
+    [HideInInspector] public Suspect currentSuspect { get; private set; }
+    [HideInInspector] public Suspect previousSuspect { get; private set; }
+     
+    public Action<Suspect> OnCurrentSuspectChangedInputSuspect;
+
+    public Action OnCurrentSuspectChanged;
 
     public static SuspectTracker instance;
 
@@ -76,6 +80,9 @@ public class SuspectTracker : MonoBehaviour
             
         }
 
+        OnCurrentSuspectChangedInputSuspect += Screen1.Instance.suspectPanelExtensionSwitch;
+        OnCurrentSuspectChanged += Screen2.Instance.chatterGroupOfOn;
+
         initilized = true;
     }
 
@@ -100,9 +107,11 @@ public class SuspectTracker : MonoBehaviour
             // THIS GOES FRIST IT CHANGES THE CURRRENT SUSPECT
             previousSuspect = currentSuspect;
             currentSuspect = susp;
-            Screen1.Instance.suspectPanelExtensionSwitch(currentSuspect);
+            Debug.Log("zmieniam suspecta wlaczam action");
+            OnCurrentSuspectChanged?.Invoke();
+            OnCurrentSuspectChangedInputSuspect?.Invoke(currentSuspect);
             // InterrogationManager.Instance.changeSuspectPng();
-            Screen2.Instance.chatterGroupOfOn();
+            
 
     
 

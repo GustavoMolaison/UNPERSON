@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
   eventName: About UnPersons
   eventType: 0
-  timer: 0
-  timeToStart: 5
-  suspectInterrogated: 0
-  suspectInterrogatedName: 
-  dialougeOptionPicked: 1
-  dialougeOptionPickedTarget: {fileID: 11400000, guid: 2d76e354a47f0ee40b0365ca96052fe9, type: 2}
-  dialougeOptionClicked: 0
-  dialougeOptionClickedTarget: {fileID: 0}
-  typeWriterEffect: {fileID: 0}
+  eventConditionsList:
+  - rid: 3864004171118936330
+  isCompleted: 0
   dialogueTable:
     m_TableReference:
       m_TableCollectionName: GUID:8b533d96286d9444ab807a09718efa17
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004171118936330
+      type: {class: EventConditionDialogueOptionPicked, ns: , asm: Assembly-CSharp}
+      data:
+        dialougeOptionPickedTarget: {fileID: 11400000, guid: 2d76e354a47f0ee40b0365ca96052fe9, type: 2}
+        typeWriterEffect: {fileID: 0}

@@ -14,15 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
   eventName: First evidenceConnect
   eventType: 0
-  timer: 0
-  timeToStart: 5
-  suspectInterrogated: 0
-  suspectInterrogatedName: 
-  dialougeOptionPicked: 0
-  dialougeOptionPickedTarget: {fileID: 0}
-  dialougeOptionClicked: 1
-  dialougeOptionClickedTarget: {fileID: 11400000, guid: 75ab8fc378b01644da4b1a27087475de, type: 2}
-  typeWriterEffect: {fileID: 0}
+  eventConditionsList:
+  - rid: 3864004171118936333
+  isCompleted: 0
   dialogueTable:
     m_TableReference:
       m_TableCollectionName: GUID:f924487708eb906469b03791724ea406
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004171118936333
+      type: {class: EventConditionDialogueOptionClicked, ns: , asm: Assembly-CSharp}
+      data:
+        dialougeOptionClickedTarget: {fileID: 11400000, guid: 75ab8fc378b01644da4b1a27087475de, type: 2}
+        typeWriterEffect: {fileID: 0}

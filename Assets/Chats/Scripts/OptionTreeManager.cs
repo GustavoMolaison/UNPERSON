@@ -8,6 +8,7 @@ using UnityEditor;
 public class OptionTreeManager : MonoBehaviour
 {
     public readonly Dictionary<Suspect, TreeClimber> treeClimbers = new Dictionary<Suspect, TreeClimber>();
+    public readonly Dictionary<Suspect, List<DialogueOption>> ClimbersEveryDialouge = new Dictionary<Suspect, List<DialogueOption>>();
     
     public static OptionTreeManager Instance;
     void Awake()
@@ -23,18 +24,20 @@ public class OptionTreeManager : MonoBehaviour
         foreach(Suspect suspect in SuspectTracker.instance.currentSuspects)
         {
           
-            Debug.Log("jedziemy222");
+            
             treeClimbers[suspect] = new TreeClimber(suspect);
             treeClimbers[suspect].startingBranch.BuildTree(DialogueTreeCreator.Instance.backPreFabb);
+
+            ClimbersEveryDialouge[suspect] = DialogueTreeCreator.Instance.getAllDialougeOptions(DialogueTreeCreator.Instance.startingNodes[suspect]);
         }
     }
 
     public class TreeClimber
     {
         public Suspect enrolledSuspect;
-        public DialogueTreeCreator.Branch startingBranch;
+        public Branch startingBranch;
 
-        public DialogueTreeCreator.Branch currentBranch;
+        public Branch currentBranch;
 
 
         public TreeClimber(Suspect suspect)
@@ -45,7 +48,7 @@ public class OptionTreeManager : MonoBehaviour
             currentBranch = DialogueTreeCreator.Instance.startingNodes[suspect];
         }
 
-        public List<DialogueOption> DecideDirection(DialogueTreeCreator.NodeTree node)
+        public List<DialogueOption> DecideDirection(NodeTree node)
         {
             if(currentBranch.content.Contains(node))
             {
@@ -86,9 +89,9 @@ public class OptionTreeManager : MonoBehaviour
             }
         }
 
-        private List<DialogueOption> Advance(List<DialogueTreeCreator.NodeTree> childs)
+        private List<DialogueOption> Advance(List<NodeTree> childs)
         {
-            foreach(DialogueTreeCreator.Branch childBranch in currentBranch.childBranches)
+            foreach(Branch childBranch in currentBranch.childBranches)
             {
                 if(childBranch.content == childs)
                 {

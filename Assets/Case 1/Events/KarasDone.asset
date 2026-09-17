@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
-  m_Name: AboutYouWife asked
+  m_Name: KarasDone
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
-  eventName: 
+  eventName: Karasdone
   eventType: 0
   eventConditionsList:
-  - rid: 3864004171118936331
+  - rid: 3864004211111886927
   isCompleted: 0
   dialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:c80415ba3b7bef94191e3a44dd28bc8e
+      m_TableCollectionName: GUID:d87f684934f201a4192d8d3e53de151c
   references:
     version: 2
     RefIds:
-    - rid: 3864004171118936331
-      type: {class: EventConditionDialogueOptionPicked, ns: , asm: Assembly-CSharp}
+    - rid: 3864004211111886927
+      type: {class: EventConditionDialogueOptionsPickedAtLeastOnce, ns: , asm: Assembly-CSharp}
       data:
-        dialougeOptionPickedTarget: {fileID: 11400000, guid: 6d84cebc349475a46a18f2a1dc1e4873, type: 2}
-        typeWriterEffect: {fileID: 0}
+        allOptions: 0
+        optionsToCheck:
+        - {fileID: 11400000, guid: 78686396b95fc5845b5c79b34fc92e6b, type: 2}

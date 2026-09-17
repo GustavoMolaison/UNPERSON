@@ -372,8 +372,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 52c008de1a6e2df46a2475a96981a8dd, type: 2}
   - {fileID: 11400000, guid: 47ddba64d1144e449a0cdf9177bcbfed, type: 2}
   conclusionPanels: []
-  currentSuspect: {fileID: 0}
-  previousSuspect: {fileID: 0}
 --- !u!224 &279370048 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2657306623177831268, guid: 88ad70a8e391b5441a4cf6d50e3ef992, type: 3}

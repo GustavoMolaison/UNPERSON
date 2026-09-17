@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Supercisor Case1 KarasAllDone_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: d87f684934f201a4192d8d3e53de151c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4340047872
+    m_Localized: dx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10333708288
+    m_Localized: xd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24523038720
+    m_Localized: dxdxxd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20454563840
+    m_Localized: dxxd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15475924992
+    m_Localized: dxdx
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

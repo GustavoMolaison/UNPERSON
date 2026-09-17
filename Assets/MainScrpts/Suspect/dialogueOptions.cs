@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Localization;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "DialogueOption")]
 public class DialogueOption : ScriptableObject
 {
@@ -66,7 +67,9 @@ public class DialogueOption : ScriptableObject
 
     [SerializeField] private bool IsBackOption = false;
 
-    [HideInInspector] public DialogueTreeCreator.NodeTree nodeTree;
+    [HideInInspector] public NodeTree nodeTree;
+
+    [HideInInspector] public bool pickedAtLeastOnce = false; 
 
 
     

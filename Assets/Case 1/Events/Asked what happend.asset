@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
   eventName: Asked WhatHappend
   eventType: 0
-  timer: 0
-  timeToStart: 5
-  suspectInterrogated: 0
-  suspectInterrogatedName: 
-  dialougeOptionPicked: 1
-  dialougeOptionPickedTarget: {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}
-  typeWriterEffect: {fileID: 0}
+  eventConditionsList:
+  - rid: 3864004171118936332
+  isCompleted: 0
   dialogueTable:
     m_TableReference:
       m_TableCollectionName: GUID:8fcb0e438aa817b479ee3c521bca25fd
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004171118936332
+      type: {class: EventConditionDialogueOptionPicked, ns: , asm: Assembly-CSharp}
+      data:
+        dialougeOptionPickedTarget: {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}
+        typeWriterEffect: {fileID: 0}

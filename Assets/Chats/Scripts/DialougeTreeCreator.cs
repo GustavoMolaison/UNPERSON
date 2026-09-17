@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class DialogueTreeCreator : MonoBehaviour
 {
     [SerializeField] public DialogueOption backPreFabb;
     public static DialogueTreeCreator Instance;
+    public Dictionary<Suspect, Branch> startingNodes = new Dictionary<Suspect, Branch>();
     void Awake()
     {
         
@@ -16,6 +18,58 @@ public class DialogueTreeCreator : MonoBehaviour
         // MonitorCameraTracker.Instance.initilize();
         // SuspectTracker.instance.initilize();
     }
+
+    public List<DialogueOption> getAllDialougeOptions(Branch startingBranch)
+    {
+            List<DialogueOption> allDialougeOptions = new List<DialogueOption>();
+            
+
+
+            foreach(NodeTree node in startingBranch.content)
+            {
+              allDialougeOptions.Add(node.data);
+            }
+
+            foreach(Branch child in startingBranch.childBranches)
+            {
+              allDialougeOptions.AddRange(getAllDialougeOptions(child));
+            }
+
+
+            return allDialougeOptions;
+
+            
+           
+    }
+
+    public void bulidTree(List<Suspect> suspects)
+    {      
+        NodeTree backnode = new NodeTree(backPreFabb);
+        foreach (Suspect suspect in suspects)
+        {
+            // Debug.Log(suspect.DialogueOptions.Count + " dialogue options found for suspect: " + suspect.name);
+            
+            foreach (DialogueOption option in suspect.DialogueOptions)
+            {
+                Debug.Log("Creating node tree for suspect: " + suspect.name + " with starting dialogue option: " + option.name);
+               
+                NodeTree node = new NodeTree(option);
+                
+                if (!startingNodes.ContainsKey(suspect))
+                {
+                    startingNodes[suspect] = new Branch(null, backPreFabb, startingbranch: true); 
+                }
+                startingNodes[suspect].AddToBranch(node);
+               
+
+            }
+
+            
+        }
+    }
+}
+
+
 
     
     public class NodeTree
@@ -126,51 +180,13 @@ public class DialogueTreeCreator : MonoBehaviour
         }
 
        
-    }
     
-    public Dictionary<Suspect, Branch> startingNodes = new Dictionary<Suspect, Branch>();
+    
+    
     
 
-    public void bulidTree(List<Suspect> suspects)
-    {
-        NodeTree nodee = new NodeTree(backPreFabb);
-        // Debug.Log(suspects.Count + " suspects found. Building dialogue trees...");
-        
-        foreach (Suspect suspect in suspects)
-        {
-            // Debug.Log(suspect.DialogueOptions.Count + " dialogue options found for suspect: " + suspect.name);
-            
-            foreach (DialogueOption option in suspect.DialogueOptions)
-            {
-                Debug.Log("Creating node tree for suspect: " + suspect.name + " with starting dialogue option: " + option.name);
-               
-                NodeTree node = new NodeTree(option);
-                
-                if (!startingNodes.ContainsKey(suspect))
-                {
-                    startingNodes[suspect] = new Branch(null, backPreFabb, startingbranch: true); 
-                }
-                startingNodes[suspect].AddToBranch(node);
-               
-
-            }
-
-            
-        }
-//         var climbers = startingNodes;
-
-// if (climbers == null || climbers.Count == 0)
-// {
-//     Debug.Log("Słownik treeClimbers jest pusty!");
-// }
-// else
-// {
-//     foreach (var pair in climbers)
-//     {
-//         Debug.Log($"Podejrzany: {pair.Key} | Climber: {pair.Value}");
-//     }
-// }
-    }
+    
+}
 
     public class Branch
     {
@@ -188,7 +204,7 @@ public class DialogueTreeCreator : MonoBehaviour
             }
             if (backPreFab != null && backPreFab.nodeTree != null && !startingbranch)
             {
-                Debug.Log("dodaje back");
+                
                 content.Add(backPreFab.nodeTree);
             }
             
@@ -251,14 +267,17 @@ public class DialogueTreeCreator : MonoBehaviour
             
         }
 
+       // Practical Functions //////////////////////////////
         public List<DialogueOption> branchToOptions()
         {
              return content.Select(node => node.data).ToList();
         }
+
+        
     }
 
     
     
         
     
-}
+

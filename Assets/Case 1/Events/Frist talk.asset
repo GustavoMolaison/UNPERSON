@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
   eventName: Welcome invesstigators
   eventType: 0
-  timer: 1
-  timeToStart: 2
+  eventConditionsList:
+  - rid: 3864004171118936334
+  isCompleted: 0
   dialogueTable:
     m_TableReference:
       m_TableCollectionName: GUID:fa7c9c2a6dbc6d446a0a6d8a1b42ea25
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004171118936334
+      type: {class: EventConditionTimer, ns: , asm: Assembly-CSharp}
+      data:
+        timeToStart: 3
