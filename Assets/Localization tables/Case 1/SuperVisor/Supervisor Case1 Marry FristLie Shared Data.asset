@@ -10,43 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: Supercisor Case1 KarasAllDone Shared Data
+  m_Name: Supervisor Case1 Marry FristLie Shared Data
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
-  m_TableCollectionName: Supercisor Case1 KarasAllDone
-  m_TableCollectionNameGuidString: d87f684934f201a4192d8d3e53de151c
+  m_TableCollectionName: Supervisor Case1 Marry FristLie
+  m_TableCollectionNameGuidString: ecdb6156e83bcee4f967636ba6540283
   m_Entries:
-  - m_Id: 4340047872
-    m_Key: xdxd
-    m_Metadata:
-      m_Items: []
-  - m_Id: 10333708288
-    m_Key: xddxd
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15475924992
-    m_Key: dxxd
-    m_Metadata:
-      m_Items: []
-  - m_Id: 20454563840
-    m_Key: xddxxd
-    m_Metadata:
-      m_Items: []
-  - m_Id: 24523038720
-    m_Key: dxdxd
-    m_Metadata:
-      m_Items: []
-  - m_Id: 150241352343552
+  - m_Id: 38783672320
     m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40549474304
+    m_Key: New Entry 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42516602880
+    m_Key: New Entry 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48870913466368
+    m_Key: New Entry 3
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3864004211111886928
+    rid: 3864004220731261006
   references:
     version: 2
     RefIds:
-    - rid: 3864004211111886928
+    - rid: 3864004220731261006
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1789635695160
+        m_CustomEpoch: 1789671820381

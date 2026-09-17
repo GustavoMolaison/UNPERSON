@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
-  m_Name: About UnPersons
+  m_Name: Asked what happend
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
-  eventName: About UnPersons
+  eventName: Asked WhatHappend
   eventType: 0
   eventConditionsList:
-  - rid: 3864004171118936330
+  - rid: 3864004171118936332
   isCompleted: 0
   dialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:8b533d96286d9444ab807a09718efa17
+      m_TableCollectionName: GUID:8fcb0e438aa817b479ee3c521bca25fd
   references:
     version: 2
     RefIds:
-    - rid: 3864004171118936330
+    - rid: 3864004171118936332
       type: {class: EventConditionDialogueOptionPicked, ns: , asm: Assembly-CSharp}
       data:
-        dialougeOptionPickedTarget: {fileID: 11400000, guid: 2d76e354a47f0ee40b0365ca96052fe9, type: 2}
+        dialogueOptionsPickedTargets:
+        - {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}
         typeWriterEffect: {fileID: 0}

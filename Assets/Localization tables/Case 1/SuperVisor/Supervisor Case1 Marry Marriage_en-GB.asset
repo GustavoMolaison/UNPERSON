@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Supervisor Case1 Marry Marriage_en-GB
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en-GB
+  m_SharedData: {fileID: 11400000, guid: 814ad3dffd024554dbff6b6f49466720, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1148831391744
+    m_Localized: You are him...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1151889039360
+    m_Localized: You are one of the founders?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1155353534464
+    m_Localized: Civlians behavior restriction and regulation Bureau.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4042745962496
+    m_Localized: Now working under me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4327484678144
+    m_Localized: 'I suppose they may not like hardliners like you. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4559459049472
+    m_Localized: But its still a waste to just throw away expierience agents.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4733950484480
+    m_Localized: How is it? Working inside the machine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4969020252160
+    m_Localized: You've been pretty lucky this whole time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5033411207168
+    m_Localized: With such safe and comfy position all those years.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5213799833600
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5227888500736
+    m_Localized: You dont talk much huh?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5364459233280
+    m_Localized: Well thats propably how you grabbed their attention and finished
+      here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5659658543104
+    m_Localized: Im happy you're here. For many reasons.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5852151930880
+    m_Localized: Lets get through our litte job introduction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6044594987008
+    m_Localized: We'l talk later.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

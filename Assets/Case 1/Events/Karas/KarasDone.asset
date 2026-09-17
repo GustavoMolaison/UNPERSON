@@ -28,4 +28,10 @@ MonoBehaviour:
       data:
         allOptions: 0
         optionsToCheck:
+        - {fileID: 11400000, guid: 6d84cebc349475a46a18f2a1dc1e4873, type: 2}
+        - {fileID: 11400000, guid: 4efb879d64e02ca40b78893d8d8d0446, type: 2}
+        - {fileID: 11400000, guid: a54444ceeeaa8b84a9191059c66e24e6, type: 2}
         - {fileID: 11400000, guid: 78686396b95fc5845b5c79b34fc92e6b, type: 2}
+        - {fileID: 11400000, guid: 2d76e354a47f0ee40b0365ca96052fe9, type: 2}
+        - {fileID: 11400000, guid: a5c8788f62c1c3e4a9c129ef3785d4a1, type: 2}
+        - {fileID: 11400000, guid: 75ab8fc378b01644da4b1a27087475de, type: 2}

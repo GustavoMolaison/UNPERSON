@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Supervisor Case1 Marry Marriage Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Supervisor Case1 Marry Marriage
+  m_TableCollectionNameGuidString: 814ad3dffd024554dbff6b6f49466720
+  m_Entries:
+  - m_Id: 1148831391744
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1151889039360
+    m_Key: New Entry 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1155353534464
+    m_Key: New Entry 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4042745962496
+    m_Key: New Entry 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4327484678144
+    m_Key: New Entry 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4559459049472
+    m_Key: New Entry 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4733950484480
+    m_Key: New Entry 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4969020252160
+    m_Key: New Entry 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5033411207168
+    m_Key: New Entry 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5213799833600
+    m_Key: New Entry 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5227888500736
+    m_Key: New Entry 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5364459233280
+    m_Key: New Entry 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5659658543104
+    m_Key: New Entry 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5852151930880
+    m_Key: New Entry 13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6044594987008
+    m_Key: New Entry 14
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3864004220731261009
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004220731261009
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1789685385457

@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
-  m_Name: AboutYouWife asked
+  m_Name: FirstLie
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
-  eventName: 
+  eventName: FirstLie
   eventType: 0
   eventConditionsList:
-  - rid: 3864004171118936331
+  - rid: 3864004220731261008
   isCompleted: 0
   dialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:c80415ba3b7bef94191e3a44dd28bc8e
+      m_TableCollectionName: GUID:ecdb6156e83bcee4f967636ba6540283
   references:
     version: 2
     RefIds:
-    - rid: 3864004171118936331
+    - rid: 3864004220731261008
       type: {class: EventConditionDialogueOptionPicked, ns: , asm: Assembly-CSharp}
       data:
-        dialougeOptionPickedTarget: {fileID: 11400000, guid: 6d84cebc349475a46a18f2a1dc1e4873, type: 2}
+        dialogueOptionsPickedTargets:
+        - {fileID: 11400000, guid: d2f4ce3dfaad1184f9b84be740e9d118, type: 2}
+        - {fileID: 11400000, guid: 89f5b9af9f4971f458bb1790c0a287ea, type: 2}
         typeWriterEffect: {fileID: 0}

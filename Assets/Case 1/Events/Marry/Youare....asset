@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
+  m_Name: Youare...
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
+  eventName: Youare...
+  eventType: 0
+  eventConditionsList:
+  - rid: 3864004220731261010
+  isCompleted: 0
+  dialogueTable:
+    m_TableReference:
+      m_TableCollectionName: GUID:814ad3dffd024554dbff6b6f49466720
+  references:
+    version: 2
+    RefIds:
+    - rid: 3864004220731261010
+      type: {class: EventConditionDialogueOptionPicked, ns: , asm: Assembly-CSharp}
+      data:
+        dialogueOptionsPickedTargets:
+        - {fileID: 11400000, guid: 8cce7b7acc12fdd4796cbf68d828339c, type: 2}
+        typeWriterEffect: {fileID: 0}

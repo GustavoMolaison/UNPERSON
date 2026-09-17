@@ -74,43 +74,54 @@ public class EventConditionSuspectInterrogated : EventCondition
 [Serializable]
 public class EventConditionDialogueOptionPicked : EventCondition
 {
-    [SerializeField] DialogueOption dialougeOptionPickedTarget;
-    [SerializeField] TypewriterEffect typeWriterEffect;
-    
+    [SerializeField] private List<DialogueOption> dialogueOptionsPickedTargets = new List<DialogueOption>();
+    [SerializeField] private TypewriterEffect typeWriterEffect;
+
     public override bool Condition()
     {
-        if(typeWriterEffect!= null)
+        // 1. Sprawdź blokady - jeśli cokolwiek pisze/przetwarza, od razu ucinamy
+        if (typeWriterEffect != null && typeWriterEffect.IsTyping)
         {
-            if(typeWriterEffect.IsTyping == false)
-           {
-                if (DialogueOptionManager.Instance.currentDialogueOption == dialougeOptionPickedTarget)
+            return false;
+        }
+
+        if (typeWriterEffect == null && DialogueManager.Instance.isProcessingQueue)
+        {
+            return false;
+        }
+
+        var currentOption = DialogueOptionManager.Instance.currentDialogueOption;
+        if (currentOption == null)
+        {
+            return false;
+        }
+
+        
+        foreach (var target in dialogueOptionsPickedTargets)
+        {
+            if (target == null) continue;
+
+            if (typeWriterEffect != null)
+            {
+                
+                if (currentOption.dialogueTitle == target.dialogueTitle)
                 {
-                    
                     return true;
                 }
-                else
-                {       
-                    return false;
+            }
+            else
+            {
+               
+                if (currentOption.dialogueTitle == target.dialogueTitle)
+                {
+                    return true;
                 }
             }
-            else
-            {
-                return false;
-            }
         }
-        else 
-        {
-            if(!DialogueManager.Instance.isProcessingQueue && DialogueOptionManager.Instance.currentDialogueOption != null && DialogueOptionManager.Instance.currentDialogueOption.dialogueTitle == dialougeOptionPickedTarget.dialogueTitle)
-            
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
+        return false;
     }
+
 
     public override void appendToAction()
         {
