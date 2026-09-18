@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 077a3a7abc4a4574dbd616a14461f41c, type: 3}
-  m_Name: FirstLie
+  m_Name: Decide
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
-  eventName: FirstLie
+  eventName: 
   eventType: 0
   eventConditionsList:
-  - rid: 3864004220731261008
+  - rid: 3864004242102288461
   isCompleted: 0
   dialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:ecdb6156e83bcee4f967636ba6540283
+      m_TableCollectionName: GUID:6c584fef4d7cfb842aaf143cda313256
   references:
     version: 2
     RefIds:
-    - rid: 3864004220731261008
-      type: {class: EventConditionDialogueOptionPicked, ns: , asm: Assembly-CSharp}
+    - rid: 3864004242102288461
+      type: {class: EventConditionDialogueOptionsPickedAtLeastOnce, ns: , asm: Assembly-CSharp}
       data:
-        dialogueOptionsPickedTargets:
-        - {fileID: 11400000, guid: 89f5b9af9f4971f458bb1790c0a287ea, type: 2}
-        - {fileID: 11400000, guid: a1d67d464c74f9044b33547d8d93ec38, type: 2}
-        typeWriterEffect: {fileID: 0}
+        allOptions: 1
+        optionsToCheck: []
+        suspectsToCheck:
+        - {fileID: 11400000, guid: 52c008de1a6e2df46a2475a96981a8dd, type: 2}
+        - {fileID: 11400000, guid: 47ddba64d1144e449a0cdf9177bcbfed, type: 2}

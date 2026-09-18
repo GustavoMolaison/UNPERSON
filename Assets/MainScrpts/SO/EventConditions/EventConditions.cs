@@ -185,49 +185,48 @@ public class EventConditionDialogueOptionPicked : EventCondition
     public class EventConditionDialogueOptionsPickedAtLeastOnce : EventCondition
 {
         [SerializeField] bool allOptions = false;
-        [SerializeField] List<DialogueOption> optionsToCheck;
+    [SerializeField] List<DialogueOption> optionsToCheck;
+    [SerializeField] List<Suspect> suspectsToCheck;
 
     public override bool Condition()
     {
-        
-        var currentDialogues = OptionTreeManager.Instance.ClimbersEveryDialouge[SuspectTracker.instance.currentSuspect];
-        bool allMatch = optionsToCheck.All(opt => currentDialogues.Any(d => d.dialogueTitle == opt.dialogueTitle));
        
-        if(allOptions)
+        if (DialogueManager.Instance.isProcessingQueue)
+            return false;
+
+        
+        if (suspectsToCheck == null || suspectsToCheck.Count == 0)
+            return false;
+
+        
+        return suspectsToCheck.All(suspect =>
         {
-            Branch branch =  DialogueTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspect];
-            List<DialogueOption> allOptions = OptionTreeManager.Instance.ClimbersEveryDialouge[SuspectTracker.instance.currentSuspect];
-            if (!DialogueManager.Instance.isProcessingQueue && allOptions.All(opt => opt.pickedAtLeastOnce))
+            if (!OptionTreeManager.Instance.ClimbersEveryDialouge.TryGetValue(suspect, out var suspectDialogues) || suspectDialogues == null)
+                return false;
+
+            if (allOptions)
             {
-                return true;
+                
+                return suspectDialogues.Count > 0 && suspectDialogues.All(opt => opt.pickedAtLeastOnce);
             }
             else
             {
-                return false;
+                
+                return optionsToCheck.All(targetOpt =>
+                    suspectDialogues.Any(d => d.dialogueTitle == targetOpt.dialogueTitle && d.pickedAtLeastOnce));
             }
-        }
-        else
-        {
-            if (!DialogueManager.Instance.isProcessingQueue && allMatch)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        
-       
+        });
     }
+
     public override void appendToAction()
-        {
-            DialogueOptionManager.Instance.OnCurrentDialogueOptionChanged += CheckCondition;
-        }
+    {
+        DialogueOptionManager.Instance.OnCurrentDialogueOptionChanged += CheckCondition;
+    }
+
     public override void deleteFromAction()
-        {
-            DialogueOptionManager.Instance.OnCurrentDialogueOptionChanged -= CheckCondition;
-        }
+    {
+        DialogueOptionManager.Instance.OnCurrentDialogueOptionChanged -= CheckCondition;
+    }
 }
 
     
