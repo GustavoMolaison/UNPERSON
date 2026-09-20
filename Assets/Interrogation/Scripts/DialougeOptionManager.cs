@@ -124,6 +124,7 @@ public class DialogueOptionManager : MonoBehaviour
         turnOnChossenDialogues(optionsToLoad);
         currentDialogueOption = enrolledDialouge;
         OnCurrentDialogueOptionChangedInputDialogueOption?.Invoke(enrolledDialouge);
+        //Debug.Log(enrolledDialouge.pickedAtLeastOnce);
         OnCurrentDialogueOptionChanged?.Invoke();
     }
 

@@ -187,10 +187,29 @@ public class EventConditionDialogueOptionPicked : EventCondition
         [SerializeField] bool allOptions = false;
     [SerializeField] List<DialogueOption> optionsToCheck;
     [SerializeField] List<Suspect> suspectsToCheck;
+    
+
+     
 
     public override bool Condition()
     {
-       
+        // W pamięci tworzymy kopie SO suspectów
+        // Seriliaze Field bierze ich otyginalne instancje
+        // Musimy więc zmapować je na kopie
+        var trackerList = SuspectTracker.instance.currentSuspects;
+
+        for (int i = 0; i < suspectsToCheck.Count; i++)
+        {
+            var target = suspectsToCheck[i];
+            if (target == null) continue;
+
+            var match = trackerList.Find(s => s != null && s.FirstName == target.FirstName);
+            if (match != null)
+            {
+                suspectsToCheck[i] = match;
+            }
+        }
+
         if (DialogueManager.Instance.isProcessingQueue)
             return false;
 
@@ -201,7 +220,8 @@ public class EventConditionDialogueOptionPicked : EventCondition
         
         return suspectsToCheck.All(suspect =>
         {
-            if (!OptionTreeManager.Instance.ClimbersEveryDialouge.TryGetValue(suspect, out var suspectDialogues) || suspectDialogues == null)
+            Debug.Log("DoBTY POCZATEK");
+            if (!OptionTreeManager.Instance.ClimbersEveryDialogue.TryGetValue(suspect, out var suspectDialogues) || suspectDialogues == null)
                 return false;
 
             if (allOptions)
@@ -211,7 +231,8 @@ public class EventConditionDialogueOptionPicked : EventCondition
             }
             else
             {
-                
+                Debug.Log("no dawaj");
+
                 return optionsToCheck.All(targetOpt =>
                     suspectDialogues.Any(d => d.dialogueTitle == targetOpt.dialogueTitle && d.pickedAtLeastOnce));
             }
@@ -229,5 +250,59 @@ public class EventConditionDialogueOptionPicked : EventCondition
     }
 }
 
+
+[Serializable]
+public class CopertOpenedFirstTime : EventCondition
+{
     
 
+    public override bool Condition()
+    {
+
+
+        if (EvidenceCopert.Instance.IsFirstOpeningActive)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public override void appendToAction()
+    {
+        EvidenceCopert.Instance.onOpeningCopert += CheckCondition;
+    }
+    public override void deleteFromAction()
+    {
+        EvidenceCopert.Instance.onOpeningCopert -= CheckCondition;
+    }
+}
+
+[Serializable]
+public class CopertClosedFirstTime : EventCondition
+{
+
+
+    public override bool Condition()
+    {
+
+
+        if (!EvidenceCopert.Instance.hasEverBeenClosed)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public override void appendToAction()
+    {
+        EvidenceCopert.Instance.onOpeningCopert += CheckCondition;
+    }
+    public override void deleteFromAction()
+    {
+        EvidenceCopert.Instance.onOpeningCopert -= CheckCondition;
+    }
+}

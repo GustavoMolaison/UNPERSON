@@ -19,7 +19,7 @@ MonoBehaviour:
   isCompleted: 0
   dialogueTable:
     m_TableReference:
-      m_TableCollectionName: GUID:6c584fef4d7cfb842aaf143cda313256
+      m_TableCollectionName: GUID:fa7c9c2a6dbc6d446a0a6d8a1b42ea25
   references:
     version: 2
     RefIds:

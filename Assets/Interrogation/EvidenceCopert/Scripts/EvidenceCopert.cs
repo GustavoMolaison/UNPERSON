@@ -31,6 +31,10 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     [Header("Object State")]
     private bool open = false;
+    public bool hasEverBeenClosed = false;
+    public bool IsFirstOpeningActive => open && !hasEverBeenClosed;
+    public event Action onOpeningCopert;
+    public event Action onClosingCopert;
 
     [Header("Closing settings")]
     [Range(0.1f, 0.5f)] 
@@ -239,6 +243,8 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         audioSource.PlayOneShot(closeSound);
         mainAnimator.SetBool("Open", false);
         open = false;
+        onClosingCopert?.Invoke();
+        hasEverBeenClosed = true;
         targetLocalSize =  Vector3.one;
         EvidenceSectionManager.Instance.showContent(false);
         
@@ -258,7 +264,9 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         mainAnimator.SetBool("Open", true);
         open = true;
         targetLocalSize = baseTargetLocalSize * Vector3.one;
-       
+        onOpeningCopert?.Invoke();
+
+
     }
 
     public void SuggestOpening()

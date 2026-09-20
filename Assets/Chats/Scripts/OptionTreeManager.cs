@@ -8,7 +8,7 @@ using UnityEditor;
 public class OptionTreeManager : MonoBehaviour
 {
     public readonly Dictionary<Suspect, TreeClimber> treeClimbers = new Dictionary<Suspect, TreeClimber>();
-    public readonly Dictionary<Suspect, List<DialogueOption>> ClimbersEveryDialouge = new Dictionary<Suspect, List<DialogueOption>>();
+    public readonly Dictionary<Suspect, List<DialogueOption>> ClimbersEveryDialogue = new Dictionary<Suspect, List<DialogueOption>>();
     
     public static OptionTreeManager Instance;
     void Awake()
@@ -28,7 +28,7 @@ public class OptionTreeManager : MonoBehaviour
             treeClimbers[suspect] = new TreeClimber(suspect);
             treeClimbers[suspect].startingBranch.BuildTree(DialogueTreeCreator.Instance.backPreFabb);
 
-            ClimbersEveryDialouge[suspect] = DialogueTreeCreator.Instance.getAllDialougeOptions(DialogueTreeCreator.Instance.startingNodes[suspect]);
+            ClimbersEveryDialogue[suspect] = DialogueTreeCreator.Instance.getAllDialougeOptions(DialogueTreeCreator.Instance.startingNodes[suspect]);
         }
     }
 

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd75f385ba4d594781484d59d564c37, type: 3}
+  m_Name: NewTutorialHintEvent
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventTutorialHint
+  eventName: 
+  eventType: 1
+  eventConditionsList:
+  - rid: 5262031116987007057
+  isCompleted: 0
+  copert: 1
+  text: halo
+  textTable:
+    m_TableReference:
+      m_TableCollectionName: 
+  visual: {fileID: 0}
+  hintGoneCondition:
+    rid: 5262031116987007058
+  references:
+    version: 2
+    RefIds:
+    - rid: 5262031116987007057
+      type: {class: CopertOpenedFirstTime, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 5262031116987007058
+      type: {class: CopertClosedFirstTime, ns: , asm: Assembly-CSharp}
+      data: 
