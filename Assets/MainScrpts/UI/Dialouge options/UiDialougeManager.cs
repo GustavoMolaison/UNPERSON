@@ -83,9 +83,9 @@ public IEnumerator ShowMessagesRoutine(DialogueOption dialoption)
         var commentMeta = sharedEntry.Metadata.GetMetadata<Comment>();
         
         (isPlayer, isSlowed, isEvidenceConntected, connectedEvidence,  color) = metaDataParser(commentMeta.CommentText);
-        Debug.Log("isPlayer: " + isPlayer);
-        Debug.Log("isSlowed: " + isSlowed);
-        Debug.Log("isEvidenceConntected: " + isEvidenceConntected);
+        //Debug.Log("isPlayer: " + isPlayer);
+        //Debug.Log("isSlowed: " + isSlowed);
+        //Debug.Log("isEvidenceConntected: " + isEvidenceConntected);
         // Debug.Log("color: " + color);
 
         

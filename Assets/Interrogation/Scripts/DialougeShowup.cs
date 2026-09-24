@@ -58,7 +58,7 @@ public class DialougeShowup : MonoBehaviour, IPointerClickHandler
     }
     public void entryEvidenceConnect()
     {
-        Debug.Log("Sprawdzam");
+        
         if(enrolledDialOption != null)
         {
             
@@ -83,6 +83,7 @@ public class DialougeShowup : MonoBehaviour, IPointerClickHandler
             optionList.Add(enrolledDialOption.unlockedDialouge[evidenceIndex]);
             DialogueOptionManager.Instance.turnOnChossenDialogues(optionList);
             enrolledDialOption.nodeTree.AddChildrenToParents(enrolledDialOption.unlockedDialouge[evidenceIndex].nodeTree);
+            TalkWindow.Instance.lieCatched?.Invoke();
         }
 
         }

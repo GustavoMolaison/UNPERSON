@@ -220,7 +220,7 @@ public class EventConditionDialogueOptionPicked : EventCondition
         
         return suspectsToCheck.All(suspect =>
         {
-            Debug.Log("DoBTY POCZATEK");
+            //Debug.Log("DoBTY POCZATEK");
             if (!OptionTreeManager.Instance.ClimbersEveryDialogue.TryGetValue(suspect, out var suspectDialogues) || suspectDialogues == null)
                 return false;
 
@@ -309,6 +309,37 @@ public class CopertClosedFirstTime : EventCondition
         EvidenceCopert.Instance.onClosingCopert -= CheckCondition;
     }
 }
+[Serializable]
+public class CopertClosed : EventCondition
+{
+
+
+    public override bool Condition()
+    {
+
+        Debug.Log("open or not");
+        Debug.Log(EvidenceCopert.Instance.open);
+        if (!EvidenceCopert.Instance.open)
+        {
+
+            return true;
+        }
+        else
+        {
+
+            return false;
+        }
+    }
+    public override void appendToAction()
+    {
+        EvidenceCopert.Instance.onClosingCopert += CheckCondition;
+    }
+    public override void deleteFromAction()
+    {
+        EvidenceCopert.Instance.onClosingCopert -= CheckCondition;
+    }
+}
+
 
 [Serializable]
 public class EvidenceCheckFirstTime : EventCondition
@@ -337,5 +368,26 @@ public class EvidenceCheckFirstTime : EventCondition
     public override void deleteFromAction()
     {
         DialogueOptionManager.Instance.onClickingDialOption -= CheckCondition;
+    }
+}
+
+
+public class LieCatchedInDialougewindow : EventCondition
+{
+
+
+    public override bool Condition()
+    {
+
+
+        return true;
+    }
+    public override void appendToAction()
+    {
+        TalkWindow.Instance.lieCatched += CheckCondition;
+    }
+    public override void deleteFromAction()
+    {
+        TalkWindow.Instance.lieCatched += CheckCondition;
     }
 }

@@ -5,6 +5,12 @@ public class GameEventSupervisorDialouge : GameEvent
 {
     [Header("Supervisor Dialogue Event Properties")]
     [SerializeField] private LocalizedStringTable dialogueTable;
+
+
+    private void Awake()
+    {
+        eventType = EventType.Dialogue;
+    }
     override public void actionToDo(EventCondition condition)
     {
 

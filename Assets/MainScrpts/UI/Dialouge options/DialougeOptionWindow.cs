@@ -90,7 +90,7 @@ public class DialogueOptionWindow : MonoBehaviour
                 DialogueOptionManager.Instance.firstEvidenceCheckDone = true;
                 DialogueOptionManager.Instance.onClickingDialOption?.Invoke();
 
-                Debug.Log("Has evidenceCheck: " + enrolledDialogue.hasEvidenceCheck);
+                //Debug.Log("Has evidenceCheck: " + enrolledDialogue.hasEvidenceCheck);
                 
                 
                 DialogueOptionManager.Instance.changeDialoguePicked(enrolledDialogue);

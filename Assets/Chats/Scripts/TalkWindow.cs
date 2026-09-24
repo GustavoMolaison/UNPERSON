@@ -4,6 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 
 
@@ -17,6 +18,9 @@ public class TalkWindow : MonoBehaviour
     private TypewriterEffect typewriter;
     [SerializeField] private AudioSource typingAudioSource;
     private int clickedCount = 0;
+
+    //Tutorial
+    public Action lieCatched;
 
     public static TalkWindow Instance;
 

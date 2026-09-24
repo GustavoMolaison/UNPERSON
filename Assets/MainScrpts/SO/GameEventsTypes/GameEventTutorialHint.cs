@@ -3,24 +3,34 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.UI;
+using static UnityEditor.Searcher.Searcher.AnalyticsEvent;
 
-
+public enum TutorialType
+{
+    General,
+    Copert
+}
 
 [CreateAssetMenu(fileName = "NewTutorialHintEvent", menuName = "Events/Tutorial Hint")]
 public class GameEventTutorialHint : GameEvent
 {
 
+    private void Awake()
+    {
+        eventType = EventType.Tutorial;
+    }
+
     private bool eventWentOff = false;
 
-    [Header("Type of Hint")]
-    [SerializeField] private bool copert;
-    
+    [SerializeField] private TutorialType tutorialType;
+
+
 
     [Header("Inputs")]
     [SerializeField] private string text;
     [SerializeField] private LocalizedStringTable textTable;
     [SerializeField] private Image visual;
-
+    
 
     //[Header("Condition of hint disapearing")]
     //[SerializeReference, SubclassSelector]
@@ -33,65 +43,56 @@ public class GameEventTutorialHint : GameEvent
 
     override public void actionToDo(EventCondition condition)
     {
+        eventType = EventType.Tutorial;
 
+        switch (tutorialType)
+    {
+        case TutorialType.General:
+                TutorialManager.Instance.generalSpaceSetActive(text, () =>
+                {
+                    isCompleted = true;
+                });
+                eventWentOff = true;
+                break;
 
-        if (copert)
-        {
-            Debug.Log(isCompleted);
-            Debug.Log("isCompleted");
-            if (eventConditionsList.Contains(condition) && !eventWentOff)
-            {
+         case TutorialType.Copert:
+                Debug.Log(isCompleted);
+                Debug.Log("isCompleted");
+
                 Debug.Log("Zaczyanm");
                 TutorialManager.Instance.copertSpaceSetActive(text, () =>
                 {
                     isCompleted = true;
                 });
                 eventWentOff = true;
+                break;
             }
-            else
-            {
-                Debug.Log("Koncze");
-                if (isCompleted)
-                {
-                    TutorialManager.Instance.copertSpaceSetDisabled();
-                }
-                else
-                {
-                    Debug.Log("Zamykamy przed wykonaniem???");
+        }
+        
 
-                }
-            }
-
-            //Debug.Log("IM TURNIGN ON");
-            //if (copert)
-            //{
-            //    Debug.Log("Coperta");
-
-            //    if (!eventWentOff)
-            //    {
-            //        Debug.Log("FIRST GO");
-            //        TutorialManager.Instance.copertSpaceSetActive(text);
-            //        eventWentOff = true;
+           
+    public override void actionToDoAtEnd(EventCondition condition)
+    {
 
 
+        switch (tutorialType)
+        {
+            case TutorialType.General:
+                TutorialManager.Instance.generalSpaceSetDisabled();
+                eventWentOff = true;
+                break;
 
-            //    }
-            //    else
-            //    {
-            //        Debug.Log("nie jest completed");
-            //        if (isCompleted)
-            //        {
-            //            Debug.Log("wylaczam");
-            //            TutorialManager.Instance.copertSpaceSetDisabled();
-            //        }
+            case TutorialType.Copert:
+                Debug.Log(isCompleted);
+                Debug.Log("isCompleted");
 
-            //    }
-
-
-
-
-
-
+                Debug.Log("Zaczyanm");
+                TutorialManager.Instance.copertSpaceSetDisabled();
+                eventWentOff = true;
+                break;
         }
     }
+        
+        
+    
 }

@@ -10,21 +10,21 @@ abstract public class GameEvent : ScriptableObject
     [Header("Event Properties")]
     [SerializeField]
     private string eventName;
-    [SerializeField]
     
-    private EventType eventType;
+    
+    protected EventType eventType;
 
     [Header("Event Conditions")]
     
 
     [SerializeReference, SubclassSelector]
-    protected  List<EventCondition> eventConditionsList = new List<EventCondition>();
+    public  List<EventCondition> eventConditionsList  = new List<EventCondition>();
 
     [SerializeReference, SubclassSelector]
-    protected  List<EventCondition> eventEndConditionsList = new List<EventCondition>();
+    public  List<EventCondition> eventEndConditionsList = new List<EventCondition>();
 
 
-
+    private bool eventWentOff = false;
     public bool isCompleted  = false;
 
     // Pointers //////////////////////
@@ -37,7 +37,7 @@ abstract public class GameEvent : ScriptableObject
    
     abstract public void actionToDo(EventCondition condition);
 
-    virtual public void actionToDoAtEnd()
+    virtual public void actionToDoAtEnd(EventCondition condition)
     {
 
     }

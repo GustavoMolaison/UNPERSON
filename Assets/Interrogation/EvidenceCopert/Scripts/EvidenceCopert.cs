@@ -7,16 +7,16 @@ using Unity.VisualScripting;
 
 public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    
+
     private Vector3 positionVelocity;
     [SerializeField] private Vector3 baseTargetPosition;
     private Vector3 targetPosition;
     [SerializeField] private float baseTargetLocalSize;
     private Vector3 targetLocalSize;
     [SerializeField] private float smoothTime = 5f;
-    
+
     [Header("Hold settings")]
-    [SerializeField] public float holdDuration = 0.5f; 
+    [SerializeField] public float holdDuration = 0.5f;
     private bool isPointerDown = false;
     private float pointerDownTimer = 0f;
     private bool hasTriggeredHold = false;
@@ -30,7 +30,7 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     private Vector2 pointerOffset;
 
     [Header("Object State")]
-    private bool open = false;
+    public bool open { get; private set; } = false;
     public bool hasEverBeenClosed = false;
     public bool IsFirstOpeningActive => open && !hasEverBeenClosed;
     public event Action onOpeningCopert;
@@ -243,6 +243,8 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         audioSource.PlayOneShot(closeSound);
         mainAnimator.SetBool("Open", false);
         open = false;
+        int count = onClosingCopert?.GetInvocationList().Length ?? 0;
+        Debug.Log($"Liczba podpiętych funkcji: {count}");
         onClosingCopert?.Invoke();
         Debug.Log("zamykam halo");
         hasEverBeenClosed = true;

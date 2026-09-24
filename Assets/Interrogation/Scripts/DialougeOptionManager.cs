@@ -123,7 +123,7 @@ public class DialogueOptionManager : MonoBehaviour
 
     public void dialoguesChange2(DialogueOption enrolledDialouge)
     {
-        Debug.Log("o huj chodzi");
+        //Debug.Log("o huj chodzi");
         optionsToLoad = OptionTreeManager.Instance.treeClimbers[SuspectTracker.instance.currentSuspect].DecideDirection(enrolledDialouge.nodeTree);
         turnOnChossenDialogues(optionsToLoad);
         currentDialogueOption = enrolledDialouge;

@@ -18,11 +18,23 @@ public abstract class EventCondition
 
     public void CheckCondition()
     {
+        bool endAction;
         isConditionMet = Condition();
+        if (gameEvent.eventConditionsList.Contains(this))
+        {
+            endAction = false;
+        }
+        else
+        {
+            endAction = true;
+        }
+
+
         if (isConditionMet)
         {
-            EventManager.Instance.EnqueueEvent(gameEvent, this);
-            deleteFromAction();
+            EventManager.Instance.EnqueueEvent(gameEvent, this, endAction);
+
+            //deleteFromAction();
         }
         
     }
