@@ -23,12 +23,30 @@ public class EventManager : MonoBehaviour
     private Queue<GameEvent> eventQueue = new Queue<GameEvent>();
     GameEvent currentEvent;
     private Coroutine queueCoroutine;
-private bool isProcessing = false;
+    private bool isProcessing = false;
 
 public void EnqueueEvent(GameEvent gameEvent, EventCondition condition, bool endAction)
 {
-    if (gameEvent == null) return;
+        if (eventQueue.Count > 0)
+        {
+            Debug.Log("wiecej niz 0");
+            GameEvent currentEvent = eventQueue.Peek();
+            if (!currentEvent.isCompleted && !endAction)
+            {
+                Debug.Log("wiecej niz 1");
+                condition.deleteFromAction();
+            }
+            else if (currentEvent.isCompleted && endAction)
+            {
+                Debug.Log("wiecej niz 2");
+                condition.deleteFromAction();
+            }
+        }
+        
+        
 
+    if (gameEvent == null) return;
+    Debug.Log("wiecej niz WW");
     eventQueue.Enqueue(gameEvent);
     StartQueue(condition, endAction);
 }
@@ -36,57 +54,61 @@ public void EnqueueEvent(GameEvent gameEvent, EventCondition condition, bool end
 public void StartQueue(EventCondition condition, bool endAction)
 {
         
-    //if (isProcessing) return;
-       
+    if (isProcessing) return;
+    Debug.Log("Lets gogo");
         queueCoroutine = StartCoroutine(ProcessQueueRoutine(condition, endAction));
 }
 
-private IEnumerator ProcessQueueRoutine(EventCondition condition, bool endAction)
-{
-    isProcessing = true;
-
-    while (eventQueue.Count > 0)
+    private IEnumerator ProcessQueueRoutine(EventCondition condition, bool endAction)
     {
-            Debug.Log("iteruje wielkosc kolejki:" + eventQueue.Count);
-        GameEvent currentEvent = eventQueue.Dequeue();
+        isProcessing = true;
 
-        if (currentEvent == null)
-            {
-                Debug.Log("null i hu jhxdxdd");
-                continue;
-            }
-            
-
-        // Bezpieczne wywołanie - błąd w evencie nie może zablokować całej kolejki
         try
         {
+            while (eventQueue.Count > 0)
+            {
+                GameEvent currentEvent = eventQueue.Dequeue();
+                if (currentEvent == null) continue;
+
+                bool actionExecuted = false;
+
+                try
+                {
+                    if (!currentEvent.isCompleted && !endAction)
+                    {
+                        currentEvent.actionToDo(condition);
+                        actionExecuted = true;
+                    }
+                    else if (currentEvent.isCompleted && endAction)
+                    {
+                        currentEvent.actionToDoAtEnd(condition);
+                        actionExecuted = true;
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError($"Błąd eventu: {e.Message}\n{e.StackTrace}");
+                    continue;
+                }
+
                 
-                if (!currentEvent.isCompleted && !endAction)
+                if (actionExecuted && !currentEvent.isCompleted)
                 {
-                    currentEvent.actionToDo(condition);
-                    condition.deleteFromAction();
+                    yield return new WaitUntil(() => currentEvent.isCompleted);
                 }
-                else if(currentEvent.isCompleted && endAction)
-                {
-                    currentEvent.actionToDoAtEnd(condition);
-                    condition.deleteFromAction();
-                }
-            
+            }
         }
-        catch (System.Exception e)
+        finally
         {
-            Debug.LogError($"Błąd podczas wykonywania eventu: {e.Message}\n{e.StackTrace}");
-            continue; 
+            // To wykona się ZAWSZE, gdy pętla skończy bieg lub rzuci wyjątek
+            Debug.Log("<color=yellow>KONCZE PROCESOWANIE</color>");
+            isProcessing = false;
+            queueCoroutine = null;
         }
-
-        // Czekaj na zakończenie
-        yield return new WaitUntil(() => currentEvent.isCompleted);
     }
+    
+    
 
-    // Sprzątanie po zakończeniu pętli
-    isProcessing = false;
-    queueCoroutine = null;
-}
 
 private void OnDisable()
 {

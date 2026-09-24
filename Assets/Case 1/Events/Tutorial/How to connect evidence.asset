@@ -19,7 +19,8 @@ MonoBehaviour:
   - rid: 5262031211470782541
   isCompleted: 0
   tutorialType: 1
-  text: hint numer dwa
+  text: Double-click an evidence item while selecting a dialogue option to link them
+    and advance the investigation. If you get it right, of course!
   textTable:
     m_TableReference:
       m_TableCollectionName: 

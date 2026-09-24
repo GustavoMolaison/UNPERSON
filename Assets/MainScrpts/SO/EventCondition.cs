@@ -32,6 +32,7 @@ public abstract class EventCondition
 
         if (isConditionMet)
         {
+            Debug.Log("normalnie wywolywany jest xd");
             EventManager.Instance.EnqueueEvent(gameEvent, this, endAction);
 
             //deleteFromAction();

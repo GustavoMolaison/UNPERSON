@@ -19,7 +19,7 @@ MonoBehaviour:
   - rid: 5262031148262359118
   isCompleted: 0
   tutorialType: 1
-  text: halo
+  text: Hold the left corner and drag to the right to seal the envelope.
   textTable:
     m_TableReference:
       m_TableCollectionName: 

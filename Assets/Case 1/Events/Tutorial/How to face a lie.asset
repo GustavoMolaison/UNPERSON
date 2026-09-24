@@ -19,7 +19,8 @@ MonoBehaviour:
   - rid: 5262031211470782543
   isCompleted: 0
   tutorialType: 0
-  text: hin3 oby ostatni
+  text: o proceed, do the exact same thing as before, but link the evidence that
+    contradicts the suspect's statement instead.
   textTable:
     m_TableReference:
       m_TableCollectionName: 

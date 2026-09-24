@@ -22,19 +22,19 @@ public class TutorialManager : MonoBehaviour
 
         if (text != null)
         {
-            TextMeshProUGUI textSpace = copertTutorialUi.GetComponent<TextMeshProUGUI>();
+            
+            TextMeshProUGUI textSpace = copertTutorialUi.GetComponentInChildren<TextMeshProUGUI>();
             textSpace.text = text;
-            textSpace.enabled = true;
+            copertTutorialUi.SetActive(true);
             onComplete();
         }
     }
     public void copertSpaceSetDisabled()
     {
-
-        
-         TextMeshProUGUI textSpace = copertTutorialUi.GetComponent<TextMeshProUGUI>();
-         textSpace.enabled = false;
-        
+        Debug.Log("lkrawhu9");
+        TextMeshProUGUI textSpace = copertTutorialUi.GetComponentInChildren<TextMeshProUGUI>();
+        textSpace.text = "";
+        copertTutorialUi.SetActive(false);
     }
 
     public void generalSpaceSetActive(string text = null, System.Action onComplete = null)
@@ -42,9 +42,9 @@ public class TutorialManager : MonoBehaviour
 
         if (text != null)
         {
-            TextMeshProUGUI textSpace = generalTutorialUi.GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI textSpace = generalTutorialUi.GetComponentInChildren<TextMeshProUGUI>();
             textSpace.text = text;
-            textSpace.enabled = true;
+            generalTutorialUi.SetActive(true);
             onComplete();
         }
     }
@@ -52,8 +52,9 @@ public class TutorialManager : MonoBehaviour
     {
 
 
-        TextMeshProUGUI textSpace = generalTutorialUi.GetComponent<TextMeshProUGUI>();
-        textSpace.enabled = false;
+        TextMeshProUGUI textSpace = generalTutorialUi.GetComponentInChildren<TextMeshProUGUI>();
+        textSpace.text = "";
+        generalTutorialUi.SetActive(false);
 
     }
 }
