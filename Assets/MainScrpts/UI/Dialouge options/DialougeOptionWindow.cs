@@ -14,6 +14,9 @@ public class DialogueOptionWindow : MonoBehaviour
     [HideInInspector] private bool correctEvidencePicked;
 
     [SerializeField] private float maxWrongGuesses = 3;
+
+    // Tutorial bools
+    
     public float howManyWrongGuesses { get; private set; }
 
     public bool dialogueDisabled { get; private set; } = false;
@@ -83,8 +86,12 @@ public class DialogueOptionWindow : MonoBehaviour
             
             if (enrolledDialogue.hasEvidenceCheck)
             {
+                
+                DialogueOptionManager.Instance.firstEvidenceCheckDone = true;
+                DialogueOptionManager.Instance.onClickingDialOption?.Invoke();
+
                 Debug.Log("Has evidenceCheck: " + enrolledDialogue.hasEvidenceCheck);
-               
+                
                 
                 DialogueOptionManager.Instance.changeDialoguePicked(enrolledDialogue);
               

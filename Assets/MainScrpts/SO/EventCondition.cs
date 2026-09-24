@@ -21,7 +21,7 @@ public abstract class EventCondition
         isConditionMet = Condition();
         if (isConditionMet)
         {
-            EventManager.Instance.EnqueueEvent(gameEvent);
+            EventManager.Instance.EnqueueEvent(gameEvent, this);
             deleteFromAction();
         }
         

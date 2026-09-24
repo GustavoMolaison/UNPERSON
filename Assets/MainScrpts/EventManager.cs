@@ -25,36 +25,43 @@ public class EventManager : MonoBehaviour
     private Coroutine queueCoroutine;
 private bool isProcessing = false;
 
-public void EnqueueEvent(GameEvent gameEvent)
+public void EnqueueEvent(GameEvent gameEvent, EventCondition condition)
 {
     if (gameEvent == null) return;
 
     eventQueue.Enqueue(gameEvent);
-    StartQueue();
+    StartQueue(condition);
 }
 
-public void StartQueue()
+public void StartQueue(EventCondition condition)
 {
-    if (isProcessing) return;
-
-    queueCoroutine = StartCoroutine(ProcessQueueRoutine());
+        
+    //if (isProcessing) return;
+       
+        queueCoroutine = StartCoroutine(ProcessQueueRoutine(condition));
 }
 
-private IEnumerator ProcessQueueRoutine()
+private IEnumerator ProcessQueueRoutine(EventCondition condition)
 {
     isProcessing = true;
 
     while (eventQueue.Count > 0)
     {
+            Debug.Log("iteruje wielkosc kolejki:" + eventQueue.Count);
         GameEvent currentEvent = eventQueue.Dequeue();
 
-        if (currentEvent == null || currentEvent.isCompleted)
-            continue;
+        if (currentEvent == null)
+            {
+                Debug.Log("null i hu jhxdxdd");
+                continue;
+            }
+            
 
         // Bezpieczne wywołanie - błąd w evencie nie może zablokować całej kolejki
         try
         {
-            currentEvent.actionToDo();
+                Debug.Log("przsada");
+            currentEvent.actionToDo(condition);
         }
         catch (System.Exception e)
         {

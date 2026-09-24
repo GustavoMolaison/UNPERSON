@@ -53,7 +53,7 @@ public class SvDialougeManager : MonoBehaviour
     }
 
 
-    public void StartDialogue(LocalizedStringTable tableReference, System.Action onComplete)
+    public void StartDialogue(LocalizedStringTable tableReference, System.Action onComplete = null)
     {
         StartCoroutine(newDialougeRoutine(tableReference, onComplete));
     }
@@ -65,14 +65,14 @@ public class SvDialougeManager : MonoBehaviour
         //     StopCoroutine(dialogueSequenceCoroutine);
         // }
 
-        yield return StartCoroutine(PlayDialogueSequence(tableReference));
-        onComplete?.Invoke();
+        yield return StartCoroutine(PlayDialogueSequence(tableReference, onComplete));
+        
         // yield return dialogueSequenceCoroutine;
     }
 
    
 
-   private IEnumerator PlayDialogueSequence(LocalizedStringTable tableReference)
+   private IEnumerator PlayDialogueSequence(LocalizedStringTable tableReference, System.Action onComplete)
     {
         // 1. Pobieramy właściwą tabelę dla aktualnego języka
         StringTable table = tableReference.GetTable();
@@ -105,7 +105,9 @@ public class SvDialougeManager : MonoBehaviour
         dialougePanelGO.SetActive(false);
         isPanelVisible = false;
         dialogueSequenceCoroutine = null;
-        
+        onComplete();
+
+
 
 
     }

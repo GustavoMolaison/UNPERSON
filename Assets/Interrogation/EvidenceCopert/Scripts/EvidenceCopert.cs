@@ -244,6 +244,7 @@ public class EvidenceCopert : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         mainAnimator.SetBool("Open", false);
         open = false;
         onClosingCopert?.Invoke();
+        Debug.Log("zamykam halo");
         hasEverBeenClosed = true;
         targetLocalSize =  Vector3.one;
         EvidenceSectionManager.Instance.showContent(false);

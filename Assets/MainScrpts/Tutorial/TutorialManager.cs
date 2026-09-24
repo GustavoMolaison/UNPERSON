@@ -16,7 +16,7 @@ public class TutorialManager : MonoBehaviour
     }
 
 
-    public void copertSpaceSetActive(string text = null)
+    public void copertSpaceSetActive(string text = null, System.Action onComplete = null)
     {
 
         if (text != null)
@@ -24,6 +24,7 @@ public class TutorialManager : MonoBehaviour
             TextMeshProUGUI textSpace = copertTutorialUi.GetComponent<TextMeshProUGUI>();
             textSpace.text = text;
             textSpace.enabled = true;
+            onComplete();
         }
     }
     public void copertSpaceSetDisabled()

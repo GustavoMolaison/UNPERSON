@@ -5,14 +5,15 @@ public class GameEventSupervisorDialouge : GameEvent
 {
     [Header("Supervisor Dialogue Event Properties")]
     [SerializeField] private LocalizedStringTable dialogueTable;
-    override public void actionToDo()
+    override public void actionToDo(EventCondition condition)
     {
-    Debug.Log("Action to do");
-     SvDialougeManager.Instance.StartDialogue(dialogueTable, () => 
-    {
-        isCompleted = true;
-    });
-        
+
+        SvDialougeManager.Instance.StartDialogue(dialogueTable, () =>
+        {
+            isCompleted = true;
+        });
     }
+        
+    
     
 }

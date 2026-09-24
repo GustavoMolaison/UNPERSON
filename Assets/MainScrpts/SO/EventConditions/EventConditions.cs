@@ -290,19 +290,52 @@ public class CopertClosedFirstTime : EventCondition
 
         if (!EvidenceCopert.Instance.hasEverBeenClosed)
         {
+            Debug.Log("prawda");
             return true;
         }
         else
         {
+            Debug.Log("fałsz");
             return false;
         }
     }
     public override void appendToAction()
     {
-        EvidenceCopert.Instance.onOpeningCopert += CheckCondition;
+        
+        EvidenceCopert.Instance.onClosingCopert += CheckCondition;
     }
     public override void deleteFromAction()
     {
-        EvidenceCopert.Instance.onOpeningCopert -= CheckCondition;
+        EvidenceCopert.Instance.onClosingCopert -= CheckCondition;
+    }
+}
+
+[Serializable]
+public class EvidenceCheckFirstTime : EventCondition
+{
+
+
+    public override bool Condition()
+    {
+
+        
+        if (DialogueOptionManager.Instance.firstEvidenceCheckDone)
+        {
+            
+            return true;
+        }
+        else
+        {
+            
+            return false;
+        }
+    }
+    public override void appendToAction()
+    {
+        DialogueOptionManager.Instance.onClickingDialOption += CheckCondition;
+    }
+    public override void deleteFromAction()
+    {
+        DialogueOptionManager.Instance.onClickingDialOption -= CheckCondition;
     }
 }

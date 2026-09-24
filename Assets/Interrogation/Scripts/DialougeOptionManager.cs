@@ -29,6 +29,10 @@ public class DialogueOptionManager : MonoBehaviour
     public List<DialogueOption> optionsToLoad = new List<DialogueOption>();
 
     [HideInInspector] public bool optionAddedOutsideTheLoop = false;
+
+    // Tutorial
+    public bool firstEvidenceCheckDone = false;
+    public Action onClickingDialOption; 
     void Awake()
     {
         if (Instance == null) Instance = this;

@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ddd75f385ba4d594781484d59d564c37, type: 3}
-  m_Name: NewTutorialHintEvent
+  m_Name: NewTutorialHintEvent 1
   m_EditorClassIdentifier: Assembly-CSharp::GameEventTutorialHint
   eventName: 
   eventType: 1
   eventConditionsList:
-  - rid: 5262031116987007057
+  - rid: 5262031191382687821
   eventEndConditionsList:
-  - rid: 5262031148262359118
+  - rid: 5262031191382687822
   isCompleted: 0
   copert: 1
-  text: halo
+  text: hint numer dwa
   textTable:
     m_TableReference:
       m_TableCollectionName: 
@@ -28,9 +28,9 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 5262031116987007057
-      type: {class: CopertOpenedFirstTime, ns: , asm: Assembly-CSharp}
+    - rid: 5262031191382687821
+      type: {class: EvidenceCheckFirstTime, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 5262031148262359118
+    - rid: 5262031191382687822
       type: {class: CopertClosedFirstTime, ns: , asm: Assembly-CSharp}
       data: 

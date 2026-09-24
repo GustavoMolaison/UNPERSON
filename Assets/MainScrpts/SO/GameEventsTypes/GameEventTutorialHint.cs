@@ -5,14 +5,16 @@ using UnityEngine.Localization;
 using UnityEngine.UI;
 
 
+
 [CreateAssetMenu(fileName = "NewTutorialHintEvent", menuName = "Events/Tutorial Hint")]
 public class GameEventTutorialHint : GameEvent
 {
 
-    private bool disableHintEvent;
+    private bool eventWentOff = false;
 
     [Header("Type of Hint")]
     [SerializeField] private bool copert;
+    
 
     [Header("Inputs")]
     [SerializeField] private string text;
@@ -20,38 +22,76 @@ public class GameEventTutorialHint : GameEvent
     [SerializeField] private Image visual;
 
 
-    [Header("Condition of hint disapearing")]
-    [SerializeReference, SubclassSelector]
-    private EventCondition hintGoneCondition;
+    //[Header("Condition of hint disapearing")]
+    //[SerializeReference, SubclassSelector]
+    //private EventCondition hintGoneCondition;
 
-    public void Initialize(bool disableHintEvent, bool copert)
+
+
+
+
+
+    override public void actionToDo(EventCondition condition)
     {
-        this.disableHintEvent = disableHintEvent;
-        this.copert = copert;
-    }
 
 
-
-
-    override public void actionToDo()
-    {
         if (copert)
         {
-            if (!disableHintEvent)
+            Debug.Log(isCompleted);
+            Debug.Log("isCompleted");
+            if (eventConditionsList.Contains(condition) && !eventWentOff)
             {
-                TutorialManager.Instance.copertSpaceSetActive(text);
-                GameEventTutorialHint disableEvent = ScriptableObject.CreateInstance<GameEventTutorialHint>();
-                disableEvent.Initialize(disableHintEvent: true, copert: true);
-                hintGoneCondition.gameEvent = disableEvent;
-                hintGoneCondition.appendToAction();
+                Debug.Log("Zaczyanm");
+                TutorialManager.Instance.copertSpaceSetActive(text, () =>
+                {
+                    isCompleted = true;
+                });
+                eventWentOff = true;
             }
             else
             {
-                TutorialManager.Instance.copertSpaceSetDisabled();
-            }
-            
-        }
-        
+                Debug.Log("Koncze");
+                if (isCompleted)
+                {
+                    TutorialManager.Instance.copertSpaceSetDisabled();
+                }
+                else
+                {
+                    Debug.Log("Zamykamy przed wykonaniem???");
 
+                }
+            }
+
+            //Debug.Log("IM TURNIGN ON");
+            //if (copert)
+            //{
+            //    Debug.Log("Coperta");
+
+            //    if (!eventWentOff)
+            //    {
+            //        Debug.Log("FIRST GO");
+            //        TutorialManager.Instance.copertSpaceSetActive(text);
+            //        eventWentOff = true;
+
+
+
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("nie jest completed");
+            //        if (isCompleted)
+            //        {
+            //            Debug.Log("wylaczam");
+            //            TutorialManager.Instance.copertSpaceSetDisabled();
+            //        }
+
+            //    }
+
+
+
+
+
+
+        }
     }
 }

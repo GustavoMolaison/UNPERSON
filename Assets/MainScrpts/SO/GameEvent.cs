@@ -18,9 +18,12 @@ abstract public class GameEvent : ScriptableObject
     
 
     [SerializeReference, SubclassSelector]
-     private List<EventCondition> eventConditionsList = new List<EventCondition>();
+    protected  List<EventCondition> eventConditionsList = new List<EventCondition>();
 
-   
+    [SerializeReference, SubclassSelector]
+    protected  List<EventCondition> eventEndConditionsList = new List<EventCondition>();
+
+
 
     public bool isCompleted  = false;
 
@@ -32,13 +35,29 @@ abstract public class GameEvent : ScriptableObject
 
     
    
-    abstract public void actionToDo();
+    abstract public void actionToDo(EventCondition condition);
+
+    virtual public void actionToDoAtEnd()
+    {
+
+    }
 
 
     public void enrollConditions()
     {
-        eventConditionsList.ForEach(condition => condition.gameEvent = this);
-        eventConditionsList.ForEach(condition => condition.appendToAction()); 
+        if (eventType == EventType.Dialogue)
+        {
+            eventConditionsList.ForEach(condition => condition.gameEvent = this);
+            eventConditionsList.ForEach(condition => condition.appendToAction());
+        }
+        if (eventType == EventType.Tutorial)
+        {
+            eventConditionsList.ForEach(condition => condition.gameEvent = this);
+            eventConditionsList.ForEach(condition => condition.appendToAction());
+
+            eventEndConditionsList.ForEach(condition => condition.gameEvent = this);
+            eventEndConditionsList.ForEach(condition => condition.appendToAction());
+        }
     }
 
 
