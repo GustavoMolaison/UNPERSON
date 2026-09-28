@@ -20,7 +20,7 @@ MonoBehaviour:
   isCompleted: 0
   tutorialType: 0
   text: o proceed, do the exact same thing as before, but link the evidence that
-    contradicts the suspect's statement instead.
+    contradicts the suspect's statement instead of dialogue option.
   textTable:
     m_TableReference:
       m_TableCollectionName: 
