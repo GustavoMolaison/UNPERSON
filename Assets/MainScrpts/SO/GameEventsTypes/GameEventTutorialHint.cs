@@ -31,6 +31,7 @@ public class GameEventTutorialHint : GameEvent
     [SerializeField] private LocalizedStringTable textTable;
     [SerializeField] private Image visual;
     
+    
 
     //[Header("Condition of hint disapearing")]
     //[SerializeReference, SubclassSelector]
@@ -51,6 +52,7 @@ public class GameEventTutorialHint : GameEvent
                 TutorialManager.Instance.generalSpaceSetActive(text, () =>
                 {
                     isCompleted = true;
+                    timeWhenCompleted = Time.time;
                 });
                 eventWentOff = true;
                 break;
@@ -63,6 +65,7 @@ public class GameEventTutorialHint : GameEvent
                 TutorialManager.Instance.copertSpaceSetActive(text, () =>
                 {
                     isCompleted = true;
+                    timeWhenCompleted = Time.time;
                 });
                 eventWentOff = true;
                 break;

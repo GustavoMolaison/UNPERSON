@@ -10,9 +10,9 @@ abstract public class GameEvent : ScriptableObject
     [Header("Event Properties")]
     [SerializeField]
     private string eventName;
-    
-    
-    protected EventType eventType;
+
+
+    public EventType eventType { get; protected set; }
 
     [Header("Event Conditions")]
     
@@ -26,6 +26,7 @@ abstract public class GameEvent : ScriptableObject
 
     private bool eventWentOff = false;
     public bool isCompleted  = false;
+    public float timeWhenCompleted { get; protected set; }
 
     // Pointers //////////////////////
     public string EventName => eventName;

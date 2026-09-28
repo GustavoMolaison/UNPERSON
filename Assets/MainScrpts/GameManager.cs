@@ -86,6 +86,14 @@ public class GameManager : MonoBehaviour
             {
                 // To jest pierwszy klik, zapisujemy czas
                 lastClickTimeD = Time.time;
+                if (MonitorCameraTracker.Instance == null)
+                {
+                    Debug.LogError("[NullCheck] MonitorCameraTracker.Instance jest NULL!");
+                }
+                else if (MonitorCameraTracker.Instance.currentCamera == null)
+                {
+                    Debug.LogError("[NullCheck] MonitorCameraTracker.Instance.currentCamera jest NULL!");
+                }
                 if (MonitorCameraTracker.Instance.currentCamera.isMonitor)
                 {
                     CameraMover.Instance.changeCamera("D");

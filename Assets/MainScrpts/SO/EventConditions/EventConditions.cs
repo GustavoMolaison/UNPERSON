@@ -41,6 +41,33 @@ public class EventConditionTimer : EventCondition
     }
 }
 
+[Serializable]
+public class EventConditionTimerSinceCompleted : EventCondition
+{
+    [SerializeField] float timeToStart = 5f;
+
+    public override bool Condition()
+    {
+        if (Time.time - gameEvent.timeWhenCompleted >= timeToStart)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    public override void appendToAction()
+    {
+        GameManager.Instance.actionPerFrame += CheckCondition;
+    }
+    public override void deleteFromAction()
+    {
+        GameManager.Instance.actionPerFrame -= CheckCondition;
+    }
+}
+
 
 [Serializable]
 public class EventConditionSuspectInterrogated : EventCondition
