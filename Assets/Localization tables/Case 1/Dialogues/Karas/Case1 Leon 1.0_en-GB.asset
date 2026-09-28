@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 23449296896
-    m_Localized: Tell me your story from the beginning to end
+    m_Localized: Tell me your story from the beginning to end.
     m_Metadata:
       m_Items: []
   - m_Id: 23508017152

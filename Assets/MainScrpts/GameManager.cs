@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public event Action actionPerFrame;
     public static GameManager Instance;
 
+    [Header("Debug settings")]
+    [SerializeField] bool ignoreEvents = false;
+
     void Awake()
     {
         Debug.Log("GameManager Awake() called");
@@ -42,11 +45,14 @@ public class GameManager : MonoBehaviour
         // Debug.Log(SuspectTracker.instance.currentSuspects.Count);
         DialogueTreeCreator.Instance.bulidTree(SuspectTracker.instance.currentSuspects);
         OptionTreeManager.Instance.initialize();
-
-        foreach(GameEvent gameEvent in currentLevel.GameEventsList)
+        if (!ignoreEvents)
         {
-            gameEvent.enrollConditions();
+            foreach (GameEvent gameEvent in currentLevel.GameEventsList)
+            {
+                gameEvent.enrollConditions();
+            }
         }
+        
         
         // DialogueTreeCreator.Instance.startingNodes[SuspectTracker.instance.currentSuspects[1]][0].displayTree();
 

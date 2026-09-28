@@ -445,6 +445,7 @@ MonoBehaviour:
   evidenceList: []
   doubleTapDelay: 0.3
   doubleTapDelayD: 0.3
+  ignoreEvents: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,7 +1640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &838305096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3936,6 +3937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InterrogationWindow Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3226064616522266713, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
+      propertyPath: optionclickedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c96f17621974ab469d71b6645c210ae, type: 3}
     - target: {fileID: 4894986607260761241, guid: 2af76785c9bf9f14e871730bb918f327, type: 3}
       propertyPath: chatlayout
       value: 
