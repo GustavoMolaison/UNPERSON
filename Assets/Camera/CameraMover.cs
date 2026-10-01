@@ -1,8 +1,7 @@
-using System.Drawing;
-using TMPro;
+
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using static UnityEditor.PlayerSettings;
+
+
 
 public class CameraMover : MonoBehaviour
 {

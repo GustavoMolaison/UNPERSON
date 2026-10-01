@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Frist talk
   m_EditorClassIdentifier: Assembly-CSharp::GameEventSupervisorDialouge
   eventName: Welcome invesstigators
-  eventType: 0
   eventConditionsList:
   - rid: 3864004171118936334
+  eventEndConditionsList: []
   isCompleted: 0
   dialogueTable:
     m_TableReference:
@@ -26,4 +26,4 @@ MonoBehaviour:
     - rid: 3864004171118936334
       type: {class: EventConditionTimer, ns: , asm: Assembly-CSharp}
       data:
-        timeToStart: 3
+        timeToStart: 7

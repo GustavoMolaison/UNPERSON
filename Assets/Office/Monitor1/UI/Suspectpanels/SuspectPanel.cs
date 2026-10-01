@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI; // Potrzebne do obs�ugi Image
 using TMPro;
-using TMPro.EditorUtilities;
+
 
 public class SuspectPanel : UIDataOrigin<Suspect>
 {

@@ -24,7 +24,7 @@ abstract public class GameEvent : ScriptableObject
     public  List<EventCondition> eventEndConditionsList = new List<EventCondition>();
 
 
-    private bool eventWentOff = false;
+    protected bool eventWentOff = false;
     public bool isCompleted  = false;
     public float timeWhenCompleted { get; protected set; }
 

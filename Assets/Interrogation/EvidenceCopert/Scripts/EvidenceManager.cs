@@ -23,6 +23,7 @@ public class EvidenceManager : MonoBehaviour
     {
         foreach (Evidence e in GameManager.Instance.evidenceList)
         {
+            Debug.Log("tworze dowody??");
             e.currentEvidenceUpdateState = -1;
             GameObject newpanel = Instantiate(evidencePanelPF, viewContent.transform, false);
             EvidencePanelManager panelManager = newpanel.GetComponent<EvidencePanelManager>();

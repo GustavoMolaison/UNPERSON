@@ -1,9 +1,8 @@
-using NaughtyAttributes;
-using TMPro;
+
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.UI;
-using static UnityEditor.Searcher.Searcher.AnalyticsEvent;
+
 
 public enum TutorialType
 {
@@ -20,7 +19,7 @@ public class GameEventTutorialHint : GameEvent
         eventType = EventType.Tutorial;
     }
 
-    private bool eventWentOff = false;
+    
 
     [SerializeField] private TutorialType tutorialType;
 

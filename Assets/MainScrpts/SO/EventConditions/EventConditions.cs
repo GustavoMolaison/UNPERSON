@@ -19,7 +19,7 @@ public class EventConditionTimer : EventCondition
     
     public override bool Condition()
     {
-        if(Time.time >= timeToStart)
+        if(Time.timeSinceLevelLoad >= timeToStart)
             {
                 
                 

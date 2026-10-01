@@ -18,10 +18,15 @@ public class InterrogationManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        
+    }
+
+    private void Start()
+    {
         OnInterrogatedSuspectChanged += DialogueOptionManager.Instance.initilalizeSuspectOptions;
         OnInterrogatedSuspectChanged += UiDialougeManager.Instance.forceClean;
     }
-    
+
 
     public void changeInterrogationSuspect(Suspect susp)
     {

@@ -1,9 +1,10 @@
 using System.Collections.Generic;
-using TMPro;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
+
 
 [CreateAssetMenu(fileName = "Evidence", menuName = "Scriptable Objects/Evidence")]
 public class Evidence : ScriptableObject
@@ -37,5 +38,8 @@ public class Evidence : ScriptableObject
     public string Details => table != null
         ? table.GetTable()?.GetEntry("Details")?.GetLocalizedString() ?? details.GetLocalizedString()
         : details.GetLocalizedString();
+
+
+    
 
 }
