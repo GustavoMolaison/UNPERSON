@@ -41,25 +41,18 @@ public class MonitorCameraTracker : MonoBehaviour
     {
 
 
-        if(Screen1.Instance == null || Screen2.Instance == null || EvidenceManager.Instance == null || InterrogationManager.Instance == null)
+        if(Screen1.Instance == null || EvidenceManager.Instance == null || InterrogationManager.Instance == null)
         {
             Debug.LogError("Nie wszystkie instancje monitorów zostały zainicjalizowane!");
             return;
         }
-        // inBaseCamera = new CameraData(true, new Vector3(0, 0, -1), 500f, new Vector3(0, 0, 0), false);
+        
 
         RectTransform screenRect = (RectTransform)Screen1.Instance.transform;
         Vector2 screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
         inMonitor1 = new CameraData(Screen1.Instance, true, true, true, screenBounds, 180);
 
-        // screenRect = (RectTransform)Case_Monitor.Instance.transform;
-        // screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        // inCaseMonitor = new CameraData(Case_Monitor.Instance, false, false, true, screenBounds, 400);
-        //inMonitor2 = new CameraData(false, Screen1.Instance.transform.position, Screen1.Instance.cameraSize, monitor2Angle);
-        
-        screenRect = (RectTransform)Screen2.Instance.transform;
-        screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inMonitor2 = new CameraData(Screen2.Instance, false, false, true, screenBounds, distanceFromMonitor);
+       
 
         screenRect = (RectTransform)InterrogationManager.Instance.transform;
         screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
@@ -67,16 +60,15 @@ public class MonitorCameraTracker : MonoBehaviour
         
         prevCamera = inInterrogation;
         currentCamera = inInterrogation;
-        CDList = new List<CameraData> { inMonitor1, inMonitor2, inInterrogation};
+        CDList = new List<CameraData> { inMonitor1, inInterrogation};
 
         screenToCameraData.Add(Screen1.Instance, inMonitor1);
-        screenToCameraData.Add(Screen2.Instance, inMonitor2);
+        
         // screenToCameraData.Add(Case_Monitor.Instance, inCaseMonitor);
 
         MonitorsCords = new Dictionary<CameraData, Vector2>
         {
             { inMonitor1, new Vector2 (0, 0) },
-            { inMonitor2, new Vector2 (1, 0) },
             { inInterrogation, new Vector2 (-1, 0) },
 
 

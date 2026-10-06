@@ -81,7 +81,7 @@ public class SuspectTracker : MonoBehaviour
         }
 
         OnCurrentSuspectChangedInputSuspect += Screen1.Instance.suspectPanelExtensionSwitch;
-        OnCurrentSuspectChanged += Screen2.Instance.chatterGroupOfOn;
+        //OnCurrentSuspectChanged += Screen2.Instance.chatterGroupOfOn;
 
         initilized = true;
     }
