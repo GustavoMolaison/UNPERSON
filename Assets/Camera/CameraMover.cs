@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -55,40 +56,39 @@ public class CameraMover : MonoBehaviour
 
     void Update()
     {
+        // Bezpieczne liczenie pozostałego kąta (uwzględnia przeskok 0-360)
+        float remainingAngle = Mathf.Abs(Mathf.DeltaAngle(cam.transform.rotation.eulerAngles.y, targetAngle.y));
 
+        // Jeśli kamera jest już praktycznie u celu, odetnij efekt łuku i przechyłu
+        if (rotationRange > 0.01f && remainingAngle > 0.1f)
+        {
+            // Clampujemy progress ściśle do przedziału 0..1
+            rotationProgress = Mathf.Clamp01(remainingAngle / rotationRange);
+        }
+        else
+        {
+            rotationProgress = 0f;
+        }
 
-        rotationProgress = Mathf.Abs(cam.transform.rotation.eulerAngles.y - targetAngle.y) / rotationRange;
-        
         float arc = Mathf.Sin(rotationProgress * Mathf.PI) * headArcAmount;
-        // 1. Płynne przesunięcie z masą/bezwładnością
-        float tilt = Mathf.Sin(rotationProgress * Mathf.PI) * Random.Range(0f, 4f);
+
+        // Tilt aplikujemy tylko w trakcie realnego ruchu, bez losowania w stanie spoczynku
+        float tilt = rotationProgress > 0.001f ? Mathf.Sin(rotationProgress * Mathf.PI) * 2f : 0f;
 
         Quaternion targetRotation = Quaternion.Euler(targetAngle.x, targetAngle.y, targetAngle.z + tilt);
-        Vector3 rawEuler = new Vector3(targetAngle.x, targetAngle.y, targetAngle.z + tilt);
-
-        // if (float.IsNaN(rawEuler.x) || float.IsNaN(rawEuler.y) || float.IsNaN(rawEuler.z) ||
-        // float.IsInfinity(rawEuler.x) || float.IsInfinity(rawEuler.y) || float.IsInfinity(rawEuler.z))
-    //    {
-    //       Debug.LogError($"[CameraMover] Wykryto NaN/Infinity! targetAngle: {targetAngle}, tilt: {tilt}");
-    //       return; // Zamiast wywalać asercję Unity, pomiń obrót w tej klatce
-    // }
-        
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
 
-        if(updateCycleCounter > rotationOverMovingHeadStart)
+        if (updateCycleCounter > rotationOverMovingHeadStart)
         {
-            // 2. Płynna rotacja z powolnym startem i wyhamowaniem
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref positionVelocity, smoothTime);
-            transform.position -= transform.forward * arc;
+            // SmoothDamp dąży do pozycji z nałożonym łukiem, zamiast odejmować go w nieskończoność
+            Vector3 desiredPosition = targetPosition - (transform.forward * arc);
+            transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref positionVelocity, smoothTime);
         }
-        
-         
+
         // 3. Zoom
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, smoothSpeed * Time.deltaTime);
 
-
         updateCycleCounter++;
-      
     }
 
     public void backToStandardPos()
@@ -107,10 +107,11 @@ public class CameraMover : MonoBehaviour
     // NIE UZYWAJ TEJ FUNKCJI POZA TYM PLIKIEM
       if(camera.active == true)
         {
+            bool hasCanvas = camera.monitorScript.TryGetComponent<Canvas>(out Canvas canvas);
 
-            
-           
-            if(targetAngle != camera.monitorScript.transform.eulerAngles)
+
+
+            if (targetAngle != camera.monitorScript.transform.eulerAngles)
             {
                 // Wydajemy dzwiek gdy obracamy fotel damn
                 GetComponent<RandomAudioPlayer>().PlayRandomCreak();
@@ -122,8 +123,18 @@ public class CameraMover : MonoBehaviour
 
             if (camera.zoomed)
             {
-               
-                targetPosition = camera.monitorScript.transform.position - (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
+                
+                if (hasCanvas)
+                {
+                    targetPosition = camera.monitorScript.transform.position - (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
+                }
+                else
+                {
+                    targetPosition = camera.monitorScript.transform.position + (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
+                    targetPosition.x -= 100f;
+                    targetPosition.y += 50f;
+                }
+                    
                 
             }
             else
@@ -131,11 +142,19 @@ public class CameraMover : MonoBehaviour
                 targetPosition = standardPosition;
             }
 
-            rotationRange = Mathf.Abs(cam.transform.rotation.eulerAngles.y - targetAngle.y);
-            
-            
+            //rotationRange = Mathf.Abs(cam.transform.rotation.eulerAngles.y - targetAngle.y);
 
-           
+            if (!hasCanvas)
+            {
+                targetAngle.y += 180f;
+            }
+
+            Quaternion targetRotation = Quaternion.Euler(targetAngle);
+            rotationRange = Quaternion.Angle(cam.transform.rotation, targetRotation);
+
+
+
+
         }
     }
 

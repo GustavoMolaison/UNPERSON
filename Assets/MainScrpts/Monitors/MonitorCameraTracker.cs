@@ -41,18 +41,30 @@ public class MonitorCameraTracker : MonoBehaviour
     {
 
 
-        if(Screen1.Instance == null || EvidenceManager.Instance == null || InterrogationManager.Instance == null)
+        if(Monitor1.Instance == null || EvidenceManager.Instance == null || InterrogationManager.Instance == null)
         {
             Debug.LogError("Nie wszystkie instancje monitorów zostały zainicjalizowane!");
             return;
         }
-        
 
-        RectTransform screenRect = (RectTransform)Screen1.Instance.transform;
-        Vector2 screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inMonitor1 = new CameraData(Screen1.Instance, true, true, true, screenBounds, 180);
+        RectTransform screenRect;
+        //RectTransform screenRect = (RectTransform)Screen1.Instance.transform;
+        //Vector2 screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
+        //inMonitor1 = new CameraData(Screen1.Instance, true, true, true, screenBounds, 180);
 
-       
+        Renderer screenRenderer = Monitor1.Instance.GetComponentInChildren<Renderer>();
+        // bounds.size zwraca wymiary prostopadłościanu w world space uwzględniające scale
+        Vector3 size = screenRenderer.bounds.size;
+
+        // Jeśli monitor stoi w osi X/Y lub Z/Y:
+        // Dla kamery patrzącej wprost potrzebujesz szerokości i wysokości tafli ekranu:
+        float width = size.x; // jeśli ekran jest obrócony bokiem (np. Y ok. -96 st.), może to być size.z
+        float height = size.y;
+
+        Vector2 screenBounds = new Vector2(width, height);
+        inMonitor1 = new CameraData(Monitor1.Instance, true, true, true, screenBounds, 180);
+
+
 
         screenRect = (RectTransform)InterrogationManager.Instance.transform;
         screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
@@ -62,7 +74,7 @@ public class MonitorCameraTracker : MonoBehaviour
         currentCamera = inInterrogation;
         CDList = new List<CameraData> { inMonitor1, inInterrogation};
 
-        screenToCameraData.Add(Screen1.Instance, inMonitor1);
+        //screenToCameraData.Add(Screen1.Instance, inMonitor1);
         
         // screenToCameraData.Add(Case_Monitor.Instance, inCaseMonitor);
 

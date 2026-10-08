@@ -42,33 +42,7 @@ public class MonitorBase : MonoBehaviour
     }
 }
 
-// public virtual void canvasChanger(Canvas canvas)
 
-//     {
-
-//         Debug.Log(canvasList.Where(x => x.enabled).FirstOrDefault());
-
-//         prevCanvas = canvasList.Where(x => x.enabled).FirstOrDefault();
-
-//         prevCanvas.enabled = false;
-
-//         //Debug.Log("wellnigga");
-
-
-
-//         canvas.enabled = true;
-
-//         //Debug.Log("wellnigga1");
-
-//     }
-
-    // public virtual void OnMouseDown()
-    // {
-    //     Debug.Log("Zmiana kamery");
-    //     CameraMover.Instance.changeCamera("bum", MonitorCameraTracker.Instance.screenToCameraData[this]);
-    //     // Setting current coordinates in MonitorCameraTracker to the coordinates of the current monitor
-    //     // MonitorCameraTracker.Instance.currentCords = MonitorCameraTracker.Instance.MonitorsCords[MonitorCameraTracker.Instance.screenToCameraData[this]];
-    // }
 
 
 

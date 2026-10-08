@@ -4,7 +4,7 @@ The main gameplay loop is divided into cases. Each case challenges the player wi
 
 To discover the truth, the player must interrogate suspects and analyze evidence—this is their primary weapon of deduction.
 
-<img src="image.png" width="250" alt="Game Start">
+<img src="img/image.png" width="250" alt="Game Start">
 
 In a standard scenario, the player must identify victims, culprits, and pinpoint an **UnPerson** among them. The player must make these deductions entirely on their own; the game will not hold their hand or indicate whether they are heading in the right direction.
 
@@ -42,19 +42,19 @@ The UI strategically utilizes colors and movement to convey information without 
 
 **Correct State (No wrong connections):**
 
-<img src="image-1.png" width="250" alt="0 Wrong Connections">
+<img src="img/image-1.png" width="250" alt="0 Wrong Connections">
 
 **1 Wrong Connection:**
 
-<img src="image-2.png" width="250" alt="1 Wrong Connection">
+<img src="img/image-2.png" width="250" alt="1 Wrong Connection">
 
 **2 Wrong Connections:**
 
-<img src="image-3.png" width="250" alt="2 Wrong Connections">
+<img src="img/image-3.png" width="250" alt="2 Wrong Connections">
 
 **3 Wrong Connections (Maximum errors):**
 
-<img src="image-4.png" width="250" alt="3 Wrong Connections">
+<img src="img/image-4.png" width="250" alt="3 Wrong Connections">
 
 My overarching goal is to express game mechanics entirely through color and movement, maximizing player immersion.
 

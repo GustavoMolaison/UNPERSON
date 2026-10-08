@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 0c27f9c7fc7e71f4a963491547df8122
+guid: ca451094698382b438afa4c7441b601d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ekran szklo
-    second: {fileID: 2100000, guid: 5f5e423373a370246b80e04db72f0724, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Obudowa podkladka
-    second: {fileID: 2100000, guid: e6f281f9bc27a1d4593df9352c4582c7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rozowytest
-    second: {fileID: 2100000, guid: b97667dbfce7cd542996a5ebbc3a4b53, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
