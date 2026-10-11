@@ -30,6 +30,13 @@ public class CameraMover : MonoBehaviour
     private float rotationRange = 1f;
     private float rotationProgress = 0f;
 
+    [SerializeField] public bool isMoving = false;
+
+    [Header("monitor1 camera adjustments")]
+    [SerializeField] private Vector3 xyzAdjustments;
+    [SerializeField] private float angleAdjustments;
+
+
 
     public static CameraMover Instance; // Statyczna referencja do instancji
 
@@ -56,13 +63,14 @@ public class CameraMover : MonoBehaviour
 
     void Update()
     {
-        // Bezpieczne liczenie pozostałego kąta (uwzględnia przeskok 0-360)
-        float remainingAngle = Mathf.Abs(Mathf.DeltaAngle(cam.transform.rotation.eulerAngles.y, targetAngle.y));
+        // Jeśli stoimy w miejscu, nie rób nic
+        if (!isMoving) return;
 
-        // Jeśli kamera jest już praktycznie u celu, odetnij efekt łuku i przechyłu
+        // 1. Sprawdzenie rotacji
+        float remainingAngle = Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.y, targetAngle.y));
+
         if (rotationRange > 0.01f && remainingAngle > 0.1f)
         {
-            // Clampujemy progress ściśle do przedziału 0..1
             rotationProgress = Mathf.Clamp01(remainingAngle / rotationRange);
         }
         else
@@ -71,16 +79,14 @@ public class CameraMover : MonoBehaviour
         }
 
         float arc = Mathf.Sin(rotationProgress * Mathf.PI) * headArcAmount;
-
-        // Tilt aplikujemy tylko w trakcie realnego ruchu, bez losowania w stanie spoczynku
         float tilt = rotationProgress > 0.001f ? Mathf.Sin(rotationProgress * Mathf.PI) * 2f : 0f;
 
         Quaternion targetRotation = Quaternion.Euler(targetAngle.x, targetAngle.y, targetAngle.z + tilt);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
 
+        // 2. Pozycja
         if (updateCycleCounter > rotationOverMovingHeadStart)
         {
-            // SmoothDamp dąży do pozycji z nałożonym łukiem, zamiast odejmować go w nieskończoność
             Vector3 desiredPosition = targetPosition - (transform.forward * arc);
             transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref positionVelocity, smoothTime);
         }
@@ -89,6 +95,23 @@ public class CameraMover : MonoBehaviour
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, targetSize, smoothSpeed * Time.deltaTime);
 
         updateCycleCounter++;
+
+        // --- ZATRZASKIWANIE I STOP ---
+        float distToTarget = Vector3.Distance(transform.position, targetPosition);
+        float angleToTarget = Quaternion.Angle(transform.rotation, Quaternion.Euler(targetAngle));
+        float sizeDiff = Mathf.Abs(cam.orthographicSize - targetSize);
+
+        // Progi tolerancji (dostosuj jeśli potrzebujesz większej/mniejszej precyzji)
+        if (distToTarget < 0.01f && angleToTarget < 0.1f && sizeDiff < 0.01f)
+        {
+            transform.position = targetPosition;
+            transform.rotation = Quaternion.Euler(targetAngle);
+            cam.orthographicSize = targetSize;
+            positionVelocity = Vector3.zero;
+
+            isMoving = false;
+            Debug.Log("KONIEC");
+        }
     }
 
     public void backToStandardPos()
@@ -131,8 +154,8 @@ public class CameraMover : MonoBehaviour
                 else
                 {
                     targetPosition = camera.monitorScript.transform.position + (camera.monitorScript.transform.forward * camera.distanceFromMonitor);
-                    targetPosition.x -= 100f;
-                    targetPosition.y += 50f;
+                    targetPosition.x -= xyzAdjustments[0];
+                    targetPosition.y += xyzAdjustments[1];
                 }
                     
                 
@@ -146,11 +169,13 @@ public class CameraMover : MonoBehaviour
 
             if (!hasCanvas)
             {
-                targetAngle.y += 180f;
+                targetAngle.y += angleAdjustments;
             }
 
             Quaternion targetRotation = Quaternion.Euler(targetAngle);
             rotationRange = Quaternion.Angle(cam.transform.rotation, targetRotation);
+            isMoving = true;
+            MouseLook.Instance.mouseMovementAllowed = false;
 
 
 

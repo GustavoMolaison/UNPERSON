@@ -72,6 +72,7 @@ public class DialogueOptionWindow : MonoBehaviour
 
     public void onClick()
     {
+        Debug.Log("KURWA KLIKAMN CIE");
         StartCoroutine(HandleNewDialogueSequence());
         DialougeOptionSoundAnimation.instance.optionClicked();
     }

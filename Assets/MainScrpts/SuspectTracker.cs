@@ -65,6 +65,7 @@ public class SuspectTracker : MonoBehaviour
         // else Destroy(gameObject);
 
         currentSuspects = GameManager.Instance.currentLevel.SuspectsList;
+        currentSuspect = currentSuspects[0];
 
         // currentSuspect = currentSuspects[0];
         // previousSuspect = currentSuspects[0];
