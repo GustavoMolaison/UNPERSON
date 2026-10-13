@@ -64,7 +64,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         actionPerFrame?.Invoke();
-     
+
+        // Sterowanie biurkiem tylko gdy gracz siedzi przy biurku
+        if (PlayerController.Instance != null && !PlayerController.Instance.InDesk) return;
+
 
         if (Input.GetKeyDown(KeyCode.B))
         {

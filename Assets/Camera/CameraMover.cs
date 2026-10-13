@@ -65,6 +65,8 @@ public class CameraMover : MonoBehaviour
     {
         // Jeśli stoimy w miejscu, nie rób nic
         if (!isMoving) return;
+        // Podczas chodzenia kamerą steruje PlayerController
+        if (PlayerController.Instance != null && !PlayerController.Instance.InDesk) return;
 
         // 1. Sprawdzenie rotacji
         float remainingAngle = Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.y, targetAngle.y));
