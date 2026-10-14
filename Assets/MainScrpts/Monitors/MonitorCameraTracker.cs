@@ -11,6 +11,7 @@ public class MonitorCameraTracker : MonoBehaviour
     public CameraData inCaseMonitor;
     public CameraData inMonitor2;
     public CameraData inInterrogation;
+    public CameraData inInterrogationGlass;
     public CameraData prevCamera;
     public CameraData currentCamera;
     public List<CameraData> CDList;
@@ -39,59 +40,44 @@ public class MonitorCameraTracker : MonoBehaviour
     private bool initilized = false;
     public void initilize()
     {
+        // Kadr (pozycja, kąt, odległość) liczy CameraData.TryGetViewPose z aktualnego transformu obiektu,
+        // więc przesunięcie monitora/szyby/canvasu na scenie nie wymaga zmian w kodzie.
+        // Działa dla canvasów (RectTransform) i obiektów 3D z Rendererami.
+        // Ekran modelu monitora patrzy w +Z, szyba - strona wykrywana automatycznie (od biurka).
+        // Ustawienia per obiekt: komponent CameraFocusTarget.
+        inMonitor1 = CreateCameraData(Monitor1.Instance, nameof(Monitor1), CameraFocusTarget.Facing.Forward);
+        inInterrogation = CreateCameraData(InterrogationManager.Instance, nameof(InterrogationManager));
+        inInterrogationGlass = CreateCameraData(InterrogationGlass.Instance, nameof(InterrogationGlass));
 
-
-        if(Monitor1.Instance == null || EvidenceManager.Instance == null || InterrogationManager.Instance == null)
-        {
-            Debug.LogError("Nie wszystkie instancje monitorów zostały zainicjalizowane!");
-            return;
-        }
-
-        RectTransform screenRect;
-        //RectTransform screenRect = (RectTransform)Screen1.Instance.transform;
-        //Vector2 screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        //inMonitor1 = new CameraData(Screen1.Instance, true, true, true, screenBounds, 180);
-
-        Renderer screenRenderer = Monitor1.Instance.GetComponentInChildren<Renderer>();
-        // bounds.size zwraca wymiary prostopadłościanu w world space uwzględniające scale
-        Vector3 size = screenRenderer.bounds.size;
-
-        // Jeśli monitor stoi w osi X/Y lub Z/Y:
-        // Dla kamery patrzącej wprost potrzebujesz szerokości i wysokości tafli ekranu:
-        float width = size.x; // jeśli ekran jest obrócony bokiem (np. Y ok. -96 st.), może to być size.z
-        float height = size.y;
-
-        Vector2 screenBounds = new Vector2(width, height);
-        inMonitor1 = new CameraData(Monitor1.Instance, true, true, true, screenBounds, 180);
-
-
-
-        screenRect = (RectTransform)InterrogationManager.Instance.transform;
-        screenBounds = new Vector2(screenRect.rect.width, screenRect.rect.height);
-        inInterrogation = new CameraData(InterrogationManager.Instance, true, true, true, screenBounds, 500);
-        
+        // Na starcie aktywna jest tylko kamera przesłuchania
         prevCamera = inInterrogation;
         currentCamera = inInterrogation;
-        CDList = new List<CameraData> { inMonitor1, inInterrogation};
+        if (inInterrogation != null) inInterrogation.active = true;
 
-        //screenToCameraData.Add(Screen1.Instance, inMonitor1);
-        
-        // screenToCameraData.Add(Case_Monitor.Instance, inCaseMonitor);
-
-        MonitorsCords = new Dictionary<CameraData, Vector2>
-        {
-            { inMonitor1, new Vector2 (0, 0) },
-            { inInterrogation, new Vector2 (-1, 0) },
-
-
-        };
-        
-
-        // CameraMover.Instance.changeCamera("Ininterrogation", MonitorCameraTracker.Instance.inMonitor1);
+        CDList = new List<CameraData>();
+        MonitorsCords = new Dictionary<CameraData, Vector2>();
+        Register(inInterrogation, new Vector2(-1, 0));
+        Register(inMonitor1, new Vector2(0, 0));
+        Register(inInterrogationGlass, new Vector2(1, 0));
 
         initilized = true;
+    }
 
+    private CameraData CreateCameraData(MonoBehaviour target, string targetName, CameraFocusTarget.Facing facing = CameraFocusTarget.Facing.Auto)
+    {
+        if (target == null)
+        {
+            Debug.LogError($"MonitorCameraTracker: brak instancji {targetName} na scenie - pomijam tę kamerę.");
+            return null;
+        }
+        return new CameraData(target, false, true, true, 0f, facing);
+    }
 
+    private void Register(CameraData camera, Vector2 cords)
+    {
+        if (camera == null) return;
+        CDList.Add(camera);
+        MonitorsCords.Add(camera, cords);
     }
 
     // public void changeCamera(string input, CameraData cameraPicked = null)
@@ -129,7 +115,7 @@ public class MonitorCameraTracker : MonoBehaviour
         if (activeCameras.Count > 0)
         {
             prevCamera = currentCamera; // Zaktualizuj poprzednią kamerę na aktualną przed zmianą
-            prevCamera.active = false; // Dezaktywuj poprzednią kamerę
+            if (prevCamera != null) prevCamera.active = false; // Dezaktywuj poprzednią kamerę
 
             // Nową kamerą zostaje pierwsza znaleziona, która nie jest starą kamerą
             CameraData targetCamera = activeCameras[0];
@@ -141,7 +127,7 @@ public class MonitorCameraTracker : MonoBehaviour
             }
 
             currentCamera = targetCamera;
-            Debug.Log($"Zmiana kamery na: {currentCamera.monitorScript.name}, poprzednia kamera: {prevCamera.monitorScript.name}");
+            Debug.Log($"Zmiana kamery na: {currentCamera.monitorScript.name}, poprzednia kamera: {prevCamera?.monitorScript.name}");
         }
         else if (CDList.Count(x => x.active) == 0)
         {

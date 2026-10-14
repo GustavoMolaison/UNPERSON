@@ -65,8 +65,23 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            MoveToCamera();
             BeginWalking(cam.transform.eulerAngles.y);
         }
+    }
+
+    // Przenosi Playera pod kamerę, żeby gra startowała tam, gdzie kamera stoi na scenie
+    private void MoveToCamera()
+    {
+        Vector3 camPos = cam.transform.position;
+        controller.enabled = false; // wyłączony, żeby raycast go nie trafił i żeby dało się teleportować
+
+        if (Physics.Raycast(camPos, Vector3.down, out RaycastHit hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
+            transform.position = hit.point;
+        else
+            transform.position = camPos - Vector3.up * eyeHeight;
+
+        controller.enabled = true;
     }
 
     void Update()
